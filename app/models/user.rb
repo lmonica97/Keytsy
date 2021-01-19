@@ -1,5 +1,5 @@
 class User < ApplicationRecord 
-    validates :first_name, presence: true 
+    validates :name, presence: true 
     validates :email, presence: true, uniqueness: true 
     validates :password_digest, presence: true 
     validates :session_token, uniqueness: true, presence: true 
@@ -33,7 +33,7 @@ class User < ApplicationRecord
         self.save! 
         self.session_token
     end
-    
+
     private 
     def generate_session_token 
         SecureRandom.urlsafe_base64

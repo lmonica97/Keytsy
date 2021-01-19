@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: './frontend/keytsy_app.jsx', 
   output: { 
     path: path.resolve(__dirname,"app", "assets", "javascripts"),
