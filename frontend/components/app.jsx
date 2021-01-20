@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 
 const App = () => (
     <div>
+        <Route exact path="/" component={MainPage} />
         <AuthRoute path="/signup" component={SignUpContainer} />
     </div>
 )

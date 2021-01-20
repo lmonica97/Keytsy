@@ -177,7 +177,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+    exact: true,
+    path: "/",
+    component: MainPage
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }));
@@ -398,6 +402,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+console.log('DOMContent');
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
   var preloadedState = undefined;
@@ -411,7 +416,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome To the Keytsy App!"), root);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    store: store
+  }), root);
 });
 
 /***/ }),
@@ -567,6 +574,7 @@ var Auth = function Auth(_ref) {
   var loggedIn = _ref.loggedIn,
       path = _ref.path,
       Component = _ref.component;
+  console.log('authRoute');
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     render: function render(props) {
@@ -581,6 +589,7 @@ var Protected = function Protected(_ref2) {
   var loggedIn = _ref2.loggedIn,
       path = _ref2.path,
       Component = _ref2.component;
+  console.log('protectedRoute');
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     render: function render(props) {
@@ -609,6 +618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 var signup = function signup(user) {
+  console.log('ajax-signup');
   return $.ajax({
     url: '/api/user',
     method: 'POST',
@@ -618,6 +628,7 @@ var signup = function signup(user) {
   });
 };
 var login = function login(user) {
+  console.log('ajax-login');
   return $.ajax({
     url: '/api/session',
     method: 'POST',
@@ -627,6 +638,7 @@ var login = function login(user) {
   });
 };
 var logout = function logout() {
+  console.log('ajax-logout');
   return $.ajax({
     url: '/api/session',
     method: 'DELETE'

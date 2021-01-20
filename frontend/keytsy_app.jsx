@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+console.log('DOMContent');
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root')
     let preloadedState = undefined;
@@ -14,5 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     }
     const store = configureStore();
-    ReactDOM.render(<h1>Welcome To the Keytsy App!</h1>, root)
+    ReactDOM.render(<Root store={store} />, root)
 })
