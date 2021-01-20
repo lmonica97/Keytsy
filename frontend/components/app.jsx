@@ -1,13 +1,26 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
-import SignUpContainer from './session/signup_container';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import Splash from '../splash/splash';
+import Modal from './modal/modal';
+import GreetingContainer from './greeting/greeting_container';
+import SigninFormContainer from './session/signin_container';
+import RegisterFormContainer from './session/register_container';
+
 
 const App = () => (
     <div>
-        <Route exact path="/" component={MainPage} />
-        <AuthRoute path="/signup" component={SignUpContainer} />
+        <Modal />
+        <header>
+            <Link to="/" className="header-link">
+                <h1>Keytsy</h1>
+            </Link>
+            <GreetingContainer />
+        </header>
+        <Route exact path="/" component={Splash} />
+        <Route path="/signin" component={SigninFormContainer} />
+        <Route path="/signup" component={RegisterFormContainer} />
     </div>
 )
 

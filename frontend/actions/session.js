@@ -25,14 +25,14 @@ export const signup = (formUser) => dispatch => {
     ))
 }
 
-export const login = (formUser) => dispatch => {
-    return SessionApiUtil.login(formUser)
+export const signin = (formUser) => dispatch => {
+    return SessionApiUtil.signin(formUser)
         .then(user => dispatch(receiveCurrentUser(user)),
         err => dispatch(receiveErrors(err.responseJSON)
         ))
 }
 
-export const logout = () => dispatch => {
-    return SessionApiUtil.logout() 
+export const signout = () => dispatch => {
+    return SessionApiUtil.signout() 
         .then( () => dispatch(logoutCurrentUser()))
 }
