@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LogoutDropdown extends React.Component {
+class Dropdown extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -42,4 +42,4 @@ class LogoutDropdown extends React.Component {
     }
 }
 
-export default LogoutDropdown;
+export default Dropdown;

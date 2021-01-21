@@ -19,8 +19,8 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Route exact path="/" component={Splash} />
-        <Route path="/signin" component={SigninFormContainer} />
-        <Route path="/signup" component={RegisterFormContainer} />
+        {/* <Route path="/signin" component={SigninFormContainer} />
+        <Route path="/signup" component={RegisterFormContainer} /> */}
     </div>
 )
 

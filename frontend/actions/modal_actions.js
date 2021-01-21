@@ -1,17 +1,15 @@
-export const MODAL_OPEN = 'MODAL_OPEN';
-export const MODAL_CLOSE = 'MODAL_CLOSE';
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
 
-export const modalOpen = modal => {
-    console.log('modal Opening')
-    return {
-        type: MODAL_OPEN,
-        modal
-    }
-}
+export const openModal = modal => {
+  return {
+    type: OPEN_MODAL,
+    modal
+  };
+};
 
-export const modalClose = () => {
-    console.log('modal Closing')
-    return {
-        type: MODAL_CLOSE,
-    }
-}
+export const closeModal = () => {
+  return {
+    type: CLOSE_MODAL
+  };
+};

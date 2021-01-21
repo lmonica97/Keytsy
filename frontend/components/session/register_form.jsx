@@ -20,7 +20,7 @@ class RegisterForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal());
     }
 
     renderErrors() {
@@ -40,10 +40,11 @@ class RegisterForm extends React.Component {
         return (
             <div className="register-form-container">
                 <form onSubmit={this.handleSubmit} className="register-form-box">
-
+                <span className="dot"></span>
+                <div onClick={this.props.modalClose} className="close-x">✖</div>
                     <h3 className="register-header">Create your account</h3>
                     <br />
-                    <p>Registration is easy.</p>
+                    <p className="register-quote">Registration is easy.</p>
                     <br />
                     <div>
                         <br />
@@ -78,7 +79,7 @@ class RegisterForm extends React.Component {
                         <br />
                         {this.renderErrors()}
                         <br />
-                        <button className="register-button">Register</button>
+                        <button className="register">Register</button>
                         <br />
                         <button className="demo-user-button">Demo User</button>
                     </div>

@@ -1,24 +1,25 @@
 import React from 'react';
-import LogoutDropdown from './logout_dropdown';
-import { Link } from 'react-router-dom';
 
+const Greeting = ({ currentUser, signout, openModal }) => {
+    console.log(currentUser);
+  const sessionLinks = () => (
+    <nav className="signin-logout">
+      <button onClick={() => openModal('signin')}>Sign in</button>
+    </nav>
+  );
+  
+  const personalGreeting = () => (
+    <hgroup className="header-group">
+      <h2 className="header-name">Hi, {currentUser.name}!</h2>
+      <button className="header-button" onClick={signout}>Sign out</button>
+    </hgroup>
+  );
 
-const Greeting = ({ currentUser, logout, modalOpen }) => {
-
-    const sessionLinks = () => (
-        <nav className="signin-register">
-            <button onClick={() => modalOpen('signin')}>Sign in</button>
-            <Link to='/signin'>Sign in</Link>
-            <Link to='/signup'>Sign up</Link>
-        </nav>
-    )
-    console.log('greeting');
-    debugger
-    return (
-        currentUser ?
-        <LogoutDropdown currentUser={currentUser} signout={logout} /> :
-        sessionLinks()
-    );
-}
+  return (
+    currentUser ?
+    personalGreeting(currentUser, signout) :
+    sessionLinks()
+  );
+};
 
 export default Greeting;

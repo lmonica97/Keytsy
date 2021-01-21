@@ -3,6 +3,7 @@ import React from 'react';
 import RegisterForm from './register_form';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session';
+import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ sessionError }) => {
     debugger
@@ -13,7 +14,8 @@ const mapStateToProps = ({ sessionError }) => {
     }
 }
 const mapDispatchToProps = (dispatch) => ({
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

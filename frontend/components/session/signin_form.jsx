@@ -1,13 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+
 class SigninForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             email: '',
-            password: ''
-        }
-
+            password: '',
+            show: false
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
 
     update(type) {
@@ -16,13 +20,22 @@ class SigninForm extends React.Component {
         }
     }
 
+    showModal () {
+        this.setState({ show: true})
+    }
+
+    hideModal() {
+        this.setState({ show: false})
+    }
+
     handleSubmit(e) {
         debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.modalClose);
+        console.log('user', user);
+        this.props.processForm(user).then(res => console.log('res', res))
+        // .then(this.props.modalClose);
     }
-
 
     renderErrors() {
         return(
@@ -39,32 +52,34 @@ class SigninForm extends React.Component {
     render() {
         console.log('sign in form up')
         return(
+            
             <div className="signin-form-container">
-                <form onSubmit={this.handleSubmit} className="signin-form-box">
+                <span className="dot"></span>
+                <div onClick={this.props.modalClose} className="close-x">✖</div>
+                <form onSubmit={this.handleSubmit} className="signin-form-box">   
+                    {this.props.otherForm}
                     <h3 className="signin-header">Sign in</h3>
-                    <button className="register-button">Register</button>
-                    <div onClick={this.props.modalClose} className="close-x">X</div>
                     <br />
-                    <label>Email address 
+                    <label className="signin-label">Email address </label>
+                        <br />
                         <input
                         type="text"
                         value={this.state.email}
                         onChange={this.update('email')}>
                         </input>
-                    </label>
                     <br />
 
-                    <label>Password
+                    <label className="signin-label">Password </label>
+                        <br />
                         <input
                         type="password"
                         value={this.state.password}
                         onChange={this.update('password')}>
                         </input>
-                    </label>
                     <br />
                     {this.renderErrors()}
                     <br />
-                    <button className="sigin-button">Sign in</button>
+                    <button className="signin-button">Sign in</button>
                     <br />
                     <button className="demo-user-button">Demo User</button>
                 </form>
