@@ -5,7 +5,7 @@ class Splash extends React.Component {
         console.log('splashcontent')
         return (
             <div className="splash">
-                <h1>Welcome to Keytsy!</h1>
+                
             </div>
         )
     }

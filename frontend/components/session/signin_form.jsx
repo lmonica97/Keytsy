@@ -10,8 +10,7 @@ class SigninForm extends React.Component {
             show: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
 
     update(type) {
@@ -20,24 +19,14 @@ class SigninForm extends React.Component {
         }
     }
 
-    showModal () {
-        this.setState({ show: true})
-    }
-
-    hideModal() {
-        this.setState({ show: false})
-    }
-
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        console.log('user', user);
-        this.props.processForm(user).then(res => console.log('res', res))
-        // .then(this.props.modalClose);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     renderErrors() {
+        // debugger
         return(
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -49,13 +38,19 @@ class SigninForm extends React.Component {
         )
     }
 
+    demoUser() {
+    //    debugger
+       const user = { email: "demouser@gmail.com", password: "password" }
+       this.props.processForm(user).then(this.props.closeModal)
+    }
+
     render() {
-        console.log('sign in form up')
+        // console.log('sign in form up')
+        // debugger
         return(
-            
             <div className="signin-form-container">
-                <span className="dot"></span>
-                <div onClick={this.props.modalClose} className="close-x">✖</div>
+                <span className="dot" onClick={this.props.closeModal}></span>
+                <div onClick={this.props.closeModal} className="close-x">✖</div>
                 <form onSubmit={this.handleSubmit} className="signin-form-box">   
                     {this.props.otherForm}
                     <h3 className="signin-header">Sign in</h3>
@@ -65,7 +60,8 @@ class SigninForm extends React.Component {
                         <input
                         type="text"
                         value={this.state.email}
-                        onChange={this.update('email')}>
+                        onChange={this.update('email')}
+                        className="signin-input">
                         </input>
                     <br />
 
@@ -74,15 +70,16 @@ class SigninForm extends React.Component {
                         <input
                         type="password"
                         value={this.state.password}
-                        onChange={this.update('password')}>
+                        onChange={this.update('password')}
+                        className="signin-input">
                         </input>
                     <br />
                     {this.renderErrors()}
                     <br />
                     <button className="signin-button">Sign in</button>
                     <br />
-                    <button className="demo-user-button">Demo User</button>
                 </form>
+                <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
             </div>
         )
     }

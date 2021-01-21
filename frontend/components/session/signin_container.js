@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import SigninForm from './signin_form';
-import { signin } from '../../actions/session';
+import { signin } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ sessionError }) => {
+const mapStateToProps = ({ errors }) => {
     console.log('state props of sign in')
-    debugger
+    // debugger
     return {
-    errors: sessionError,
-    formType: 'signin'
+    errors: errors.session,
+    formType: 'signin',
     }
 }
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
             Register
         </button>
     ),
-    modalClose: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SigninForm);

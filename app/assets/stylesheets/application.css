@@ -50,7 +50,7 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  input {
+  .signin-input {
     text-rendering: auto;
     word-spacing: normal;
     cursor: text;
@@ -69,7 +69,7 @@
   .dot {
     position: absolute;
     top: -49px;
-    right: 3px;
+    right: 12px;
     display: inline-block;
     border-radius: 50%;
     height: 40px;
@@ -78,7 +78,7 @@
   .close-x {
     position: absolute;
     top: -50px;
-    right: 10px;
+    right: 20px;
     font-weight: 500;
     font-size: 30px;
     color: white;
@@ -165,3 +165,90 @@
     color: white;
     width: 100%;
   }
+
+  .signin, .profile-dropdown {
+    position: absolute;
+    display: block;
+    top: 48px;
+    right: 15%;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    padding: 15px;
+    font-weight: bold;
+    color:  #22223b;
+  }
+
+  .signin:hover, .profile-dropdown:hover {
+    background-color: #f2e9e4;
+    transition-duration: 1s;
+  }
+
+  .cart {
+    position: absolute;
+    top: 56px;
+    right: 200px;
+    width: 30px;
+    height: 30px;
+  }
+
+header {
+  display: block;
+  box-sizing: border-box;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: space-between;
+  border-bottom: 1px solid #9a8c98;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.searchBar {
+  text-rendering: auto;
+  word-spacing: normal;
+  cursor: text;
+  display: block;
+  width: 65%;
+  position: absolute;
+  top: 6%;
+  right: 20%;
+  height: 35px;
+  border-radius: 20px;
+}
+/* 
+
+.dropDown-content {
+  display: none;
+  position: absolute;
+  background-color: #f2e9e4;
+  box-shadow: 0px, 8px, 16px, 0px, rgba(0,0,0, 0.2)
+} */
+
+.dropDown-content {
+  color:  #22223b;
+  display: block;
+  text-align: left;
+  position: absolute;
+  width: 160%;
+  background-color: #f2e9e4;
+}
+
+.dropDown-content > p:hover {
+  transition-duration: 1s;
+  cursor: pointer;
+  background-color: #c9ada7;
+}
+
+.dropDown-content > p {
+
+
+}

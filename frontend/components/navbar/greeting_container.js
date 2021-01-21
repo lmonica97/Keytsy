@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signout } from '../../actions/session';
+import { signout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import Greeting from './greeting';
 
@@ -8,7 +8,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(signout()),
+  signout: () => dispatch(signout()),
   openModal: modal => dispatch(openModal(modal))
 });
 

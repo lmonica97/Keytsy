@@ -40,8 +40,8 @@ class RegisterForm extends React.Component {
         return (
             <div className="register-form-container">
                 <form onSubmit={this.handleSubmit} className="register-form-box">
-                <span className="dot"></span>
-                <div onClick={this.props.modalClose} className="close-x">✖</div>
+                <span className="dot" onClick={this.props.closeModal}></span>
+                <div onClick={this.props.closeModal} className="close-x">✖</div>
                     <h3 className="register-header">Create your account</h3>
                     <br />
                     <p className="register-quote">Registration is easy.</p>
@@ -53,7 +53,8 @@ class RegisterForm extends React.Component {
                             <input
                             type="text"
                             value={this.state.email}
-                            onChange={this.update('email')}>
+                            onChange={this.update('email')}
+                            className="signin-input">
                             </input>
                         </label>
 
@@ -62,7 +63,8 @@ class RegisterForm extends React.Component {
                         <label className="register-label">First Name
                             <input type="text"
                             value={this.state.name}
-                            onChange={this.update('name')}>
+                            onChange={this.update('name')}
+                            className="signin-input">
                             </input>
                         </label>
 
@@ -72,7 +74,8 @@ class RegisterForm extends React.Component {
                             <input
                             type="password"
                             value={this.state.password}
-                            onChange={this.update('password')}>
+                            onChange={this.update('password')}
+                            className="signin-input">
                             </input>
                         </label>
 

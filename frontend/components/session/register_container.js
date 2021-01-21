@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import React from 'react';
 import RegisterForm from './register_form';
 import { Link } from 'react-router-dom';
-import { signup } from '../../actions/session';
+import { signup } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ sessionError }) => {
-    debugger
-    console.log('register errors')
+const mapStateToProps = ({ errors }) => {
+    // debugger
+    // // console.log('register errors')
     return {
-        errors: sessionError,
+        errors: errors.session,
         formType: 'register',
     }
 }
