@@ -1,0 +1,32 @@
+.footer-component-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    align-items: center;
+}
+
+.footer-component {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    color: #22223b;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    align-items: space-between;
+    margin: 0px 0px;
+}
+
+.footer-column {
+    margin: 0px 150px;
+}
+
+.footer-header {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.footer-list-index {
+    font-weight: bold;
+}

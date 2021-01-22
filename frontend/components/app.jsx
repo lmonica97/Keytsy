@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import Splash from '../splash/splash';
 import Modal from './modal/modal';
 import GreetingContainer from './navbar/greeting_container';
+import Footer from './footer/footer';
 
 
 
@@ -17,7 +18,10 @@ const App = () => (
             </Link>
             <GreetingContainer />
         </header>
+        <Splash />
+        <Footer />
     </div>
+
 )
 
 export default App;

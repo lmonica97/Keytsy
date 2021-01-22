@@ -29,8 +29,8 @@ class Dropdown extends React.Component {
                     this.state.showDropDown ?
                         (
                             <ul className="dropDown-content">
-                                <h3>Welcome, {this.props.currentUser.name}</h3>
-                                <p onClick={this.props.signout}>Sign out</p>
+                                <h3>Welcome, {this.props.currentUser.name} </h3>
+                                <p onClick={this.props.signout}>↳ Sign out</p>
                                 {/* <button onClick={this.props.signout}>Sign out</button> */}
                             </ul>
                         )
