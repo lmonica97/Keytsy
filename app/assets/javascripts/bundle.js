@@ -1512,10 +1512,41 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withR
 /*!***********************************!*\
   !*** ./frontend/utils/session.js ***!
   \***********************************/
-/*! exports provided: signup, login, logout */
-/***/ (function(module, exports) {
+/*! exports provided: signup, signin, signout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/c/Users/Monica/Documents/keytsyApp/frontend/utils/session.js: Unexpected token (1:1)\n\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 2 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m signup \u001b[33m=\u001b[39m (user) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 3 | \u001b[39m    \u001b[90m// console.log('ajax-signup')\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m    \u001b[36mreturn\u001b[39m $\u001b[33m.\u001b[39majax({\u001b[0m\n    at Object._raise (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:748:17)\n    at Object.raiseWithData (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.raise (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.unexpected (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:9101:16)\n    at Object.jsxParseIdentifier (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4536:12)\n    at Object.jsxParseNamespacedName (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4546:23)\n    at Object.jsxParseElementName (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4557:21)\n    at Object.jsxParseOpeningElementAt (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4644:22)\n    at Object.jsxParseElementAt (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4677:33)\n    at Object.jsxParseElement (/mnt/c/Users/Monica/Documents/keytsyApp/node_modules/@babel/parser/lib/index.js:4751:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signin", function() { return signin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signout", function() { return signout; });
+var signup = function signup(user) {
+  // console.log('ajax-signup')
+  return $.ajax({
+    url: '/api/user',
+    method: 'POST',
+    data: {
+      user: user
+    }
+  });
+};
+var signin = function signin(user) {
+  // console.log('ajax-login')
+  return $.ajax({
+    url: '/api/session',
+    method: 'POST',
+    data: {
+      user: user
+    }
+  });
+};
+var signout = function signout() {
+  // console.log('ajax-logout')
+  return $.ajax({
+    url: '/api/session',
+    method: 'DELETE'
+  });
+};
 
 /***/ }),
 
