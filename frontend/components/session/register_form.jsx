@@ -9,6 +9,7 @@ class RegisterForm extends React.Component {
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
 
     update(type) {
@@ -21,6 +22,11 @@ class RegisterForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal());
+    }
+
+    demoUser() {
+        const user = { email: 'demouser@gmail.com', password: "password" } 
+        this.props.signin(user).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -84,7 +90,7 @@ class RegisterForm extends React.Component {
                         <br />
                         <button className="register">Register</button>
                         <br />
-                        <button className="demo-user-button">Demo User</button>
+                        <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
                     </div>
                 </form>
             </div>
