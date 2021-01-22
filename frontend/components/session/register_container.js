@@ -16,7 +16,6 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = (dispatch) => ({
     processForm: user => dispatch(signup(user)),
     closeModal: () => dispatch(closeModal()), 
-    signin: user => dispatch(signin(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
