@@ -1,0 +1,38 @@
+.info-section-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif);
+    background-size: cover;
+    height: 500px;
+    align-items: center;
+    margin: 20px 0px;
+} 
+
+.info-section-header {
+    font-family: 'Montserrat';
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+}
+
+.info-section {
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    padding-top:60px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+.info-group {
+    margin: 0px 35px;
+    align-items: center;
+}
+
+.sub-info-header {
+    font-size: 30px;
+}

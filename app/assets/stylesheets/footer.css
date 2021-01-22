@@ -1,0 +1,36 @@
+.footer-component-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+    padding: 0;
+}
+
+.footer-component {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    color: #22223b;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    margin: 0px 0px;
+    border-top: 2px solid #9a8c98;
+    justify-content: space-between;
+}
+
+.footer-column {
+    margin: 0px 150px;
+    align-items: center;
+}
+
+.footer-header {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.footer-list-index {
+    align-items: center;
+    font-weight: bold;
+}

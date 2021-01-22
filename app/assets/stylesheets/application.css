@@ -13,3 +13,238 @@
  *= require_tree .
  *= require_self
  */
+
+ .modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+  
+  .modal-child {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;   
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 6px 36px #22223b;
+    width: 350px;
+  }
+
+  .signin-header, .register-header {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    color: #22223b;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .signin-label, .register-label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .signin-input {
+    text-rendering: auto;
+    word-spacing: normal;
+    cursor: text;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  input:hover {
+    transition-duration: 0.1s;
+    border: 2px solid black;
+  }
+
+  .dot {
+    position: absolute;
+    top: -49px;
+    right: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  .close-x {
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .register-button {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bolder;
+    border-radius: 24px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    border-style: 10px solid black;
+    background-color: white;
+    color: black;
+    width: 100px;
+  }
+
+  .register-button:hover, .demo-user-button:hover {
+    transition-duration: 1s;
+    border: 2px solid black;
+    transform: scale(1.02);
+  }
+
+  .dot:hover{
+    background-color: #e5e5e5;
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+
+  .signin-button:hover, .register:hover {
+    filter: brightness(100%);
+    transition-duration: 1s;
+    transform: scale(1.03);
+  }
+
+  .demo-user-button {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 200;
+    display: block;
+    border-radius: 24px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    background-color: white;
+    border-color: 1px black;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 16px;
+    z-index: 10;
+    color: #22223b;
+    width: 100%;
+  }
+
+  .register-quote {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding-top: -50px;
+  }
+
+  .signin-button, .register {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 200;
+    display: block;
+    border-radius: 24px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    background-color: #22223b;
+    border: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 16px;
+    z-index: 10;
+    color: white;
+    width: 100%;
+  }
+
+  .signin, .profile-dropdown {
+    position: absolute;
+    display: block;
+    top: 48px;
+    right: 15%;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    padding: 15px;
+    font-weight: bold;
+    color:  #22223b;
+  }
+
+  .signin:hover, .profile-dropdown:hover {
+    background-color: #f2e9e4;
+    transition-duration: 1s;
+  }
+
+  .cart {
+    position: absolute;
+    top: 56px;
+    right: 200px;
+    width: 30px;
+    height: 30px;
+  }
+
+header {
+  display: block;
+  box-sizing: border-box;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.searchBar {
+  text-rendering: auto;
+  word-spacing: normal;
+  cursor: text;
+  display: block;
+  width: 65%;
+  position: absolute;
+  top: 6%;
+  right: 20%;
+  height: 35px;
+  border-radius: 20px;
+}
+/* 
+
+.dropDown-content {
+  display: none;
+  position: absolute;
+  background-color: #f2e9e4;
+  box-shadow: 0px, 8px, 16px, 0px, rgba(0,0,0, 0.2)
+} */
+
+.dropDown-content {
+  color:  #22223b;
+  display: block;
+  text-align: left;
+  position: absolute;
+  width: 160%;
+  background-color: #f2e9e4;
+  z-index: 1;
+}
+
+.dropDown-content > p:hover {
+  transition-duration: 1s;
+  cursor: pointer;
+  background-color: #c9ada7;
+}
+
