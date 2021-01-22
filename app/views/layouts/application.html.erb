@@ -5,11 +5,7 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%
-=begin%>
- <%= favicon_link_tag asset_path(window.biglogo) %> 
-<%
-=end%>
+    <%= favicon_link_tag asset_path('biglogo.png') %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
