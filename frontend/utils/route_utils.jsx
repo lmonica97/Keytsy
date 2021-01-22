@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 })
 
 const Auth = ({ loggedIn, path, component: Component }) => {
-    console.log('authRoute')
+    // console.log('authRoute')
     return (
         <Route 
             path={path}
@@ -19,7 +19,7 @@ const Auth = ({ loggedIn, path, component: Component }) => {
 }
 
 const Protected = ({ loggedIn, path, component: Component }) => {
-    console.log('protectedRoute');
+    // console.log('protectedRoute');
     return (
         <Route 
             path={path}
