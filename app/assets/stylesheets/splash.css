@@ -7,7 +7,7 @@
     background-size: cover;
     height: 500px;
     align-items: center;
-    margin: 20px 0px;
+    
 } 
 
 .info-section-header {
@@ -29,10 +29,72 @@
 }
 
 .info-group {
-    margin: 0px 35px;
+    margin: 0px 60px;
     align-items: center;
 }
 
 .sub-info-header {
     font-size: 30px;
 }
+
+.intro-image {
+    height: 200px;
+    width: 200px;
+}
+
+.intro-container-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-block{
+    background-color: lightpink;
+    margin: 0;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.arrow {
+    height: 10px;
+    width: 10px;
+    margin: 0px 10px;
+}
+
+.intro-container-list-index-image {
+    margin: 0px 30px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.intro-block {
+    font-family: 'Montserrat';
+}
+
+.intro-header {
+    font-size: 40px;
+    text-align: center;
+}
+
+.intro-container-list p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.intro-container-list:hover {
+    cursor: pointer;
+}
+
+.arrow:hover {
+    transform: scale(1.5);
+}
+
+.intro-image:hover {
+    opacity: 0.5;
+}
+
+
+

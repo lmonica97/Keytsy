@@ -11,7 +11,8 @@
     font-weight: bold;
     border-bottom: 2px solid #9a8c98;
     margin-top: -10px;
-    padding-left: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .cat-nav-element {
@@ -19,6 +20,7 @@
     text-decoration: none;
     color: #22223b;
     padding-bottom: 11px;
+
 }
 
 .cat-nav-element:before {

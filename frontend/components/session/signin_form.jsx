@@ -20,28 +20,36 @@ class SigninForm extends React.Component {
     }
 
     handleSubmit(e) {
+        // debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal);
+        this.props.processForm(user).then(() => this.props.closeModal);
     }
 
     renderErrors() {
-        // debugger
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        )
+        if ((this.props.errors).length !== 0) {
+            return(
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li className="errors" key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+    }
+
+    componentWillUnmount() {
+       const errors = [];
+       this.props.deleteErrors(errors);
     }
 
     demoUser() {
     //    debugger
        const user = { email: "demouser@gmail.com", password: "password" }
        this.props.processForm(user).then(this.props.closeModal)
+    //    debugger
     }
 
     render() {
@@ -51,7 +59,7 @@ class SigninForm extends React.Component {
             <div className="signin-form-container">
                 <span className="dot" onClick={this.props.closeModal}></span>
                 <div onClick={this.props.closeModal} className="close-x">✖</div>
-                <form onSubmit={this.handleSubmit} className="signin-form-box">   
+                <form onSubmit={this.handleSubmit} className="signin-form-box"> 
                     {this.props.otherForm}
                     <h3 className="signin-header">Sign in</h3>
                     <br />
@@ -75,7 +83,6 @@ class SigninForm extends React.Component {
                         </input>
                     <br />
                     {this.renderErrors()}
-                    <br />
                     <button className="signin-button">Sign in</button>
                     <br />
                 </form>

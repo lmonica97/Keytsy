@@ -19,7 +19,7 @@ class Dropdown extends React.Component {
 
     render() {
         // debugger
-        console.log('signout dropdown')
+        // console.log('signout dropdown')
         return (
                 <div>
                     <button className="profile-dropdown" onFocus={this.showDropDown} onBlur={this.showDropDown}>

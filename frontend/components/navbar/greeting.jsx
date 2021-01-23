@@ -13,6 +13,8 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
         <input type="text" className="searchBar" placeholder="Search for anything"></input>
         <img className="cart" src={window.cart} />
+        <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
+        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
       </nav>
       <CategoryNav />
     </div>
@@ -25,6 +27,8 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <Dropdown currentUser={currentUser} signout={signout} />
         <input type="text" className="searchBar" placeholder="Search for anything"></input>
         <img className="cart" src={window.cart} />
+        <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
+        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
       </nav>
       <CategoryNav />
     </div>

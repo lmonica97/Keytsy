@@ -5,6 +5,7 @@
     height: 200px;
     width: 100%;
     padding: 0;
+    background-color: #4a4e69;
 }
 
 .footer-component {
@@ -12,12 +13,13 @@
     display: flex;
     flex-direction: row;
     padding-top: 20px;
-    color: #22223b;
+    color: white;
     font-size: 15px;
     font-family: 'Montserrat';
     margin: 0px 0px;
     border-top: 2px solid #9a8c98;
     justify-content: space-between;
+    background-color: #4a4e69;
 }
 
 .footer-column {
@@ -33,4 +35,29 @@
 .footer-list-index {
     align-items: center;
     font-weight: bold;
+}
+
+.footer-logo {
+    height: 30px;
+    width: 30px;
+}
+
+.bottom-footer {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    background-color: #22223b;
+}
+
+.country-currency, .terms-of-use {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 30px;
+    color: white;
+}
+
+a .footer-logo {
+    margin: 0px 15px;
+    filter: brightness(2);
 }

@@ -169,8 +169,8 @@
   .signin, .profile-dropdown {
     position: absolute;
     display: block;
-    top: 48px;
-    right: 15%;
+    top: 53px;
+    right: 9.5%;
     font-size: 15px;
     text-align: center;
     vertical-align: middle;
@@ -191,7 +191,7 @@
   .cart {
     position: absolute;
     top: 56px;
-    right: 200px;
+    right: 120px;
     width: 30px;
     height: 30px;
   }
@@ -202,13 +202,13 @@ header {
   padding-top: 12px;
   padding-bottom: 12px;
   justify-content: space-between;
-  padding-left: 100px;
-  padding-right: 100px;
 }
 
 .logo {
+  position: relative;
   width: 120px;
   height: 120px;
+  left: 5%;
 }
 
 .searchBar {
@@ -219,7 +219,7 @@ header {
   width: 65%;
   position: absolute;
   top: 6%;
-  right: 20%;
+  right: 22%;
   height: 35px;
   border-radius: 20px;
 }
@@ -248,3 +248,30 @@ header {
   background-color: #c9ada7;
 }
 
+.errors {
+  list-style-type: none;
+  font-family:'Roboto', sams-serif;
+  color: red;
+}
+
+.logo-1, .logo-2 {
+  height: 35px;
+  width: 35px;
+}
+
+.logo-1 {
+  position: absolute;
+  top: 57px;
+  right: 14.5%;
+}
+
+.logo-2 {
+  position: absolute;
+  top: 57px;
+  right: 18.5%
+}
+
+.logo-1:hover, :logo-2:hover {
+  cursor: pointer;
+
+}
