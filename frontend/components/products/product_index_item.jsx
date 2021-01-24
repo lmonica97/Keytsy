@@ -1,13 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductIndexItem = props => {
-
     debugger
     return (
         <li className="product-list-index">
-            <img className="product-image" src={props.product.image_url} />
+            <Link to={`/products/${props.product.id}`}>
+                <img className="product-image" src={props.product.image_url} />
+            </Link>
             {/* <p>{props.product.id}</p> */}
-            <h3 className="product-name">{props.product.product_name}</h3>
+            <Link to={`/products/${props.product.id}`} style={{textDecoration: 'none'}}>
+                <h3 className="product-name">{props.product.product_name}</h3>
+            </Link>
             <p className="product-price">${props.product.price}</p>
         </li>
     )

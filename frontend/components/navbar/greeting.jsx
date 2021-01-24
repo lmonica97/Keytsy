@@ -1,5 +1,6 @@
 import React from 'react';
 // import SearchBar from './search_bar';
+import { Link } from 'react-router-dom';
 import Dropdown from './logout_dropdown';
 // import DemoUserContainer from '../session/demouser_container'
 import CategoryNav from '../category/category_nav';
@@ -9,7 +10,9 @@ const Greeting = ({ currentUser, signout, openModal }) => {
   const sessionLinks = () => (
     <div>
       <nav className="signin-logout">
-        <img className="logo" src={window.logo} />
+        <Link to="/"> 
+          <img className="logo" src={window.logo} />
+        </Link>
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
         <input type="text" className="searchBar" placeholder="Search for anything"></input>
         <img className="cart" src={window.cart} />

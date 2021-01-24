@@ -2,7 +2,7 @@ import * as ProductApiUtil from '../utils/product';
 
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
-export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODICT_ERRORS';
+export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 
 export const receiveProduct = (product) => ({
     type: RECEIVE_PRODUCT, 
@@ -19,8 +19,9 @@ const receiveProductErrors = (errors) => ({
     errors
 })
 
-export const fetchProduct = (product) => dispatch => {
-    return ProductApiUtil.fetchProduct(product)
+export const fetchProduct = (productId) => dispatch => {
+    debugger
+    return ProductApiUtil.fetchProduct(productId)
         .then(product => dispatch(receiveProduct(product)),
         err => dispatch(receiveProductErrors(err.responseJSON)
     ))
