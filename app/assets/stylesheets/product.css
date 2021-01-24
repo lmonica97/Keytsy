@@ -46,3 +46,11 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+.product-name {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+

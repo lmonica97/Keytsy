@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductContainer from '../components/products/products_container';
 
 class Splash extends React.Component {
     render() {
@@ -42,85 +43,9 @@ class Splash extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="products-all-block">
-                    <div className="products-all-container">
-                        <h2 className="products-header">Popular Products</h2>
-                        <ul className="product-list">
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.chainnecklace} />
-                                <p className="product-price">$20.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.custompins} />
-                                <p className="product-price">$15.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.dices} />
-                                <p className="product-price">$25.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.keyboard} />
-                                <p className="product-price">$150.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.knitsweater} />
-                                <p className="product-price">$35.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.moonnecklace} />
-                                <p className="product-price">$40.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.chainnecklace} />
-                                <p className="product-price">$20.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.custompins} />
-                                <p className="product-price">$15.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.dices} />
-                                <p className="product-price">$25.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.keyboard} />
-                                <p className="product-price">$150.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.knitsweater} />
-                                <p className="product-price">$35.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.moonnecklace} />
-                                <p className="product-price">$40.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.chainnecklace} />
-                                <p className="product-price">$20.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.custompins} />
-                                <p className="product-price">$15.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.dices} />
-                                <p className="product-price">$25.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.keyboard} />
-                                <p className="product-price">$150.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.knitsweater} />
-                                <p className="product-price">$35.00</p>
-                            </li>
-                            <li className="product-list-index">
-                                <img className="product-image" src={window.moonnecklace} />
-                                <p className="product-price">$40.00</p>
-                            </li>
-                        </ul>
-                    </div>
-
+                <div>
+                    <h2 className="products-header">Products</h2>
+                    <ProductContainer />
                 </div>
                 <div className="info-section-block">
                     <h2 className="info-section-header">What is Keytsy?</h2>

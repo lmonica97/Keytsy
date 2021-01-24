@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+// import {fetchProduct, fetchProducts} from './actions/product_actions';
 
 // console.log('DOMContent');
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,5 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
+
+    // window.fetchProduct = fetchProduct;
+    // window.fetchProducts = fetchProducts;
+    // window.state = state
     ReactDOM.render(<Root store={store} />, root)
 })
+

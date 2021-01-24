@@ -6,6 +6,7 @@ import Splash from '../splash/splash';
 import Modal from './modal/modal';
 import GreetingContainer from './navbar/greeting_container';
 import Footer from './footer/footer';
+// import ProductContainer from './products/products_container';
 
 
 
@@ -18,6 +19,7 @@ const App = () => (
             </Link>
             <GreetingContainer />
         </header>
+        {/* <ProductContainer /> */}
         <Splash />
         <Footer />
     </div>
