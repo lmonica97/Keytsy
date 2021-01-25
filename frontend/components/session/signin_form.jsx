@@ -11,6 +11,7 @@ class SigninForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
+        this.handleKeypress = this.handleKeypress.bind(this);
     }
 
     update(type) {
@@ -20,10 +21,16 @@ class SigninForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
+        debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.closeModal);
+        this.props.processForm(user).then(() => this.props.closeModal());
+    }
+
+    handleKeypress(e) {
+        if (e.keyCode === 13) {
+            this.handleSubmit();
+        }
     }
 
     renderErrors() {
@@ -56,37 +63,41 @@ class SigninForm extends React.Component {
         // console.log('sign in form up')
         // debugger
         return(
-            <div className="signin-form-container">
-                <span className="dot" onClick={this.props.closeModal}></span>
-                <div onClick={this.props.closeModal} className="close-x">✖</div>
-                <form onSubmit={this.handleSubmit} className="signin-form-box"> 
-                    {this.props.otherForm}
-                    <h3 className="signin-header">Sign in</h3>
-                    <br />
-                    <label className="signin-label">Email address </label>
+            <div>
+                {this.props.otherForm}
+                <div className="signin-form-container">
+                    <span className="dot" onClick={this.props.closeModal}></span>
+                    <div onClick={this.props.closeModal} className="close-x">✖</div>
+                    <form onSubmit={this.handleSubmit} className="signin-form-box"> 
+                        <h3 className="signin-header">Sign in</h3>
                         <br />
-                        <input
-                        type="email"
-                        value={this.state.email}
-                        onChange={this.update('email')}
-                        className="signin-input">
-                        </input>
-                    <br />
+                        <label className="signin-label">Email address </label>
+                            <br />
+                            <input
+                            type="emai"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="signin-input">
+                            </input>
+                        <br />
 
-                    <label className="signin-label">Password </label>
+                        <label className="signin-label">Password </label>
+                            <br />
+                            <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="signin-input"
+                            onKeyPress={this.handleKeypress}>
+                            </input>
                         <br />
-                        <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                        className="signin-input">
-                        </input>
-                    <br />
-                    {this.renderErrors()}
-                    <button className="signin-button" type="submit">Sign in</button>
-                    <br />
-                </form>
-                <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                        {this.renderErrors()}
+                        {/* <button className="signin-button" type="submit">Sign in</button> */}
+                        <input type="submit" className="signin-button" value="Sign in"></input>
+                        <br />
+                    </form>
+                    <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>
+                </div>
             </div>
         )
     }

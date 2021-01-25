@@ -1,6 +1,6 @@
 .product-image {
-    height: 170px;
-    width: 220px;
+    height: 165px;
+    width: 205px;
 }
 
 /* .products-all-container {
@@ -22,7 +22,7 @@
 
 
 .product-list-index {
-   margin: 10px 2px;
+   margin: 5px 2px;
 }
 
 .splash {
@@ -33,11 +33,12 @@
 }
 
 .product-image:hover {
-    box-shadow: 5px 5px 5px 5px lightgrey;
+    box-shadow: 0 0 2px 2px lightgrey;
     cursor: pointer;
 }
 
 .product-price {
+    margin-top: 0;
     font-weight: bold;
     font-family: 'Montserrat';
 }
@@ -61,6 +62,7 @@
     padding-left: 250px;
     padding-right: 250px;
     font-family: 'Montserrat';
+    padding-bottom: 200px;
 }
 
 .product-show-image {
@@ -69,13 +71,12 @@
     height: 635px;
     width: 800px;
     display: block;
-    border-radius: 5px;
-    padding-left: 50px;
+    padding-left: 75px;
 }
 
 .product-show-name {
     position: absolute;
-    left: 60.5%;
+    left: 62%;
     top: 20%;
     font-size: 30px;
 }
@@ -84,26 +85,26 @@
     font-size: 20px;
     font-weight: bold;
     position: absolute;
-    top: 250px;
-    left: 60.5%;
+    top: 260px;
+    left: 62%;
 }
 
 .product-show-quantity-label {
     position: absolute;
-    left: 60.5%;
-    top: 310px;
+    left: 62%;
+    top: 330px;
     font-size: 8;
 }
 
 .product-quantity-box {
     position: absolute;
-    left: 60.5%;
+    left: 62%;
     display: block;
     border-radius: 5px;
     width: 20%;
     box-shadow: 0 0 5px rgb(204, 204, 204);
-    height: 40px;
-    top: 340px;
+    height: 45px;
+    top: 360px;
     border-style: none;
     padding-left: 10px;
 }
@@ -116,8 +117,8 @@
 .product-show-add-button {
     display: block;
     position: absolute;
-    top: 400px;
-    left: 60.5%;
+    top: 420px;
+    left: 62%;
     text-align: center;
     vertical-align: middle;
     font-weight: bolder;
@@ -139,20 +140,120 @@
 
 .product-show-tag {
     position: absolute;
-    left: 60.5%;
-    top: 500px;
+    left: 62%;
+    top: 745px;
+    font-size: 14px;
+    font-weight: bolder;
 }
 
 .product-description-box {
     position: absolute;
-    left: 60.5%;
-    top: 550px;
-    padding-right: 280px;
+    left: 62%;
+    top: 800px;
+    padding-right: 290px;
     line-height: 2;
+    font-size: 14px;
 }
 
+.product-in-stock {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 278px;
+    left: 78.5%;
+}
 
+.product-available p {
+    position: absolute;
+    top: 267px;
+    left: 79.5%;
+    font-weight: bold;
+    font-size: 12px;
+}
 
+.product-show-icon1 {
+    height: 40px;
+    width: 40px;
+}
 
+.product-show-icon2 {
+    height: 50px;
+    width: 45px;
+}
+
+.product-show-icon1 {
+    position: absolute;
+    top: 490px;
+    left: 62%;
+}
+
+.product-show-icon2 {
+    position: absolute;
+    top: 540px;
+    left: 62%;
+}
+
+.product-in-cart {
+    position: absolute;
+    top: 485px;
+    left: 65%;
+    padding-right: 280px;
+    font-size: 12px;
+}
+
+.highlight-text {
+    font-weight: bolder;
+}
+
+.product-delivery {
+    position: absolute;
+    top: 545px;
+    left: 65%;
+    padding-right: 280px;
+    font-size: 12px;
+}
+
+.product-highlight-list {
+    list-style: none;
+}
+
+.product-highlight1, .product-highlight2 {
+    height: 15px;
+    width: 15px;
+}
+
+.product-highlight-header {
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    left: 62%;
+    top: 600px;
+}
+
+.product-highlight1 {
+    position: absolute;
+    left: 62%;
+    top: 675px;
+}
+
+.product-highlight2 {
+    position: absolute;
+    left: 62%;
+    top: 710px;
+}
+
+.product-highlight-p {
+    position: absolute;
+    top: 660px;
+    left: 63.5%;
+    font-size: 14px;
+}
+
+.product-highlight-p2 {
+    position: absolute;
+    top: 695px;
+    left: 63.5%;
+    font-size: 14px;
+}
 
 

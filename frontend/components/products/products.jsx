@@ -11,7 +11,7 @@ class Product extends React.Component {
     }
 
     render() {
-        debugger 
+        // debugger 
         const { products } = this.props;
         return(
                 <ul className="product-list">

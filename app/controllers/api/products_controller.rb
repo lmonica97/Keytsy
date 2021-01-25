@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
     def show 
         @product = Product.find_by(id: params[:id])
         # debugger
-        render "api/products/show"
+        render :show
     end
 
     def index 

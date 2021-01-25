@@ -3,16 +3,16 @@ import ProductShow from './product_show';
 import { fetchProduct } from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         product: state.product[ownProps.match.params.id]
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
+    // debugger
     return {
-        fetchProduct: product => dispatch(fetchProduct(product))
+        fetchProduct: productId => dispatch(fetchProduct(productId))
     }
 }
 

@@ -4,3 +4,8 @@
         json.image_url asset_path("products/#{product.id}")
     end
 end
+
+# json.array! @products do |product|
+#     json.extract product, :id, :product_name, :description, :price, :seller_id 
+#     json.image url_for(product.image)
+# end
