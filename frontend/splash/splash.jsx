@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductContainer from '../components/products/products_container';
+import { Link } from 'react-router-dom'
 
 class Splash extends React.Component {
     render() {
@@ -10,36 +11,36 @@ class Splash extends React.Component {
                     <h2 className="intro-header">See what's trending for Valentine's Day on Keytsy.</h2>
                     <div className="intro-container">
                         <ul className="intro-container-list">
-                            <li className="intro-container-list-index">
+                            <Link to="/products/7" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.roses} />
                                 </div>
                                 <p>Roses<img className="arrow" src={window.arrow} /></p>
-                            </li>
-                            <li className="intro-container-list-index">
+                            </Link>
+                            <Link to="/products/14" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.valentine} />
                                 </div>
                                 <p>Arts & Craft<img className="arrow" src={window.arrow} /></p>
-                            </li>
-                            <li className="intro-container-list-index">
+                            </Link>
+                            <Link to="/products/2" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.candy} />
                                 </div>
                                 <p>Candies <img className="arrow" src={window.arrow} /></p>
-                            </li>
-                            <li className="intro-container-list-index">
+                            </Link>
+                            <Link to="/products/6" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.heart} />
                                 </div>
                                 <p>Love<img className="arrow" src={window.arrow} /></p>
-                            </li>
-                            <li className="intro-container-list-index">
+                            </Link>
+                            <Link to="/products/1" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                 <img className="intro-image" src={window.cookie} />
                                 </div>
                                 <p>Sweets<img className="arrow" src={window.arrow} /></p>
-                            </li>
+                            </Link>
                         </ul>
                     </div>
                 </div>

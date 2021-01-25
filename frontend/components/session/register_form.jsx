@@ -58,7 +58,7 @@ class RegisterForm extends React.Component {
 
                         <label className="register-label">Email</label>
                             <input
-                            type="text"
+                            type="email"
                             value={this.state.email}
                             onChange={this.update('email')}
                             className="signin-input">
@@ -83,7 +83,7 @@ class RegisterForm extends React.Component {
                             </input>
                         {this.props.errors.length >= 3 ? <p className="errors">{this.props.errors[2]}</p> : null}
                         <br />
-                        <button className="register">Register</button>
+                        <button className="register" type="submit">Register</button>
                         <br />
                     </div>
                 </form>

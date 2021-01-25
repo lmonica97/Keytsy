@@ -57,7 +57,102 @@
     color:  #22223b;
 }
 
-.product-show-image {
-    height: 200px;
-    width: 200px;
+.product-show-page{
+    padding-left: 250px;
+    padding-right: 250px;
+    font-family: 'Montserrat';
 }
+
+.product-show-image {
+    position: relative;
+    padding-top: 30px;
+    height: 635px;
+    width: 800px;
+    display: block;
+    border-radius: 5px;
+    padding-left: 50px;
+}
+
+.product-show-name {
+    position: absolute;
+    left: 60.5%;
+    top: 20%;
+    font-size: 30px;
+}
+
+.product-show-price {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 250px;
+    left: 60.5%;
+}
+
+.product-show-quantity-label {
+    position: absolute;
+    left: 60.5%;
+    top: 310px;
+    font-size: 8;
+}
+
+.product-quantity-box {
+    position: absolute;
+    left: 60.5%;
+    display: block;
+    border-radius: 5px;
+    width: 20%;
+    box-shadow: 0 0 5px rgb(204, 204, 204);
+    height: 40px;
+    top: 340px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+.product-quantity-box:hover {
+    transition-duration: 0.5s;
+    border: 1px solid black;
+}
+
+.product-show-add-button {
+    display: block;
+    position: absolute;
+    top: 400px;
+    left: 60.5%;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bolder;
+    border-radius: 24px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    border-style: none;
+    background-color: #22223b;
+    color:white;
+    width: 20.5%;
+    height: 50px;
+    font-size: 18px;
+}
+
+.product-show-add-button:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+.product-show-tag {
+    position: absolute;
+    left: 60.5%;
+    top: 500px;
+}
+
+.product-description-box {
+    position: absolute;
+    left: 60.5%;
+    top: 550px;
+    padding-right: 280px;
+    line-height: 2;
+}
+
+
+
+
+
+

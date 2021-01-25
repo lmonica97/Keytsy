@@ -66,7 +66,7 @@ class SigninForm extends React.Component {
                     <label className="signin-label">Email address </label>
                         <br />
                         <input
-                        type="text"
+                        type="email"
                         value={this.state.email}
                         onChange={this.update('email')}
                         className="signin-input">
@@ -83,7 +83,7 @@ class SigninForm extends React.Component {
                         </input>
                     <br />
                     {this.renderErrors()}
-                    <button className="signin-button">Sign in</button>
+                    <button className="signin-button" type="submit">Sign in</button>
                     <br />
                 </form>
                 <button className="demo-user-button" onClick={this.demoUser}>Demo User</button>

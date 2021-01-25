@@ -56,9 +56,15 @@
     cursor: text;
     display: block;
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    align-self: center;
     height: 30px;
+    background-color: rgb(232, 240, 254);
+    border-color: rgb(34, 34, 34, 0.15);
     border-radius: 5px;
+    height: 40px;
+    width: 250px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   input:hover {
@@ -68,8 +74,8 @@
 
   .dot {
     position: absolute;
-    top: -49px;
-    right: 12px;
+    top: 2px;
+    right: -59.5px;
     display: inline-block;
     border-radius: 50%;
     height: 40px;
@@ -77,8 +83,8 @@
   }
   .close-x {
     position: absolute;
-    top: -50px;
-    right: 20px;
+    top: 0px;
+    right: -52px;
     font-weight: 500;
     font-size: 30px;
     color: white;
@@ -130,10 +136,10 @@
     cursor: pointer;
     background-color: white;
     border-color: 1px black;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: 16px;
     z-index: 10;
     color: #22223b;
@@ -156,8 +162,8 @@
     cursor: pointer;
     background-color: #22223b;
     border: none;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 18px;
     padding-right: 18px;
     font-size: 16px;
