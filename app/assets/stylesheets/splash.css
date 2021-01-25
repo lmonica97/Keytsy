@@ -147,5 +147,43 @@
     border-color: white;
 }
 
+.blog-picture {
+    height: 345px;
+    width: 430px;
+    border-radius: 5px 5px 0px 0px;
+}
 
+.blog-block-list {
+    text-decoration: none;
+    color: black;
+    display: block;
+    border-radius: 5px;
+    margin: 0px 20px;
+    border: 1px solid lightgray;
+}
+
+.blog-division {
+    font-family: 'Montserrat';
+}
+
+.blog-block {
+    display: flex;
+    flex-direction: row;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.blog-section {
+    text-align: left;
+    padding-left: 270px;
+}
+
+.blog-block-list:hover {
+    box-shadow: 0 0 2px 2px lightgray;
+}
+
+.blog-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 

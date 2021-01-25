@@ -70,6 +70,37 @@ class Splash extends React.Component {
                         </form>
                     </div>
                 </div>
+                <div className="blog-division">
+                    <h3 className="blog-section">Fresh from the blog</h3>
+                    <div className="blog-section-list">
+                        <ul className="blog-block">
+                            <a className="blog-block-list" href="https://blog.etsy.com/en/featured-shop-mai-solorzano/?ref=hp" >
+                                <img className="blog-picture" src={window.earring} />
+                                <div className="blog-text">
+                                    <p>Featured Shops</p>
+                                    <h3>Statement Jewelry for Nature Lovers</h3>
+                                    <p>Inspired by the beauty of the earth and sea, these gorgeously giftable pieces are a meaningful way to honor our connection to the great outdoors.</p>
+                                </div>
+                            </a>
+                            <a className="blog-block-list" href="https://thriveworks.com/blog/write-your-heart-out/">
+                                <img className="blog-picture" src={window.journal} />
+                                <div className="blog-text">
+                                    <p>Journalism</p>
+                                    <h3>Write Your Heart Out</h3>
+                                    <p>One of the most powerful ways to express oneself involves taking pen to paper or finger to keyboard as emotions spill out. For people seeking mental health treatment, journaling their thoughts is often a lifeline.</p>
+                                </div>
+                            </a>
+                            <a className="blog-block-list"href="https://msw.usc.edu/mswusc-blog/60-ways-show-someone-you-care/">
+                                <img className="blog-picture" src={window.friendship} />
+                                <div className="blog-text">
+                                    <p>Inspiration</p>
+                                    <h3>The Keytsy Guide to Show Someone You Care</h3>
+                                    <p>A purpose of a Care Card is to serve as a random act of kindness -- a message of love, friendship or appreciation. The You Matter Campaign encourages human connection.</p>
+                                </div>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
             </div>
         )
     }

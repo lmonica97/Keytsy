@@ -3,11 +3,11 @@ import React from 'react';
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
+        this.fetchSeller = this.fetchSeller.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.id)
-        // debugger
+        this.props.fetchProduct(this.props.match.params.id);
     }
 
     randomNumberGenerator() {
@@ -18,7 +18,6 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props;
-        // debugger 
         if (!product){
             // debugger
             return(
@@ -76,6 +75,9 @@ class ProductShow extends React.Component {
                                 <p className="product-highlight-p2">Materials: with love</p>
                             </li>
                         </ul>
+                    </div>
+                    <div>
+                        {/* {this.fetchSeller()} */}
                     </div>
                 </div>
             )
