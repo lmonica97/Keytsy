@@ -58,8 +58,8 @@
     font-family: 'Roboto', sans-serif;
     align-self: center;
     height: 30px;
-    background-color: rgb(232, 240, 254);
-    border-color: rgb(34, 34, 34, 0.15);
+    background-color: rgba(232, 240, 254);
+    border-color: rgba(34, 34, 34, 0.15);
     border-radius: 5px;
     height: 40px;
     width: 250px;
