@@ -1197,7 +1197,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {
     products: Object.values(state.entities.products)
   };
@@ -1267,8 +1267,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
-  debugger; // // console.log('register errors')
-
+  // debugger
+  // // console.log('register errors')
   return {
     errors: errors.session,
     formType: 'register'
@@ -1468,7 +1468,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   // console.log('state props of sign in')
-  debugger;
+  // debugger
   return {
     errors: errors.session,
     formType: 'signin'
@@ -1575,8 +1575,8 @@ var SigninForm = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      var user = Object.assign({}, this.state);
-      debugger;
+      var user = Object.assign({}, this.state); // debugger
+
       this.props.processForm(user).then(function () {
         return _this3.props.closeModal();
       });
@@ -1609,7 +1609,7 @@ var SigninForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "demoUser",
     value: function demoUser() {
-      debugger;
+      //    debugger
       var user = {
         email: "demouser@gmail.com",
         password: "password"
