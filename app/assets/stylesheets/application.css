@@ -166,12 +166,29 @@
     width: 100%;
   }
 
-  .signin, .profile-dropdown {
+  .signin {
     position: absolute;
     display: block;
-    top: 53px;
-    right: 9.5%;
-    font-size: 15px;
+    top: 28px;
+    right: 17%;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 20px;
+    padding: 15px;
+    font-weight: bold;
+    color:  #22223b;
+  }
+
+  .profile-dropdown {
+    position: absolute;
+    display: block;
+    top: 28px;
+    right: 17%;
+    font-size: 13px;
     text-align: center;
     vertical-align: middle;
     border: none;
@@ -190,47 +207,59 @@
 
   .cart {
     position: absolute;
-    top: 56px;
-    right: 120px;
-    width: 30px;
-    height: 30px;
+    top: 35px;
+    right: 14%;
+    width: 25px;
+    height: 25px;
   }
 
 header {
   display: block;
   box-sizing: border-box;
-  padding-top: 12px;
-  padding-bottom: 12px;
   justify-content: space-between;
 }
 
 .logo {
+  display: block;
   position: relative;
-  width: 120px;
-  height: 120px;
-  left: 5%;
+  width: 90px;
+  height: 90px;
+  left: 12%;
 }
 
-.searchBar {
+.searchBar-signin {
   text-rendering: auto;
   word-spacing: normal;
   cursor: text;
   display: block;
-  width: 65%;
+  width: 60%;
   position: absolute;
-  top: 6%;
+  top: 3%;
   right: 22%;
-  height: 35px;
-  border-radius: 20px;
+  height: 40px;
+  border-radius: 25px;
+  margin: 0px;
 }
-/* 
 
-.dropDown-content {
+.searchBar-signout {
+  text-rendering: auto;
+  word-spacing: normal;
+  cursor: text;
+  display: block;
+  width: 55%;
+  position: absolute;
+  top: 3%;
+  right: 27%;
+  height: 40px;
+  border-radius: 25px;
+  margin: 0px;
+}
+/* .dropDown-content {
   display: none;
   position: absolute;
   background-color: #f2e9e4;
   box-shadow: 0px, 8px, 16px, 0px, rgba(0,0,0, 0.2)
-} */
+}  */
 
 .dropDown-content {
   color:  #22223b;
@@ -261,14 +290,14 @@ header {
 
 .logo-1 {
   position: absolute;
-  top: 57px;
-  right: 14.5%;
+  top: 30px;
+  right: 21%;
 }
 
 .logo-2 {
   position: absolute;
-  top: 57px;
-  right: 18.5%
+  top: 30px;
+  right: 24%
 }
 
 .logo-1:hover, :logo-2:hover {

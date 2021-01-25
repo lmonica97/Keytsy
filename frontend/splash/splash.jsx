@@ -63,6 +63,11 @@ class Splash extends React.Component {
                             <p className="sub-info">Your privary is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</p>
                         </div>
                     </section>
+                    <div className="github-web-link">Want to know more?
+                        <form className="github" action="https://github.com/lmonica97/Keytsy">
+                            <input className="github-button" type="submit" value="Go to Github" />
+                        </form>
+                    </div>
                 </div>
             </div>
         )

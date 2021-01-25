@@ -9,9 +9,9 @@ const ProductIndexItem = props => {
                 <img className="product-image" src={props.product.image_url} />
             </Link>
             {/* <p>{props.product.id}</p> */}
-            <Link to={`/products/${props.product.id}`} style={{textDecoration: 'none'}}>
+            {/* <Link to={`/products/${props.product.id}`} style={{textDecoration: 'none'}}>
                 <h3 className="product-name">{props.product.product_name}</h3>
-            </Link>
+            </Link> */}
             <p className="product-price">${props.product.price}</p>
         </li>
     )

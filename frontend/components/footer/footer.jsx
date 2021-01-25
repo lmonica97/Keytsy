@@ -11,9 +11,8 @@ class Footer extends React.Component {
                         <div className="footer-column">
                             <h3 className="footer-header">Skills</h3>
                             <ul className="footer-list">
-                                <p className="footer-list-index">Ruby</p>
                                 <p className="footer-list-index">JavaScript</p>
-                                <p className="footer-list-index">Rails</p>
+                                <p className="footer-list-index">Ruby on Rails</p>
                                 <p className="footer-list-index">React</p>
                                 <p className="footer-list-index">Heroku</p>
                                 <p className="footer-list-index">Github</p>
@@ -31,6 +30,18 @@ class Footer extends React.Component {
                             </ul>
                         </div>
                         <div className="footer-column">
+                            <h3 className="footer-header">About</h3>
+                            <ul className="footer-list">
+                                <p className="footer-list-index">Keytsy, Inc.</p>
+                                <p className="footer-list-index">Policies</p>
+                                <p className="footer-list-index">Investors</p>
+                                <p className="footer-list-index">Investors</p>
+                                <p className="footer-list-index">Careers</p>
+                                <p className="footer-list-index">Press</p>
+                                <p className="footer-list-index">Impact</p>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
                             <h3 className="footer-header">Get to know me</h3>
                             <ul className="footer-list">
                                 <p className="footer-list-index"><a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="footer-logo" src={window.linkedin} /></a></p>
@@ -40,8 +51,10 @@ class Footer extends React.Component {
                     </div>
                     <div className="bottom-footer">
                         <div className="country-currency">
-                            <p>United States   |</p>
-                            <p>   English (US) |</p>
+                            <p>United States   </p>
+                            <p> |</p>
+                            <p>   English (US) </p>
+                            <p> |</p>
                             <p>   $ (USD) </p>
                         </div>
                         <div className="terms-of-use">
