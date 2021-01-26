@@ -3,7 +3,7 @@ import React from 'react';
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
-        this.fetchSeller = this.fetchSeller.bind(this);
+        // this.fetchSeller = this.fetchSeller.bind(this);
     }
 
     componentDidMount() {

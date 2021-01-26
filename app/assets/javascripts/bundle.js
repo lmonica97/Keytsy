@@ -712,11 +712,11 @@ var Greeting = function Greeting(_ref) {
       onClick: function onClick() {
         return openModal('signin');
       }
-    }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
       type: "text",
       className: "searchBar-signin",
       placeholder: "Search for anything"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "cart",
       src: window.cart
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_category_nav__WEBPACK_IMPORTED_MODULE_3__["default"], null));
@@ -959,13 +959,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(ProductShow);
 
   function ProductShow(props) {
-    var _this;
-
     _classCallCheck(this, ProductShow);
 
-    _this = _super.call(this, props);
-    _this.fetchSeller = _this.fetchSeller.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.call(this, props); // this.fetchSeller = this.fetchSeller.bind(this);
   }
 
   _createClass(ProductShow, [{

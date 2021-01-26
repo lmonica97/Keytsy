@@ -14,7 +14,10 @@ const Greeting = ({ currentUser, signout, openModal }) => {
           <img className="logo" src={window.logo} />
         </Link>
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
-        <input type="text" className="searchBar-signin" placeholder="Search for anything"></input>
+        <div>
+          <input type="text" className="searchBar-signin" placeholder="Search for anything"></input>
+          {/* <button className="search-button">{window.hearticon}</button> */}
+        </div>
         <img className="cart" src={window.cart} />
       </nav>
       <CategoryNav />
