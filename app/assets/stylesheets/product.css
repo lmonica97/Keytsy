@@ -67,16 +67,16 @@
 
 .product-show-image {
     position: relative;
-    padding-top: 30px;
+    padding-top: 15px;
     height: 635px;
     width: 800px;
     display: block;
-    padding-left: 75px;
+    padding-left: 95px;
 }
 
 .product-show-name {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 20%;
     font-size: 30px;
 }
@@ -86,19 +86,19 @@
     font-weight: bold;
     position: absolute;
     top: 260px;
-    left: 62%;
+    left: 63.5%;
 }
 
 .product-show-quantity-label {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 330px;
     font-size: 8;
 }
 
 .product-quantity-box {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     display: block;
     border-radius: 5px;
     width: 20%;
@@ -118,7 +118,7 @@
     display: block;
     position: absolute;
     top: 420px;
-    left: 62%;
+    left: 63.5%;
     text-align: center;
     vertical-align: middle;
     font-weight: bolder;
@@ -140,7 +140,7 @@
 
 .product-show-tag {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 745px;
     font-size: 14px;
     font-weight: bolder;
@@ -148,7 +148,7 @@
 
 .product-description-box {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 800px;
     padding-right: 290px;
     line-height: 2;
@@ -160,13 +160,13 @@
     width: 15px;
     height: 15px;
     top: 278px;
-    left: 78.5%;
+    left: 80%;
 }
 
 .product-available p {
     position: absolute;
     top: 267px;
-    left: 79.5%;
+    left: 81%;
     font-weight: bold;
     font-size: 12px;
 }
@@ -184,19 +184,19 @@
 .product-show-icon1 {
     position: absolute;
     top: 490px;
-    left: 62%;
+    left: 63.5%;
 }
 
 .product-show-icon2 {
     position: absolute;
     top: 540px;
-    left: 62%;
+    left: 63.5%;
 }
 
 .product-in-cart {
     position: absolute;
     top: 485px;
-    left: 65%;
+    left: 66.5%;
     padding-right: 280px;
     font-size: 12px;
 }
@@ -208,7 +208,7 @@
 .product-delivery {
     position: absolute;
     top: 545px;
-    left: 65%;
+    left: 66.5%;
     padding-right: 280px;
     font-size: 12px;
 }
@@ -226,34 +226,136 @@
     font-weight: bold;
     font-size: 14px;
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 600px;
 }
 
 .product-highlight1 {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 675px;
 }
 
 .product-highlight2 {
     position: absolute;
-    left: 62%;
+    left: 63.5%;
     top: 710px;
 }
 
 .product-highlight-p {
     position: absolute;
     top: 660px;
-    left: 63.5%;
+    left: 64.5%;
     font-size: 14px;
 }
 
 .product-highlight-p2 {
     position: absolute;
     top: 695px;
-    left: 63.5%;
+    left: 64.5%;
     font-size: 14px;
 }
 
+.rating {
+    position: absolute;
+    height: 100px;
+    padding-left: 15px;
+    top: 793px;
+}
 
+.rating-header {
+    padding-left: 30px;
+    font-size: 20px;
+    padding-top: 35px;
+}
+
+.rating-separator {
+    position: absolute;
+    border-bottom: 2px solid lightgray;
+    left: 15%;
+    padding-right: 650px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+.anon-pic1 {
+    position: absolute;
+    left: 15.2%;
+    top: 950px;
+}
+
+.rating1 {
+    position: absolute;
+    height: 100px;
+    top: 950px;
+    left: 17.2%;
+}
+
+.comment1 {
+    list-style: none;
+    display: block;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-bottom: 100px;
+}
+
+.comment1-user {
+    position: absolute;
+    left: 17.2%;
+    top: 960px;
+    font-size: 12px;
+}
+
+
+.comment1-date {
+    position: absolute;
+    left: 21.5%;
+    top: 960px;
+    font-size: 12px;
+}
+
+.comment1 p {
+    position: absolute;
+    left: 17.2%;
+    top: 1010px;
+}
+
+.comment2 {
+    list-style: none;
+}
+
+.rating2 {
+    position: absolute;
+    height: 100px;
+    top: 1100px;
+    left: 17.2%;
+}
+
+.anon-pic2 {
+    position: absolute;
+    left: 15.2%;
+    top: 1100px;
+}
+
+.comment2-user {
+    position: absolute;
+    left: 17.2%;
+    top: 1110px;
+    font-size: 12px;
+}
+
+.comment2-date {
+    position: absolute;
+    left: 20.5%;
+    top: 1110px;
+    font-size: 12px;
+}
+
+.comment2 p {
+    position: absolute;
+    left: 17.2%;
+    top: 1160px;
+    padding-right: 800px;
+    line-height: 1.5;
+}

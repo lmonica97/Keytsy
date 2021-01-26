@@ -15,8 +15,8 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         </Link>
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
         <div>
+          <button className="search-button-signin"><img className="search-image"src={window.magnifying} /></button>
           <input type="text" className="searchBar-signin" placeholder="Search for anything"></input>
-          {/* <button className="search-button">{window.hearticon}</button> */}
         </div>
         <img className="cart" src={window.cart} />
       </nav>
@@ -29,7 +29,10 @@ const Greeting = ({ currentUser, signout, openModal }) => {
       <nav className="signin-signout">
         <img className="logo" src={window.logo} />
         <Dropdown currentUser={currentUser} signout={signout} />
-        <input type="text" className="searchBar-signout" placeholder="Search for anything"></input>
+        <div>
+          <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
+          <input type="text" className="searchBar-signout" placeholder="Search for anything"></input>
+        </div>
         <img className="cart" src={window.cart} />
         <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
         <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>

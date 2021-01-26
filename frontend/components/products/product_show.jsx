@@ -27,6 +27,7 @@ class ProductShow extends React.Component {
             // debugger
             return (
                 <div className="product-show-page">
+                    <img></img>
                     <div className="product-show-image-block">
                         <img className="product-show-image" src={this.props.product.image_url} />
                     </div>
@@ -75,6 +76,32 @@ class ProductShow extends React.Component {
                                 <p className="product-highlight-p2">Materials: with love</p>
                             </li>
                         </ul>
+                    </div>
+                    <div>
+                        <div>
+                            <p className="rating-header">
+                                <span>{this.randomNumberGenerator()} </span> reviews <img className="rating"src={window.rating} />
+                            </p>
+                            <div>
+                                <p className="rating-separator">Reviews for this item</p>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li className="comment1">
+                                        <img className="anon-pic1" src={window.anon} />
+                                        <a className="comment1-user" href="#">DemoUser</a> <span className="comment1-date">Jan 25, 2020</span>
+                                        <img className="rating1" src={window.rating} />
+                                        <p>This product is awesome, I would highly recommend it to everyone! It literally changed my life!!!</p>
+                                    </li> 
+                                    <li className="comment2">
+                                        <img className="anon-pic2" src={window.anon} />
+                                        <a className="comment2-user" href="#">Monica</a> <span className="comment2-date">Jan 26, 2020</span>
+                                        <img className="rating2" src={window.rating} />
+                                        <p>Honestly, everyone should be buying this product. I agree with the user above, that the product really is awesome. :)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
