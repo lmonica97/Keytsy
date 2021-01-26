@@ -46,7 +46,7 @@ class ProductShow extends React.Component {
                     </div>
                     <div>
                         <label className="product-show-quantity-label">Quantity</label>
-                        <input className="product-quantity-box" type="number" min="1" max="100" value="1" step="1"></input>
+                        <input className="product-quantity-box" type="number" min="1" max="100" defaultValue="1"></input>
                     </div>
                     <div>
                         <button className="product-show-add-button">Add to cart</button>
@@ -75,9 +75,6 @@ class ProductShow extends React.Component {
                                 <p className="product-highlight-p2">Materials: with love</p>
                             </li>
                         </ul>
-                    </div>
-                    <div>
-                        {/* {this.fetchSeller()} */}
                     </div>
                 </div>
             )
