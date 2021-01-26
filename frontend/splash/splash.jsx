@@ -48,6 +48,47 @@ class Splash extends React.Component {
                     <h2 className="products-header">Products</h2>
                     <ProductContainer />
                 </div>
+                <div className="product-display-mid">
+                    <div>
+                        <div className="home-list-side">
+                            <div className="home-print">
+                                <p>Editor's Picks</p>
+                                <h3>Home favorites</h3>
+                                <span>See more <img className="arrow" src={window.arrow} /></span>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics" src={window.home1} />
+                                <div className="home-pic-price">$100.22</div>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics" src={window.home2} />
+                                <div className="home-pic-price">$30.65</div>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics3" src={window.home3} />
+                                <div className="home-pic-price">$15.68</div>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics" src={window.home4} />
+                                <div className="home-pic-price">$240.00</div>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics" src={window.home5} />
+                                <div className="home-pic-price">$500.50</div>
+                            </div>
+                            <div className="home-block">
+                                <img className="home-pics" src={window.home6} />
+                                <div className="home-pic-price">$28.00</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="home-main">
+                                <img className="home-pics-main" src={window.mainhome} />
+                                <div className="home-pic-price">$35.50</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="info-section-block">
                     <h2 className="info-section-header">What is Keytsy?</h2>
                     <section className="info-section">

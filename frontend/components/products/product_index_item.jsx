@@ -6,7 +6,7 @@ const ProductIndexItem = props => {
     return (
         <li className="product-list-index">
             <Link to={`/products/${props.product.id}`}>
-                <img className="product-image" src={props.product.image_url} />
+                <img className="product-image" src={props.product.photoUrl} />
             </Link>
             {/* <p>{props.product.id}</p> */}
             {/* <Link to={`/products/${props.product.id}`} style={{textDecoration: 'none'}}>

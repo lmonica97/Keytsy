@@ -5,7 +5,7 @@ class Product < ApplicationRecord
     validates :product_name, presence: true 
     validates :price, presence: true, numericality: { greater_than: 0, less_than: 1000000 }
 
-    has_one_attached :image
+    has_one_attached :photo
 
     belongs_to :seller,
     foreign_key: :seller_id,
