@@ -10,6 +10,6 @@ class Product < ApplicationRecord
     belongs_to :seller,
     foreign_key: :seller_id,
     primary_key: :id,
-    class_name: :User,
+    class_name: :User
 
 end
