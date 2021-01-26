@@ -27,7 +27,10 @@ class ProductShow extends React.Component {
             // debugger
             return (
                 <div className="product-show-page">
-                    
+                    <div className="product-sale-seller">
+                        <p className="product-show-seller">{product.seller.name}</p>
+                        <p className="product-sales">{this.randomNumberGenerator()} sales</p> <span> | </span> <img className="store-rating"src={window.rating} />
+                    </div>
                     <div className="product-show-image-block">
                         <img className="product-show-image" src={this.props.product.photoUrl} />
                     </div>
@@ -76,6 +79,12 @@ class ProductShow extends React.Component {
                                 <p className="product-highlight-p2">Materials: with love</p>
                             </li>
                         </ul>
+                    </div>
+                    <div className="seller-profile">
+                        <h3>Meet your Seller</h3>
+                        <img className="seller-profile-pic" src={window.profilepic} />
+                        <h4 className="seller-profile-name">{product.seller.name}</h4>
+                        <p>Owner of <a href="#">{product.seller.name}</a></p>
                     </div>
                     <div>
                         <div>
