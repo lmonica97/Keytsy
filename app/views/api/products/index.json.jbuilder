@@ -1,6 +1,6 @@
 @products.each do |product|
     json.set! product.id do 
-        json.partial! "api/products/product", product: product 
+        json.extract! product, :id, :description, :product_name, :price, :seller_id
         json.photoUrl url_for(product.photo)
     end
 end
