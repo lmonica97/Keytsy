@@ -27,7 +27,7 @@ class ProductShow extends React.Component {
             // debugger
             return (
                 <div className="product-show-page">
-                    <img></img>
+                    
                     <div className="product-show-image-block">
                         <img className="product-show-image" src={this.props.product.photoUrl} />
                     </div>
