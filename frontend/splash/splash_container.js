@@ -3,7 +3,7 @@ import { fetchProducts } from '../actions/product_actions';
 import Splash from './splash';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         products: Object.values(state.entities.products)
     }

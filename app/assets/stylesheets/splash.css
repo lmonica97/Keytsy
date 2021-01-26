@@ -26,8 +26,8 @@
     color: white;
     font-size: 15px;
     font-family: 'Montserrat';
-    padding-left: 180px;
-    padding-right: 180px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 .sub-info {
@@ -195,11 +195,11 @@
 }
 
 .home-pics-main {
-    height: 460px;
-    width: 445px;
+    height: 459px;
+    width: 409px;
     position: absolute;
-    left: 63.1%;
-    top: 166.4%;
+    left: 63.3%;
+    top: 130.2%;
     display: block;
     border-radius: 0px 5px 5px 0px;
 }
@@ -207,12 +207,12 @@
 .home-list-side {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 490px;
+    margin-right: 400px;
     padding-left: 0px;
 }
 .home-print {
     padding-left: 40px;
-    padding-right: 200px;
+    padding-right: 195px;
     font-family: 'Montserrat';
 }
 
@@ -233,11 +233,12 @@
 .product-display-main {
     border: 1px solid lightgray;
     box-shadow: 3px 3px 3px 3px rgb(180, 180, 180);
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-bottom: 20px;
+    margin-left: 280px;
+    margin-right: 280px;
+    margin-bottom: 40px;
     border-radius: 5px;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .home-print p {
@@ -248,4 +249,3 @@
     border-radius: 20px;
     background-color: rgb(245, 244, 244);
 }
-
