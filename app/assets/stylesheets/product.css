@@ -102,7 +102,7 @@
     display: block;
     border-radius: 5px;
     width: 20%;
-    box-shadow: 0 0 5px rgba(204, 204, 204);
+    box-shadow: 0 0 5px rgb(179, 177, 177);
     height: 45px;
     top: 360px;
     border-style: none;
