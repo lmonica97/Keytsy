@@ -2,9 +2,12 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../actions/product_actions';
 import Splash from './splash';
 
-const mapStateToProps = (state, ownProps) => ({
-    products: Object.values(state.entities.products)
-}) 
+const mapStateToProps = (state, ownProps) => {
+    debugger
+    return {
+        products: Object.values(state.entities.products)
+    }
+} 
 
 const mapDispatchToProps = (dispatch) => ({
     fetchProducts: () => dispatch(fetchProducts())

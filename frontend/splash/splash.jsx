@@ -1,10 +1,21 @@
 import React from 'react';
 import ProductContainer from '../components/products/products_container';
 import { Link } from 'react-router-dom'
+import ProductSlice from './product_slice';
 
 class Splash extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount(){
+        this.props.fetchProducts()
+    }
+
     render() {
+        const { products } = this.props;
         // console.log('splashcontent')
+        // debugger
         return (
             <div className="splash">
                 <div className="intro-block">
@@ -45,47 +56,50 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <h2 className="products-header">Products</h2>
-                    <ProductContainer />
+                    <div>
+                        <h5 className="products-header">New from shops you might like</h5>
+                        <ProductSlice products={products.slice(0,6)} />
+                    </div>
+                    <div>
+                        <h5 className="products-header">Recommended in Home & Living</h5>
+                        <ProductSlice products={products.slice(18,24)} />
+                    </div>
+                    <div>
+                        <h5 className="products-header">Recommendations</h5>
+                        <ProductSlice products={products.slice(7,13)} />
+                    </div>
                 </div>
                 <div className="product-display-mid">
-                    <div>
+                    <div className="product-display-main">
                         <div className="home-list-side">
-                            <div className="home-print">
+                            <div  className="home-print">
                                 <p>Editor's Picks</p>
                                 <h3>Home favorites</h3>
                                 <span>See more <img className="arrow" src={window.arrow} /></span>
                             </div>
-                            <div className="home-block">
+                            <Link to="/products/19" className="home-block">
                                 <img className="home-pics" src={window.home1} />
-                                <div className="home-pic-price">$100.22</div>
-                            </div>
-                            <div className="home-block">
+                            </Link>
+                            <Link to="/products/20" className="home-block">
                                 <img className="home-pics" src={window.home2} />
-                                <div className="home-pic-price">$30.65</div>
-                            </div>
-                            <div className="home-block">
+                            </Link>
+                            <Link to="/products/21" className="home-block">
                                 <img className="home-pics3" src={window.home3} />
-                                <div className="home-pic-price">$15.68</div>
-                            </div>
-                            <div className="home-block">
+                            </Link >
+                            <Link to="/products/22" className="home-block">
                                 <img className="home-pics" src={window.home4} />
-                                <div className="home-pic-price">$240.00</div>
-                            </div>
-                            <div className="home-block">
+                            </Link>
+                            <Link to="/products/23" className="home-block">
                                 <img className="home-pics" src={window.home5} />
-                                <div className="home-pic-price">$500.50</div>
-                            </div>
-                            <div className="home-block">
+                            </Link>
+                            <Link to="/products/24" className="home-block">
                                 <img className="home-pics" src={window.home6} />
-                                <div className="home-pic-price">$28.00</div>
-                            </div>
+                            </Link>
                         </div>
                         <div>
-                            <div className="home-main">
+                            <Link to="/products/25" className="home-main">
                                 <img className="home-pics-main" src={window.mainhome} />
-                                <div className="home-pic-price">$35.50</div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

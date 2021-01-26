@@ -195,15 +195,20 @@
 }
 
 .home-pics-main {
-    height: 480px;
+    height: 460px;
     width: 445px;
+    position: absolute;
+    left: 63.1%;
+    top: 166.4%;
+    display: block;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .home-list-side {
     display: flex;
     flex-wrap: wrap;
-    padding-right: 550px;
-    padding-left: 250px;
+    margin-right: 490px;
+    padding-left: 0px;
 }
 .home-print {
     padding-left: 40px;
@@ -222,5 +227,25 @@
 
 .home-pics3 {
     display: block;
-    margin-left: 33px;
+    margin-left: 30px;
 }
+
+.product-display-main {
+    border: 1px solid lightgray;
+    box-shadow: 3px 3px 3px 3px rgb(180, 180, 180);
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.home-print p {
+    padding-top: 30px;
+}
+
+.home-block:hover {
+    border-radius: 20px;
+    background-color: rgb(245, 244, 244);
+}
+

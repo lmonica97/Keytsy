@@ -15,14 +15,12 @@
     justify-content: space-between;
     align-items: center; 
     list-style-type: none;
-    margin: 0px 55px;
-    padding-left: 200px;
-    padding-right: 200px;
+    margin: 0px 0px;
 }
 
 
 .product-list-index {
-   margin: 5px 2px;
+   margin-right: 20px;
 }
 
 .splash {
@@ -44,10 +42,11 @@
 }
 
 .products-header {
-    text-align: center;
+    text-align: left;
     font-family: 'Montserrat';
-    font-size: 30px;
+    font-size: 15px;
     font-weight: bold;
+    padding-left: 25px;
 }
 
 .product-name {
@@ -359,3 +358,4 @@
     padding-right: 800px;
     line-height: 1.5;
 }
+

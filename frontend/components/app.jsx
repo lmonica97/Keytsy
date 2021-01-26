@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import { Route, Link, Switch } from 'react-router-dom';
-import Splash from '../splash/splash';
+import SplashContainer from '../splash/splash_container';
 import Modal from './modal/modal';
 import GreetingContainer from './navbar/greeting_container';
 import Footer from './footer/footer';
