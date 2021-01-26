@@ -21,7 +21,7 @@ const App = () => (
         </header>
         <Switch>
             <Route path="/products/:id" component={ProductShowContainer} />
-            <Route path="/" component={Splash} />
+            <Route path="/" component={SplashContainer} />
         </Switch>
         <Footer />
     </div>
