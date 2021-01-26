@@ -13,7 +13,6 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :seller_id,
     class_name: :Product,
-    optional: true
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
