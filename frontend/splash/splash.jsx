@@ -2,6 +2,7 @@ import React from 'react';
 import ProductContainer from '../components/products/products_container';
 import { Link } from 'react-router-dom'
 import ProductSlice from './product_slice';
+import ProductPiece from './product_piece';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Splash extends React.Component {
     render() {
         const { products } = this.props;
         // console.log('splashcontent')
-        // debugger
+        debugger
         return (
             <div className="splash">
                 <div className="intro-block">
@@ -100,6 +101,23 @@ class Splash extends React.Component {
                             <Link to="/products/68" className="home-main">
                                 <img className="home-pics-main" src={window.mainhome} />
                             </Link>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div className="selections-category">
+                        <h5>Shop our selections</h5>  
+                        <span>Items hand-picked by our editors</span>
+                        <p className="selections-arrow">More like these <img className="arrow" src={window.arrow} /></p>
+                        <div>
+                            <ul className="selections-list-box">
+                                <ProductPiece product={products.slice(9,10)} title="For her" />
+                                <ProductPiece product={products.slice(16,17)} title="For him" />
+                                <ProductPiece product={products.slice(12,13)} title="For kids" />
+                                <ProductPiece product={products.slice(15,16)} title="Home essentials" />
+                                <ProductPiece product={products.slice(14,15)} title="Collectables" />
+                                <ProductPiece product={products.slice(7,8)} title="For everyone" />
+                            </ul>
                         </div>
                     </div>
                 </div>

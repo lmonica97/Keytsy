@@ -27,6 +27,9 @@ class ProductShow extends React.Component {
             // debugger
             return (
                 <div className="product-show-page">
+                    <div>
+                        <img className="photo-sidebar" src={product.photoUrl} />
+                    </div>
                     <div className="product-sale-seller">
                         <p className="product-show-seller">{product.seller.name}</p>
                         <p className="product-sales">{this.randomNumberGenerator()} sales</p> <span> | </span> <img className="store-rating"src={window.rating} />
