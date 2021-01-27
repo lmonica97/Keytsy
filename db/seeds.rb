@@ -172,7 +172,7 @@ product18 = Product.create!(
 )
 product18.photo.attach(io: File.open("app/assets/images/products/18.jpg"), filename: "18.jpg")
 
-product19 = Product.create(
+product19 = Product.create!(
     seller_id: user2.id,
     product_name: "Baby Palm Tree",
     description: "Aesthetically pleasing baby palm tree for your home!",
@@ -180,7 +180,7 @@ product19 = Product.create(
 )
 product19.photo.attach(io: File.open("app/assets/images/products/19.jpg"), filename: "19.jpg")
 
-product20 = Product.create(
+product20 = Product.create!(
     seller_id: user1.id,
     product_name: "Texted Vase",
     description: "Texted Vase, comes in various colors. Dimensions are: 10 x 12 x 5",
@@ -188,7 +188,7 @@ product20 = Product.create(
 )
 product20.photo.attach(io: File.open("app/assets/images/products/20.jpg"), filename: "20.jpg")
 
-product21 = Product.create(
+product21 = Product.create!(
     seller_id: user3.id,
     product_name: "Candle with cute animal faces",
     description: "Cute candles with cute animal faces --- comes in various colors and face expressions!",
@@ -196,7 +196,7 @@ product21 = Product.create(
 )
 product21.photo.attach(io: File.open("app/assets/images/products/21.jpg"), filename: "21.jpg")
 
-product22 = Product.create(
+product22 = Product.create!(
     seller_id: user1.id,
     product_name: "Single Seater Chair",
     description: "Single seater chair that can be added to your home! Comes only in the color of white. ",
@@ -204,7 +204,7 @@ product22 = Product.create(
 )
 product22.photo.attach(io: File.open("app/assets/images/products/22.jpg"), filename: "22.jpg")
 
-product23 = Product.create(
+product23 = Product.create!(
     seller_id: user2.id,
     product_name: "Large Lamp",
     description: "Large Lamp. VERY LARGE.",
@@ -212,7 +212,7 @@ product23 = Product.create(
 )
 product23.photo.attach(io: File.open("app/assets/images/products/23.jpg"), filename: "23.jpg")
 
-product24 = Product.create(
+product24 = Product.create!(
     seller_id: user3.id,
     product_name: "Glass Vase",
     description: "Glass Vase, Color is a bit darker than in picture if not exposed to light.",
@@ -220,10 +220,16 @@ product24 = Product.create(
 )
 product24.photo.attach(io: File.open("app/assets/images/products/24.jpg"), filename: "24.jpg")
 
-product25 = Product.create(
+product25 = Product.create!(
     seller_id: user1.id,
     product_name: "Delicious Cinnamon Rolls",
     description: "Delicious Cinnamon Rolls that come in a box of 12! Order for you and your loved ones. You'll come back wanting more",
     price: 35.55
 )
 product25.photo.attach(io: File.open("app/assets/images/products/25.jpg"), filename: "25.jpg")
+
+cart1 = Cartitem.create!(
+    user_id: user1.id,
+    product_id: product25.id,
+    quantity: 1
+)

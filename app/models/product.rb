@@ -12,4 +12,13 @@ class Product < ApplicationRecord
     primary_key: :id,
     class_name: :User
 
+    has_many :cartitems,
+    foreign_key: :product_id,
+    primary_key: :id,
+    class_name: :Cartitem
+
+    has_many :buyers,
+    through: :cartitems,
+    source: :user
+
 end

@@ -56,7 +56,7 @@
 }
 
 .intro-block{
-    background-color: lightpink;
+    background-color: rgb(255, 219, 224);
     margin: 0;
     padding-left: 500px;
     padding-right: 500px;
@@ -232,7 +232,7 @@
 
 .product-display-main {
     border: 1px solid lightgray;
-    box-shadow: 3px 3px 3px 3px rgb(180, 180, 180);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
     margin-left: 280px;
     margin-right: 280px;
     margin-bottom: 40px;

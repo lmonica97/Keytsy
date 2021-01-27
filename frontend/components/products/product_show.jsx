@@ -55,7 +55,7 @@ class ProductShow extends React.Component {
                         <label className="product-show-quantity-label">Quantity</label>
                         {/* <input className="product-quantity-box" type="number" min="1" max="100" defaultValue="1"></input> */}
                         <select className="product-quantity-box" >
-                            <option value="1" selected="selected">1</option>
+                            <option value="1" defaultValue="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>

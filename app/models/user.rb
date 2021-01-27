@@ -14,6 +14,16 @@ class User < ApplicationRecord
     foreign_key: :seller_id,
     class_name: :Product
 
+    has_many :cartitems,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Cartitem
+
+    has_many :items,
+    through: :cartitems,
+    source: :product
+
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user

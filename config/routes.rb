@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resource :session, only: [:create, :show, :destroy]
     resources :products, only: [:create, :index, :show]
+    resources :cartitems, only: [:create, :update, :destroy, :index, :show]
   end
 end

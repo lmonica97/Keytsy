@@ -6,8 +6,8 @@ import SplashContainer from '../splash/splash_container';
 import Modal from './modal/modal';
 import GreetingContainer from './navbar/greeting_container';
 import Footer from './footer/footer';
-import ProductShowContainer from '../components/products/product_show_container';
-
+import ProductShowContainer from './products/product_show_container';
+import CartContainer from './cart/cart_container';
 
 
 const App = () => (
@@ -22,6 +22,7 @@ const App = () => (
         <Switch>
             <Route path="/products/:id" component={ProductShowContainer} />
             <Route path="/" component={SplashContainer} />
+            {/* <Route path="/cart" component={CartContainer} /> */}
         </Switch>
         <Footer />
     </div>
