@@ -2108,7 +2108,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductPiece = function ProductPiece(props) {
-  debugger;
+  // debugger
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "selections-list-index"
   }, props.product.map(function (product) {
@@ -2232,8 +2232,8 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var products = this.props.products; // console.log('splashcontent')
+      // debugger
 
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

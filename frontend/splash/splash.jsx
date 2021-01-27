@@ -16,7 +16,7 @@ class Splash extends React.Component {
     render() {
         const { products } = this.props;
         // console.log('splashcontent')
-        debugger
+        // debugger
         return (
             <div className="splash">
                 <div className="intro-block">

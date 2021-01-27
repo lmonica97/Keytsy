@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductPiece = props => {
-    debugger
+    // debugger
     return (
         <div className="selections-list-index" >
             {props.product.map(product => 
