@@ -1,5 +1,3 @@
- # Keytsy
- 
  <p align="center">
   <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/logo.png" />
 </p>
