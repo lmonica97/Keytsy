@@ -46,6 +46,7 @@
 .intro-image {
     height: 200px;
     width: 200px;
+    object-fit: cover;
 }
 
 .intro-container-list {
@@ -191,6 +192,7 @@
     height: 195px;
     width: 195px;
     border-radius: 30px;
+    object-fit: cover;
 }
 
 .home-pics-main {
@@ -200,6 +202,7 @@
     top: 130.3%;
     display: block;
     border-radius: 0px 5px 5px 0px;
+    object-fit: cover;
 }
 
 .home-list-side {

@@ -1,6 +1,7 @@
 .product-image {
     height: 165px;
     width: 205px;
+    object-fit: cover;
 }
 
 /* .products-all-container {
@@ -74,6 +75,7 @@
     width: 800px;
     display: block;
     padding-left: 95px;
+    object-fit: cover;
 }
 
 .product-show-name {
@@ -438,5 +440,6 @@
     height: 165px;
     width: 206px;
     border-radius: 10px 10px 0px 0px;
-    
+    object-fit: cover;
+
 }
