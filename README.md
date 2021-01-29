@@ -1,16 +1,16 @@
  # Keytsy
  
- ![alt text][logo]
- 
- [logo]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/logo.png
+ <p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/logo.png" />
+</p>
+
 
 
 [Click here to view the live site!]( https://keytsy.herokuapp.com/#/ ) 
 
-
-![alt text][splash]
-
-[splash]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/splash.gif
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/splash.gif" />
+</p>
 
 ## Overview
 
@@ -26,11 +26,16 @@ This app is my replication of the original website, Etsy.com. Similarly to the o
 ## Features
 + User Autherization -- Allows a User to create an account, sign in to an existing account, and sign out. 
 
-![alt text][auth]
-
-[auth]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/auth.gif
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/auth.gif" />
+</p>
 
 + Products -- Display of products, User can choose which product they want to view more in depth of
+
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/product.gif" />
+</p>
+
 + Cart -- Display of the products that the User added to cart. User can update quantity amount, add more products to existing cart, delete items from cart, and purchase the items in their cart. (**COMING SOON!**)
 + Reviews -- Users who have purchased products can leave a review on the product page for that specific product on a 1-5 scale rating. (**COMING SOON!**)
 + Search -- A search bar that will display a result of products that match the User's search input. (**COMING SOON!**)
