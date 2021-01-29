@@ -2598,7 +2598,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "intro-container-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/57",
+        to: "/products/50",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2613,7 +2613,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/64",
+        to: "/products/57",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2628,7 +2628,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/52",
+        to: "/products/45",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2643,7 +2643,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/56",
+        to: "/products/49",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2658,7 +2658,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/51",
+        to: "/products/44",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2696,37 +2696,37 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/69",
+        to: "/products/62",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home1
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/70",
+        to: "/products/63",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home2
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/71",
+        to: "/products/64",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics3",
         src: window.home3
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/72",
+        to: "/products/65",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home4
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/73",
+        to: "/products/66",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home5
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/74",
+        to: "/products/67",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
@@ -2734,7 +2734,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-main-comp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/75",
+        to: "/products/68",
         className: "home-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics-main",
