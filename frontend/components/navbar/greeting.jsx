@@ -30,7 +30,9 @@ const Greeting = ({ currentUser, signout, openModal }) => {
   const personalGreeting = () => (
     <div>
       <nav className="signin-signout">
-        <img className="logo" src={window.logo} />
+        <Link to="/">
+          <img className="logo" src={window.logo} />
+        </Link>
         <Dropdown currentUser={currentUser} signout={signout} />
         <div>
           <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
