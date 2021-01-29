@@ -106,9 +106,21 @@ class Splash extends React.Component {
                 </div>
                 <div>
                     <div className="selections-category">
-                        <h5>Shop our selections</h5>  
-                        <span>Items hand-picked by our editors</span>
-                        <p className="selections-arrow">More like these <img className="arrow" src={window.arrow} /></p>
+                        <div className="selections-strings-container">
+                            <div className="selections-cat-strings">
+                                <div className="selections-sub">
+                                    <div className="selections-tag1">
+                                        <span>Shop our selections</span>  
+                                    </div>
+                                    <div className="selections-tag2">
+                                        <span>Items hand-picked by our editors</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span className="selections-arrow">More like these <img className="arrow" src={window.arrow} /></span>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <ul className="selections-list-box">
                                 <ProductPiece product={products.slice(9,10)} title="For her" />
