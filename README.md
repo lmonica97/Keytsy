@@ -1,23 +1,32 @@
-[logo]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/logo.png
+ # Keytsy
+ 
+ ![alt text][logo]
+ 
+ [logo]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/logo.png
 
 
 [Click here to view the live site!]( https://keytsy.herokuapp.com/#/ ) 
 
+
+![alt text][splash]
+
 [splash]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/splash.gif
 
-##Overview
+## Overview
 
 This app is my replication of the original website, Etsy.com. Similarly to the original website, it is a shopping site where users can browse items from a variety of categories to choose from. Unlike other shopping platforms, Keytsy only provides products from independent sellers-- people who want to sell their own hand-crafted items online.
 
-##Keytsy was built with:
+## Keytsy was built with:
 + Ruby on Rails -- Backend
 + PostgresQL -- database structure 
 + ReactJS -- Frontend
 + AWS -- For product images
 + Redux -- Frontend
 
-###Features
+## Features
 + User Autherization -- Allows a User to create an account, sign in to an existing account, and sign out. 
+
+![alt text][auth]
 
 [auth]: https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/auth.gif
 
