@@ -396,7 +396,7 @@
 .seller-profile h3 {
     position: absolute;
     left: 63.5%;
-    top: 900px;
+    top: 930px;
     font-size: 15px;
 }
 
@@ -405,20 +405,20 @@
     width: 65px;
     position: absolute;
     left: 63.5%;
-    top: 960px;
+    top: 990px;
 }
 
 .seller-profile-name {
     position: absolute;
     left: 68%;
-    top: 940px;
+    top: 970px;
     font-size: 20px;
 }
 
 .seller-profile p {
     position: absolute;
     left: 68%;
-    top: 985px;
+    top: 1015px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -438,4 +438,8 @@
     height: 165px;
     width: 206px;
     border-radius: 10px 10px 0px 0px;
+}
+
+img {
+    object-fit: cover;
 }

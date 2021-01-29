@@ -7,7 +7,7 @@ import Modal from './modal/modal';
 import GreetingContainer from './navbar/greeting_container';
 import Footer from './footer/footer';
 import ProductShowContainer from './products/product_show_container';
-import CartContainer from './cart/cart_container';
+// import CartContainer from './cart/cart_container';
 
 
 const App = () => (
@@ -20,9 +20,10 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Switch>
-            <Route path="/products/:id" component={ProductShowContainer} />
-            <Route path="/" component={SplashContainer} />
-            {/* <Route path="/cart" component={CartContainer} /> */}
+            <Route exact path="/" component={SplashContainer} />
+            <Route exact path="/products/:id" component={ProductShowContainer} />
+            {/* <Route exact path="/cart" component={CartContainer} /> */}
+
         </Switch>
         <Footer />
     </div>

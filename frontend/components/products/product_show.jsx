@@ -3,11 +3,27 @@ import React from 'react';
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            quantity: 1
+        }
+        // this.handleClick = this.handleClick.bind(this);
         // this.fetchSeller = this.fetchSeller.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.id);
+    }
+
+    // handleClick(e) {
+    //     e.preventDefault();
+    //     this.props.addItem({user_id: this.props.currentUser, product_id: this.props.product.id, quantity: this.state.quantity})
+    //         .then(this.props.history.push({pathname:'/cart', state: this.state}))
+    // }
+
+    update(type) {
+        return e => {
+            this.setState({[type]: e.currentTarget.value})
+        }
     }
 
     randomNumberGenerator() {
@@ -18,6 +34,7 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props;
+        // debugger
         if (!product){
             // debugger
             return(
@@ -54,7 +71,7 @@ class ProductShow extends React.Component {
                     <div>
                         <label className="product-show-quantity-label">Quantity</label>
                         {/* <input className="product-quantity-box" type="number" min="1" max="100" defaultValue="1"></input> */}
-                        <select className="product-quantity-box" >
+                        <select className="product-quantity-box" onChange={this.update('quantity')}>
                             <option value="1" defaultValue="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -74,9 +91,9 @@ class ProductShow extends React.Component {
                             <option value="17">17</option>
                         </select>
                     </div>
-                    <div>
-                        <button className="product-show-add-button">Add to cart</button>
-                    </div>
+                    <form >
+                        <button className="product-show-add-button" >Add to cart</button>
+                    </form>
                     <div>
                         <img className="product-show-icon1" src={window.procart} /> 
                         <p className="product-in-cart">

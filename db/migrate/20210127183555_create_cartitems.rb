@@ -6,7 +6,7 @@ class CreateCartitems < ActiveRecord::Migration[5.2]
       t.integer :product_id, null: false
       t.timestamps
     end
-      add_index :cartitems, :user_id, unique: true
-      add_index :cartitems, :product_id, unique: true
+      add_index :cartitems, :user_id
+      add_index :cartitems, :product_id
   end
 end

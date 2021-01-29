@@ -26,8 +26,11 @@ export const receiveErrors = errors => ({
 export const signup = (formUser) => dispatch => {
     return SessionApiUtil.signup(formUser)
         .then(user => dispatch(receiveCurrentUser(user)),
-        err => dispatch(receiveErrors(err.responseJSON)
-    ))
+        err => {
+            // debugger
+            dispatch(receiveErrors(err.responseJSON))
+        }
+    )
 }
 
 export const signin = (formUser) => dispatch => {

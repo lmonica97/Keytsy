@@ -1,8 +1,8 @@
-export const addCartitem = (cartitem) => {
+export const fetchCartitems = () => {
+    // debugger
     return $.ajax({
         url: 'api/cartitems',
         method: 'GET',
-        data: { cartitem }
     })
 }
 
@@ -18,5 +18,14 @@ export const removeCartitem = (cartitemId) => {
     return $.ajax({
         url: `api/cartitems/${cartitemId}`,
         method: 'DELETE'
+    })
+}
+
+export const addSingleItem = (cartitem) => {
+    // debugger
+    return $.ajax({
+        url: `/api/cartitems`,
+        method: 'POST',
+        data: { cartitem }
     })
 }

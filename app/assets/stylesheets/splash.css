@@ -190,14 +190,12 @@
 .home-pics, .home-pics3 {
     height: 195px;
     width: 195px;
-    padding: 10px 0px;
     border-radius: 30px;
 }
 
 .home-pics-main {
     height: 459px;
     width: 409px;
-    position: absolute;
     left: 63.3%;
     top: 130.3%;
     display: block;
@@ -206,9 +204,10 @@
 
 .home-list-side {
     display: flex;
+    flex-direction: left;
     flex-wrap: wrap;
-    margin-right: 400px;
     padding-left: 0px;
+    margin-top: 20px;
 }
 .home-print {
     padding-left: 40px;
@@ -237,8 +236,8 @@
     margin-right: 280px;
     margin-bottom: 40px;
     border-radius: 5px;
-    padding-bottom: 20px;
     margin-top: 20px;
+    display: flex;
 }
 
 .home-print p {
@@ -246,8 +245,7 @@
 }
 
 .home-block:hover {
-    border-radius: 20px;
-    background-color: rgb(245, 244, 244);
+    cursor: pointer;
 }
 
 .selections-list-box{
@@ -301,4 +299,21 @@
 
 .selections-list-index:hover {
     box-shadow: 0 0 15px lightgray
+}
+
+.error-label {
+    text-rendering: auto;
+    word-spacing: normal;
+    cursor: text;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    align-self: center;
+    height: 30px;
+    background-color: rgb(247, 184, 184);
+    border-color: red;
+    border-radius: 5px;
+    height: 40px;
+    width: 250px;
+    padding-left: 15px;
+    padding-right: 15px;
 }

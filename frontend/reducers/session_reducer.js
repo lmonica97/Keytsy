@@ -11,9 +11,7 @@ import {
     Object.freeze(state);
     switch(action.type) {
       case RECEIVE_CURRENT_USER:
-        const currentUser = action.currentUser;
-        // debugger
-        return merge({}, { currentUser });
+        return { id: action.currentUser.id, currentUser: action.currentUser}
       case LOGOUT_CURRENT_USER:
         return _nullUser;
       default:

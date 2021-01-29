@@ -219,6 +219,10 @@
     height: 22px;
   }
 
+.cart:hover {
+  cursor: pointer;
+}
+
 header {
   display: block;
   box-sizing: border-box;

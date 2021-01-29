@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import Dropdown from './logout_dropdown';
 // import DemoUserContainer from '../session/demouser_container'
 import CategoryNav from '../category/category_nav';
+// import CartContainer from '../cart/cart_container';
 
 const Greeting = ({ currentUser, signout, openModal }) => {
-    // console.log(currentUser);
+    // debugger
   const sessionLinks = () => (
     <div>
       <nav className="signin-logout">
@@ -18,7 +19,9 @@ const Greeting = ({ currentUser, signout, openModal }) => {
           <button className="search-button-signin"><img className="search-image"src={window.magnifying} /></button>
           <input type="text" className="searchBar-signin" placeholder="Search for anything"></input>
         </div>
+        
         <img className="cart" src={window.cart} />
+        {/* </Link> */}
       </nav>
       <CategoryNav />
     </div>
@@ -33,7 +36,9 @@ const Greeting = ({ currentUser, signout, openModal }) => {
           <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
           <input type="text" className="searchBar-signout" placeholder="Search for anything"></input>
         </div>
-        <img className="cart" src={window.cart} />
+        {/* <Link to="/cart"> */}
+          <img className="cart" src={window.cart} />
+          {/* </Link>  */}
         <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
         <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
       </nav>

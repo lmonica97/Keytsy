@@ -23,19 +23,19 @@ class RegisterForm extends React.Component {
         this.props.processForm(user).then(this.props.closeModal);
     }
 
-    renderErrors() {
-        if (this.props.errors.length !== 0) {
-            return(
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li className="errors" key={`error-${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>
-            )
-        }
-    }
+    // renderErrors() {
+    //     if (this.props.errors.length !== 0) {
+    //         return(
+    //             <ul>
+    //                 {this.props.errors.map((column, value) => (
+    //                     <li className="errors" key={`error-${i}`}>
+    //                         {value}
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         )
+    //     }
+    // }
 
     componentWillUnmount() {
         const errors = [];
@@ -43,7 +43,7 @@ class RegisterForm extends React.Component {
      }
 
     render() {
-        // console.log('register form up')
+        // debugger
         return (
             <div className="register-form-container">
                 <form onSubmit={this.handleSubmit} className="register-form-box">
@@ -55,33 +55,81 @@ class RegisterForm extends React.Component {
                     <br />
                     <div>
                         <br />
+                        { 
+                            this.props.errors.email ? 
+                            <div>
+                                <label className="register-label">Email</label>
+                                <input
+                                type="email"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                className="error-label">
+                                </input>
+                                <label className="errors">{this.props.errors.email}</label>
+                            </div>
+                        :
+                            <div> 
+                                <label className="register-label">Email</label>
+                                    <input
+                                    type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    className="signin-input">
+                                    </input>
+                            </div>
+                        }
+                        
+                        <br />
+                        { 
+                            this.props.errors.name ? 
+                            <div>
+                                <label className="register-label">First name</label>
+                                <input
+                                type="text"
+                                value={this.state.name}
+                                onChange={this.update('name')}
+                                className="error-label">
+                                </input>
+                                <label className="errors">{this.props.errors.name}</label>
+                            </div>
+                        :
+                            <div> 
+                                <label className="register-label">First name</label>
+                                    <input
+                                    type="text"
+                                    value={this.state.name}
+                                    onChange={this.update('name')}
+                                    className="signin-input">
+                                    </input>
+                            </div>
+                        }
 
-                        <label className="register-label">Email</label>
-                            <input
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            className="signin-input">
-                            </input>
-                        {this.props.errors.length >= 2 ? <p className="errors">{this.props.errors[1]}</p> : null}
                         <br />
 
-                        <label className="register-label">First Name</label>
-                            <input type="text"
-                            value={this.state.name}
-                            onChange={this.update('name')}
-                            className="signin-input">
-                            </input>
-                        {this.props.errors.length >= 1 ? <p className="errors">{this.props.errors[0]}</p> : null}
-                        <br />
-                        <label className="register-label">Password </label>
-                            <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className="signin-input">
-                            </input>
-                        {this.props.errors.length >= 3 ? <p className="errors">{this.props.errors[2]}</p> : null}
+                        { 
+                            this.props.errors.password ? 
+                            <div>
+                                <label className="register-label">Password</label>
+                                <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                className="error-label">
+                                </input>
+                                <label className="errors">{this.props.errors.password}</label>
+                            </div>
+                        :
+                            <div> 
+                                <label className="register-label">Password</label>
+                                    <input
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="signin-input">
+                                    </input>
+                            </div>
+                        }
+                        
                         <br />
                         <button className="register" type="submit">Register</button>
                         <br />

@@ -6,7 +6,7 @@ import cartitemReducer from './cartitem_reducer';
 const entitiesReducer = combineReducers({
     users: usersReducer,
     products: productReducer,
-    cartitem: cartitemReducer
+    cartitems: cartitemReducer
 })
 
 export default entitiesReducer;

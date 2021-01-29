@@ -10,6 +10,11 @@ class Dropdown extends React.Component {
         // this.closeDrownDown = this.closeDrownDown.bind(this);
     }
 
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.signout.then(this.props.history.push({path:'/', state: this.state }));
+    }
+
     showDropDown(e) {
         e.preventDefault();
         const newState = !this.state.showDropDown
