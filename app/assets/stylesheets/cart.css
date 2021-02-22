@@ -81,7 +81,7 @@
 } 
 
 .cartshow-seller-name {
-    position: fixed;
+    position: absolute;
     float: right;
     right: 80%;
     left: 20%;

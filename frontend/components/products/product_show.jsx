@@ -6,7 +6,7 @@ class ProductShow extends React.Component {
         this.state = {
             quantity: 1
         }
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         // this.fetchSeller = this.fetchSeller.bind(this);
     }
 
@@ -14,11 +14,11 @@ class ProductShow extends React.Component {
         this.props.fetchProduct(this.props.match.params.id);
     }
 
-    // handleClick(e) {
-    //     e.preventDefault();
-    //     this.props.addItem({user_id: this.props.currentUser, product_id: this.props.product.id, quantity: this.state.quantity})
-    //         .then(this.props.history.push({pathname:'/cart', state: this.state}))
-    // }
+    handleClick(e) {
+        e.preventDefault();
+        this.props.addItem({user_id: this.props.currentUser, product_id: this.props.product.id, quantity: this.state.quantity})
+            .then(this.props.history.push({pathname:'/cart', state: this.state}))
+    }
 
     update(type) {
         return e => {
@@ -91,8 +91,8 @@ class ProductShow extends React.Component {
                             <option value="17">17</option>
                         </select>
                     </div>
-                    <form >
-                        <button className="product-show-add-button" >Add to cart</button>
+                    <form onClick={this.handleClick}>
+                        <button className="product-show-add-button">Add to cart</button>
                     </form>
                     <div>
                         <img className="product-show-icon1" src={window.procart} /> 
