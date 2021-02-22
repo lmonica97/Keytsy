@@ -39,26 +39,25 @@ class CartShow extends React.Component{
         let item = {id: this.props.cartItem, user: this.props.user, product: this.props.id, quantity: this.state.quantity.value}
         return (
             <li className="cartshow-index" key={this.props.id}>
-                <div className="cartshow-item-index">
+                <div className="cartshow-seller">
                     <div>
-                        <div className="cartshow-seller">
-                            <div>
-                                <img className="cartshow-seller-pic" src={window.anon} />
-                            </div>
-                            <div>
-                                <h3 className="cartshow-seller-name">{this.props.seller}</h3>
-                            </div>
-                        </div>
-                        <div> 
-                            <img className="cartshow-image"src={this.props.photo} />
-                        </div>
+                        <img className="cartshow-seller-pic" src={window.anon} />
+                    </div>
+                    <div>
+                        <h3 className="cartshow-seller-name">{this.props.seller}</h3>
+                    </div>
+                </div>
+                <div className="item-index">
+                    <div> 
+                        <img className="cartshow-image"src={this.props.photo} />
                     </div>
                     <div className="cartshow-strings">
                         <div className="cartshow-name">
-                            <p>{this.props.name}</p>
+                            <p className="cart-name">{this.props.name}</p>
                         </div>
-                        <div>
+                        <div className="select-cart">
                             <Select 
+                                className="cart-quant"
                                 options={this.options}
                                 value={this.state.quantity}
                                 onChange={value => this.update(value)}
@@ -67,16 +66,23 @@ class CartShow extends React.Component{
                         </div>
                         <div className="cartshow-price">
                             { quantity === 1 ? (
-                                <span>${this.props.price}</span>
+                                <div>
+                                    <span className="cartitem-total">${this.props.price}</span>
+                                </div>
                             ) : (
-                                <span>${totalPrice.toFixed(2)} <br /> (${this.props.price} each)</span>  
+                                <div>
+                                    <span className="cartitem-total">${totalPrice.toFixed(2)}</span>  
+                                    <p className="cartitem-each">(${this.props.price} each)</p>
+                                </div>
                             )
                             }   
                         </div>
                     </div> 
-                    <div className="remove-item">
-                        <button className="remove-button" onClick={() => this.props.removeitem(this.props.id)}>Remove</button>
-                        <button className="update-button" onClick={() => this.props.updateItem(item)}>Update</button>
+                    <div>
+                        <div className="remove-item">
+                            <button className="update-button" onClick={() => this.props.updateItem(item)}>Update</button>
+                            <button className="remove-button" onClick={() => this.props.removeitem(this.props.id)}>Remove</button>
+                        </div>
                     </div>
                 </div>
             </li>

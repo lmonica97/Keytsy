@@ -1,15 +1,13 @@
 .cartshow-image {
-    height: 175px; 
-    width: 215px;
+    height: 205px; 
+    width: 235px;
     display: flex;
     border-radius: 5px;
 }
 
 .cartshow-container {
     margin-left: 250px;
-    list-style: none;
     font-family: 'Montserrat';
-    margin-right: 700px;
 }
 
 .cartshow-header {
@@ -23,13 +21,17 @@
     margin-bottom: 50px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 50px;
+    margin-left: 60px;
+    height: 300px;
+    width: 1000px;
 }
 
 .cartshow-strings {
     display: flex;
     position: top;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 15px;
+    width: 500px;
+    height: 100px;
 }
 
 .cartshow-name {
@@ -39,11 +41,44 @@
   left: 28%;
 }
 
+.cart-name {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    height: 70px;
+    width: 400px;
+    margin-top: 5px;
+}
+
+.select-cart {
+    display: block;
+    padding-left: 100px;
+}
+
+.cart-quant {
+    font-weight: bold;
+   display: block;
+   height: 60px;
+   width: 80px; 
+   cursor: pointer;
+   font-size: 18px;
+}
+
 .cartshow-price {
-    padding-top: 15px;
+    display: block;
+    text-align: right;
+    height: 50px;
+    width: 200px;
+    padding-left: 110px;
+    font-size: 18px;
+}
+
+.cartitem-total {
     font-weight: 900;
-    margin-left: 260px;
-    width: 300px;
+}
+
+.cartitem-each {
+    white-space: nowrap;
 }
 
 .cartshow-topheader {
@@ -69,7 +104,6 @@
 
 .cartshow-seller {
     display: flex;
-    justify-content: space-between;
 } 
 
 .cartshow-seller-pic {
@@ -81,11 +115,10 @@
 } 
 
 .cartshow-seller-name {
-    position: absolute;
-    float: right;
-    right: 80%;
-    left: 20%;
-
+    padding-left: 15px;
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .cartshow-item-index {
@@ -93,21 +126,31 @@
 }
 
 .remove-item {
+    display: flex;
     margin-top: 70px;
 }
 
-.remove-button {
-    position: absolute;
-    right: 62%;
+.remove-button, .update-button {
     background-color: white;
     border: none;
     font-weight: 900;
     font-family: 'Montserrat';
     border-radius: 15px;
     padding: 10px 15px;
+    font-size: 15px;
 }
 
-.remove-button:hover {
+.update-botton {
+    
+
+}
+
+.remove-button:hover, .update-button:hover {
     cursor: pointer;
-    background: rgb(219, 216, 216)
+    background: rgb(219, 216, 216);
+    transition: 1s;
+}
+
+.item-index {
+    display: flex;
 }
