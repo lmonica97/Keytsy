@@ -12,12 +12,10 @@ class Api::CartitemsController < ApplicationController
     end 
 
     def update 
-        debugger
         if logged_in?
             @cartitem = Cartitem.find_by(id: params[:id])
-            debugger
                 if @cartitem.update(cartitem_params)
-                    debugger
+                    @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
                     render 'api/cartitems/index'
                 end
         else

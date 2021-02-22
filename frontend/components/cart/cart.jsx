@@ -12,11 +12,11 @@ class Cart extends React.Component {
         this.props.fetchAllitems();
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     // if (prevProps.cartitems !== this.props.items){
-    //     //     this.props.fetchAllitems();
-    //     // }
-    // }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.cartitems !== this.props.items){
+            this.props.fetchAllitems();
+        }
+    }
 
     render() {
         const { items, removeItem, updateItem } = this.props;
@@ -47,7 +47,7 @@ class Cart extends React.Component {
                     <ul className="cartshow-container">
                         {
                             items.map(item => (
-                                    <CartShow user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.id}
+                                    <CartShow user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.product_id} cartItem={item.id}
                                         removeitem={removeItem} total={total.toFixed(2)} updateItem={updateItem} />
                             ))
                         }

@@ -27,14 +27,16 @@ class CartShow extends React.Component{
         ]
     }
 
-    update(type) {
-        return e => {
-            this.setState({[type]: e.currentTarget.value})
-        }
+    update(value) {
+        debugger
+        this.setState({quantity: value})
+        debugger
     }
 
     render() {
-        let quantity = this.state.quantity
+        let quantity = this.props.quantity
+        let totalPrice = (quantity * this.props.price)
+        let item = {id: this.props.cartItem, user: this.props.user, product: this.props.id, quantity: this.state.quantity.value}
         return (
             <li className="cartshow-index" key={this.props.id}>
                 <div className="cartshow-item-index">
@@ -59,17 +61,22 @@ class CartShow extends React.Component{
                             <Select 
                                 options={this.options}
                                 value={this.state.quantity}
-                                onChange={(value) => this.update('quantity')}
+                                onChange={value => this.update(value)}
                                 defaultValue={{ label: this.state.quantity, value: this.state.quantity }}
                             />
                         </div>
                         <div className="cartshow-price">
-                            <span>${this.props.price}</span>
+                            { quantity === 1 ? (
+                                <span>${this.props.price}</span>
+                            ) : (
+                                <span>${totalPrice.toFixed(2)} <br /> (${this.props.price} each)</span>  
+                            )
+                            }   
                         </div>
                     </div> 
                     <div className="remove-item">
                         <button className="remove-button" onClick={() => this.props.removeitem(this.props.id)}>Remove</button>
-                        <button className="update-button" onClick={() => this.props.updateItem(this.state)}>Update</button>
+                        <button className="update-button" onClick={() => this.props.updateItem(item)}>Update</button>
                     </div>
                 </div>
             </li>

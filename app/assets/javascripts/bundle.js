@@ -513,12 +513,14 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       // debugger
       this.props.fetchAllitems();
-    } // componentDidUpdate(prevProps, prevState) {
-    //     // if (prevProps.cartitems !== this.props.items){
-    //     //     this.props.fetchAllitems();
-    //     // }
-    // }
-
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.cartitems !== this.props.items) {
+        this.props.fetchAllitems();
+      }
+    }
   }, {
     key: "render",
     value: function render() {
@@ -560,7 +562,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
             name: item.product_name,
             price: item.price,
             photo: item.photoUrl,
-            id: item.id,
+            id: item.product_id,
+            cartItem: item.id,
             removeitem: removeItem,
             total: total.toFixed(2),
             updateItem: updateItem
@@ -654,8 +657,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.browser.esm.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -744,19 +745,26 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
 
   _createClass(CartShow, [{
     key: "update",
-    value: function update(type) {
-      var _this2 = this;
-
-      return function (e) {
-        _this2.setState(_defineProperty({}, type, e.currentTarget.value));
-      };
+    value: function update(value) {
+      debugger;
+      this.setState({
+        quantity: value
+      });
+      debugger;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
-      var quantity = this.state.quantity;
+      var quantity = this.props.quantity;
+      var totalPrice = quantity * this.props.price;
+      var item = {
+        id: this.props.cartItem,
+        user: this.props.user,
+        product: this.props.id,
+        quantity: this.state.quantity.value
+      };
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "cartshow-index",
         key: this.props.id
@@ -780,7 +788,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         options: this.options,
         value: this.state.quantity,
         onChange: function onChange(value) {
-          return _this3.update('quantity');
+          return _this2.update(value);
         },
         defaultValue: {
           label: this.state.quantity,
@@ -788,17 +796,17 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cartshow-price"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", this.props.price))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, quantity === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", this.props.price) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", totalPrice.toFixed(2), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ($", this.props.price, " each)"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "remove-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "remove-button",
         onClick: function onClick() {
-          return _this3.props.removeitem(_this3.props.id);
+          return _this2.props.removeitem(_this2.props.id);
         }
       }, "Remove"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "update-button",
         onClick: function onClick() {
-          return _this3.props.updateItem(_this3.state);
+          return _this2.props.updateItem(item);
         }
       }, "Update"))));
     }
