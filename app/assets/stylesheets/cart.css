@@ -160,7 +160,7 @@
 }
 
 .cart-textarea {
-    margin-top: 30px;
+    margin-top: 20px;
     height: 100px;
     width: 400px;
     padding: 10px 10px;
@@ -172,11 +172,38 @@
     box-shadow: inset 0 0 10px lightgray;
 }
 
+.checkbox-container {
+    display: block;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.side-comment{
+    margin: 0;
+    font-size: 12px;
+    padding-left: 35px;
+}
+
 .cartitem-single {
     font-weight: bold;
     margin-left: 45px;
 }
 
+input[type="checkbox"]:checked + label:before {
+    background: black;
+    color: white;
+}
+
+.checkmark {
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
+    background-color: black;
+}
 
 .remove-button:hover, .update-button:hover {
     cursor: pointer;

@@ -87,10 +87,10 @@ class CartShow extends React.Component{
                 </div>
                 <div>
                     <label className="checkbox-container">
-                        <input type="checkbox"></input>
+                        <input type="checkbox" className="checkmark"></input>
                         This order is a gift
-                        <span className="checkmark"></span>
                     </label>
+                    <p className="side-comment">Prices will not be shown on packing slip</p>
                 </div>
                 <textarea className="cart-textarea" placeholder={"Add a note to " + this.props.seller + " (optional)"}></textarea>
             </li>
