@@ -516,9 +516,10 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {// if (prevProps.cartitems !== this.props.items){
-      //     this.props.fetchAllitems();
-      // }
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.cartitems !== this.props.items) {
+        this.props.fetchAllitems();
+      }
     }
   }, {
     key: "render",
@@ -806,7 +807,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "cartitem-total"
       }, "$", totalPrice.toFixed(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "cartitem-each"
-      }, "($", this.props.price, " each)")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "($", this.props.price, " each)")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "remove-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "update-button",
@@ -818,7 +819,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.props.removeitem(_this2.props.cartItem);
         }
-      }, "Remove")))));
+      }, "Remove"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        placeholder: "Add a note to " + this.props.seller
+      }));
     }
   }]);
 

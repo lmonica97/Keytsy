@@ -128,10 +128,10 @@
 .remove-item {
     display: flex;
     margin-top: 70px;
-    
+
 }
 
-.remove-button, .update-button {
+.remove-button{
     background-color: white;
     border: none;
     font-weight: 900;
@@ -139,11 +139,24 @@
     border-radius: 15px;
     padding: 10px 15px;
     font-size: 15px;
+    height: 50px;
+    width: 100px;
 }
 
-.update-botton {
-    
-
+.update-button {
+    background-color: white;
+    border: none;
+    font-weight: 900;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 15px;
+    height: 50px;
+    width: 100px;
+    margin-right: 60px;
+    display:block;
+    position:relative;
+    right: 22%;
 }
 
 .cartitem-single {

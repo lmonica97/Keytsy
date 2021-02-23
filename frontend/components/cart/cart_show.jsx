@@ -33,6 +33,8 @@ class CartShow extends React.Component{
         debugger
     }
 
+
+
     render() {
         let quantity = this.props.quantity
         let totalPrice = (quantity * this.props.price)
@@ -78,13 +80,12 @@ class CartShow extends React.Component{
                             }   
                         </div>
                     </div> 
-                    <div>
-                        <div className="remove-item">
+                    <div className="remove-item">
                             <button className="update-button" onClick={() => this.props.updateItem(item)}>Update</button>
                             <button className="remove-button" onClick={() => this.props.removeitem(this.props.cartItem)}>Remove</button>
-                        </div>
                     </div>
                 </div>
+                <textarea placeholder={"Add a note to " + this.props.seller}></textarea>
             </li>
         )
         }
