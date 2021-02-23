@@ -74,7 +74,7 @@
 }
 
 .cartitem-total {
-    font-weight: 900;
+    font-weight: 400;
 }
 
 .cartitem-each {
@@ -91,7 +91,7 @@
     margin-left: 935px;
     background-color: white;
     font-family: 'Montserrat';
-    font-weight: 900;
+    font-weight: 400;
     padding: 15px 20px;
     font-size: 20px;
     border-radius: 30px;
@@ -124,7 +124,6 @@ input[type=radio] {
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat';
-    font-weight: 600;
 }
 
 .pay-img {
@@ -137,7 +136,11 @@ input[type=radio] {
 
 
 .sub-items {
-    font-weight: bolder;
+    font-weight: 500;
+}
+
+.final-price {
+    font-weight: 500;
 }
 
 .line-divider {
@@ -153,6 +156,7 @@ input[type=radio] {
     border: 1px solid black;
     padding: 20px 20px;
     border-radius: 20px;
+    box-shadow: 0 0 5px 5px lightgray;
 }
 
 .donation {
@@ -201,7 +205,7 @@ input[type=radio] {
 .remove-button{
     background-color: white;
     border: none;
-    font-weight: 900;
+    font-weight: 400;
     font-family: 'Montserrat';
     border-radius: 15px;
     padding: 10px 15px;
@@ -213,7 +217,7 @@ input[type=radio] {
 .update-button {
     background-color: white;
     border: none;
-    font-weight: 900;
+    font-weight: 400;
     font-family: 'Montserrat';
     border-radius: 15px;
     padding: 10px 15px;
@@ -232,7 +236,7 @@ input[type=radio] {
     width: 400px;
     padding: 10px 10px;
     font-family: 'Montserrat';
-    font-weight: 600;
+    font-weight: 300;
     font-size: 18px;
     border-radius: 5px;
     border: 1px solid lightgray;

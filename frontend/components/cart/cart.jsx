@@ -83,8 +83,8 @@ class Cart extends React.Component {
                                 </div>
                                 <p className="line-divider"></p>
                                 <div className="items-total">
-                                    <p>Total ({items.length} items)</p>
-                                    <p>${total.toFixed(2)}</p>
+                                    <p className="final-price">Total ({items.length} items)</p>
+                                    <p className="final-price">${total.toFixed(2)}</p>
                                 </div>
                                 <button className="checkout-button">Proceed to checkout</button>
                             </div>

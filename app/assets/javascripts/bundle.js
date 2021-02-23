@@ -619,7 +619,11 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "line-divider"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "items-total"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Total (", items.length, " items)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", total.toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "final-price"
+        }, "Total (", items.length, " items)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "final-price"
+        }, "$", total.toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "checkout-button"
         }, "Proceed to checkout")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "donation"
@@ -1749,7 +1753,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  // debugger
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.session.currentUser.id
@@ -1757,7 +1760,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  // debugger
   return {
     fetchProduct: function fetchProduct(productId) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProduct"])(productId));
@@ -1828,7 +1830,6 @@ var Product = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger 
       var products = this.props.products;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "product-list"
@@ -2375,8 +2376,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import {fetchProduct, fetchProducts} from './actions/product_actions';
-// console.log('DOMContent');
 
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
@@ -2392,10 +2391,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delete window.currentUser;
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  } // window.fetchProduct = fetchProduct;
-  // window.fetchProducts = fetchProducts;
-  // window.state = state
-
+  }
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
@@ -2582,7 +2578,7 @@ __webpack_require__.r(__webpack_exports__);
 var productErrorsReducer = function productErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); // debugger
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCTS"]:
@@ -2690,7 +2686,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); // debugger
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -2795,15 +2791,12 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      // debugger
       return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_USERS"]:
-      // debugger
       return action.users;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SINGLE_USER"]:
-      // debugger
       return Object.assign({}, state, _defineProperty({}, action.user.id, action.user));
 
     default:
@@ -3300,7 +3293,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeCartitem", function() { return removeCartitem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSingleItem", function() { return addSingleItem; });
 var fetchCartitems = function fetchCartitems() {
-  // debugger
   return $.ajax({
     url: 'api/cartitems',
     method: 'GET'
@@ -3322,7 +3314,6 @@ var removeCartitem = function removeCartitem(cartitemId) {
   });
 };
 var addSingleItem = function addSingleItem(cartitem) {
-  debugger;
   return $.ajax({
     url: "/api/cartitems",
     method: 'POST',
@@ -3347,19 +3338,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProduct", function() { return fetchProduct; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createProduct", function() { return createProduct; });
 var fetchProducts = function fetchProducts() {
-  // debugger
   return $.ajax({
     url: 'api/products',
-    method: 'GET' // success: response => this.setState({ products: response })
-
+    method: 'GET'
   });
 };
 var fetchProduct = function fetchProduct(productId) {
-  // debugger
   return $.ajax({
     url: "/api/products/".concat(productId),
-    method: 'GET' // success: response => this.setState({ product: response })
-
+    method: 'GET'
   });
 };
 var createProduct = function createProduct(product) {
@@ -3405,7 +3392,6 @@ var Auth = function Auth(_ref) {
   var loggedIn = _ref.loggedIn,
       path = _ref.path,
       Component = _ref.component;
-  // console.log('authRoute')
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     render: function render(props) {
@@ -3449,7 +3435,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signin", function() { return signin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signout", function() { return signout; });
 var signup = function signup(user) {
-  // console.log('ajax-signup')
   return $.ajax({
     url: '/api/user',
     method: 'POST',
@@ -3459,7 +3444,6 @@ var signup = function signup(user) {
   });
 };
 var signin = function signin(user) {
-  // console.log('ajax-login')
   return $.ajax({
     url: '/api/session',
     method: 'POST',
@@ -3469,7 +3453,6 @@ var signin = function signin(user) {
   });
 };
 var signout = function signout() {
-  // console.log('ajax-logout')
   return $.ajax({
     url: '/api/session',
     method: 'DELETE'

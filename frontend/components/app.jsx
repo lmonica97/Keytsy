@@ -15,7 +15,6 @@ const App = () => (
         <Modal />
         <header className="header">
             <Link to="/" className="header-link">
-                {/* <img src={window.cart} /> */}
             </Link>
             <GreetingContainer />
         </header>

@@ -1,5 +1,4 @@
 export const fetchCartitems = () => {
-    // debugger
     return $.ajax({
         url: 'api/cartitems',
         method: 'GET',
@@ -22,7 +21,6 @@ export const removeCartitem = (cartitemId) => {
 }
 
 export const addSingleItem = (cartitem) => {
-    debugger
     return $.ajax({
         url: `/api/cartitems`,
         method: 'POST',

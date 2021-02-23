@@ -2,7 +2,6 @@ import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_PRODUCT_ERRORS } from '../ac
 
 const productErrorsReducer = (state = [], action) => {
     Object.freeze(state);
-    // debugger
     switch(action.type) {
         case RECEIVE_PRODUCTS:
             return [];
