@@ -1,10 +1,10 @@
 <% if logged_in? %>
-    <script id="bootstrap-current-user" type="text/javascript">
-    window.currentUser = <%= render(
-        "api/users/user.json.jbuilder", 
+<script id="bootstrap-current-user" type="text/javascript">
+    window.currentUser = < %= render(
+        "api/users/user.json.jbuilder",
         user: current_user
-        ).html_safe %>
-    </script>
+    ).html_safe % >
+</script>
 <% end %>
 <main id="root">If you see this, react is broken :(</main>
 
@@ -13,151 +13,155 @@
 </script>
 
 <script type="text/javascript">
-  window.cart = "<%= image_url('shopping-cart.png') %>";
+    window.cart = "<%= image_url('shopping-cart.png') %>";
 </script>
 
 <script type="text/javascript">
-  window.magnifying = "<%= image_url('magnifying-glass.png') %>";
+    window.magnifying = "<%= image_url('magnifying-glass.png') %>";
 </script>
 
 <script type="text/javascript">
-  window.biglogo = "<%= image_url('biglogo.png') %>";
+    window.biglogo = "<%= image_url('biglogo.png') %>";
 </script>
 
 <script type="text/javascript">
-  window.arrow = "<%= image_url('arrow.png')%>";
+    window.arrow = "<%= image_url('arrow.png')%>";
 </script>
 
 <script type="text/javascript">
-  window.bear = "<%= image_url('bear.jpg')%>"
+    window.bear = "<%= image_url('bear.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.candy = "<%= image_url('candy.jpg')%>"
+    window.candy = "<%= image_url('candy.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.roses = "<%= image_url('roses.jpg')%>"
+    window.roses = "<%= image_url('roses.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.valentine = "<%= image_url('valentine.jpg')%>"
+    window.valentine = "<%= image_url('valentine.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.heart = "<%= image_url('heart.jpg')%>"
+    window.heart = "<%= image_url('heart.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.cookie = "<%= image_url('cookie.jpg')%>"
-</script>
-
-
-<script type="text/javascript">
-  window.linkedin = "<%= image_url('linkedin.png')%>"
+    window.cookie = "<%= image_url('cookie.jpg')%>"
 </script>
 
 
 <script type="text/javascript">
-  window.github = "<%= image_url('github.png')%>"
+    window.linkedin = "<%= image_url('linkedin.png')%>"
+</script>
+
+
+<script type="text/javascript">
+    window.github = "<%= image_url('github.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.check = "<%= image_url('check.png')%>"
+    window.check = "<%= image_url('check.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.delivery = "<%= image_url('delivery-truck.png')%>"
+    window.delivery = "<%= image_url('delivery-truck.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.made = "<%= image_url('knitting.png')%>"
+    window.made = "<%= image_url('knitting.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.hand = "<%= image_url('hello.png')%>"
+    window.hand = "<%= image_url('hello.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.procart = "<%= image_url('cart.png')%>"
+    window.procart = "<%= image_url('cart.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.earring = "<%= image_url('earring.jpg')%>"
+    window.earring = "<%= image_url('earring.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.friendship = "<%= image_url('friendship.jpg')%>"
+    window.friendship = "<%= image_url('friendship.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.journal = "<%= image_url('journal.jpg')%>"
+    window.journal = "<%= image_url('journal.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.hearticon = "<%= image_url('hearticon.png')%>"
+    window.hearticon = "<%= image_url('hearticon.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.magnifying = "<%= image_url('magnifying-glass.png')%>"
+    window.magnifying = "<%= image_url('magnifying-glass.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.rating = "<%= image_url('rating.png')%>"
+    window.rating = "<%= image_url('rating.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.anon = "<%= image_url('bag-on-head.png')%>"
+    window.anon = "<%= image_url('bag-on-head.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.home1 = "<%= image_url('home1.jpg')%>"
+    window.home1 = "<%= image_url('home1.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.home2 = "<%= image_url('home2.jpg')%>"
+    window.home2 = "<%= image_url('home2.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.home3 = "<%= image_url('home3.jpg')%>"
+    window.home3 = "<%= image_url('home3.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.home4 = "<%= image_url('home4.jpg')%>"
+    window.home4 = "<%= image_url('home4.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.home5 = "<%= image_url('home5.jpg')%>"
+    window.home5 = "<%= image_url('home5.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.home6 = "<%= image_url('home6.jpg')%>"
+    window.home6 = "<%= image_url('home6.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.mainhome = "<%= image_url('mainhome.jpg')%>"
+    window.mainhome = "<%= image_url('mainhome.jpg')%>"
 </script>
 
 <script type="text/javascript">
-  window.profilepic = "<%= image_url('ano-profile.png')%>"
+    window.profilepic = "<%= image_url('ano-profile.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.paypal = "<%= image_url('paypal.png')%>"
+    window.paypal = "<%= image_url('paypal.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.visa = "<%= image_url('visa.png')%>"
+    window.visa = "<%= image_url('visa.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.mastercard = "<%= image_url('mastercard.png')%>"
+    window.mastercard = "<%= image_url('mastercard.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.ae = "<%= image_url('american-express.png')%>"
+    window.ae = "<%= image_url('american-express.png')%>"
 </script>
 
 <script type="text/javascript">
-  window.discover = "<%= image_url('discover.png')%>"
+    window.discover = "<%= image_url('discover.png')%>"
+</script>
+
+<script type="text/javascript">
+    window.klarna = "<%= image_url('klarna.png')%>"
 </script>

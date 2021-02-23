@@ -54,20 +54,39 @@ class Cart extends React.Component {
                         </ul>
                         <div>
                             <div className="paymentbox">
-                                <h3 className="">How you'll pay</h3>
-                                    <input type="radio" name="creditcard" />
-                                    <label>
-                                        <img src={window.mastercard} /> 
-                                        <img src={window.visa} />
-                                        <img src={window.ae} />
-                                        <img src={window.discover} />
-                                    </label>
+                                <h3 className="payment-header">How you'll pay</h3>
+                                <div>
+                                    <input type="radio" name="payment" className="creditcard"/>
+                                        <img className="pay-img" src={window.mastercard} /> 
+                                        <img className="pay-img" src={window.visa} />
+                                        <img className="pay-img" src={window.ae} />
+                                        <img className="pay-img" src={window.discover} />
                                     <br />
-                                    <input type="radio" name="paypal" />
-                                    <label>
-                                        <img src={window.paypal} />
-                                    </label>
-                                <h3>${total.toFixed(2)}</h3>
+                                    <input type="radio" name="payment" className="paypal" />
+                                        <img className="pay-img" src={window.paypal} />
+                                    <br />
+                                    <input type="radio" name="payment" className="paypal" />
+                                        <img className="pay-img" src={window.klarna} />
+                                </div>
+                                <div className="items-total">
+                                    <p>Item(s) total</p>
+                                    <p>${total.toFixed(2)}</p>
+                                </div>
+                                <p className="line-divider"></p>
+                                <div className="items-total">
+                                    <p className="sub-items">Subtotal</p>
+                                    <p>${total.toFixed(2)}</p>
+                                </div>
+                                <div className="items-total">
+                                    <p>Shipping</p>
+                                    <p>FREE</p>
+                                </div>
+                                <p className="line-divider"></p>
+                                <div className="items-total">
+                                    <p>Total ({items.length} items)</p>
+                                    <p>${total.toFixed(2)}</p>
+                                </div>
+                                <button className="checkout-button">Proceed to checkout</button>
                             </div>
                             <div>
                                 <p className="donation">The Uplift Fund Supports nonprofits that provide <br />resources to creative entrepreneurs in <br />communities that need it most. You can donate <br />your change at Checkout.</p>
