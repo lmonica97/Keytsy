@@ -85,7 +85,14 @@ class CartShow extends React.Component{
                             <button className="remove-button" onClick={() => this.props.removeitem(this.props.cartItem)}>Remove</button>
                     </div>
                 </div>
-                <textarea placeholder={"Add a note to " + this.props.seller}></textarea>
+                <div>
+                    <label className="checkbox-container">
+                        <input type="checkbox"></input>
+                        This order is a gift
+                        <span className="checkmark"></span>
+                    </label>
+                </div>
+                <textarea className="cart-textarea" placeholder={"Add a note to " + this.props.seller + " (optional)"}></textarea>
             </li>
         )
         }

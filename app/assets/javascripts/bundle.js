@@ -819,8 +819,15 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.props.removeitem(_this2.props.cartItem);
         }
-      }, "Remove"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        placeholder: "Add a note to " + this.props.seller
+      }, "Remove"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "checkbox-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox"
+      }), "This order is a gift", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "checkmark"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "cart-textarea",
+        placeholder: "Add a note to " + this.props.seller + " (optional)"
       }));
     }
   }]);
