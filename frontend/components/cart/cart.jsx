@@ -8,7 +8,6 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchAllitems();
     }
 
@@ -42,32 +41,38 @@ class Cart extends React.Component {
                 <div>
                     <div className="cartshow-topheader">
                         <h2 className="cartshow-header">{items.length} items in your cart</h2>
-                        <Link to="/" ><button>Keep shopping</button></Link>
+                        <Link to="/" ><button className="home-button">Keep shopping</button></Link>
                     </div>
-                    <ul className="cartshow-container">
-                        {
-                            items.map(item => (
-                                    <CartShow user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.product_id} cartItem={item.id}
-                                        removeitem={removeItem} total={total.toFixed(2)} updateItem={updateItem} />
-                            ))
-                        }
-                    </ul>
-                    <div>
-                        <h3>How you'll pay</h3>
-                        <form action="">
-                            <input type="radio" name="creditcard" />
-                            <label>
-                                <img src={window.mastercard} /> 
-                                <img src={window.visa} />
-                                <img src={window.ae} />
-                                <img src={window.discover} />
-                            </label>
-                            <input type="radio" name="paypal" />
-                            <label>
-                                <img src={window.paypal} />
-                            </label>
-                        </form>
-                        <h3>${total.toFixed(2)}</h3>
+                    <div className="cart-mainbody">
+                        <ul className="cartshow-container">
+                            {
+                                items.map(item => (
+                                        <CartShow user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.product_id} cartItem={item.id}
+                                            removeitem={removeItem} total={total.toFixed(2)} updateItem={updateItem} />
+                                ))
+                            }
+                        </ul>
+                        <div>
+                            <div className="paymentbox">
+                                <h3 className="">How you'll pay</h3>
+                                    <input type="radio" name="creditcard" />
+                                    <label>
+                                        <img src={window.mastercard} /> 
+                                        <img src={window.visa} />
+                                        <img src={window.ae} />
+                                        <img src={window.discover} />
+                                    </label>
+                                    <br />
+                                    <input type="radio" name="paypal" />
+                                    <label>
+                                        <img src={window.paypal} />
+                                    </label>
+                                <h3>${total.toFixed(2)}</h3>
+                            </div>
+                            <div>
+                                <p className="donation">The Uplift Fund Supports nonprofits that provide <br />resources to creative entrepreneurs in <br />communities that need it most. You can donate <br />your change at Checkout.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )

@@ -20,7 +20,7 @@
 .cartshow-index {
     margin-bottom: 50px;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 150px;
+    padding-bottom: 250px;
     margin-left: 60px;
     height: 300px;
     width: 1000px;
@@ -83,6 +83,8 @@
 
 .cartshow-topheader {
     display: flex;
+    justify-content: space-between;
+    margin-right: 260px;
 }
 
 .cartshow-topheader button {
@@ -91,15 +93,38 @@
     font-family: 'Montserrat';
     font-weight: 900;
     padding: 15px 20px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 30px;
     margin-top: 30px;
     border: none;
 }
 
+.cart-mainbody {
+    display: flex;
+}
+
+.paymentbox {
+    display: block;
+    margin-left: 40px;
+    height: 600px;
+    width: 420px;
+    border: 1px solid black;
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+
+.donation {
+    font-family: 'Montserrat';
+    margin-left: 80px;
+}
 .cartshow-topheader button:hover {
     background-color: rgb(204, 204, 204);
     transition: 0.5s;
+}
+
+.cartshow-header {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .cartshow-seller {
@@ -203,6 +228,10 @@ input[type="checkbox"]:checked + label:before {
     width: 18px;
     margin-right: 8px;
     background-color: black;
+}
+
+.checkmark:hover {
+    cursor: pointer;
 }
 
 .remove-button:hover, .update-button:hover {
