@@ -44,13 +44,19 @@ class Api::CartitemsController < ApplicationController
     end
 
     def create 
+        allCartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
         @cartitem = Cartitem.new(cartitem_params)
-        if @cartitem.save && logged_in? 
-            @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
-            # debugger
-            render 'api/cartitems/index'
-        else 
-            render json: @cartitem.errors.full_messages, status: 404
+        hash = {};
+        allCartitems.map { |cartitem| hash[cartitem.product_id] = cartitem.id} 
+        if hash.keys.include?(@cartitem.product_id) 
+            @existingcartitem = Cartitem.find_by(id: hash[@cartitem.product_id])
+            @existingcartitem.quantity = @existingcartitem.quantity + @cartitem.quantity
+            if @existingcartitem.save && logged_in? 
+                @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+                render 'api/cartitems/index'
+            else 
+                render json: @cartitem.errors.full_messages, status: 404
+            end
         end
     end
 

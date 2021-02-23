@@ -2420,13 +2420,10 @@ var cartitemReducer = function cartitemReducer() {
       return action.cartitems;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["ADD_CARTITEM"]:
-      debugger;
       return Object.assign({}, state, _defineProperty({}, action.cartitem.id, action.cartitem));
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CARTITEM"]:
-      // debugger
-      delete nextState[action.cartitemId]; // debugger
-
+      delete nextState[action.cartitemId];
       return nextState;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CARTITEM_ERRORS"]:
