@@ -57,7 +57,7 @@ export const updateItem = cartitem => dispatch => {
 }
 
 export const removeItem = cartitemId => dispatch => {
-    // debugger
+    debugger
     return CartitemApiUtil.removeCartitem(cartitemId)
         .then(() => dispatch(removeCartitem(cartitemId)),
         error=> dispatch(receiveCartitemErrors(error.responseJSON)))

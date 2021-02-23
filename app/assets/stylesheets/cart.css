@@ -128,6 +128,7 @@
 .remove-item {
     display: flex;
     margin-top: 70px;
+    
 }
 
 .remove-button, .update-button {
@@ -143,6 +144,11 @@
 .update-botton {
     
 
+}
+
+.cartitem-single {
+    font-weight: bold;
+    margin-left: 45px;
 }
 
 .remove-button:hover, .update-button:hover {

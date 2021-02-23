@@ -67,7 +67,7 @@ class CartShow extends React.Component{
                         <div className="cartshow-price">
                             { quantity === 1 ? (
                                 <div>
-                                    <span className="cartitem-total">${this.props.price}</span>
+                                    <span className="cartitem-single">${this.props.price}</span>
                                 </div>
                             ) : (
                                 <div>
@@ -81,7 +81,7 @@ class CartShow extends React.Component{
                     <div>
                         <div className="remove-item">
                             <button className="update-button" onClick={() => this.props.updateItem(item)}>Update</button>
-                            <button className="remove-button" onClick={() => this.props.removeitem(this.props.id)}>Remove</button>
+                            <button className="remove-button" onClick={() => this.props.removeitem(this.props.cartItem)}>Remove</button>
                         </div>
                     </div>
                 </div>

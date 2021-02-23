@@ -13,9 +13,9 @@ class Cart extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.cartitems !== this.props.items){
-            this.props.fetchAllitems();
-        }
+        // if (prevProps.cartitems !== this.props.items){
+        //     this.props.fetchAllitems();
+        // }
     }
 
     render() {

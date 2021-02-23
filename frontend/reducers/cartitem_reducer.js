@@ -10,7 +10,9 @@ const cartitemReducer = (state = {}, action) => {
             debugger
             return Object.assign({}, state, { [action.cartitem.id]: action.cartitem })
         case REMOVE_CARTITEM:   
+            // debugger
             delete nextState[action.cartitemId]
+            // debugger
             return nextState;
         case RECEIVE_CARTITEM_ERRORS:
             return null;
