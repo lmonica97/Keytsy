@@ -321,3 +321,25 @@ input[type="checkbox"]:checked + label:before {
 .item-index {
     display: flex;
 }
+
+.empty-cart-containter{
+    font-family: "Montserrat";
+    margin-left: 310px;
+    margin-right: 320px;
+}
+
+.emptycart {
+    font-family: 'Montserrat';
+    font-size: 32px;
+    margin-left: 310px;
+    margin-right: 320px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.carthome-link {
+    text-decoration: underline;
+    color: black;
+    font-family: 'Montserrat';
+    text-align: center;
+}

@@ -28,11 +28,12 @@ class Cart extends React.Component {
         const { items, removeItem, updateItem } = this.props;
         if (items.length === 0) {
             return(
-                <div>
-                    <h1>Your cart is empty.</h1>
-                    <Link to="/">
-                        Discover something unique to fill it up
+                <div className="empty-cart-containter">
+                    <h1 className="emptycart">Your cart is empty.</h1>
+                    <Link to="/" className="carthome-link">
+                        <p className="carthome-link">Discover something unique to fill it up</p>
                     </Link>
+                    
                 </div>
             )
         }
