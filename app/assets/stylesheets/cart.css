@@ -6,7 +6,7 @@
 }
 
 .cartshow-container {
-    margin-left: 250px;
+    margin-left: 200px;
     font-family: 'Montserrat';
 }
 
@@ -239,7 +239,6 @@ input[type=radio] {
     font-weight: 300;
     font-size: 18px;
     border-radius: 5px;
-    border: 1px solid lightgray;
     box-shadow: inset 0 0 10px lightgray;
 }
 
