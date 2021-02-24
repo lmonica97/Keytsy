@@ -39,7 +39,7 @@
 
 .product-price {
     margin-top: 0;
-    font-weight: bold;
+    font-weight: 600;
     font-family: 'Montserrat';
 }
 
@@ -47,7 +47,7 @@
     text-align: left;
     font-family: 'Montserrat';
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 600;
     padding-left: 45px;
     margin-top: 20px;
     margin-bottom: 0px;

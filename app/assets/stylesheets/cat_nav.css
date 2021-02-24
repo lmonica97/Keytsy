@@ -8,11 +8,11 @@
     justify-content: space-between;
     flex-direction: row;
     font-family: 'Montserrat';
-    font-weight: bold;
+    font-weight: 500;
     border-bottom: 2px solid #c7c5c7;
     margin-top: 3px;
-    padding-left: 280px;
-    padding-right: 280px;
+    padding-left: 310px;
+    padding-right: 320px;
     margin-bottom: 0px;
 }
 
@@ -21,8 +21,7 @@
     text-decoration: none;
     color: #22223b;
     padding-bottom: 11px;
-    font-size: 12px;
-
+    font-size: 13px;
 }
 
 .cat-nav-element:before {
