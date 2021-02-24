@@ -9,7 +9,6 @@ class CartShow extends React.Component{
             product: this.props.id,
             quantity: { label: this.props.quantity, value: this.props.quantity }
         }
-        debugger
         this.options = [
             {label: 1, value: 1},
             {label: 2, value: 2},
@@ -28,12 +27,8 @@ class CartShow extends React.Component{
     }
 
     update(value) {
-        debugger
         this.setState({quantity: value})
-        debugger
     }
-
-
 
     render() {
         let quantity = this.props.quantity

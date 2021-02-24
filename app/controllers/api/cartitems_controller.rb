@@ -23,17 +23,12 @@ class Api::CartitemsController < ApplicationController
         end
     end 
 
-    # def show 
-    #     @cartitem = Cartitem.all.select(|item| item.user_id == current_user.id ) 
-    #     render 'api/cartitems/show'
-    # end
-
     def destroy 
         if logged_in? 
             @cartitem = Cartitem.find_by(id: params[:id])
-            # debugger
+
             if @cartitem.destroy 
-                # debugger
+
                 @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
                 # debugger
                 render'api/cartitems/index'
@@ -52,6 +47,13 @@ class Api::CartitemsController < ApplicationController
             @existingcartitem = Cartitem.find_by(id: hash[@cartitem.product_id])
             @existingcartitem.quantity = @existingcartitem.quantity + @cartitem.quantity
             if @existingcartitem.save && logged_in? 
+                @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+                render 'api/cartitems/index'
+            else 
+                render json: @cartitem.errors.full_messages, status: 404
+            end
+        else 
+            if @cartitem.save && logged_in? 
                 @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
                 render 'api/cartitems/index'
             else 

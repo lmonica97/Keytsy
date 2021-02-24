@@ -503,9 +503,13 @@ var Cart = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Cart);
 
   function Cart(props) {
+    var _this;
+
     _classCallCheck(this, Cart);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.handleCheckout = _this.handleCheckout.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Cart, [{
@@ -521,9 +525,18 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "handleCheckout",
+    value: function handleCheckout() {
+      var _this2 = this;
+
+      this.props.items.map(function (item) {
+        _this2.props.removeItem(item.id);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this3 = this;
 
       var _this$props = this.props,
           items = _this$props.items,
@@ -541,6 +554,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       items.forEach(function (item) {
         return total += parseFloat(item.price) * parseFloat(item.quantity);
       });
+      var quarter = total / 4;
 
       if (!items) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fetching items...");
@@ -559,7 +573,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cartshow-container"
         }, items.map(function (item) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            user: _this.props.user,
+            user: _this3.props.user,
             seller: item.name,
             quantity: item.quantity,
             name: item.product_name,
@@ -602,10 +616,16 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           type: "radio",
           name: "payment",
           className: "paypal"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "klarna-info1"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "pay-img",
           src: window.klarna
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), " 4 interest-free installments"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "klarna-info"
+        }, "Pay in 4 installments of $", quarter.toFixed(2), ". ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "boldme"
+        }, "Klarna."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "items-total"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Item(s) total"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "$", total.toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "line-divider"
@@ -624,10 +644,15 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         }, "Total (", items.length, " items)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "final-price"
         }, "$", total.toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this3.handleCheckout();
+          },
           className: "checkout-button"
         }, "Proceed to checkout")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "donation"
-        }, "The Uplift Fund Supports nonprofits that provide ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "resources to creative entrepreneurs in ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "communities that need it most. You can donate ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "your change at Checkout.")))));
+        }, "The Uplift Fund Supports nonprofits that provide ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "resources to creative entrepreneurs in ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "communities that need it most. You can donate ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "your change at Checkout.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "line-divider"
+        }));
       }
     }
   }]);
@@ -663,7 +688,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  // debugger
+  debugger;
   return {
     fetchAllitems: function fetchAllitems() {
       return dispatch(Object(_actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllitems"])());
@@ -740,7 +765,6 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         value: _this.props.quantity
       }
     };
-    debugger;
     _this.options = [{
       label: 1,
       value: 1
@@ -787,11 +811,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
   _createClass(CartShow, [{
     key: "update",
     value: function update(value) {
-      debugger;
       this.setState({
         quantity: value
       });
-      debugger;
     }
   }, {
     key: "render",

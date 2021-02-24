@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 const mapDispatchToProps = dispatch => {
-    // debugger
+    debugger
     return {
         fetchAllitems: () => dispatch(fetchAllitems()),
         updateItem: cartitem => dispatch(updateItem(cartitem)),

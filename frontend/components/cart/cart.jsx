@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class Cart extends React.Component {
     constructor(props) {
         super(props)
+        this.handleCheckout = this.handleCheckout.bind(this);
     }
 
     componentDidMount() {
@@ -15,6 +16,12 @@ class Cart extends React.Component {
         if (prevProps.cartitems !== this.props.items){
             this.props.fetchAllitems();
         }
+    }
+
+    handleCheckout() {
+       this.props.items.map((item) => {
+           this.props.removeItem(item.id)
+       }) 
     }
 
     render() {
@@ -32,6 +39,7 @@ class Cart extends React.Component {
         debugger
         let total = 0
         items.forEach( item => total += (parseFloat(item.price) * parseFloat(item.quantity)))
+        let quarter = total / 4
         if (!items) {
             return (
                 <h1>Fetching items...</h1>
@@ -66,7 +74,8 @@ class Cart extends React.Component {
                                         <img className="pay-img" src={window.paypal} />
                                     <br />
                                     <input type="radio" name="payment" className="paypal" />
-                                        <img className="pay-img" src={window.klarna} />
+                                        <label className="klarna-info1"><img className="pay-img" src={window.klarna} /> 4 interest-free installments</label>
+                                        <p className="klarna-info">Pay in 4 installments of ${quarter.toFixed(2)}. <span className="boldme">Klarna.</span></p>
                                 </div>
                                 <div className="items-total">
                                     <p>Item(s) total</p>
@@ -86,13 +95,14 @@ class Cart extends React.Component {
                                     <p className="final-price">Total ({items.length} items)</p>
                                     <p className="final-price">${total.toFixed(2)}</p>
                                 </div>
-                                <button className="checkout-button">Proceed to checkout</button>
+                                <button onClick={() => this.handleCheckout()} className="checkout-button">Proceed to checkout</button>
                             </div>
                             <div>
                                 <p className="donation">The Uplift Fund Supports nonprofits that provide <br />resources to creative entrepreneurs in <br />communities that need it most. You can donate <br />your change at Checkout.</p>
                             </div>
                         </div>
                     </div>
+                    <p  className="line-divider"></p>
                 </div>
             )
         }
