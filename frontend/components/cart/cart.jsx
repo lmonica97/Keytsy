@@ -63,7 +63,7 @@ class Cart extends React.Component {
             return (
                 <div>
                     <div className="cartshow-topheader">
-                        <h2 className="cartshow-header">{items.length} items in your cart</h2>
+                        <h2 className="cartshow-header">{items.length} item(s) in your cart</h2>
                         <Link to="/" ><button className="home-button">Keep shopping</button></Link>
                     </div>
                     <div className="cart-mainbody">
