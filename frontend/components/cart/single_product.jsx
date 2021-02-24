@@ -11,7 +11,7 @@ const SingleProduct = props => {
             <p className="cart-suggest-name">{item.product_name}</p>
             <p className="cart-suggest-seller">{item.seller.name}</p>
             <p className="cart-suggest-price">${item.price}</p>
-            <button>Add to cart</button>
+            <button onClick={()=> props.addItem({user_id: props.user, product_id: item.id, quantity: 1})}>Add to cart</button>
         </li>)}
     </ul>
     )

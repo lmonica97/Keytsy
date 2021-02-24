@@ -28,7 +28,7 @@ class Cart extends React.Component {
     }
 
     render() {
-        const { items, removeItem, updateItem, products } = this.props;
+        const { items, removeItem, updateItem, products, addItem, user } = this.props;
         if (items.length === 0) {
             return(
                 <div className="empty-cart-containter">
@@ -41,11 +41,11 @@ class Cart extends React.Component {
                     <div className="cart-likes">
                         <h2 className="cart-likes-header">You may also like</h2>
                         <div className="cart-suggest-list">
-                            <SingleProduct product={products.slice(25,26)} />
-                            <SingleProduct product={products.slice(26,27)} />
-                            <SingleProduct product={products.slice(27,28)} />
-                            <SingleProduct product={products.slice(28,29)} />
-                            <SingleProduct product={products.slice(29,30)} />
+                            <SingleProduct product={products.slice(25,26)} addItem={addItem} user={user}/>
+                            <SingleProduct product={products.slice(26,27)} addItem={addItem} user={user} />
+                            <SingleProduct product={products.slice(27,28)} addItem={addItem} user={user} />
+                            <SingleProduct product={products.slice(28,29)} addItem={addItem} user={user} />
+                            <SingleProduct product={products.slice(29,30)} addItem={addItem} user={user} />
                         </div>
                     </div>
                 </div>
