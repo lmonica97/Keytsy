@@ -228,8 +228,43 @@ product25 = Product.create!(
 )
 product25.photo.attach(io: File.open("app/assets/images/products/25.jpg"), filename: "25.jpg")
 
-cart1 = Cartitem.create!(
-    user_id: user1.id,
-    product_id: product25.id,
-    quantity: 1
+product26 = Product.create!(
+    seller_id: user2.id,
+    product_name: "Doraemon-themed keycaps",
+    description: "Cherry-profile keycaps with doraemon theme. This cute keycap set would look perfect on your keyboard :)",
+    price: 50.55
 )
+product26.photo.attach(io: File.open("app/assets/images/products/26.jpg"), filename: "26.jpg")
+
+product27 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Keychron",
+    description: "75% keyboard layout. Can be used wireless through Bluetooth connection or wired. Pefect for those who travel around with their keyboards often.",
+    price: 99.99
+)
+product27.photo.attach(io: File.open("app/assets/images/products/27.jpg"), filename: "27.jpg")
+
+product28 = Product.create!(
+    seller_id: user2.id,
+    product_name: "Custom sneaker keycap",
+    description: "This cute little adidas sneaker can be on your keyboard to kick yourself to doing work!",
+    price: 20.99
+)
+product28.photo.attach(io: File.open("app/assets/images/products/28.jpg"), filename: "28.jpg")
+
+product29 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Mario lego piece",
+    description: "Super cute mario lego piece that will fit perfectly in your mario world or in your lego world.",
+    price: 32.49
+)
+product29.photo.attach(io: File.open("app/assets/images/products/29.jpg"), filename: "29.jpg")
+
+product30 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Plastic Thor Hammer",
+    description: "This plastic Thor Hammer will amaze your friends due to the fact of how cool it simply is. Dimensions: 30inx15in",
+    price: 40.49
+)
+product30.photo.attach(io: File.open("app/assets/images/products/30.jpg"), filename: "30.jpg")
+

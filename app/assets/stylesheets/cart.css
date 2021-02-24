@@ -342,13 +342,29 @@ input[type="checkbox"]:checked + label:before {
     color: black;
     font-family: 'Montserrat';
     text-align: center;
+    font-size: 18px;
+}
+
+.carthome-link:hover {
+    cursor: pointer;
+    color: rgb(182, 180, 180);
+    transition: 0.5s;
 }
 
 .carbon {
     text-align: center;
+    margin-top: 80px;
 }
 
 .carbon-img {
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
 }
+
+.cart-suggest-img {
+    object-fit: cover;
+    height: 250px; 
+    width: 250px;
+}
+

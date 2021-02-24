@@ -1,6 +1,8 @@
 import React from 'react'
 import CartShow from './cart_show';
 import { Link } from 'react-router-dom';
+import SingleProduct from './single_product';
+import products_container from '../products/products_container';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -10,6 +12,7 @@ class Cart extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllitems();
+        this.props.fetchProducts();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -25,7 +28,7 @@ class Cart extends React.Component {
     }
 
     render() {
-        const { items, removeItem, updateItem } = this.props;
+        const { items, removeItem, updateItem, products } = this.props;
         if (items.length === 0) {
             return(
                 <div className="empty-cart-containter">
@@ -34,6 +37,17 @@ class Cart extends React.Component {
                         <p className="carthome-link">Discover something unique to fill it up</p>
                     </Link>
                     <p className="carbon"><img className="carbon-img" src={window.leaf} />Keytsy offsets carbon emissions from every delivery</p>
+                    <p className="line-divider"></p>
+                    <div className="cart-likes">
+                        <h2>You may also like</h2>
+                        <div className="cart-suggest-list">
+                            <SingleProduct product={products.slice(25,26)} />
+                            <SingleProduct product={products.slice(26,27)} />
+                            <SingleProduct product={products.slice(27,28)} />
+                            <SingleProduct product={products.slice(28,29)} />
+                            <SingleProduct product={products.slice(29,30)} />
+                        </div>
+                    </div>
                 </div>
             )
         }
