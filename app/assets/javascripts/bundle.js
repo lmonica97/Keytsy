@@ -990,6 +990,7 @@ var SingleProduct = function SingleProduct(props) {
     }, item.seller.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       className: "cart-suggest-price"
     }, "$", item.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "cart-suggest-add",
       onClick: function onClick() {
         return props.addItem({
           user_id: props.user,
