@@ -13,4 +13,9 @@ class Review < ApplicationRecord
     primary_key: :id,
     foreign_key: :product_id,
     class_name: :Product
+
+    def convertToDate
+        date = Review.created_at
+        return date.strftime("%B %d, %Y")
+    end
 end

@@ -2,7 +2,12 @@ class Api::ReviewsController < ApplicationController
     before_action only: [:update, :destroy, :create]
 
     def index 
-        render 'api/reviews/index'
+        if params[:product_id]
+            @reviews = Review.where(product_id: params[:product_id])
+            render 'api/reviews/index'
+        else 
+            return nil 
+        end
     end
 
     def update 
