@@ -23,6 +23,10 @@ class User < ApplicationRecord
     through: :cartitems,
     source: :product
 
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :reviewer_id,
+    class_name: :Review
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
