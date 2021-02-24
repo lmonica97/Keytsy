@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
     before_action only: [:update, :destroy, :create]
 
     def index 
-        
+        render 'api/reviews/index'
     end
 
     def update 
