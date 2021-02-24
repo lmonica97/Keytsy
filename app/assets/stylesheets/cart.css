@@ -364,7 +364,30 @@ input[type="checkbox"]:checked + label:before {
 
 .cart-suggest-img {
     object-fit: cover;
-    height: 250px; 
-    width: 250px;
+    height: 230px; 
+    width: 285px;
 }
 
+.cart-suggest-list {
+    display: flex;
+}
+
+.cart-suggest-price {
+    font-weight: 600;
+}
+
+.cart-likes-header {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.cart-suggest-single {
+    padding: 0;
+    padding-left: 10px;
+}
+
+.cart-suggest-name, .cart-suggest-seller, .cart-suggest-price {
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+}

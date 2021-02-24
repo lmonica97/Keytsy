@@ -39,7 +39,7 @@ class Cart extends React.Component {
                     <p className="carbon"><img className="carbon-img" src={window.leaf} />Keytsy offsets carbon emissions from every delivery</p>
                     <p className="line-divider"></p>
                     <div className="cart-likes">
-                        <h2>You may also like</h2>
+                        <h2 className="cart-likes-header">You may also like</h2>
                         <div className="cart-suggest-list">
                             <SingleProduct product={products.slice(25,26)} />
                             <SingleProduct product={products.slice(26,27)} />
