@@ -553,7 +553,12 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "carthome-link"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "carthome-link"
-        }, "Discover something unique to fill it up")));
+        }, "Discover something unique to fill it up")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "carbon"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "carbon-img",
+          src: window.leaf
+        }), "Keytsy offsets carbon emissions from every delivery"));
       }
 
       debugger;

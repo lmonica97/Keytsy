@@ -33,7 +33,7 @@ class Cart extends React.Component {
                     <Link to="/" className="carthome-link">
                         <p className="carthome-link">Discover something unique to fill it up</p>
                     </Link>
-                    
+                    <p className="carbon"><img className="carbon-img" src={window.leaf} />Keytsy offsets carbon emissions from every delivery</p>
                 </div>
             )
         }

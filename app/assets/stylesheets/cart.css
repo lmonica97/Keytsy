@@ -343,3 +343,12 @@ input[type="checkbox"]:checked + label:before {
     font-family: 'Montserrat';
     text-align: center;
 }
+
+.carbon {
+    text-align: center;
+}
+
+.carbon-img {
+    height: 10px;
+    width: 10px;
+}
