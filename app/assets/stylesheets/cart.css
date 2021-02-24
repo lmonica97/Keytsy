@@ -84,7 +84,7 @@
 .cartshow-topheader {
     display: flex;
     justify-content: space-between;
-    margin-right: 260px;
+    margin-right: 280px;
 }
 
 .cartshow-topheader button {
@@ -136,11 +136,11 @@ input[type=radio] {
 
 
 .sub-items {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .final-price {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .line-divider {
@@ -151,12 +151,11 @@ input[type=radio] {
 .paymentbox {
     display: block;
     margin-left: 40px;
-    height: 600px;
+    height: 500px;
     width: 420px;
-    border: 1px solid black;
     padding: 20px 20px;
     border-radius: 20px;
-    box-shadow: 0 0 5px 5px lightgray;
+    box-shadow: 0 0 5px 5px rgb(223, 221, 221);
 }
 
 .donation {
@@ -273,6 +272,25 @@ input[type="checkbox"]:checked + label:before {
     width: 18px;
     margin-right: 8px;
     background-color: black;
+}
+
+.checkout-button {
+    text-align: center;
+    height: 50px; 
+    width: 100%;
+    border-radius: 30px;
+    background-color: #22223b;
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.checkout-button:hover {
+    transform: scale(1.04);
+    opacity: 0.8;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .checkmark:hover {
