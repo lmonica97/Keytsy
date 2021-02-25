@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         fetchProducts: () => dispatch(fetchProducts()),
         fetchAllitems: () => dispatch(fetchAllitems()),

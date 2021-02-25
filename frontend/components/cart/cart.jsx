@@ -51,7 +51,6 @@ class Cart extends React.Component {
                 </div>
             )
         }
-        debugger
         let total = 0
         items.forEach( item => total += (parseFloat(item.price) * parseFloat(item.quantity)))
         let quarter = total / 4

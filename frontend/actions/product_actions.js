@@ -20,7 +20,6 @@ const receiveProductErrors = (errors) => ({
 })
 
 export const fetchProduct = (productId) => dispatch => {
-    // debugger
     return ProductApiUtil.fetchProduct(productId)
         .then(product => dispatch(receiveProduct(product)),
         err => dispatch(receiveProductErrors(err.responseJSON)
