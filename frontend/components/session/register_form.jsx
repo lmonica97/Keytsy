@@ -23,27 +23,12 @@ class RegisterForm extends React.Component {
         this.props.processForm(user).then(this.props.closeModal);
     }
 
-    // renderErrors() {
-    //     if (this.props.errors.length !== 0) {
-    //         return(
-    //             <ul>
-    //                 {this.props.errors.map((column, value) => (
-    //                     <li className="errors" key={`error-${i}`}>
-    //                         {value}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         )
-    //     }
-    // }
-
     componentWillUnmount() {
         const errors = [];
         this.props.deleteErrors(errors);
      }
 
     render() {
-        // debugger
         return (
             <div className="register-form-container">
                 <form onSubmit={this.handleSubmit} className="register-form-box">

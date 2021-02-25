@@ -6,8 +6,6 @@ import { signup, receiveErrors } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
-    // debugger
-    // // console.log('register errors')
     return {
         errors: errors.session,
         formType: 'register',

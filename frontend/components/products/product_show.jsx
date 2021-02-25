@@ -34,14 +34,11 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props;
-        // debugger
         if (!product){
-            // debugger
             return(
                 <div>Fetching Product...</div>
             );
         } else {
-            // debugger
             return (
                 <div className="product-show-page">
                     <div>
