@@ -7,7 +7,6 @@ import CategoryNav from '../category/category_nav';
 import CartContainer from '../cart/cart_container';
 
 const Greeting = ({ currentUser, signout, openModal }) => {
-    // debugger
   const sessionLinks = () => (
     <div>
       <nav className="signin-logout">

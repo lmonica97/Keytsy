@@ -19,12 +19,9 @@ class Dropdown extends React.Component {
         e.preventDefault();
         const newState = !this.state.showDropDown
         this.setState({ showDropDown: newState })
-        // debugger
     }
 
     render() {
-        // debugger
-        // console.log('signout dropdown')
         return (
                 <div>
                     <button className="profile-dropdown" onFocus={this.showDropDown} onBlur={this.showDropDown}>
