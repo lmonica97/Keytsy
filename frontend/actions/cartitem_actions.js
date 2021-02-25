@@ -7,7 +7,6 @@ export const RECEIVE_CARTITEM_ERRORS = 'RECEIVE_CARTITEM_ERRORS';
 export const RECEIVE_ALL_CARTITEMS = 'RECEIVE_ALL_CARTITEMS';
 
 export const addCartitem = cartitem => {
-    debugger
     return {
         type: ADD_CARTITEM,
         cartitem
@@ -22,7 +21,6 @@ export const receiveCartitems = (cartitems) => {
 }
 
 export const removeCartitem = cartitemId => {
-    // debugger
     return {
         type: REMOVE_CARTITEM,
         cartitemId
@@ -43,21 +41,18 @@ export const fetchAllitems = () => dispatch => {
 }
 
 export const addItem = cartitem => dispatch => {
-    debugger
     return CartitemApiUtil.addSingleItem(cartitem)
         .then(cartitem => dispatch(addCartitem(cartitem)),
         error => dispatch(receiveCartitemErrors(error.responseJSON)))
 }
 
 export const updateItem = cartitem => dispatch => {
-    debugger
     return CartitemApiUtil.updateCartitem(cartitem)
         .then(cartitem => dispatch(addCartitem(cartitem)),
         error => dispatch(receiveCartitemErrors(error)))
 }
 
 export const removeItem = cartitemId => dispatch => {
-    debugger
     return CartitemApiUtil.removeCartitem(cartitemId)
         .then(() => dispatch(removeCartitem(cartitemId)),
         error=> dispatch(receiveCartitemErrors(error.responseJSON)))
