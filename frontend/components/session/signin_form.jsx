@@ -23,7 +23,6 @@ class SigninForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        // debugger
         this.props.processForm(user).then(() => this.props.closeModal());
     }
 
@@ -53,15 +52,11 @@ class SigninForm extends React.Component {
     }
 
     demoUser() {
-    //    debugger
        const user = { email: "demouser@gmail.com", password: "password" }
        this.props.processForm(user).then(this.props.closeModal)
-    //    debugger
     }
 
     render() {
-        // console.log('sign in form up')
-        // debugger
         return(
             <div>
                 {this.props.otherForm}

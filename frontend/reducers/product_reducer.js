@@ -5,7 +5,6 @@ const productReducer = (state = {}, action) => {
     let newState = Object.assign({}, state)
     switch(action.type) {
         case RECEIVE_PRODUCT:
-            // debugger
             return Object.assign({}, state, {[action.product.id]: action.product})
         case RECEIVE_PRODUCTS:
             return action.products

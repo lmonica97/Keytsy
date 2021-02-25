@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductSlice = (props) => {
-    // debugger
     return (
         <ul className="product-list">
             {props.products.map(product=> <li className="product-list-index" key={product.id}>
