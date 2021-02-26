@@ -4,3 +4,11 @@ export const fetchReviews = (productId) => {
         method: 'GET'
     })
 }
+
+export const updateReview = (productId, review) => {
+    return $.ajax({
+        url: `api/products/${productId}/reviews/${review.id}`,
+        method: 'PATCH',
+        data: { review }
+    })
+}
