@@ -18,6 +18,8 @@ function Modal({modal, closeModal}) {
     case 'register':
       component = <RegisterFormContainer />;
       break;
+    case 'review':
+      component = <
     default:
       return null;
   }
