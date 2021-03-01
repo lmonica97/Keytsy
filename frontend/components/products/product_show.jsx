@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewContainer from '../review/review_container';
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -34,7 +35,6 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props;
-        debugger
         if (!product){
             return(
                 <div>Fetching Product...</div>
@@ -146,6 +146,7 @@ class ProductShow extends React.Component {
                                     </li>
                                 </ul>
                             </div>
+                            <ReviewContainer />
                         </div>
                     </div>
                 </div>

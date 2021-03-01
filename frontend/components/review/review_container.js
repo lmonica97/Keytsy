@@ -3,9 +3,10 @@ import Review from './review';
 import { fetchReviews, createReview, updateReview, deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return {
         user: state.session.currentUser.id,
-        
+        product: state.entities.products
     }
 }
 

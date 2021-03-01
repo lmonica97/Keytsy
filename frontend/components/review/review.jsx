@@ -2,7 +2,14 @@ import React from 'react';
 
 class Review extends React.Component {
     render() {
-        return null;
+        const { user, product } = this.props;
+        debugger
+        return (
+            <div>
+                {user}
+                {product.id}
+            </div>
+        )
     }
 }
 
