@@ -1742,7 +1742,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function handleClick(e) {
       e.preventDefault();
       this.props.addItem({
-        user_id: this.props.currentUser,
+        user_id: this.props.currentUser.id,
         product_id: this.props.product.id,
         quantity: this.state.quantity
       }).then(this.props.history.push({
@@ -1770,6 +1770,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var product = this.props.product;
+      debugger;
 
       if (!product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching Product...");
@@ -1953,9 +1954,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     product: state.entities.products[ownProps.match.params.id],
-    currentUser: state.session.currentUser.id
+    currentUser: state.session.currentUser
   };
 };
 
