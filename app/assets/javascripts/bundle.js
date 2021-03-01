@@ -116,7 +116,6 @@ var REMOVE_CARTITEM = 'REMOVE_CARTITEM';
 var RECEIVE_CARTITEM_ERRORS = 'RECEIVE_CARTITEM_ERRORS';
 var RECEIVE_ALL_CARTITEMS = 'RECEIVE_ALL_CARTITEMS';
 var addCartitem = function addCartitem(cartitem) {
-  debugger;
   return {
     type: ADD_CARTITEM,
     cartitem: cartitem
@@ -129,7 +128,6 @@ var receiveCartitems = function receiveCartitems(cartitems) {
   };
 };
 var removeCartitem = function removeCartitem(cartitemId) {
-  // debugger
   return {
     type: REMOVE_CARTITEM,
     cartitemId: cartitemId
@@ -152,7 +150,6 @@ var fetchAllitems = function fetchAllitems() {
 };
 var addItem = function addItem(cartitem) {
   return function (dispatch) {
-    debugger;
     return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["addSingleItem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
@@ -162,7 +159,6 @@ var addItem = function addItem(cartitem) {
 };
 var updateItem = function updateItem(cartitem) {
   return function (dispatch) {
-    debugger;
     return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["updateCartitem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
@@ -172,7 +168,6 @@ var updateItem = function updateItem(cartitem) {
 };
 var removeItem = function removeItem(cartitemId) {
   return function (dispatch) {
-    debugger;
     return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["removeCartitem"](cartitemId).then(function () {
       return dispatch(removeCartitem(cartitemId));
     }, function (error) {
@@ -255,7 +250,6 @@ var receiveProductErrors = function receiveProductErrors(errors) {
 
 var fetchProduct = function fetchProduct(productId) {
   return function (dispatch) {
-    // debugger
     return _utils_product__WEBPACK_IMPORTED_MODULE_0__["fetchProduct"](productId).then(function (product) {
       return dispatch(receiveProduct(product));
     }, function (err) {
@@ -326,14 +320,12 @@ var signup = function signup(formUser) {
     return _utils_session__WEBPACK_IMPORTED_MODULE_0__["signup"](formUser).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
-      // debugger
       dispatch(receiveErrors(err.responseJSON));
     });
   };
 };
 var signin = function signin(formUser) {
   return function (dispatch) {
-    // debugger
     return _utils_session__WEBPACK_IMPORTED_MODULE_0__["signin"](formUser).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -597,7 +589,6 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         }))));
       }
 
-      debugger;
       var total = 0;
       items.forEach(function (item) {
         return total += parseFloat(item.price) * parseFloat(item.quantity);
@@ -739,7 +730,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProducts"])());
@@ -1354,7 +1344,6 @@ var Greeting = function Greeting(_ref) {
       signout = _ref.signout,
       openModal = _ref.openModal;
 
-  // debugger
   var sessionLinks = function sessionLinks() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       className: "signin-logout"
@@ -1540,13 +1529,11 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       var newState = !this.state.showDropDown;
       this.setState({
         showDropDown: newState
-      }); // debugger
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      // debugger
-      // console.log('signout dropdown')
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "profile-dropdown",
         onFocus: this.showDropDown,
@@ -1582,7 +1569,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductIndexItem = function ProductIndexItem(props) {
-  // debugger
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "product-list-index"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1692,13 +1678,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var product = this.props.product; // debugger
+      var product = this.props.product;
 
       if (!product) {
-        // debugger
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching Product...");
       } else {
-        // debugger
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-show-page"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1991,7 +1975,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger
   return {
     products: Object.values(state.entities.products)
   };
@@ -2061,8 +2044,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
-  // debugger
-  // // console.log('register errors')
   return {
     errors: errors.session,
     formType: 'register'
@@ -2159,20 +2140,7 @@ var RegisterForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(this.props.closeModal);
-    } // renderErrors() {
-    //     if (this.props.errors.length !== 0) {
-    //         return(
-    //             <ul>
-    //                 {this.props.errors.map((column, value) => (
-    //                     <li className="errors" key={`error-${i}`}>
-    //                         {value}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         )
-    //     }
-    // }
-
+    }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
@@ -2182,7 +2150,6 @@ var RegisterForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "register-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -2283,8 +2250,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
-  // console.log('state props of sign in')
-  // debugger
   return {
     errors: errors.session,
     formType: 'signin'
@@ -2391,8 +2356,7 @@ var SigninForm = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      var user = Object.assign({}, this.state); // debugger
-
+      var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
         return _this3.props.closeModal();
       });
@@ -2425,18 +2389,15 @@ var SigninForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "demoUser",
     value: function demoUser() {
-      //    debugger
       var user = {
         email: "demouser@gmail.com",
         password: "password"
       };
-      this.props.processForm(user).then(this.props.closeModal); //    debugger
+      this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
     key: "render",
     value: function render() {
-      // console.log('sign in form up')
-      // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.otherForm, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -2746,7 +2707,6 @@ var productReducer = function productReducer() {
 
   switch (action.type) {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCT"]:
-      // debugger
       return Object.assign({}, state, _defineProperty({}, action.product.id, action.product));
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCTS"]:
@@ -2949,7 +2909,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductPiece = function ProductPiece(props) {
-  // debugger
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "selections-list-index"
   }, props.product.map(function (product) {
@@ -2989,7 +2948,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductSlice = function ProductSlice(props) {
-  // debugger
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "product-list"
   }, props.products.map(function (product) {
@@ -3073,9 +3031,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var products = this.props.products; // console.log('splashcontent')
-      // debugger
-
+      var products = this.props.products;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3358,7 +3314,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  // debugger
   return {
     products: Object.values(state.entities.products)
   };
@@ -3531,7 +3486,6 @@ var Protected = function Protected(_ref2) {
   var loggedIn = _ref2.loggedIn,
       path = _ref2.path,
       Component = _ref2.component;
-  debugger;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     render: function render(props) {
