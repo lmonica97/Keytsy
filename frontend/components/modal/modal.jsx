@@ -3,8 +3,7 @@ import SigninFormContainer from '../session/signin_container';
 import RegisterFormContainer from '../session/register_container';
 import  { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-
-
+import ReviewFormContainer from '../review/create_review_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -19,7 +18,7 @@ function Modal({modal, closeModal}) {
       component = <RegisterFormContainer />;
       break;
     case 'review':
-      component = <
+      component = <ReviewFormContainer />;
     default:
       return null;
   }
