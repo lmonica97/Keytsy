@@ -43,3 +43,15 @@ export const createReview = (productId, review) => {
         .then(review => dispatch(receiveReview(review))),
         error => dispatch(receiveReviewErrors(error.responseJSON))
 }
+
+export const updateReview = (productId, review) => {
+    return ReviewApiUtil.updateReview(productId, review)
+        .then(review => dispatch(receiveReview(review)),
+        error => dispatch(receiveReviewErrors(error.responseJSON)))
+}
+
+export const deleteReview = (productId, review) => {
+    return ReviewApiUtil.deleteReview(productId, review)
+        .then(() => dispatch(removeReview(reviewId)),
+        error => dispatch(receiveReviewErrors(error.responseJSON)))
+}
