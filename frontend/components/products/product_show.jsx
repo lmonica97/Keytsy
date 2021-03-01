@@ -1,4 +1,5 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
 import ReviewContainer from '../review/review_container';
 
 class ProductShow extends React.Component {
@@ -131,6 +132,7 @@ class ProductShow extends React.Component {
                                 <p className="rating-separator">Reviews for this item</p>
                             </div>
                             <div>
+                                 <button className="createReview" onClick={() => openModal('review')}>Create Review</button>
                                 <ul>
                                     <li className="comment1">
                                         <img className="anon-pic1" src={window.anon} />
