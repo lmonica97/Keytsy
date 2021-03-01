@@ -269,6 +269,97 @@ var fetchProducts = function fetchProducts() {
 
 /***/ }),
 
+/***/ "./frontend/actions/review_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/review_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW_ERRORS, receiveReview, receiveReviews, removeReview, receiveReviewErrors, fetchReviews, createReview, updateReview, deleteReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW", function() { return RECEIVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_REVIEW", function() { return REMOVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_REVIEWS", function() { return RECEIVE_ALL_REVIEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW_ERRORS", function() { return RECEIVE_REVIEW_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReview", function() { return receiveReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReviews", function() { return receiveReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeReview", function() { return removeReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReviewErrors", function() { return receiveReviewErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReviews", function() { return fetchReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateReview", function() { return updateReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReview", function() { return deleteReview; });
+/* harmony import */ var _utils_review__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/review */ "./frontend/utils/review.js");
+
+var RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+var REMOVE_REVIEW = 'REMOVE_REVIEW';
+var RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
+var RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+var receiveReview = function receiveReview(review) {
+  debugger;
+  return {
+    type: RECEIVE_REVIEW,
+    review: review
+  };
+};
+var receiveReviews = function receiveReviews(reviews) {
+  debugger;
+  return {
+    type: RECEIVE_ALL_REVIEWS,
+    reviews: reviews
+  };
+};
+var removeReview = function removeReview(reviewId) {
+  debugger;
+  return {
+    type: REMOVE_REVIEW,
+    reviewId: reviewId
+  };
+};
+var receiveReviewErrors = function receiveReviewErrors(errors) {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors: errors
+  };
+};
+var fetchReviews = function fetchReviews(productId) {
+  return function (dispatch) {
+    debugger;
+    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["fetchReviews"](productId).then(function (reviews) {
+      return dispatch(receiveReviews(reviews));
+    }, function (error) {
+      return dispatch(receiveReviewErrors(error.responseJSON));
+    });
+  };
+};
+var createReview = function createReview(productId, review) {
+  debugger;
+  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](productId, review).then(function (review) {
+    return dispatch(receiveReview(review));
+  }), function (error) {
+    return dispatch(receiveReviewErrors(error.responseJSON));
+  };
+};
+var updateReview = function updateReview(productId, review) {
+  debugger;
+  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](productId, review).then(function (review) {
+    return dispatch(receiveReview(review));
+  }, function (error) {
+    return dispatch(receiveReviewErrors(error.responseJSON));
+  });
+};
+var deleteReview = function deleteReview(productId, review) {
+  debugger;
+  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](productId, review).then(function () {
+    return dispatch(removeReview(reviewId));
+  }, function (error) {
+    return dispatch(receiveReviewErrors(error.responseJSON));
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -2581,6 +2672,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _product_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_reducer */ "./frontend/reducers/product_reducer.js");
 /* harmony import */ var _cartitem_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cartitem_reducer */ "./frontend/reducers/cartitem_reducer.js");
+/* harmony import */ var _review_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./review_reducer */ "./frontend/reducers/review_reducer.js");
+
 
 
 
@@ -2588,7 +2681,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   products: _product_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  cartitems: _cartitem_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  cartitems: _cartitem_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  reviews: _review_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -2607,6 +2701,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
 /* harmony import */ var _product_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_errors_reducer */ "./frontend/reducers/product_errors_reducer.js");
 /* harmony import */ var _cartitem_errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cartitem_errors_reducer */ "./frontend/reducers/cartitem_errors_reducer.js");
+/* harmony import */ var _review_errors_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./review_errors_reducer */ "./frontend/reducers/review_errors_reducer.js");
+
 
 
 
@@ -2614,7 +2710,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   product: _product_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  cartitem: _cartitem_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  cartitem: _cartitem_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  review: _review_errors_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 }));
 
 /***/ }),
@@ -2721,6 +2818,91 @@ var productReducer = function productReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (productReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/review_errors_reducer.js":
+/*!****************************************************!*\
+  !*** ./frontend/reducers/review_errors_reducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/review_actions */ "./frontend/actions/review_actions.js");
+
+
+var reviewErrorsReducer = function reviewErrorsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
+      return [];
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
+      return [];
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
+      return [];
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
+      return action.errors;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reviewErrorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/review_reducer.js":
+/*!*********************************************!*\
+  !*** ./frontend/reducers/review_reducer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/review_actions */ "./frontend/actions/review_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var reviewReducer = function reviewReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
+      debugger;
+      return Object.assign({}, state, _defineProperty({}, action.review.id, action.review));
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
+      debugger;
+      return action.reviews;
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
+      debugger;
+      delete nextState[action.reviewId];
+      return nextState;
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
+      return null;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reviewReducer);
 
 /***/ }),
 
@@ -3438,6 +3620,56 @@ var createProduct = function createProduct(product) {
     },
     contentType: false,
     processData: false
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/utils/review.js":
+/*!**********************************!*\
+  !*** ./frontend/utils/review.js ***!
+  \**********************************/
+/*! exports provided: fetchReviews, updateReview, createReview, deleteReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchReviews", function() { return fetchReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateReview", function() { return updateReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReview", function() { return deleteReview; });
+var fetchReviews = function fetchReviews(productId) {
+  debugger;
+  return $.ajax({
+    url: "api/products/".concat(productId, "/reviews"),
+    method: 'GET'
+  });
+};
+var updateReview = function updateReview(productId, review) {
+  debugger;
+  return $.ajax({
+    url: "api/products/".concat(productId, "/reviews/").concat(review.id),
+    method: 'PATCH',
+    data: {
+      review: review
+    }
+  });
+};
+var createReview = function createReview(productId, review) {
+  debugger;
+  return $.ajax({
+    url: "api/products/".concat(productId, "/reviews"),
+    method: 'POST',
+    data: {
+      review: review
+    }
+  });
+};
+var deleteReview = function deleteReview(productId, review) {
+  debugger;
+  return $.ajax({
+    url: "api/products/".concat(productId, "/reviews/").concat(review.id),
+    method: 'DELETE'
   });
 };
 
