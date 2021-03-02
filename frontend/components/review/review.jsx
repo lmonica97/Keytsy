@@ -5,7 +5,7 @@ class Review extends React.Component {
         const { user, product } = this.props;
         return (
             <div>
-                hello
+                
             </div>
         )
     }

@@ -138,20 +138,18 @@ class ProductShow extends React.Component {
                     </div>
                     <div>
                         <div>
-                            <p className="rating-header">
-                                <span>{this.randomNumberGenerator()} </span> reviews <img className="rating"src={window.rating} />
-                            </p>
                             <div>
-                                <p className="rating-separator">Reviews for this item</p>
-                            </div>
-                            <div>
-                                <div>
+                                <div className="review-component">
+                                    <div>
                                     { showReviewForm && <ReviewFormContainer product={this.props.product}/> }
+                                    </div>
+                                    <div>
                                     {this.props.currentUser ? 
-                                    <button onClick={() => this.hideForm("showReviewForm")}>{showReviewForm ? "Close" : "Create Review" }</button>
-                                : null }
-                                    
+                                    <form onClick={() => this.hideForm("showReviewForm")}>{showReviewForm ? <button className="close-btn">Close</button> : <button className="create-btn">Create Review</button> }</form>
+                                     : null }
+                                    </div>     
                                 </div>
+
                                 <ReviewContainer product={this.props.product}/>
                             </div>
                         </div>

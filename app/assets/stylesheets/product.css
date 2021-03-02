@@ -143,6 +143,7 @@
 .product-show-add-button:hover {
     opacity: 0.9;
     transform: scale(1.03);
+    cursor: pointer;
 }
 
 .product-show-tag {
