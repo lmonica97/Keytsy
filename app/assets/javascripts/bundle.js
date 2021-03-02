@@ -334,7 +334,6 @@ var fetchReviews = function fetchReviews(productId) {
   };
 };
 var createReview = function createReview(review) {
-  debugger;
   return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](review).then(function (review) {
     return dispatch(receiveReview(review));
   }), function (error) {
@@ -3941,7 +3940,6 @@ var updateReview = function updateReview(review) {
   });
 };
 var createReview = function createReview(review) {
-  debugger;
   return $.ajax({
     url: "/api/reviews",
     method: 'POST',

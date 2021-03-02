@@ -16,7 +16,6 @@ export const updateReview = (review) => {
 }
 
 export const createReview = (review) => {
-    debugger
     return $.ajax({
         url: `/api/reviews`,
         method: 'POST',

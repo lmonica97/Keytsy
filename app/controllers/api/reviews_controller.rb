@@ -2,9 +2,7 @@ class Api::ReviewsController < ApplicationController
     before_action only: [:update, :destroy, :create]
 
     def index 
-        debugger
         if params[:product_id]
-            debugger
             @reviews = Review.where(product_id: params[:product_id])
             render 'api/reviews/index'
         else 
@@ -36,11 +34,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create 
-        debugger
         @review = Review.new(review_params)
-        debugger
         if @review.save && logged_in? 
-            debugger
+            @reviews = Review.where(product_id: @review.product_id)
             render 'api/reviews/index'
         else 
             render json: @review.errors.full_message, status: 404

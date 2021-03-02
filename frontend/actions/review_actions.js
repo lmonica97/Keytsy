@@ -43,7 +43,6 @@ export const fetchReviews = productId => dispatch => {
 }
 
 export const createReview = (review) => {
-    debugger
     return ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review))),
         error => dispatch(receiveReviewErrors(error.responseJSON))

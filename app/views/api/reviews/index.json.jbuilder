@@ -1,7 +1,7 @@
 @reviews.each do |review|
     json.set! review.id do 
         json.partial! 'api/reviews/review', review: review
-        json.date review.convertToDate
+        json.date review.created_at.strftime('%B %d, %Y')
         json.user review.reviewer, :name
     end
 end
