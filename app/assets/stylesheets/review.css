@@ -1,0 +1,20 @@
+.review-form-container, .review-form {
+    display: block;
+    height: 200px;
+    width: 500px;
+}
+
+.review-form-head {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.review-textarea {
+    height: 100px;
+    width: 500px;
+}
+
+.review-star-rating {
+    height: 100px;
+    width: 500px;
+}

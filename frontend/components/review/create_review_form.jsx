@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import StarRatingComponent from 'react-star-rating-component';
+import ReactStars from 'react-rating-stars-component';
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -12,6 +12,7 @@ class ReviewForm extends React.Component {
             comment: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onStarClick = this.onStarClick.bind(this);
     }
 
     update(type) {
@@ -20,8 +21,8 @@ class ReviewForm extends React.Component {
         }
     }
 
-    onStarClick(nextValue, prevValue, name) {
-        this.setState({rating: nextValue});
+    onStarClick(newRating) {
+        this.setState({rating: newRating})
     }
 
     handleSubmit(e) {
@@ -35,16 +36,16 @@ class ReviewForm extends React.Component {
         return (
             <div className="review-form-container">
                 <form className="review-form" onSubmit={this.handleSubmit}>
-                    <h1>Write a review</h1>
-                    <StarRatingComponent 
-                    name="rate1"
-                    starCount={5}
+                    <h1 className="review-form-head">Write a review</h1>
+                    <ReactStars
+                    count={5}
                     value={rating}
-                    onStarClick={this.onStarClick.bind(this)}
+                    size={34}
+                    onChange={this.onStarClick}
+                    activeColor="#ffd700"
+                    className="review-star-rating"
                     />
-                    <label>Comment
-                    <textarea type="textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
-                    </label>
+                    <textarea className="review-textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
                     <button className="review-submit-btn">Submit</button>
                 </form>
             </div>

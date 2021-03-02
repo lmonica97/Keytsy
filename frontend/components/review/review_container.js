@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         user: state.session.currentUser,
-        product: state.entities.products
     }
 }
 

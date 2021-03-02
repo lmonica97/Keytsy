@@ -1920,11 +1920,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           src: window.rating
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "rating-separator"
-        }, "Reviews for this item")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, showReviewForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_create_review_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Reviews for this item")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, showReviewForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_create_review_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          product: this.props.product
+        }), this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this3.hideForm("showReviewForm");
           }
-        }, showReviewForm ? "Close" : "Create Review") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
+        }, showReviewForm ? "Close" : "Create Review") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          product: this.props.product
+        })))));
       }
     }
   }]);
@@ -1955,6 +1959,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.session.currentUser
@@ -2102,9 +2107,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     user: state.session.currentUser,
-    product: state.entities.products,
     errors: state.errors.review
   };
 };
@@ -2133,8 +2138,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_star_rating_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-star-rating-component */ "./node_modules/react-star-rating-component/index.js");
-/* harmony import */ var react_star_rating_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_star_rating_component__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_rating_stars_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-rating-stars-component */ "./node_modules/react-rating-stars-component/dist/react-stars.js");
+/* harmony import */ var react_rating_stars_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_rating_stars_component__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2181,6 +2186,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
       comment: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.onStarClick = _this.onStarClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2195,9 +2201,9 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "onStarClick",
-    value: function onStarClick(nextValue, prevValue, name) {
+    value: function onStarClick(newRating) {
       this.setState({
-        rating: nextValue
+        rating: newRating
       });
     }
   }, {
@@ -2220,16 +2226,20 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "review-form",
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Write a review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_star_rating_component__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        name: "rate1",
-        starCount: 5,
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "review-form-head"
+      }, "Write a review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_rating_stars_component__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        count: 5,
         value: rating,
-        onStarClick: this.onStarClick.bind(this)
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Comment", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        type: "textarea",
+        size: 34,
+        onChange: this.onStarClick,
+        activeColor: "#ffd700",
+        className: "review-star-rating"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "review-textarea",
         value: this.state.comment,
         onChange: this.update("comment")
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "review-submit-btn"
       }, "Submit")));
     }
@@ -2324,8 +2334,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   debugger;
   return {
-    user: state.session.currentUser,
-    product: state.entities.products
+    user: state.session.currentUser
   };
 };
 
@@ -13428,68 +13437,6 @@ var _iconsCache = {
 };
 
 
-
-
-/***/ }),
-
-/***/ "./node_modules/classnames/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/classnames/index.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2017 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg) && arg.length) {
-				var inner = classNames.apply(null, arg);
-				if (inner) {
-					classes.push(inner);
-				}
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
 
 
 /***/ }),
@@ -46398,6 +46345,541 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-rating-stars-component/dist/hooks/useConfig.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-rating-stars-component/dist/hooks/useConfig.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.default = useConfig;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+function useConfig(config) {
+    var _useState = (0, _react.useState)(config.count),
+        _useState2 = _slicedToArray(_useState, 2),
+        count = _useState2[0],
+        setCount = _useState2[1];
+
+    var _useState3 = (0, _react.useState)(config.size),
+        _useState4 = _slicedToArray(_useState3, 2),
+        size = _useState4[0],
+        setSize = _useState4[1];
+
+    var _useState5 = (0, _react.useState)(config.char),
+        _useState6 = _slicedToArray(_useState5, 2),
+        char = _useState6[0],
+        setChar = _useState6[1];
+
+    var _useState7 = (0, _react.useState)(config.color),
+        _useState8 = _slicedToArray(_useState7, 2),
+        color = _useState8[0],
+        setColor = _useState8[1];
+
+    var _useState9 = (0, _react.useState)(config.activeColor),
+        _useState10 = _slicedToArray(_useState9, 2),
+        activeColor = _useState10[0],
+        setActiveColor = _useState10[1];
+
+    var _useState11 = (0, _react.useState)(config.isHalf),
+        _useState12 = _slicedToArray(_useState11, 2),
+        isHalf = _useState12[0],
+        setIsHalf = _useState12[1];
+
+    var _useState13 = (0, _react.useState)(config.edit),
+        _useState14 = _slicedToArray(_useState13, 2),
+        edit = _useState14[0],
+        setEdit = _useState14[1];
+
+    var _useState15 = (0, _react.useState)(config.emptyIcon),
+        _useState16 = _slicedToArray(_useState15, 2),
+        emptyIcon = _useState16[0],
+        setEmptyIcon = _useState16[1];
+
+    var _useState17 = (0, _react.useState)(config.halfIcon),
+        _useState18 = _slicedToArray(_useState17, 2),
+        halfIcon = _useState18[0],
+        setHalfIcon = _useState18[1];
+
+    var _useState19 = (0, _react.useState)(config.filledIcon),
+        _useState20 = _slicedToArray(_useState19, 2),
+        filledIcon = _useState20[0],
+        setFilledIcon = _useState20[1];
+
+    var _useState21 = (0, _react.useState)(config.a11y),
+        _useState22 = _slicedToArray(_useState21, 2),
+        a11y = _useState22[0],
+        setA11y = _useState22[1];
+
+    var configObj = {
+        count: count,
+        size: size,
+        char: char,
+        color: color,
+        activeColor: activeColor,
+        isHalf: isHalf,
+        edit: edit,
+        emptyIcon: emptyIcon,
+        halfIcon: halfIcon,
+        filledIcon: filledIcon,
+        a11y: a11y
+    };
+
+    function setConfig(config) {
+        setCount(config.count);
+        setSize(config.size);
+        setChar(config.char);
+        setColor(config.color);
+        setActiveColor(config.activeColor);
+        setIsHalf(config.isHalf);
+        setEdit(config.edit);
+        setEmptyIcon(config.emptyIcon);
+        setHalfIcon(config.halfIcon);
+        setFilledIcon(config.filledIcon);
+        setA11y(config.a11y);
+    }
+
+    return [configObj, setConfig];
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-rating-stars-component/dist/react-stars.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-rating-stars-component/dist/react-stars.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _useConfig3 = __webpack_require__(/*! ./hooks/useConfig */ "./node_modules/react-rating-stars-component/dist/hooks/useConfig.js");
+
+var _useConfig4 = _interopRequireDefault(_useConfig3);
+
+var _star = __webpack_require__(/*! ./star */ "./node_modules/react-rating-stars-component/dist/star.js");
+
+var _star2 = _interopRequireDefault(_star);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var parentStyles = {
+    overflow: "hidden",
+    position: "relative"
+};
+
+function getHalfStarStyles(color, uniqueness) {
+    return '\n    .react-stars-' + uniqueness + ':before {\n      position: absolute;\n      overflow: hidden;\n      display: block;\n      z-index: 1;\n      top: 0; left: 0;\n      width: 50%;\n      content: attr(data-forhalf);\n      color: ' + color + ';\n  }';
+}
+
+function getHalfStarStyleForIcons(color) {
+    return '\n          span.react-stars-half > * {\n          color: ' + color + ';\n      }';
+};
+
+function ReactStars(props) {
+    var _useState = (0, _react.useState)(''),
+        _useState2 = _slicedToArray(_useState, 2),
+        uniqueness = _useState2[0],
+        setUniqueness = _useState2[1];
+
+    var _useState3 = (0, _react.useState)(0),
+        _useState4 = _slicedToArray(_useState3, 2),
+        currentValue = _useState4[0],
+        setCurrentValue = _useState4[1];
+
+    var _useState5 = (0, _react.useState)([]),
+        _useState6 = _slicedToArray(_useState5, 2),
+        stars = _useState6[0],
+        setStars = _useState6[1];
+
+    var _useState7 = (0, _react.useState)(false),
+        _useState8 = _slicedToArray(_useState7, 2),
+        isUsingIcons = _useState8[0],
+        setIsUsingIcons = _useState8[1];
+
+    var _useConfig = (0, _useConfig4.default)(props),
+        _useConfig2 = _slicedToArray(_useConfig, 2),
+        config = _useConfig2[0],
+        setConfig = _useConfig2[1];
+
+    var _useState9 = (0, _react.useState)(0),
+        _useState10 = _slicedToArray(_useState9, 2),
+        halfStarAt = _useState10[0],
+        setHalfStarAt = _useState10[1];
+
+    var _useState11 = (0, _react.useState)(false),
+        _useState12 = _slicedToArray(_useState11, 2),
+        halfStarHidden = _useState12[0],
+        setHalfStarHidden = _useState12[1];
+
+    var _useState13 = (0, _react.useState)(''),
+        _useState14 = _slicedToArray(_useState13, 2),
+        classNames = _useState14[0],
+        setClassNames = _useState14[1];
+
+    function iconsUsed(config) {
+        return !config.isHalf && config.emptyIcon && config.filledIcon || config.isHalf && config.emptyIcon && config.halfIcon && config.filledIcon;
+    }
+
+    function createUniqueness() {
+        setUniqueness((Math.random() + "").replace(".", ""));
+    }
+
+    (0, _react.useEffect)(function () {
+        addClassNames();
+        validateInitialValue(props.value, props.count);
+        setStars(getStars(props.value));
+        setConfig(props);
+        createUniqueness();
+        setIsUsingIcons(iconsUsed(props));
+        setHalfStarAt(Math.floor(props.value));
+        setHalfStarHidden(props.isHalf && props.value % 1 < 0.5);
+    }, []);
+
+    function validateInitialValue(value, count) {
+        if (value < 0 || value > count) {
+            setCurrentValue(0);
+        } else {
+            setCurrentValue(value);
+        }
+    }
+
+    function addClassNames() {
+        var reactStarsClass = 'react-stars';
+        setClassNames(props.classNames + (' ' + reactStarsClass));
+    }
+
+    function isDecimal(value) {
+        return value % 1 === 0;
+    }
+
+    function getRate() {
+        return config.isHalf ? Math.floor(currentValue) : Math.round(currentValue);
+    }
+
+    function getStars(activeCount) {
+        if (typeof activeCount === 'undefined') {
+            activeCount = getRate();
+        }
+
+        var stars = [];
+        for (var i = 0; i < config.count; i++) {
+            stars.push({
+                active: i <= activeCount - 1
+            });
+        }
+        return stars;
+    }
+
+    function mouseOver(event) {
+        if (!config.edit) return;
+
+        var index = Number(event.currentTarget.getAttribute('data-index'));
+
+        if (config.isHalf) {
+            var isAtHalf = moreThanHalf(event);
+            setHalfStarHidden(isAtHalf);
+            if (isAtHalf) index += 1;
+            setHalfStarAt(index);
+        } else {
+            index += 1;
+        }
+
+        updateStars(index);
+    }
+
+    function updateStars(index) {
+        var currentActive = stars.filter(function (x) {
+            return x.active;
+        });
+        if (index !== currentActive.length) {
+            setStars(getStars(index));
+        }
+    }
+
+    function moreThanHalf(event) {
+        var target = event.target;
+
+        var boundingClientRect = target.getBoundingClientRect();
+        var mouseAt = event.clientX - boundingClientRect.left;
+        mouseAt = Math.round(Math.abs(mouseAt));
+
+        return mouseAt > boundingClientRect.width / 2;
+    }
+
+    function mouseLeave() {
+        if (!config.edit) return;
+
+        updateHalfStarValues(currentValue);
+        setStars(getStars());
+    }
+
+    function updateHalfStarValues(value) {
+        if (config.isHalf) {
+            setHalfStarHidden(isDecimal(value));
+            setHalfStarAt(Math.floor(value));
+        }
+    }
+
+    function onClick(event) {
+        if (!config.edit) return;
+
+        var index = Number(event.currentTarget.getAttribute('data-index'));
+        var value = void 0;
+        if (config.isHalf) {
+            var isAtHalf = moreThanHalf(event);
+            setHalfStarHidden(isAtHalf);
+            if (isAtHalf) index += 1;
+            value = isAtHalf ? index : index + 0.5;
+            setHalfStarAt(index);
+        } else {
+            value = index = index + 1;
+        }
+
+        currentValueUpdated(value);
+    }
+
+    function renderHalfStarStyleElement() {
+        return _react2.default.createElement('style', { dangerouslySetInnerHTML: {
+                __html: isUsingIcons ? getHalfStarStyleForIcons(config.activeColor) : getHalfStarStyles(config.activeColor, uniqueness)
+            } });
+    }
+
+    function currentValueUpdated(value) {
+        if (value !== currentValue) {
+            setStars(getStars(value));
+            setCurrentValue(value);
+            props.onChange(value);
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (!config.a11y && !config.edit) return;
+
+        var key = event.key;
+
+        var value = currentValue;
+
+        var keyNumber = Number(key); // e.g. "1" => 1, "ArrowUp" => NaN
+        if (keyNumber) {
+            if (Number.isInteger(keyNumber) && keyNumber > 0 && keyNumber <= config.count) {
+                value = keyNumber;
+            }
+        } else {
+            if ((key === "ArrowUp" || key === "ArrowRight") && value < config.count) {
+                event.preventDefault();
+
+                value += config.isHalf ? 0.5 : 1;
+            } else if ((key === "ArrowDown" || key === "ArrowLeft") && value > 0.5) {
+                event.preventDefault();
+                value -= config.isHalf ? 0.5 : 1;
+            }
+        }
+
+        updateHalfStarValues(value);
+
+        currentValueUpdated(value);
+    }
+
+    function renderStars() {
+        return stars.map(function (star, i) {
+            return _react2.default.createElement(_star2.default, {
+                key: i,
+                index: i,
+                active: star.active,
+                config: config,
+                onMouseOver: mouseOver,
+                onMouseLeave: mouseLeave,
+                onClick: onClick,
+                halfStarHidden: halfStarHidden,
+                halfStarAt: halfStarAt,
+                isUsingIcons: isUsingIcons,
+                uniqueness: uniqueness
+            });
+        });
+    }
+
+    return _react2.default.createElement(
+        'div',
+        { className: 'react-stars-wrapper-' + uniqueness,
+            style: { display: 'flex' } },
+        _react2.default.createElement(
+            'div',
+            { tabIndex: config.a11y && config.edit ? 0 : null,
+                'aria-label': 'add rating by typing an integer from 0 to 5 or pressing arrow keys',
+                onKeyDown: handleKeyDown,
+                className: classNames,
+                style: parentStyles },
+            config.isHalf && renderHalfStarStyleElement(),
+            renderStars(),
+            _react2.default.createElement(
+                'p',
+                { style: { position: 'absolute', left: '-200rem' }, role: 'status' },
+                currentValue
+            )
+        )
+    );
+}
+
+ReactStars.propTypes = {
+    classNames: _propTypes2.default.string,
+    edit: _propTypes2.default.bool,
+    half: _propTypes2.default.bool,
+    value: _propTypes2.default.number,
+    count: _propTypes2.default.number,
+    char: _propTypes2.default.string,
+    size: _propTypes2.default.number,
+    color: _propTypes2.default.string,
+    activeColor: _propTypes2.default.string,
+    emptyIcon: _propTypes2.default.element,
+    halfIcon: _propTypes2.default.element,
+    filledIcon: _propTypes2.default.element,
+    a11y: _propTypes2.default.bool
+};
+
+ReactStars.defaultProps = {
+    edit: true,
+    half: false,
+    value: 0,
+    count: 5,
+    char: '★',
+    size: 15,
+    color: 'gray',
+    activeColor: '#ffd700',
+    a11y: true,
+
+    onChange: function onChange() {}
+};
+
+exports.default = ReactStars;
+
+/***/ }),
+
+/***/ "./node_modules/react-rating-stars-component/dist/star.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-rating-stars-component/dist/star.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = Star;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultStyles = {
+    position: "relative",
+    overflow: "hidden",
+    cursor: "pointer",
+    display: "block",
+    float: "left"
+};
+
+function Star(props) {
+    var index = props.index,
+        active = props.active,
+        config = props.config,
+        onMouseOver = props.onMouseOver,
+        onMouseLeave = props.onMouseLeave,
+        onClick = props.onClick,
+        halfStarHidden = props.halfStarHidden,
+        halfStarAt = props.halfStarAt,
+        isUsingIcons = props.isUsingIcons,
+        uniqueness = props.uniqueness;
+    var color = config.color,
+        activeColor = config.activeColor,
+        size = config.size,
+        char = config.char,
+        isHalf = config.isHalf,
+        edit = config.edit,
+        halfIcon = config.halfIcon,
+        emptyIcon = config.emptyIcon,
+        filledIcon = config.filledIcon;
+
+
+    var starClass = '';
+    var half = false;
+
+    if (isHalf && !halfStarHidden && halfStarAt === index) {
+        if (!isUsingIcons) starClass = "react-stars-" + uniqueness;else starClass = 'react-stars-half';
+        half = true;
+    }
+
+    var style = _extends({}, defaultStyles, {
+        color: active ? activeColor : color,
+        cursor: edit ? 'pointer' : 'default',
+        fontSize: size + "px"
+    });
+
+    function renderIcon() {
+        if (!isUsingIcons) {
+            return char;
+        } else {
+            if (active) {
+                return filledIcon;
+            } else if (!active && half) {
+                return halfIcon;
+            } else {
+                return emptyIcon;
+            }
+        }
+    }
+
+    return _react2.default.createElement(
+        "span",
+        {
+            className: starClass,
+            style: style,
+            key: index,
+            "data-index": index,
+            "data-forhalf": filledIcon ? index : char,
+            onMouseOver: onMouseOver,
+            onMouseMove: onMouseOver,
+            onMouseLeave: onMouseLeave,
+            onClick: onClick },
+        renderIcon()
+    );
+}
+
+/***/ }),
+
 /***/ "./node_modules/react-redux/es/components/Context.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-redux/es/components/Context.js ***!
@@ -53762,274 +54244,6 @@ var manageState = function manageState(SelectComponent) {
 };
 
 
-
-
-/***/ }),
-
-/***/ "./node_modules/react-star-rating-component/index.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/react-star-rating-component/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StarRatingComponent = function (_Component) {
-  _inherits(StarRatingComponent, _Component);
-
-  function StarRatingComponent(props) {
-    _classCallCheck(this, StarRatingComponent);
-
-    var _this = _possibleConstructorReturn(this, (StarRatingComponent.__proto__ || Object.getPrototypeOf(StarRatingComponent)).call(this));
-
-    _this.state = {
-      value: props.value
-    };
-    return _this;
-  }
-
-  _createClass(StarRatingComponent, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var value = nextProps.value;
-
-
-      if (value != null && value !== this.state.value) {
-        this.setState({ value: value });
-      }
-    }
-  }, {
-    key: 'onChange',
-    value: function onChange(inputValue) {
-      var _props = this.props,
-          editing = _props.editing,
-          value = _props.value;
-
-
-      if (!editing) {
-        return;
-      }
-
-      // do not update internal state based on input value if prop passed
-      if (value != null) {
-        return;
-      }
-
-      this.setState({ value: inputValue });
-    }
-  }, {
-    key: 'onStarClick',
-    value: function onStarClick(index, value, name, e) {
-      e.stopPropagation();
-
-      var _props2 = this.props,
-          onStarClick = _props2.onStarClick,
-          editing = _props2.editing;
-
-
-      if (!editing) {
-        return;
-      }
-
-      onStarClick && onStarClick(index, value, name, e);
-    }
-  }, {
-    key: 'onStarHover',
-    value: function onStarHover(index, value, name, e) {
-      e.stopPropagation();
-
-      var _props3 = this.props,
-          onStarHover = _props3.onStarHover,
-          editing = _props3.editing;
-
-
-      if (!editing) {
-        return;
-      }
-
-      onStarHover && onStarHover(index, value, name, e);
-    }
-  }, {
-    key: 'onStarHoverOut',
-    value: function onStarHoverOut(index, value, name, e) {
-      e.stopPropagation();
-
-      var _props4 = this.props,
-          onStarHoverOut = _props4.onStarHoverOut,
-          editing = _props4.editing;
-
-
-      if (!editing) {
-        return;
-      }
-
-      onStarHoverOut && onStarHoverOut(index, value, name, e);
-    }
-  }, {
-    key: 'renderStars',
-    value: function renderStars() {
-      var _this2 = this;
-
-      var _props5 = this.props,
-          name = _props5.name,
-          starCount = _props5.starCount,
-          starColor = _props5.starColor,
-          emptyStarColor = _props5.emptyStarColor,
-          editing = _props5.editing;
-      var value = this.state.value;
-
-
-      var starStyles = function starStyles(i, value) {
-        return {
-          float: 'right',
-          cursor: editing ? 'pointer' : 'default',
-          color: value >= i ? starColor : emptyStarColor
-        };
-      };
-      var radioStyles = {
-        display: 'none',
-        position: 'absolute',
-        marginLeft: -9999
-      };
-
-      // populate stars
-      var starNodes = [];
-
-      var _loop = function _loop(i) {
-        var id = name + '_' + i;
-        var starNodeInput = _react2.default.createElement('input', {
-          key: 'input_' + id,
-          style: radioStyles,
-          className: 'dv-star-rating-input',
-          type: 'radio',
-          name: name,
-          id: id,
-          value: i,
-          checked: value === i,
-          onChange: _this2.onChange.bind(_this2, i, name)
-        });
-        var starNodeLabel = _react2.default.createElement(
-          'label',
-          {
-            key: 'label_' + id,
-            style: starStyles(i, value),
-            className: 'dv-star-rating-star ' + (value >= i ? 'dv-star-rating-full-star' : 'dv-star-rating-empty-star'),
-            htmlFor: id,
-            onClick: function onClick(e) {
-              return _this2.onStarClick(i, value, name, e);
-            },
-            onMouseOver: function onMouseOver(e) {
-              return _this2.onStarHover(i, value, name, e);
-            },
-            onMouseLeave: function onMouseLeave(e) {
-              return _this2.onStarHoverOut(i, value, name, e);
-            }
-          },
-          _this2.renderIcon(i, value, name, id)
-        );
-
-        starNodes.push(starNodeInput);
-        starNodes.push(starNodeLabel);
-      };
-
-      for (var i = starCount; i > 0; i--) {
-        _loop(i);
-      }
-
-      return starNodes.length ? starNodes : null;
-    }
-  }, {
-    key: 'renderIcon',
-    value: function renderIcon(index, value, name, id) {
-      var _props6 = this.props,
-          renderStarIcon = _props6.renderStarIcon,
-          renderStarIconHalf = _props6.renderStarIconHalf;
-
-
-      if (typeof renderStarIconHalf === 'function' && Math.ceil(value) === index && value % 1 !== 0) {
-        return renderStarIconHalf(index, value, name, id);
-      }
-
-      if (typeof renderStarIcon === 'function') {
-        return renderStarIcon(index, value, name, id);
-      }
-
-      return _react2.default.createElement(
-        'i',
-        { key: 'icon_' + id, style: { fontStyle: 'normal' } },
-        '\u2605'
-      );
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props7 = this.props,
-          editing = _props7.editing,
-          className = _props7.className;
-
-      var classes = (0, _classnames2.default)('dv-star-rating', {
-        'dv-star-rating-non-editable': !editing
-      }, className);
-
-      return _react2.default.createElement(
-        'div',
-        { style: { display: 'inline-block', position: 'relative' }, className: classes },
-        this.renderStars()
-      );
-    }
-  }]);
-
-  return StarRatingComponent;
-}(_react.Component);
-
-StarRatingComponent.propTypes = {
-  name: _propTypes2.default.string.isRequired,
-  value: _propTypes2.default.number,
-  editing: _propTypes2.default.bool,
-  starCount: _propTypes2.default.number,
-  starColor: _propTypes2.default.string,
-  onStarClick: _propTypes2.default.func,
-  onStarHover: _propTypes2.default.func,
-  onStarHoverOut: _propTypes2.default.func,
-  renderStarIcon: _propTypes2.default.func,
-  renderStarIconHalf: _propTypes2.default.func
-};
-StarRatingComponent.defaultProps = {
-  starCount: 5,
-  editing: true,
-  starColor: '#ffb400',
-  emptyStarColor: '#333'
-};
-exports.default = StarRatingComponent;
-module.exports = exports['default'];
 
 
 /***/ }),
