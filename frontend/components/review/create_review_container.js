@@ -3,7 +3,6 @@ import ReviewForm from './create_review_form';
 import { createReview, receiveReviewErrors } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         user: state.session.currentUser,
         errors: state.errors.review,

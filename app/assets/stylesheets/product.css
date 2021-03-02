@@ -72,10 +72,11 @@
     position: relative;
     padding-top: 35px;
     height: 635px;
-    width: 800px;
+    width: 700px;
     display: block;
-    padding-left: 95px;
+    padding-left: 205px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .product-show-name {
@@ -158,7 +159,7 @@
     position: absolute;
     left: 63.5%;
     top: 800px;
-    padding-right: 290px;
+    padding-right: 320px;
     line-height: 2;
     font-size: 14px;
 }
@@ -205,7 +206,7 @@
     position: absolute;
     top: 485px;
     left: 66.5%;
-    padding-right: 280px;
+    padding-right: 320px;
     font-size: 12px;
 }
 
@@ -433,7 +434,7 @@
     display: block;
     border-radius: 5px;
     border: 3px solid black;
-    margin-left: 23px;
+    margin-left: 60px;
     margin-top: 35px;
 }
 

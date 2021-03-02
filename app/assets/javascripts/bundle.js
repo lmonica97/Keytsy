@@ -2105,7 +2105,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     user: state.session.currentUser,
     errors: state.errors.review
@@ -2207,7 +2206,6 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      debugger;
       e.preventDefault();
       this.props.createReview({
         reviewer_id: this.state.reviewer_id,
@@ -2220,7 +2218,6 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var rating = this.state.rating;
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-form-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -2300,18 +2297,24 @@ var Review = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(Review);
 
-  function Review() {
+  function Review(props) {
     _classCallCheck(this, Review);
 
-    return _super.apply(this, arguments);
+    return _super.call(this, props);
   }
 
   _createClass(Review, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchReviews(this.props.product.id);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           user = _this$props.user,
-          product = _this$props.product;
+          product = _this$props.product,
+          reviews = _this$props.reviews;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
   }]);
@@ -2342,7 +2345,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   debugger;
   return {
-    user: state.session.currentUser
+    user: state.session.currentUser,
+    reviews: state.entities.reviews
   };
 };
 

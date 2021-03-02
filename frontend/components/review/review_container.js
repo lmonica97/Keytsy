@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         user: state.session.currentUser,
+        reviews: state.entities.reviews
     }
 }
 

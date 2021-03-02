@@ -26,14 +26,12 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.createReview({reviewer_id: this.state.reviewer_id, product_id: this.state.product_id, rating: this.state.rating, comment: this.state.comment})
     }
 
     render() {
         const { rating } = this.state;
-        debugger
         return (
             <div className="review-form-container">
                 <form className="review-form" onSubmit={this.handleSubmit}>
