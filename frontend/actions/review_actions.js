@@ -42,16 +42,16 @@ export const fetchReviews = productId => dispatch => {
         error => dispatch(receiveReviewErrors(error.responseJSON)))
 }
 
-export const createReview = (productId, review) => {
+export const createReview = (review) => {
     debugger
-    return ReviewApiUtil.createReview(productId, review)
+    return ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review))),
         error => dispatch(receiveReviewErrors(error.responseJSON))
 }
 
-export const updateReview = (productId, review) => {
+export const updateReview = (review) => {
     debugger
-    return ReviewApiUtil.updateReview(productId, review)
+    return ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)),
         error => dispatch(receiveReviewErrors(error.responseJSON)))
 }

@@ -6,7 +6,7 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            reviewer_id: this.props.user,
+            reviewer_id: this.props.user.id,
             product_id: this.props.product.id,
             rating: 1,
             comment: ''
@@ -26,8 +26,9 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
-        this.props.createReview({productId: this.state.product_id}, {review: this.state } )
+        this.props.createReview({reviewer_id: this.state.reviewer_id, product_id: this.state.product_id, rating: this.state.rating, comment: this.state.comment})
     }
 
     render() {

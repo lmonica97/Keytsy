@@ -333,17 +333,17 @@ var fetchReviews = function fetchReviews(productId) {
     });
   };
 };
-var createReview = function createReview(productId, review) {
+var createReview = function createReview(review) {
   debugger;
-  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](productId, review).then(function (review) {
+  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](review).then(function (review) {
     return dispatch(receiveReview(review));
   }), function (error) {
     return dispatch(receiveReviewErrors(error.responseJSON));
   };
 };
-var updateReview = function updateReview(productId, review) {
+var updateReview = function updateReview(review) {
   debugger;
-  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](productId, review).then(function (review) {
+  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
     return dispatch(receiveReview(review));
   }, function (error) {
     return dispatch(receiveReviewErrors(error.responseJSON));
@@ -2179,7 +2179,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      reviewer_id: _this.props.user,
+      reviewer_id: _this.props.user.id,
       product_id: _this.props.product.id,
       rating: 1,
       comment: ''
@@ -2208,11 +2208,13 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      debugger;
       e.preventDefault();
       this.props.createReview({
-        productId: this.state.product_id
-      }, {
-        review: this.state
+        reviewer_id: this.state.reviewer_id,
+        product_id: this.state.product_id,
+        rating: this.state.rating,
+        comment: this.state.comment
       });
     }
   }, {
@@ -3924,24 +3926,24 @@ __webpack_require__.r(__webpack_exports__);
 var fetchReviews = function fetchReviews(productId) {
   debugger;
   return $.ajax({
-    url: "api/products/".concat(productId, "/reviews"),
+    url: "/api/products/".concat(productId, "/reviews"),
     method: 'GET'
   });
 };
-var updateReview = function updateReview(productId, review) {
+var updateReview = function updateReview(review) {
   debugger;
   return $.ajax({
-    url: "api/products/".concat(productId, "/reviews/").concat(review.id),
+    url: "/api/reviews/".concat(review.id),
     method: 'PATCH',
     data: {
       review: review
     }
   });
 };
-var createReview = function createReview(productId, review) {
+var createReview = function createReview(review) {
   debugger;
   return $.ajax({
-    url: "api/products/".concat(productId, "/reviews"),
+    url: "/api/reviews",
     method: 'POST',
     data: {
       review: review
@@ -3951,7 +3953,7 @@ var createReview = function createReview(productId, review) {
 var deleteReview = function deleteReview(productId, review) {
   debugger;
   return $.ajax({
-    url: "api/products/".concat(productId, "/reviews/").concat(review.id),
+    url: "/api/products/".concat(productId, "/reviews/").concat(review.id),
     method: 'DELETE'
   });
 };
