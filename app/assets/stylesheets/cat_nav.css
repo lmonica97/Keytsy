@@ -11,8 +11,8 @@
     font-weight: 500;
     border-bottom: 2px solid #c7c5c7;
     margin-top: 3px;
-    padding-left: 310px;
-    padding-right: 320px;
+    padding-left: 280px;
+    padding-right: 280px;
     margin-bottom: 0px;
 }
 
@@ -22,6 +22,8 @@
     color: #22223b;
     padding-bottom: 11px;
     font-size: 13px;
+    margin-right: 20px;
+
 }
 
 .cat-nav-element:before {

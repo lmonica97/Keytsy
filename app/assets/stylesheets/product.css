@@ -74,7 +74,7 @@
     height: 635px;
     width: 700px;
     display: block;
-    padding-left: 205px;
+    padding-left: 135px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -434,7 +434,7 @@
     display: block;
     border-radius: 5px;
     border: 3px solid black;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: 35px;
 }
 

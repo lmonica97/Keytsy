@@ -330,10 +330,10 @@ input[type="checkbox"]:checked + label:before {
 
 .emptycart {
     font-family: 'Montserrat';
-    font-size: 32px;
+    font-size: 30px;
     margin-left: 310px;
     margin-right: 320px;
-    margin-top: 100px;
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -342,7 +342,7 @@ input[type="checkbox"]:checked + label:before {
     color: black;
     font-family: 'Montserrat';
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .carthome-link:hover {
@@ -354,18 +354,20 @@ input[type="checkbox"]:checked + label:before {
 .carbon {
     text-align: center;
     margin-top: 80px;
+    font-size: 12px;
+    margin-bottom: 40px;
 }
 
 .carbon-img {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     margin-left: 10px;
 }
 
 .cart-suggest-img {
     object-fit: cover;
-    height: 230px; 
-    width: 275px;
+    height: 200px; 
+    width: 235px;
     border-radius: 3px;
 }
 
@@ -392,7 +394,7 @@ input[type="checkbox"]:checked + label:before {
 
 .cart-suggest-single {
     padding: 0;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .cart-suggest-name, .cart-suggest-seller, .cart-suggest-price {
