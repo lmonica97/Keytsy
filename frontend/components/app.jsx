@@ -22,7 +22,6 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/products/:id" component={ProductShowContainer} />
             <ProtectedRoute exact path="/cart" component={CartContainer} />
-
         </Switch>
         <Footer />
     </div>

@@ -1,12 +1,14 @@
 import React from 'react';
 import { openModal } from '../../actions/modal_actions';
 import ReviewContainer from '../review/review_container';
+import ReviewFormContainer from '../review/create_review_container';
 
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            quantity: 1
+            quantity: 1,
+            showReviewForm: false,
         }
         this.handleClick = this.handleClick.bind(this);
         // this.fetchSeller = this.fetchSeller.bind(this);
@@ -14,6 +16,16 @@ class ProductShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.id);
+    }
+
+    hideForm(name) {
+        switch(name) {
+            case "showReviewForm":
+                this.setState({ showReviewForm: !this.state.showReviewForm })
+                break;
+            default:
+                null;
+        }
     }
 
     handleClick(e) {
@@ -36,6 +48,7 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props;
+        const { showReviewForm } = this.state;
         if (!product){
             return(
                 <div>Fetching Product...</div>
@@ -132,7 +145,13 @@ class ProductShow extends React.Component {
                                 <p className="rating-separator">Reviews for this item</p>
                             </div>
                             <div>
-                                <button className="createReview" onClick={() => openModal('review')}>Create Review</button>
+                                <div>
+                                    { showReviewForm && <ReviewFormContainer /> }
+                                    {this.props.currentUser ? 
+                                    <button onClick={() => this.hideForm("showReviewForm")}>{showReviewForm ? "Close" : "Create Review" }</button>
+                                : null }
+                                    
+                                </div>
                                 <ReviewContainer />
                             </div>
                         </div>

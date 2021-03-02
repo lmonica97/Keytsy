@@ -1349,8 +1349,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_register_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../session/register_container */ "./frontend/components/session/register_container.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var _review_create_review_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../review/create_review_container */ "./frontend/components/review/create_review_container.js");
-
 
 
 
@@ -1375,9 +1373,6 @@ function Modal(_ref) {
     case 'register':
       component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_register_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       break;
-
-    case 'review':
-      component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_create_review_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
 
     default:
       return null;
@@ -1694,6 +1689,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _review_review_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../review/review_container */ "./frontend/components/review/review_container.js");
+/* harmony import */ var _review_create_review_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../review/create_review_container */ "./frontend/components/review/create_review_container.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1722,6 +1718,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var ProductShow = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductShow, _React$Component);
 
@@ -1734,7 +1731,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      quantity: 1
+      quantity: 1,
+      showReviewForm: false
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this)); // this.fetchSeller = this.fetchSeller.bind(this);
 
@@ -1745,6 +1743,20 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.id);
+    }
+  }, {
+    key: "hideForm",
+    value: function hideForm(name) {
+      switch (name) {
+        case "showReviewForm":
+          this.setState({
+            showReviewForm: !this.state.showReviewForm
+          });
+          break;
+
+        default:
+          null;
+      }
     }
   }, {
     key: "handleClick",
@@ -1778,7 +1790,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var product = this.props.product;
+      var showReviewForm = this.state.showReviewForm;
 
       if (!product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching Product...");
@@ -1905,12 +1920,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           src: window.rating
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "rating-separator"
-        }, "Reviews for this item")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "createReview",
+        }, "Reviews for this item")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, showReviewForm && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_create_review_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["openModal"])('review');
+            return _this3.hideForm("showReviewForm");
           }
-        }, "Create Review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
+        }, showReviewForm ? "Close" : "Create Review") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
       }
     }
   }]);
@@ -1935,8 +1949,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show */ "./frontend/components/products/product_show.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/cartitem_actions */ "./frontend/actions/cartitem_actions.js");
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-
 
 
 
@@ -1956,9 +1968,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     addItem: function addItem(cartItem) {
       return dispatch(Object(_actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_3__["addItem"])(cartItem));
-    },
-    openModal: function openModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])(modal));
     }
   };
 };
@@ -2088,18 +2097,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _create_review_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create_review_form */ "./frontend/components/review/create_review_form.jsx");
 /* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-
 
 
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    user: state.session.currentUser.id,
+    user: state.session.currentUser,
     product: state.entities.products,
-    errors: state.errors.review,
-    formType: 'review'
+    errors: state.errors.review
   };
 };
 
@@ -2107,9 +2113,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createReview: function createReview(productId, review) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["createReview"])(productId, review));
-    },
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
   };
 };
@@ -2178,7 +2181,10 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewForm, [{
     key: "render",
     value: function render() {
-      return null;
+      debugger;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Write a review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Comment", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "textarea"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Submit")));
     }
   }]);
 
@@ -2241,8 +2247,7 @@ var Review = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           user = _this$props.user,
           product = _this$props.product;
-      debugger;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, user, product.id);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "hello");
     }
   }]);
 

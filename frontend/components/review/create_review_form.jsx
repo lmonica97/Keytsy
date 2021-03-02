@@ -13,7 +13,18 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-        return null;
+        debugger
+        return (
+            <div>
+                <form>
+                    <h1>Write a review</h1>
+                    <label>Comment
+                    <input type="textarea"></input>
+                    </label>
+                    <button>Submit</button>
+                </form>
+            </div>
+        )
     }
 }
 
