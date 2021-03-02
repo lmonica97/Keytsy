@@ -369,6 +369,12 @@ input[type="checkbox"]:checked + label:before {
     border-radius: 3px;
 }
 
+.cart-suggest-img:hover {
+    box-shadow: 0 8px 6px -6px lightgray;
+    cursor: pointer;
+}
+
+
 .cart-suggest-list {
     display: flex;
     margin-bottom: 100px;

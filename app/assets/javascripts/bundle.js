@@ -1733,8 +1733,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       quantity: 1,
       showReviewForm: false
     };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this)); // this.fetchSeller = this.fetchSeller.bind(this);
-
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1957,7 +1956,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.session.currentUser

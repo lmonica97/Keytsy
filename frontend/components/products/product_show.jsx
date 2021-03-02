@@ -11,7 +11,6 @@ class ProductShow extends React.Component {
             showReviewForm: false,
         }
         this.handleClick = this.handleClick.bind(this);
-        // this.fetchSeller = this.fetchSeller.bind(this);
     }
 
     componentDidMount() {
