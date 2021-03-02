@@ -1910,33 +1910,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           onClick: function onClick() {
             return Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["openModal"])('review');
           }
-        }, "Create Review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "comment1"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "anon-pic1",
-          src: window.anon
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "comment1-user",
-          href: "#"
-        }, "DemoUser"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "comment1-date"
-        }, "Jan 25, 2020"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "rating1",
-          src: window.rating
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This product is awesome, I would highly recommend it to everyone! It literally changed my life!!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "comment2"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "anon-pic2",
-          src: window.anon
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "comment2-user",
-          href: "#"
-        }, "Monica"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "comment2-date"
-        }, "Jan 26, 2020"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "rating2",
-          src: window.rating
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Honestly, everyone should be buying this product. I agree with the user above, that the product really is awesome. :)")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+        }, "Create Review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_review_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))));
       }
     }
   }]);
@@ -2298,7 +2272,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   debugger;
   return {
-    user: state.session.currentUser.id,
+    user: state.session.currentUser,
     product: state.entities.products
   };
 };

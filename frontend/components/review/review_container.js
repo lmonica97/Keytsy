@@ -5,7 +5,7 @@ import { fetchReviews, createReview, updateReview, deleteReview } from '../../ac
 const mapStateToProps = (state, ownProps) => {
     debugger
     return {
-        user: state.session.currentUser.id,
+        user: state.session.currentUser,
         product: state.entities.products
     }
 }
