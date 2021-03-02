@@ -60,7 +60,7 @@ class Cart extends React.Component {
             )
         } else {
             return (
-                <div>
+                <div className="cart-whole">
                     <div className="cartshow-topheader">
                         <h2 className="cartshow-header">{items.length} item(s) in your cart</h2>
                         <Link to="/" ><button className="home-button">Keep shopping</button></Link>
@@ -74,7 +74,7 @@ class Cart extends React.Component {
                                 ))
                             }
                         </ul>
-                        <div>
+                        <div className="paymentbox-container">
                             <div className="paymentbox">
                                 <h3 className="payment-header">How you'll pay</h3>
                                 <div>
@@ -116,7 +116,8 @@ class Cart extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <p  className="line-divider"></p>
+                    <p className="carbon"><img className="carbon-img" src={window.leaf} />Keytsy offsets carbon emissions from every delivery</p>
+                    <p className="line-divider1"></p>
                 </div>
             )
         }

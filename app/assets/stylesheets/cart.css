@@ -1,12 +1,12 @@
 .cartshow-image {
-    height: 205px; 
-    width: 235px;
+    height: 165px; 
+    width: 205px;
     display: flex;
     border-radius: 5px;
 }
 
 .cartshow-container {
-    margin-left: 200px;
+    margin-left: 180px;
     font-family: 'Montserrat';
 }
 
@@ -15,22 +15,24 @@
     margin-left: 290px;
     margin-top: 40px;
     margin-bottom: 40px;
+    font-size: 27px;
+    font-weight: 400;
 }
 
 .cartshow-index {
     margin-bottom: 50px;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     margin-left: 60px;
     height: 300px;
-    width: 1000px;
+    width: 800px;
 }
 
 .cartshow-strings {
     display: flex;
     position: top;
     margin-left: 15px;
-    width: 500px;
+    width: 350px;
     height: 100px;
 }
 
@@ -43,20 +45,19 @@
 
 .cart-name {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     display: block;
     height: 70px;
-    width: 400px;
+    width: 300px;
     margin-top: 5px;
 }
 
 .select-cart {
     display: block;
-    padding-left: 100px;
 }
 
 .cart-quant {
-    font-weight:500;
+font-weight:500;
    display: block;
    height: 60px;
    width: 80px; 
@@ -70,7 +71,7 @@
     height: 50px;
     width: 200px;
     padding-left: 110px;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .cartitem-total {
@@ -84,16 +85,15 @@
 .cartshow-topheader {
     display: flex;
     justify-content: space-between;
-    margin-right: 280px;
+    margin-right: 290px;
 }
 
 .cartshow-topheader button {
-    margin-left: 935px;
     background-color: white;
     font-family: 'Montserrat';
-    font-weight: 400;
+    font-weight: 600;
     padding: 15px 20px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 30px;
     margin-top: 30px;
     border: none;
@@ -105,13 +105,13 @@
 
 .payment-header {
     font-family: 'Montserrat';
-    font-weight: 900;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 17px;
 }
 
 input[type=radio] {
-    transform: scale(3);
-    margin-right: 30px;
+    transform: scale(2.3);
+    margin-right: 18px;
     margin-bottom: 20px;
 }
 
@@ -124,6 +124,7 @@ input[type=radio] {
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat';
+    font-size: 15px;
 }
 
 .pay-img {
@@ -156,6 +157,7 @@ input[type=radio] {
 
 .final-price {
     font-weight: 600;
+    font-size: 15px;
 }
 
 .line-divider {
@@ -163,28 +165,39 @@ input[type=radio] {
     margin: 0px;
 }
 
+.line-divider1 {
+    border-top: 1px solid lightgray;
+    margin-bottom: 20px;
+    margin-right: 290px;
+    margin-left: 280px;
+}
+
 .paymentbox {
     display: block;
-    margin-left: 40px;
-    height: 470px;
-    width: 420px;
+    margin-left: 60px;
+    height: 450px;
+    width: 400px;
     padding: 20px 20px;
     border-radius: 20px;
-    box-shadow: 0 0 5px 5px rgb(223, 221, 221);
+    box-shadow: 0 0 5px 5px rgb(245, 245, 245);
+}
+
+.paymentbox-container {
+    margin-bottom: 20px;
+}
+
+.cart-whole {
+    font-family: 'Montserrat';
 }
 
 .donation {
     font-family: 'Montserrat';
     margin-left: 80px;
+    font-size: 15px;
 }
 .cartshow-topheader button:hover {
     background-color: rgb(204, 204, 204);
     transition: 0.5s;
-}
-
-.cartshow-header {
-    font-size: 30px;
-    font-weight: 400;
 }
 
 .cartshow-seller {
@@ -203,7 +216,7 @@ input[type=radio] {
     padding-left: 15px;
     margin-top: 6px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .cartshow-item-index {
@@ -222,10 +235,10 @@ input[type=radio] {
     font-weight: 600;
     font-family: 'Montserrat';
     border-radius: 15px;
-    padding: 10px 15px;
-    font-size: 15px;
-    height: 50px;
-    width: 100px;
+    padding: 5px 10px;
+    font-size: 13px;
+    height: 40px;
+    width: 80px;
 }
 
 .update-button {
@@ -234,11 +247,11 @@ input[type=radio] {
     font-weight: 600;
     font-family: 'Montserrat';
     border-radius: 15px;
-    padding: 10px 15px;
-    font-size: 15px;
-    height: 50px;
-    width: 100px;
-    margin-right: 60px;
+    padding: 5px 10px;
+    font-size: 13px;
+    height: 40px;
+    width: 80px;
+    margin-right: 90px;
     display:block;
     position:relative;
     right: 22%;
@@ -246,13 +259,14 @@ input[type=radio] {
 
 .cart-textarea {
     margin-top: 20px;
-    height: 80px;
-    width: 500px;
+    height: 60px;
+    width: 400px;
     padding: 10px 10px;
     font-family: 'Montserrat';
     font-weight: 300;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 5px;
+    border: none;
     box-shadow: inset 0 0 10px lightgray;
 }
 
@@ -260,9 +274,9 @@ input[type=radio] {
     display: block;
     cursor: pointer;
     margin-top: 25px;
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Montserrat';
-    font-weight: 400;
+    font-weight: 500;
     padding-bottom: 5px;
 }
 
@@ -283,8 +297,8 @@ input[type="checkbox"]:checked + label:before {
 }
 
 .checkmark {
-    height: 18px;
-    width: 18px;
+    height: 15px;
+    width: 15px;
     margin-right: 8px;
     background-color: black;
 }
@@ -353,7 +367,7 @@ input[type="checkbox"]:checked + label:before {
 
 .carbon {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 12px;
     margin-bottom: 40px;
 }
