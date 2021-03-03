@@ -134,7 +134,7 @@
     margin-left: 60px;
 }
 
-.review-update {
+.review-update, .update-review, .delete-review {
     background-color: #22223b;
     font-family: 'Montserrat';
     font-size: 13px;
@@ -145,10 +145,58 @@
     color: white;
 }
 
+.update-review {
+    margin-right: 30px;
+}
+
+.review-update-close {
+    background-color: #22223b;
+    font-family: 'Montserrat';
+    font-size: 13px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    color: white;
+    
+}
+
+
 .review-main-container {
     display: block;
-    height: 200px;
+    height: 230px;
     width: 800px;
+}
+
+.review-edit-container {
+    display: block;
+    font-family: 'Montserrat';
+    margin-left: 30px;
+}
+
+.review-update-text {
+    font-family: 'Montserrat';
+    height: 60px;
+    width: 720px;
+    padding: 10px 10px;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.review-edit-head {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+ {
+    background-color: #22223b;
+    font-family: 'Montserrat';
+    font-size: 13px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    color: white;
 }
 
 .review-user-date {

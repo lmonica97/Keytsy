@@ -45,12 +45,25 @@ class ReviewShow extends React.Component {
             4: <img className="review-star-rating" src={window.rating4} />,
             5: <img className="review-star-rating" src={window.rating5} />
         }
+        if (!this.props.currentUser) {
+            return (
+                <div className="review-show-container">
+                        <div className="review-user-date">
+                            <img className="review-user-pic" src={window.anon} />
+                            <p className="review-user">{this.props.user}</p>
+                            <p className="review-date">{this.props.date}</p>
+                        </div>
+                        <p className="star-container">{stars[this.props.rating]}</p>
+                        <p className="review-comment">{this.props.comment}</p>
+                </div>
+            )
+        } else {
         return (
             <li className="review-index-container" key={this.props.id}>
                 <div className="review-main-container">
                     { showUpdateForm ? 
-                    <div>
-                        <h1>Update Your Review</h1>
+                    <div className="review-edit-container">
+                        <h1 className="review-edit-head">Update Your Review</h1>
                         <div className="review-rating-disp">
                             <p className="rating-text">Rating: </p>
                             <ReactStars
@@ -64,8 +77,8 @@ class ReviewShow extends React.Component {
                             <p className="rating-text1">{this.props.rating} Star(s)</p>
                         </div>
                         <textarea className="review-update-text" value={this.props.comment} onChange={this.update("comment")}></textarea>
-                        <button>Update</button>
-                        <button>Delete Review</button>
+                        <button className="update-review">Update</button>
+                        <button className="delete-review">Delete Review</button>
                     </div> :
                     <div className="review-show-container">
                         <div className="review-user-date">
@@ -77,7 +90,7 @@ class ReviewShow extends React.Component {
                         <p className="review-comment">{this.props.comment}</p>
                     </div>
                     }
-                    { this.props.currentUser === this.props.reviewerId ? 
+                    { this.props.currentUser.id === this.props.reviewerId ? 
                         <div className="review-update-delete">
                             <form onClick={() => this.hideForm("showUpdateForm")}>
                                 {showUpdateForm ? <button className="review-update-close">Cancel</button> : <button className="review-update">Update Review</button>}
@@ -87,6 +100,7 @@ class ReviewShow extends React.Component {
                 </div>
             </li>
         )
+        }
     }
 }
 
