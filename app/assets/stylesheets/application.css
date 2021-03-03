@@ -212,15 +212,21 @@
   }
 
   .cart {
+    display: block;
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 16%;
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
+    padding: 4px 4px;
   }
 
 .cart:hover {
   cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  background-color: #f2e9e4;
+  transition-duration: 0.5s;
 }
 
 header {
