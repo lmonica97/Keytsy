@@ -11,11 +11,12 @@ class Review extends React.Component {
     }
 
     render() {
-        const { user, product, reviews } = this.props;
+        const { user, product, reviews, updateReview, deleteReview } = this.props;
         return (
-            <div>
+            <div className="review-list-container">
                 {reviews.map(review => (
-                    <ReviewShow user={review.user.name} date={review.date} comment={review.comment} rating={review.rating} />
+                    <ReviewShow id={review.id} user={review.user.name} date={review.date} comment={review.comment} rating={review.rating} currentUser={user.id}
+                    updateReview={updateReview} deleteReview={deleteReview} />
                 ))}
             </div>
         )

@@ -2329,13 +2329,21 @@ var Review = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           user = _this$props.user,
           product = _this$props.product,
-          reviews = _this$props.reviews;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reviews.map(function (review) {
+          reviews = _this$props.reviews,
+          updateReview = _this$props.updateReview,
+          deleteReview = _this$props.deleteReview;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-list-container"
+      }, reviews.map(function (review) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          id: review.id,
           user: review.user.name,
           date: review.date,
           comment: review.comment,
-          rating: review.rating
+          rating: review.rating,
+          currentUser: user.id,
+          updateReview: updateReview,
+          deleteReview: deleteReview
         });
       }));
     }
@@ -2463,11 +2471,23 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           src: window.rating5
         })
       };
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "review-index-container"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "review-index-container",
+        key: this.props.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-user-date"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.user), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.comment));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "review-user-pic",
+        src: window.anon
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "review-user"
+      }, this.props.user), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "review-date"
+      }, this.props.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "star-container"
+      }, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "review-comment"
+      }, this.props.comment));
     }
   }]);
 

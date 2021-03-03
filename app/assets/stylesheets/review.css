@@ -89,3 +89,46 @@
     margin-left: 60px;
 }
 
+.review-list-container {
+    display: relative;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.review-user {
+    padding: 0 20px;
+    font-size: 13px;
+
+}
+
+.review-date {
+    font-size: 13px;
+}
+
+.review-user-pic {
+    height: 37px;
+    width: 37px;
+}
+
+.review-star-rating {
+    display: block;
+    height: 20px;
+    margin-left: 60px;
+}
+
+.review-comment {
+    margin-left: 60px;
+}
+
+.star-container {
+    padding: 0;
+    margin: 0;
+}
+.review-index-container {
+  margin-bottom: 30px; 
+  list-style: none;  
+}
+
+.review-user-date {
+    display: flex;
+}
