@@ -5,6 +5,7 @@ const cartitemReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state)
     switch(action.type) {
         case RECEIVE_ALL_CARTITEMS:
+            debugger
             return action.cartitems
         case ADD_CARTITEM:
             return Object.assign({}, state, { [action.cartitem.id]: action.cartitem })

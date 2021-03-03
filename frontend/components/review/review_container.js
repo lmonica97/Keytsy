@@ -3,10 +3,9 @@ import Review from './review';
 import { fetchReviews, createReview, updateReview, deleteReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         user: state.session.currentUser,
-        reviews: state.entities.reviews
+        reviews: Object.values(state.entities.reviews)
     }
 }
 

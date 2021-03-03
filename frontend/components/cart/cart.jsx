@@ -29,6 +29,7 @@ class Cart extends React.Component {
 
     render() {
         const { items, removeItem, updateItem, products, addItem, user } = this.props;
+        debugger
         if (items.length === 0) {
             return(
                 <div className="empty-cart-containter">

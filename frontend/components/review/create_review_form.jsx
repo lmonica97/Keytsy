@@ -26,7 +26,6 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
         this.props.createReview({reviewer_id: this.state.reviewer_id, product_id: this.state.product_id, rating: this.state.rating, comment: this.state.comment})
     }
 

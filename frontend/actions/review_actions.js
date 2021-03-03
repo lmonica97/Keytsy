@@ -42,20 +42,20 @@ export const fetchReviews = productId => dispatch => {
         error => dispatch(receiveReviewErrors(error.responseJSON)))
 }
 
-export const createReview = (review) => {
+export const createReview = (review) => dispatch => {
     return ReviewApiUtil.createReview(review)
         .then(review => dispatch(receiveReview(review))),
         error => dispatch(receiveReviewErrors(error.responseJSON))
 }
 
-export const updateReview = (review) => {
+export const updateReview = (review) => dispatch => {
     debugger
     return ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)),
         error => dispatch(receiveReviewErrors(error.responseJSON)))
 }
 
-export const deleteReview = (productId, review) => {
+export const deleteReview = (productId, review) => dispatch => {
     debugger
     return ReviewApiUtil.deleteReview(productId, review)
         .then(() => dispatch(removeReview(reviewId)),

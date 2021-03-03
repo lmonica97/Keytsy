@@ -334,27 +334,33 @@ var fetchReviews = function fetchReviews(productId) {
   };
 };
 var createReview = function createReview(review) {
-  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](review).then(function (review) {
-    return dispatch(receiveReview(review));
-  }), function (error) {
-    return dispatch(receiveReviewErrors(error.responseJSON));
+  return function (dispatch) {
+    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["createReview"](review).then(function (review) {
+      return dispatch(receiveReview(review));
+    }), function (error) {
+      return dispatch(receiveReviewErrors(error.responseJSON));
+    };
   };
 };
 var updateReview = function updateReview(review) {
-  debugger;
-  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
-    return dispatch(receiveReview(review));
-  }, function (error) {
-    return dispatch(receiveReviewErrors(error.responseJSON));
-  });
+  return function (dispatch) {
+    debugger;
+    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
+      return dispatch(receiveReview(review));
+    }, function (error) {
+      return dispatch(receiveReviewErrors(error.responseJSON));
+    });
+  };
 };
 var deleteReview = function deleteReview(productId, review) {
-  debugger;
-  return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](productId, review).then(function () {
-    return dispatch(removeReview(reviewId));
-  }, function (error) {
-    return dispatch(receiveReviewErrors(error.responseJSON));
-  });
+  return function (dispatch) {
+    debugger;
+    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](productId, review).then(function () {
+      return dispatch(removeReview(reviewId));
+    }, function (error) {
+      return dispatch(receiveReviewErrors(error.responseJSON));
+    });
+  };
 };
 
 /***/ }),
@@ -632,6 +638,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           products = _this$props.products,
           addItem = _this$props.addItem,
           user = _this$props.user;
+      debugger;
 
       if (items.length === 0) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2213,7 +2220,6 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
       this.props.createReview({
         reviewer_id: this.state.reviewer_id,
         product_id: this.state.product_id,
@@ -2324,7 +2330,14 @@ var Review = /*#__PURE__*/function (_React$Component) {
           user = _this$props.user,
           product = _this$props.product,
           reviews = _this$props.reviews;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reviews.map(function (review) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          user: review.user.name,
+          date: review.date,
+          comment: review.comment,
+          rating: review.rating
+        });
+      }));
     }
   }]);
 
@@ -2352,10 +2365,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     user: state.session.currentUser,
-    reviews: state.entities.reviews
+    reviews: Object.values(state.entities.reviews)
   };
 };
 
@@ -2429,7 +2441,33 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewShow, [{
     key: "render",
     value: function render() {
-      return null;
+      var stars = {
+        1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating",
+          src: window.rating1
+        }),
+        2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating",
+          src: window.rating2
+        }),
+        3: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating",
+          src: window.rating3
+        }),
+        4: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating",
+          src: window.rating4
+        }),
+        5: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating",
+          src: window.rating5
+        })
+      };
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-index-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-user-date"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.user), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.comment));
     }
   }]);
 
@@ -2995,6 +3033,7 @@ var cartitemReducer = function cartitemReducer() {
 
   switch (action.type) {
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CARTITEMS"]:
+      debugger;
       return action.cartitems;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["ADD_CARTITEM"]:
