@@ -11,7 +11,8 @@ class ReviewShow extends React.Component {
             comment: "",
             showUpdateForm: false
         }
-
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         this.onStarClick = this.onStarClick.bind(this);
     }
 
@@ -34,6 +35,15 @@ class ReviewShow extends React.Component {
                 null;
         }
     }
+
+    handleUpdate(e) {
+
+    }
+
+    handleDelete(e) {
+
+    }
+
 
     render() {
         const { rating, comment, showUpdateForm } = this.state;
@@ -77,7 +87,7 @@ class ReviewShow extends React.Component {
                             <p className="rating-text1">{this.props.rating} Star(s)</p>
                         </div>
                         <textarea className="review-update-text" value={this.props.comment} onChange={this.update("comment")}></textarea>
-                        <button className="update-review">Update</button>
+                        <button className="update-review" onClick={() => this.handleUpdate}>Update</button>
                         <button className="delete-review">Delete Review</button>
                     </div> :
                     <div className="review-show-container">
@@ -92,7 +102,7 @@ class ReviewShow extends React.Component {
                     }
                     { this.props.currentUser.id === this.props.reviewerId ? 
                         <div className="review-update-delete">
-                            <form onClick={() => this.hideForm("showUpdateForm")}>
+                            <form onClick={() => this.hideForm("showUpdateForm")} >
                                 {showUpdateForm ? <button className="review-update-close">Cancel</button> : <button className="review-update">Update Review</button>}
                             </form>
                         </div> : null

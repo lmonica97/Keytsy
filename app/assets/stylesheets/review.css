@@ -145,22 +145,36 @@
     color: white;
 }
 
+.review-update:hover, .review-update-close:hover, .update-review:hover {
+   cursor: pointer;
+   opacity: 0.9;
+   transform: scale(1.03);
+}
+
 .update-review {
     margin-right: 30px;
 }
 
 .review-update-close {
+    position: absolute;
     background-color: #22223b;
     font-family: 'Montserrat';
     font-size: 13px;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-weight: 500;
     color: white;
-    
+    left: 17.8%;
 }
 
+.delete-review:hover {
+    background-color: red;
+    transition-duration: 0.5s;
+    opacity: 0.9;
+    transform: scale(1.03);
+    cursor: pointer;
+}
 
 .review-main-container {
     display: block;
@@ -186,17 +200,6 @@
 .review-edit-head {
     font-weight: 500;
     font-size: 18px;
-}
-
- {
-    background-color: #22223b;
-    font-family: 'Montserrat';
-    font-size: 13px;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: 500;
-    color: white;
 }
 
 .review-user-date {

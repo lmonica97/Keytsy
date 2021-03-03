@@ -2465,6 +2465,8 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       comment: "",
       showUpdateForm: false
     };
+    _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.onStarClick = _this.onStarClick.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2499,6 +2501,12 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           null;
       }
     }
+  }, {
+    key: "handleUpdate",
+    value: function handleUpdate(e) {}
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {}
   }, {
     key: "render",
     value: function render() {
@@ -2576,7 +2584,10 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           value: this.props.comment,
           onChange: this.update("comment")
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "update-review"
+          className: "update-review",
+          onClick: function onClick() {
+            return _this3.handleUpdate;
+          }
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-review"
         }, "Delete Review")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
