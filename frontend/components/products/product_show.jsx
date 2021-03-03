@@ -140,7 +140,7 @@ class ProductShow extends React.Component {
                             <div>
                                 <div className="review-component">
                                     <div>
-                                    { showReviewForm && <ReviewFormContainer product={this.props.product}/> }
+                                    { showReviewForm ? <ReviewFormContainer product={this.props.product}/> : null}
                                     </div>
                                     <div>
                                     {this.props.currentUser ? 

@@ -129,6 +129,28 @@
   list-style: none;  
 }
 
+.review-update-delete {
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+.review-update {
+    background-color: #22223b;
+    font-family: 'Montserrat';
+    font-size: 13px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+.review-main-container {
+    display: block;
+    height: 200px;
+    width: 800px;
+}
+
 .review-user-date {
     display: flex;
 }
