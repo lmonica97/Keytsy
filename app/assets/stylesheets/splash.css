@@ -52,16 +52,16 @@
 .intro-container-list {
     list-style-type: none;
     display: flex;
+    align-content: center;
     justify-content: space-between;
 
 }
 
 .intro-block{
+    font-family: 'Montserrat';
     background-color: rgb(255, 219, 224);
-    margin: 0;
-    padding-left: 500px;
-    padding-right: 500px;
-    margin: 0px 500px;
+    padding-left: 125px;
+    padding-right: 125px;
 }
 
 .arrow {
@@ -82,10 +82,6 @@
     overflow: hidden;
     border-radius: 50%;
     padding: 0;
-}
-
-.intro-block {
-    font-family: 'Montserrat';
 }
 
 .intro-header {
@@ -161,6 +157,8 @@
     border-radius: 5px;
     margin: 0px 20px;
     border: 1px solid lightgray;
+    height: 510px;
+    width: 430px;
 }
 
 .blog-division {
@@ -171,13 +169,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 310px;
-    padding-right: 320px;
 }
 
 .blog-section {
     text-align: left;
-    padding-left: 330px;
+    margin-left: 60px;
     font-weight: 600;
     margin-top: 30px;
 }
