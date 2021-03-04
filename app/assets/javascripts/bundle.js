@@ -4215,7 +4215,7 @@ var createReview = function createReview(review) {
 var deleteReview = function deleteReview(reviewId) {
   debugger;
   return $.ajax({
-    url: "/api/products/".concat(productId, "/reviews/").concat(review.id),
+    url: "/api/reviews/".concat(reviewId),
     method: 'DELETE'
   });
 };
