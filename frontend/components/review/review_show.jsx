@@ -5,7 +5,7 @@ class ReviewShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: this.props.key,
+            id: this.props.reviewId,
             reviewer_id: this.props.reviewerId,
             product_id: this.props.productId,
             rating: 1,
@@ -59,7 +59,7 @@ class ReviewShow extends React.Component {
             )
         } else {
         return (
-            <li className="review-index-container" key={this.props.key}>
+            <li className="review-index-container" key={this.props.reviewId}>
                 <div className="review-main-container">
                     { showUpdateForm ? 
                     <div className="review-edit-container">
@@ -78,7 +78,7 @@ class ReviewShow extends React.Component {
                         </div>
                         <textarea className="review-update-text" value={this.props.comment} onChange={this.update("comment")}></textarea>
                         <button className="update-review" onClick={() => this.props.updateReview(review)}>Update</button>
-                        <button className="delete-review" onClick={() => this.props.deleteReview}>Delete Review</button>
+                        <button className="delete-review" onClick={() => this.props.deleteReview(this.props.reviewId)}>Delete Review</button>
                     </div> :
                     <div className="review-show-container">
                         <div className="review-user-date">

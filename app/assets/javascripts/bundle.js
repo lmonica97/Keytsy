@@ -2340,7 +2340,7 @@ var Review = /*#__PURE__*/function (_React$Component) {
           className: "review-list-container"
         }, reviews.map(function (review) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            key: review.id,
+            reviewId: review.id,
             reviewerId: review.reviewer_id,
             user: review.user.name,
             date: review.date,
@@ -2459,7 +2459,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      id: _this.props.key,
+      id: _this.props.reviewId,
       reviewer_id: _this.props.reviewerId,
       product_id: _this.props.productId,
       rating: 1,
@@ -2559,7 +2559,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "review-index-container",
-          key: this.props.key
+          key: this.props.reviewId
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-main-container"
         }, showUpdateForm ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2591,7 +2591,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-review",
           onClick: function onClick() {
-            return _this3.props.deleteReview;
+            return _this3.props.deleteReview(_this3.props.reviewId);
           }
         }, "Delete Review")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-show-container"

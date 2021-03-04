@@ -20,7 +20,7 @@ class Review extends React.Component {
             return (
                 <div className="review-list-container">
                         {reviews.map(review => (
-                            <ReviewShow key={review.id} reviewerId={review.reviewer_id} user={review.user.name} date={review.date}
+                            <ReviewShow reviewId={review.id} reviewerId={review.reviewer_id} user={review.user.name} date={review.date}
                             comment={review.comment} rating={review.rating} currentUser={user}
                             updateReview={updateReview} deleteReview={deleteReview} productId={review.product_id} />
                         ))}

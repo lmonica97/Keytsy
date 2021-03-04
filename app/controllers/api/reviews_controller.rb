@@ -24,8 +24,10 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find_by(id: params[:id])
+        productId = @review.product_id
         debugger
         if @review.destroy
+            @reviews = Review.where(product_id: productId)
             debugger
             render 'api/reviews/index'
         else 
