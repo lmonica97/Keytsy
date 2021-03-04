@@ -2581,7 +2581,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           className: "rating-text1"
         }, this.props.rating, " Star(s)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           className: "review-update-text",
-          value: this.props.comment,
+          placeholder: this.props.comment,
           onChange: this.update("comment")
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "update-review",

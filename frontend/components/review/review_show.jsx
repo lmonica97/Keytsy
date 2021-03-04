@@ -76,7 +76,7 @@ class ReviewShow extends React.Component {
                             />
                             <p className="rating-text1">{this.props.rating} Star(s)</p>
                         </div>
-                        <textarea className="review-update-text" value={this.props.comment} onChange={this.update("comment")}></textarea>
+                        <textarea className="review-update-text" placeholder={this.props.comment} onChange={this.update("comment")}></textarea>
                         <button className="update-review" onClick={() => this.props.updateReview(review)}>Update</button>
                         <button className="delete-review" onClick={() => this.props.deleteReview(this.props.reviewId)}>Delete Review</button>
                     </div> :
