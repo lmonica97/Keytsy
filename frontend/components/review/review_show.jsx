@@ -5,14 +5,13 @@ class ReviewShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            id: this.props.key,
             reviewer_id: this.props.reviewerId,
             product_id: this.props.productId,
             rating: 1,
             comment: "",
             showUpdateForm: false
         }
-        this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
         this.onStarClick = this.onStarClick.bind(this);
     }
 
@@ -38,7 +37,7 @@ class ReviewShow extends React.Component {
 
     render() {
         const { rating, comment, showUpdateForm } = this.state;
-
+        let review = { id: this.state.id, reviewer_id: this.state.reviewer_id, product_id: this.state.product_id, rating: this.state.rating, comment: this.state.comment}
         const stars = {
             1: <img className="review-star-rating" src={window.rating1} />,
             2: <img className="review-star-rating" src={window.rating2} />,
@@ -78,8 +77,8 @@ class ReviewShow extends React.Component {
                             <p className="rating-text1">{this.props.rating} Star(s)</p>
                         </div>
                         <textarea className="review-update-text" value={this.props.comment} onChange={this.update("comment")}></textarea>
-                        <button className="update-review" onClick={() => this.handleUpdate}>Update</button>
-                        <button className="delete-review">Delete Review</button>
+                        <button className="update-review" onClick={() => this.props.updateReview(review)}>Update</button>
+                        <button className="delete-review" onClick={() => this.props.deleteReview}>Delete Review</button>
                     </div> :
                     <div className="review-show-container">
                         <div className="review-user-date">

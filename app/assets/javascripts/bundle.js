@@ -352,10 +352,10 @@ var updateReview = function updateReview(review) {
     });
   };
 };
-var deleteReview = function deleteReview(productId, review) {
+var deleteReview = function deleteReview(reviewId) {
   return function (dispatch) {
     debugger;
-    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](productId, review).then(function () {
+    return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](reviewId).then(function () {
       return dispatch(removeReview(reviewId));
     }, function (error) {
       return dispatch(receiveReviewErrors(error.responseJSON));
@@ -2459,14 +2459,13 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
+      id: _this.props.key,
       reviewer_id: _this.props.reviewerId,
       product_id: _this.props.productId,
       rating: 1,
       comment: "",
       showUpdateForm: false
     };
-    _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
-    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.onStarClick = _this.onStarClick.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2510,6 +2509,13 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           rating = _this$state.rating,
           comment = _this$state.comment,
           showUpdateForm = _this$state.showUpdateForm;
+      var review = {
+        id: this.state.id,
+        reviewer_id: this.state.reviewer_id,
+        product_id: this.state.product_id,
+        rating: this.state.rating,
+        comment: this.state.comment
+      };
       var stars = {
         1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-star-rating",
@@ -2580,10 +2586,13 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "update-review",
           onClick: function onClick() {
-            return _this3.handleUpdate;
+            return _this3.props.updateReview(review);
           }
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "delete-review"
+          className: "delete-review",
+          onClick: function onClick() {
+            return _this3.props.deleteReview;
+          }
         }, "Delete Review")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-show-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4203,7 +4212,7 @@ var createReview = function createReview(review) {
     }
   });
 };
-var deleteReview = function deleteReview(productId, review) {
+var deleteReview = function deleteReview(reviewId) {
   debugger;
   return $.ajax({
     url: "/api/products/".concat(productId, "/reviews/").concat(review.id),
