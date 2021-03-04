@@ -36,15 +36,6 @@ class ReviewShow extends React.Component {
         }
     }
 
-    handleUpdate(e) {
-
-    }
-
-    handleDelete(e) {
-
-    }
-
-
     render() {
         const { rating, comment, showUpdateForm } = this.state;
 
@@ -69,7 +60,7 @@ class ReviewShow extends React.Component {
             )
         } else {
         return (
-            <li className="review-index-container" key={this.props.id}>
+            <li className="review-index-container" key={this.props.key}>
                 <div className="review-main-container">
                     { showUpdateForm ? 
                     <div className="review-edit-container">

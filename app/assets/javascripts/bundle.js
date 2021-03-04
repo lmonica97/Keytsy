@@ -2340,7 +2340,7 @@ var Review = /*#__PURE__*/function (_React$Component) {
           className: "review-list-container"
         }, reviews.map(function (review) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            id: review.id,
+            key: review.id,
             reviewerId: review.reviewer_id,
             user: review.user.name,
             date: review.date,
@@ -2502,12 +2502,6 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
-    key: "handleUpdate",
-    value: function handleUpdate(e) {}
-  }, {
-    key: "handleDelete",
-    value: function handleDelete(e) {}
-  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -2559,7 +2553,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "review-index-container",
-          key: this.props.id
+          key: this.props.key
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-main-container"
         }, showUpdateForm ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
