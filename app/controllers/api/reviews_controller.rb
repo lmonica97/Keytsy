@@ -12,11 +12,8 @@ class Api::ReviewsController < ApplicationController
 
     def update 
         @review = Review.find_by(id: params[:id])
-        debugger
         if @review.update(review_params)
-            debugger
             @reviews = Review.where(product_id: @review.product_id)
-            debugger
             render 'api/reviews/index'
         else 
             render json: @review.errors.full_messages, status: 422

@@ -2324,6 +2324,13 @@ var Review = /*#__PURE__*/function (_React$Component) {
       this.props.fetchReviews(this.props.product.id);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.reviews !== this.props.reviews) {
+        this.props.fetchReviews(this.props.product.id);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -2342,7 +2349,7 @@ var Review = /*#__PURE__*/function (_React$Component) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
             reviewId: review.id,
             reviewerId: review.reviewer_id,
-            user: review.user.name,
+            user: review.name,
             date: review.date,
             comment: review.comment,
             rating: review.rating,

@@ -2,6 +2,6 @@
     json.set! review.id do 
         json.partial! 'api/reviews/review', review: review
         json.date review.created_at.strftime('%B %d, %Y')
-        json.user review.reviewer, :name
+        json.extract! review.reviewer, :name
     end
 end

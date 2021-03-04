@@ -10,6 +10,12 @@ class Review extends React.Component {
         this.props.fetchReviews(this.props.product.id)
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.reviews !== this.props.reviews) {
+            this.props.fetchReviews(this.props.product.id)
+        }
+    }
+
     render() {
         const { user, product, reviews, updateReview, deleteReview } = this.props;
         if (!reviews) {
@@ -20,7 +26,7 @@ class Review extends React.Component {
             return (
                 <div className="review-list-container">
                         {reviews.map(review => (
-                            <ReviewShow reviewId={review.id} reviewerId={review.reviewer_id} user={review.user.name} date={review.date}
+                            <ReviewShow reviewId={review.id} reviewerId={review.reviewer_id} user={review.name} date={review.date}
                             comment={review.comment} rating={review.rating} currentUser={user}
                             updateReview={updateReview} deleteReview={deleteReview} productId={review.product_id} />
                         ))}
