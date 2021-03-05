@@ -613,7 +613,9 @@ var Cart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevProps.cartitems !== this.props.items) {
+      debugger;
+
+      if (prevProps.items.length !== this.props.items.length) {
         this.props.fetchAllitems();
       }
     }
@@ -2326,7 +2328,9 @@ var Review = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevProps.reviews !== this.props.reviews) {
+      debugger;
+
+      if (prevProps.reviews.length !== this.props.reviews.length) {
         this.props.fetchReviews(this.props.product.id);
       }
     }

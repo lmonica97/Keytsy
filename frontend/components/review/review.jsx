@@ -11,7 +11,8 @@ class Review extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.reviews !== this.props.reviews) {
+        debugger
+        if (prevProps.reviews.length !== this.props.reviews.length) {
             this.props.fetchReviews(this.props.product.id)
         }
     }
