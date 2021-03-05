@@ -6,7 +6,6 @@ import ReactStars from 'react-rating-stars-component';
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             quantity: 1,
             rating: 1,
@@ -43,7 +42,6 @@ class ProductShow extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment}).then(this.hideForm("showReviewForm"))
     }
 

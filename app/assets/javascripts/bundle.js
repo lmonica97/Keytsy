@@ -1746,7 +1746,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, ProductShow);
 
     _this = _super.call(this, props);
-    debugger;
     _this.state = {
       quantity: 1,
       rating: 1,
@@ -1801,7 +1800,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      debugger;
       this.props.createReview({
         reviewer_id: this.props.currentUser.id,
         product_id: this.props.product.id,
@@ -2030,7 +2028,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     currentUser: state.session.currentUser,
     errors: state.errors.review
   };
-  debugger;
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -2489,7 +2486,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-review",
           onClick: function onClick() {
-            return _this3.props.deleteReview(_this3.props.reviewId);
+            return _this3.props.deleteReview(_this3.props.reviewId).then(_this3.hideForm("showUpdateForm"));
           }
         }, "Delete Review")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-show-container"

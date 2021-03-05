@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.session.currentUser,
         errors: state.errors.review,
     }
-    debugger
 }
 
 const mapDispatchToProps = dispatch => {
