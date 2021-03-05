@@ -1,16 +1,21 @@
 import React from 'react';
 import { openModal } from '../../actions/modal_actions';
 import ReviewContainer from '../review/review_container';
-import ReviewFormContainer from '../review/create_review_container';
+import ReactStars from 'react-rating-stars-component';
 
 class ProductShow extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {
             quantity: 1,
+            rating: 1,
+            comment: '',
             showReviewForm: false,
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.onStarClick = this.onStarClick.bind(this);
     }
 
     componentDidMount() {
@@ -27,10 +32,19 @@ class ProductShow extends React.Component {
         }
     }
 
+    onStarClick(newRating) {
+        this.setState({rating: newRating})
+    }
+
     handleClick(e) {
         e.preventDefault();
-        this.props.addItem({user_id: this.props.currentUser.id, product_id: this.props.product.id, quantity: this.state.quantity})
+        this.props.addItem({user_id: this.props.currentUser.id, product_id: this.props.product, quantity: this.state.quantity})
             .then(this.props.history.push({pathname:'/cart', state: this.state}))
+    }
+
+    handleSubmit(e) {
+        debugger
+        this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment}).then(this.hideForm("showReviewForm"))
     }
 
     update(type) {
@@ -48,6 +62,8 @@ class ProductShow extends React.Component {
     render() {
         const { product } = this.props;
         const { showReviewForm } = this.state;
+        const { rating } = this.state;
+
         if (!product){
             return(
                 <div>Fetching Product...</div>
@@ -140,7 +156,27 @@ class ProductShow extends React.Component {
                             <div>
                                 <div className="review-component">
                                     <div>
-                                    { showReviewForm ? <ReviewFormContainer product={this.props.product}/> : null}
+                                    { showReviewForm ? 
+                                    <div className="review-form-container">
+                                        <form className="review-form" onSubmit={this.handleSubmit}>
+                                            <h1 className="review-form-head">Write a review</h1>
+                                            <div className="review-rating-disp">
+                                                <p className="rating-text">Rating: </p>
+                                                <ReactStars
+                                                count={5}
+                                                value={rating}
+                                                size={34}
+                                                onChange={this.onStarClick}
+                                                activeColor="#ffd700"
+                                                className="review-star-rating"
+                                                />
+                                                <p className="rating-text1">{rating} Star(s)</p>
+                                            </div>
+                                            <p className="review-text-label">Comment: </p>
+                                            <textarea className="review-textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
+                                            <button className="review-submit-btn">Submit</button>
+                                        </form>
+                                    </div> : null}
                                     </div>
                                     <div>
                                     {this.props.currentUser ? 
