@@ -613,8 +613,6 @@ var Cart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      debugger;
-
       if (prevProps.items.length !== this.props.items.length) {
         this.props.fetchAllitems();
       }
@@ -2328,8 +2326,6 @@ var Review = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      debugger;
-
       if (prevProps.reviews.length !== this.props.reviews.length) {
         this.props.fetchReviews(this.props.product.id);
       }
@@ -2343,13 +2339,14 @@ var Review = /*#__PURE__*/function (_React$Component) {
           reviews = _this$props.reviews,
           updateReview = _this$props.updateReview,
           deleteReview = _this$props.deleteReview;
+      var reversed = reviews.reverse();
 
       if (!reviews) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching reviews..");
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-list-container"
-        }, reviews.map(function (review) {
+        }, reversed.map(function (review) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
             reviewId: review.id,
             reviewerId: review.reviewer_id,

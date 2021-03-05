@@ -16,7 +16,6 @@ class Cart extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (prevProps.items.length !== this.props.items.length){
             this.props.fetchAllitems();
         }
