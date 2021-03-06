@@ -1762,7 +1762,14 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.id);
-    }
+    } // shouldComponentUpdate(nextProps, nextState) {
+    //     debugger
+    //     if (this.state.showReviewForm != nextState.showReviewForm ) {
+    //         return false
+    //     }
+    //     return true
+    // }
+
   }, {
     key: "hideForm",
     value: function hideForm(name) {

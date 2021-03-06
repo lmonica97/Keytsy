@@ -21,6 +21,14 @@ class ProductShow extends React.Component {
         this.props.fetchProduct(this.props.match.params.id);
     }
 
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     debugger
+    //     if (this.state.showReviewForm != nextState.showReviewForm ) {
+    //         return false
+    //     }
+    //     return true
+    // }
+
     hideForm(name) {
         switch(name) {
             case "showReviewForm":
@@ -61,7 +69,6 @@ class ProductShow extends React.Component {
         const { product } = this.props;
         const { showReviewForm } = this.state;
         const { rating } = this.state;
-
         if (!product){
             return(
                 <div>Fetching Product...</div>
