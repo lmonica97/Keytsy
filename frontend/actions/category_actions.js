@@ -3,6 +3,7 @@ import * as CategoryApiUtil from '../utils/category';
 export const RECEIVE_ALL_CATEGORY = 'RECEIVE_ALL_CATEGORY';
 
 export const receiveAllCategory = (products) => {
+    debugger
     return {
         type: RECEIVE_ALL_CATEGORY,
         products
@@ -10,6 +11,7 @@ export const receiveAllCategory = (products) => {
 }
 
 export const fetchAllCategory = (categoryId) => dispatch => {
+    debugger
     return CategoryApiUtil.fetchAllProducts(categoryId)
         .then(products => dispatch(receiveAllCategory(products)))
 }
