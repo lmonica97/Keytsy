@@ -5,13 +5,10 @@ const reviewReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_REVIEW:
-            debugger
             return Object.assign({}, state, { [action.review.id]: action.review })
         case RECEIVE_ALL_REVIEWS:
-            debugger
             return action.reviews
         case REMOVE_REVIEW: 
-            debugger
             delete nextState[action.reviewId]
             return nextState;
         case RECEIVE_REVIEW_ERRORS:

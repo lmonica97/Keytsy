@@ -1,5 +1,4 @@
 export const fetchReviews = (productId) => {
-    debugger
     return $.ajax({
         url: `/api/products/${productId}/reviews`,
         method: 'GET'
@@ -7,7 +6,6 @@ export const fetchReviews = (productId) => {
 }
 
 export const updateReview = (review) => {
-    debugger
     return $.ajax({
         url: `/api/reviews/${review.id}`,
         method: 'PATCH',
@@ -24,7 +22,6 @@ export const createReview = (review) => {
 }
 
 export const deleteReview = (reviewId) => {
-    debugger
     return $.ajax({
         url: `/api/reviews/${reviewId}`,
         method: 'DELETE'

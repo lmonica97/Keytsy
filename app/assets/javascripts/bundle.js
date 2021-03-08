@@ -297,21 +297,18 @@ var REMOVE_REVIEW = 'REMOVE_REVIEW';
 var RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 var RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 var receiveReview = function receiveReview(review) {
-  debugger;
   return {
     type: RECEIVE_REVIEW,
     review: review
   };
 };
 var receiveReviews = function receiveReviews(reviews) {
-  debugger;
   return {
     type: RECEIVE_ALL_REVIEWS,
     reviews: reviews
   };
 };
 var removeReview = function removeReview(reviewId) {
-  debugger;
   return {
     type: REMOVE_REVIEW,
     reviewId: reviewId
@@ -325,7 +322,6 @@ var receiveReviewErrors = function receiveReviewErrors(errors) {
 };
 var fetchReviews = function fetchReviews(productId) {
   return function (dispatch) {
-    debugger;
     return _utils_review__WEBPACK_IMPORTED_MODULE_0__["fetchReviews"](productId).then(function (reviews) {
       return dispatch(receiveReviews(reviews));
     }, function (error) {
@@ -344,7 +340,6 @@ var createReview = function createReview(review) {
 };
 var updateReview = function updateReview(review) {
   return function (dispatch) {
-    debugger;
     return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
       return dispatch(receiveReview(review));
     }, function (error) {
@@ -354,7 +349,6 @@ var updateReview = function updateReview(review) {
 };
 var deleteReview = function deleteReview(reviewId) {
   return function (dispatch) {
-    debugger;
     return _utils_review__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](reviewId).then(function () {
       return dispatch(removeReview(reviewId));
     }, function (error) {
@@ -638,7 +632,6 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           products = _this$props.products,
           addItem = _this$props.addItem,
           user = _this$props.user;
-      debugger;
 
       if (items.length === 0) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3138,7 +3131,6 @@ var cartitemReducer = function cartitemReducer() {
 
   switch (action.type) {
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CARTITEMS"]:
-      debugger;
       return action.cartitems;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["ADD_CARTITEM"]:
@@ -3383,15 +3375,12 @@ var reviewReducer = function reviewReducer() {
 
   switch (action.type) {
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
-      debugger;
       return Object.assign({}, state, _defineProperty({}, action.review.id, action.review));
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
-      debugger;
       return action.reviews;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
-      debugger;
       delete nextState[action.reviewId];
       return nextState;
 
@@ -4140,14 +4129,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReview", function() { return createReview; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteReview", function() { return deleteReview; });
 var fetchReviews = function fetchReviews(productId) {
-  debugger;
   return $.ajax({
     url: "/api/products/".concat(productId, "/reviews"),
     method: 'GET'
   });
 };
 var updateReview = function updateReview(review) {
-  debugger;
   return $.ajax({
     url: "/api/reviews/".concat(review.id),
     method: 'PATCH',
@@ -4166,7 +4153,6 @@ var createReview = function createReview(review) {
   });
 };
 var deleteReview = function deleteReview(reviewId) {
-  debugger;
   return $.ajax({
     url: "/api/reviews/".concat(reviewId),
     method: 'DELETE'
