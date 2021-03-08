@@ -41,8 +41,11 @@
 }
 
 .footer-logo {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
 }
 
 .bottom-footer {
@@ -67,7 +70,6 @@
 
 a .footer-logo {
     margin: 0px 15px;
-    filter: brightness(2);
 }
 
 .country-currency p {

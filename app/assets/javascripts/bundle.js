@@ -2457,7 +2457,9 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           className: "star-container"
         }, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "review-comment"
-        }, this.props.comment));
+        }, this.props.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.thumbsup
+        }), "Is this review helpful?"));
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "review-index-container",
@@ -2510,7 +2512,12 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           className: "star-container"
         }, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "review-comment"
-        }, this.props.comment)), this.props.currentUser.id === this.props.reviewerId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "review-helpful"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-thumb",
+          src: window.thumbsup
+        }), "Is this review helpful?")), this.props.currentUser.id === this.props.reviewerId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-update-delete"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onClick: function onClick() {

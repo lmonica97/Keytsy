@@ -205,3 +205,16 @@
 .review-user-date {
     display: flex;
 }
+
+.review-helpful {
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.review-thumb {
+    height: 12px;
+    width: 12px;
+    padding-right: 5px;
+}
