@@ -1,4 +1,3 @@
-import Cart from '../components/cart/cart';
 import * as CartitemApiUtil from '../utils/cartitem';
 
 export const ADD_CARTITEM = 'ADD_CARTITEM';

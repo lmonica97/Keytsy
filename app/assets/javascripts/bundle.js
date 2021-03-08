@@ -107,9 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addItem", function() { return addItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateItem", function() { return updateItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeItem", function() { return removeItem; });
-/* harmony import */ var _components_cart_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/cart/cart */ "./frontend/components/cart/cart.jsx");
-/* harmony import */ var _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/cartitem */ "./frontend/utils/cartitem.js");
-
+/* harmony import */ var _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/cartitem */ "./frontend/utils/cartitem.js");
 
 var ADD_CARTITEM = 'ADD_CARTITEM';
 var REMOVE_CARTITEM = 'REMOVE_CARTITEM';
@@ -141,7 +139,7 @@ var receiveCartitemErrors = function receiveCartitemErrors(errors) {
 };
 var fetchAllitems = function fetchAllitems() {
   return function (dispatch) {
-    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["fetchCartitems"]().then(function (cartitems) {
+    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["fetchCartitems"]().then(function (cartitems) {
       return dispatch(receiveCartitems(cartitems));
     }, function (error) {
       return dispatch(receiveCartitems(error.responseJSON));
@@ -150,7 +148,7 @@ var fetchAllitems = function fetchAllitems() {
 };
 var addItem = function addItem(cartitem) {
   return function (dispatch) {
-    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["addSingleItem"](cartitem).then(function (cartitem) {
+    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["addSingleItem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
       return dispatch(receiveCartitemErrors(error.responseJSON));
@@ -159,7 +157,7 @@ var addItem = function addItem(cartitem) {
 };
 var updateItem = function updateItem(cartitem) {
   return function (dispatch) {
-    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["updateCartitem"](cartitem).then(function (cartitem) {
+    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["updateCartitem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
       return dispatch(receiveCartitemErrors(error));
@@ -168,7 +166,7 @@ var updateItem = function updateItem(cartitem) {
 };
 var removeItem = function removeItem(cartitemId) {
   return function (dispatch) {
-    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_1__["removeCartitem"](cartitemId).then(function () {
+    return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["removeCartitem"](cartitemId).then(function () {
       return dispatch(removeCartitem(cartitemId));
     }, function (error) {
       return dispatch(receiveCartitemErrors(error.responseJSON));
