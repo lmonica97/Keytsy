@@ -1762,6 +1762,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.id);
+      this.props.fetchReviews(this.props.match.params.id);
     } // shouldComponentUpdate(nextProps, nextState) {
     //     debugger
     //     if (this.state.showReviewForm != nextState.showReviewForm ) {
@@ -1838,6 +1839,37 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var product = this.props.product;
       var showReviewForm = this.state.showReviewForm;
       var rating = this.state.rating;
+      var reviews = this.props.reviews;
+      var stars = {
+        1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating1",
+          src: window.rating1
+        }),
+        2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating1",
+          src: window.rating2
+        }),
+        3: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating1",
+          src: window.rating3
+        }),
+        4: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating1",
+          src: window.rating4
+        }),
+        5: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating1",
+          src: window.rating5
+        })
+      };
+      var ratings = [];
+      reviews.map(function (review) {
+        return ratings.push(review.rating);
+      });
+      var total = ratings.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      var average = total / ratings.length;
 
       if (!product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching Product...");
@@ -1957,7 +1989,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "seller-profile-name"
         }, product.seller.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Owner of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "#"
-        }, product.seller.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, product.seller.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "product-total-review-cont"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "product-total-reviews"
+        }, ratings.length, " review(s)"), stars[average]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-component"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, showReviewForm ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-form-container"
@@ -2029,11 +2065,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.session.currentUser,
-    errors: state.errors.review
+    errors: state.errors.review,
+    reviews: Object.values(state.entities.reviews)
   };
 };
 
@@ -2047,6 +2085,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createReview: function createReview(productId, review) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_4__["createReview"])(productId, review));
+    },
+    fetchReviews: function fetchReviews(productId) {
+      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_4__["fetchReviews"])(productId));
     }
   };
 };
@@ -2457,7 +2498,10 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
           className: "star-container"
         }, stars[this.props.rating]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "review-comment"
-        }, this.props.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, this.props.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "review-helpful"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-thumb",
           src: window.thumbsup
         }), "Is this review helpful?"));
       } else {

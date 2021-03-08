@@ -19,6 +19,7 @@ class ProductShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.id);
+        this.props.fetchReviews(this.props.match.params.id);
     }
 
     // shouldComponentUpdate(nextProps, nextState) {
@@ -69,6 +70,18 @@ class ProductShow extends React.Component {
         const { product } = this.props;
         const { showReviewForm } = this.state;
         const { rating } = this.state;
+        const { reviews } = this.props;
+        const stars = {
+            1: <img className="review-star-rating1" src={window.rating1} />,
+            2: <img className="review-star-rating1" src={window.rating2} />,
+            3: <img className="review-star-rating1" src={window.rating3} />,
+            4: <img className="review-star-rating1" src={window.rating4} />,
+            5: <img className="review-star-rating1" src={window.rating5} />
+        }
+        let ratings = [];
+        reviews.map(review => ratings.push(review.rating));
+        let total = ratings.reduce((a , b) => a + b, 0);
+        let average = (total / ratings.length);
         if (!product){
             return(
                 <div>Fetching Product...</div>
@@ -158,6 +171,10 @@ class ProductShow extends React.Component {
                     </div>
                     <div>
                         <div>
+                            <div className="product-total-review-cont">
+                                <p className="product-total-reviews">{ratings.length} review(s)</p>
+                                {stars[average]}
+                            </div>
                             <div>
                                 <div className="review-component">
                                     <div>

@@ -218,3 +218,23 @@
     width: 12px;
     padding-right: 5px;
 }
+
+.product-total-reviews {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.review-star-rating1 {
+    display: block;
+    height: 27px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.product-total-review-cont {
+    margin-left: 60px;
+    margin-top: 50px;
+    display: flex;
+}

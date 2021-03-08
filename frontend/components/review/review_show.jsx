@@ -55,7 +55,7 @@ class ReviewShow extends React.Component {
                         </div>
                         <p className="star-container">{stars[this.props.rating]}</p>
                         <p className="review-comment">{this.props.comment}</p>
-                        <p><img src={window.thumbsup} />Is this review helpful?</p>
+                        <p className="review-helpful"><img className="review-thumb"src={window.thumbsup} />Is this review helpful?</p>
                 </div>
             )
         } else {
