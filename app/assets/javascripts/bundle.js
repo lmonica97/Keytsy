@@ -1254,21 +1254,40 @@ var CategoryNav = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var categories = this.props.categories;
       debugger;
-      return null; // <div className="cat-nav-block">
-      //     <div className="cat-nav-container">
-      //         <ul className="cat-nav-list">
-      //             <a href="#" className="cat-nav-element">Keyboard & Accesories</a >
-      //             <a href="#" className="cat-nav-element">Jewelry & Accesories</a >
-      //             <a href="#" className="cat-nav-element">Clothing & Shoes</a >
-      //             <a href="#" className="cat-nav-element">Home & Living</a >
-      //             <a href="#" className="cat-nav-element">Wedding & Party</a >
-      //             <a href="#" className="cat-nav-element">Toys & Entertainment</a >
-      //             <a href="#" className="cat-nav-element">Art & Collectables</a >
-      //             <a href="#" className="cat-nav-element">Craft Supplies</a >
-      //             <a href="#"className="cat-nav-element">Keytsy Gifts & Gift Cards</a >
-      //         </ul>
-      //     </div>
-      // </div>
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cat-nav-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cat-nav-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "cat-nav-list"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Keyboard & Accesories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Jewelry & Accesories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Clothing & Shoes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Home & Living"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Wedding & Party"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Toys & Entertainment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Art & Collectables"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Craft Supplies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "cat-nav-element"
+      }, "Keytsy Gifts & Gift Cards"))));
     }
   }]);
 
