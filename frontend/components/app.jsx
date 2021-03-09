@@ -8,6 +8,7 @@ import GreetingContainer from './navbar/greeting_container';
 import Footer from './footer/footer';
 import ProductShowContainer from './products/product_show_container';
 import CartContainer from './cart/cart_container';
+import CategoryShowContainer from './category/category_show_container';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
         <Switch>
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/products/:id" component={ProductShowContainer} />
+            <Route exact path="/categories/:id" component={CategoryShowContainer} />
             <ProtectedRoute exact path="/cart" component={CartContainer} />
         </Switch>
         <Footer />

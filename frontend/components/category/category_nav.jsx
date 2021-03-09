@@ -1,6 +1,14 @@
 import React from 'react';
 
 class CategoryNav extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.allCategories();
+    }
+
     render() {
         return (
             <div className="cat-nav-block">
