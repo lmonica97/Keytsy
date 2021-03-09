@@ -18,6 +18,7 @@ class ProductShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchProduct(this.props.match.params.id);
         this.props.fetchReviews(this.props.match.params.id);
     }
@@ -29,6 +30,11 @@ class ProductShow extends React.Component {
     //     }
     //     return true
     // }
+
+    componentDidUpdate(prevProps, prevState) {
+        debugger
+        
+    }
 
     hideForm(name) {
         switch(name) {
@@ -71,6 +77,7 @@ class ProductShow extends React.Component {
         const { showReviewForm } = this.state;
         const { rating } = this.state;
         const { reviews } = this.props;
+        debugger
         const stars = {
             1: <img className="review-star-rating1" src={window.rating1} />,
             2: <img className="review-star-rating1" src={window.rating2} />,
@@ -93,8 +100,7 @@ class ProductShow extends React.Component {
                         <img className="photo-sidebar" src={product.photoUrl} />
                     </div>
                     <div className="product-sale-seller">
-                        <p className="product-show-seller">{product.seller.name}</p>
-                        <p className="product-sales">{this.randomNumberGenerator()} sales</p> <span> | </span> <img className="store-rating"src={window.rating} />
+                        <p className="product-show-seller">{product.name}</p>
                     </div>
                     <div className="product-show-image-block">
                         <img className="product-show-image" src={this.props.product.photoUrl} />
@@ -166,8 +172,8 @@ class ProductShow extends React.Component {
                     <div className="seller-profile">
                         <h3>Meet your Seller</h3>
                         <img className="seller-profile-pic" src={window.profilepic} />
-                        <h4 className="seller-profile-name">{product.seller.name}</h4>
-                        <p>Owner of <a href="#">{product.seller.name}</a></p>
+                        <h4 className="seller-profile-name">{product.name}</h4>
+                        <p>Owner of <a href="#">{product.name}</a></p>
                     </div>
                     <div>
                         <div>

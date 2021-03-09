@@ -1322,7 +1322,7 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "category-product-show"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "products/".concat(product.id),
+        to: "/products/".concat(product.id),
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -2021,6 +2021,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   _createClass(ProductShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      debugger;
       this.props.fetchProduct(this.props.match.params.id);
       this.props.fetchReviews(this.props.match.params.id);
     } // shouldComponentUpdate(nextProps, nextState) {
@@ -2031,6 +2032,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     //     return true
     // }
 
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      debugger;
+    }
   }, {
     key: "hideForm",
     value: function hideForm(name) {
@@ -2100,6 +2106,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var showReviewForm = this.state.showReviewForm;
       var rating = this.state.rating;
       var reviews = this.props.reviews;
+      debugger;
       var stars = {
         1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-star-rating1",
@@ -2143,12 +2150,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "product-sale-seller"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-show-seller"
-        }, product.seller.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "product-sales"
-        }, this.randomNumberGenerator(), " sales"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " | "), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "store-rating",
-          src: window.rating
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, product.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-show-image-block"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "product-show-image",
@@ -2247,9 +2249,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           src: window.profilepic
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
           className: "seller-profile-name"
-        }, product.seller.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Owner of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Owner of ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "#"
-        }, product.seller.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, product.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-total-review-cont"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-total-reviews"
@@ -3550,6 +3552,8 @@ function modalReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_category_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/category_actions */ "./frontend/actions/category_actions.js");
+
 
 
 var productErrorsReducer = function productErrorsReducer() {
@@ -3566,6 +3570,9 @@ var productErrorsReducer = function productErrorsReducer() {
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCT_ERRORS"]:
       return action.errors;
+
+    case _actions_category_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_CATEGORY"]:
+      return [];
 
     default:
       return state;
