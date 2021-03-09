@@ -180,17 +180,21 @@ var removeItem = function removeItem(cartitemId) {
 /*!**********************************************!*\
   !*** ./frontend/actions/category_actions.js ***!
   \**********************************************/
-/*! exports provided: RECEIVE_ALL_CATEGORY, receiveAllCategory, fetchAllCategory */
+/*! exports provided: RECEIVE_ALL_CATEGORY, RECEIVE_ALL_CATEGORIES, receiveAllCategory, receiveAllCategories, fetchAllCategory, allCategories */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_CATEGORY", function() { return RECEIVE_ALL_CATEGORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_CATEGORIES", function() { return RECEIVE_ALL_CATEGORIES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllCategory", function() { return receiveAllCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllCategories", function() { return receiveAllCategories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllCategory", function() { return fetchAllCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allCategories", function() { return allCategories; });
 /* harmony import */ var _utils_category__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/category */ "./frontend/utils/category.js");
 
 var RECEIVE_ALL_CATEGORY = 'RECEIVE_ALL_CATEGORY';
+var RECEIVE_ALL_CATEGORIES = 'RECEIVE_ALL_CATEGORIES';
 var receiveAllCategory = function receiveAllCategory(products) {
   debugger;
   return {
@@ -198,11 +202,26 @@ var receiveAllCategory = function receiveAllCategory(products) {
     products: products
   };
 };
+var receiveAllCategories = function receiveAllCategories(categories) {
+  debugger;
+  return {
+    type: RECEIVE_ALL_CATEGORIES,
+    categories: categories
+  };
+};
 var fetchAllCategory = function fetchAllCategory(categoryId) {
   return function (dispatch) {
     debugger;
     return _utils_category__WEBPACK_IMPORTED_MODULE_0__["fetchAllProducts"](categoryId).then(function (products) {
       return dispatch(receiveAllCategory(products));
+    });
+  };
+};
+var allCategories = function allCategories() {
+  return function (dispatch) {
+    debugger;
+    return _utils_category__WEBPACK_IMPORTED_MODULE_0__["fetchAllCategories"]().then(function (categories) {
+      return dispatch(receiveAllCategories(categories));
     });
   };
 };
@@ -4147,16 +4166,23 @@ var addSingleItem = function addSingleItem(cartitem) {
 /*!************************************!*\
   !*** ./frontend/utils/category.js ***!
   \************************************/
-/*! exports provided: fetchAllProducts */
+/*! exports provided: fetchAllProducts, fetchAllCategories */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllProducts", function() { return fetchAllProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllCategories", function() { return fetchAllCategories; });
 var fetchAllProducts = function fetchAllProducts(categoryId) {
   debugger;
   return $.ajax({
     url: "api/categories/".concat(categoryId),
+    method: 'GET'
+  });
+};
+var fetchAllCategories = function fetchAllCategories() {
+  return $.ajax({
+    url: 'api/categories',
     method: 'GET'
   });
 };
