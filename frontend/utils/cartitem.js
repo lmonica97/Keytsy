@@ -21,6 +21,7 @@ export const removeCartitem = (cartitemId) => {
 }
 
 export const addSingleItem = (cartitem) => {
+    debugger
     return $.ajax({
         url: `/api/cartitems`,
         method: 'POST',

@@ -46,7 +46,7 @@ class ProductShow extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        this.props.addItem({user_id: this.props.currentUser.id, product_id: this.props.product, quantity: this.state.quantity})
+        this.props.addItem({user_id: this.props.currentUser.id, product_id: this.props.product.id, quantity: this.state.quantity})
             .then(this.props.history.push({pathname:'/cart', state: this.state}))
     }
 
@@ -71,7 +71,6 @@ class ProductShow extends React.Component {
         const { showReviewForm } = this.state;
         const { rating } = this.state;
         const { reviews } = this.props;
-        debugger
         const stars = {
             1: <img className="review-star-rating1" src={window.rating1} />,
             2: <img className="review-star-rating1" src={window.rating2} />,

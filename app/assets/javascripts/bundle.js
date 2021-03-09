@@ -114,6 +114,7 @@ var REMOVE_CARTITEM = 'REMOVE_CARTITEM';
 var RECEIVE_CARTITEM_ERRORS = 'RECEIVE_CARTITEM_ERRORS';
 var RECEIVE_ALL_CARTITEMS = 'RECEIVE_ALL_CARTITEMS';
 var addCartitem = function addCartitem(cartitem) {
+  debugger;
   return {
     type: ADD_CARTITEM,
     cartitem: cartitem
@@ -148,6 +149,7 @@ var fetchAllitems = function fetchAllitems() {
 };
 var addItem = function addItem(cartitem) {
   return function (dispatch) {
+    debugger;
     return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["addSingleItem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
@@ -873,6 +875,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     user: state.session.currentUser.id,
     items: Object.values(state.entities.cartitems),
@@ -1402,10 +1405,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      debugger;
-
       if (prevProps.match.params.id !== this.props.match.params.id) {
-        debugger;
         this.props.fetchAllCategory(this.props.match.params.id);
       }
     }
@@ -1415,7 +1415,6 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           allProducts = _this$props.allProducts,
           category = _this$props.category;
-      debugger;
 
       if (!category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetch Products...");
@@ -2078,7 +2077,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       this.props.addItem({
         user_id: this.props.currentUser.id,
-        product_id: this.props.product,
+        product_id: this.props.product.id,
         quantity: this.state.quantity
       }).then(this.props.history.push({
         pathname: '/cart',
@@ -2120,7 +2119,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var showReviewForm = this.state.showReviewForm;
       var rating = this.state.rating;
       var reviews = this.props.reviews;
-      debugger;
       var stars = {
         1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-star-rating1",
@@ -2352,6 +2350,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     fetchProduct: function fetchProduct(productId) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProduct"])(productId));
@@ -3417,6 +3416,7 @@ var cartitemReducer = function cartitemReducer() {
       return action.cartitems;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["ADD_CARTITEM"]:
+      debugger;
       return Object.assign({}, state, _defineProperty({}, action.cartitem.id, action.cartitem));
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CARTITEM"]:
@@ -4392,6 +4392,7 @@ var removeCartitem = function removeCartitem(cartitemId) {
   });
 };
 var addSingleItem = function addSingleItem(cartitem) {
+  debugger;
   return $.ajax({
     url: "/api/cartitems",
     method: 'POST',

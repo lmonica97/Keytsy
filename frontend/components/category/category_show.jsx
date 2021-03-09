@@ -11,16 +11,13 @@ class CategoryShow extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            debugger
             this.props.fetchAllCategory(this.props.match.params.id)
         }
     }
 
     render() {
         const { allProducts, category } = this.props;
-        debugger
         if (!category) {
             return (
                 <div>Fetch Products...</div>
