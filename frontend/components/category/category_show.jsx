@@ -5,7 +5,12 @@ class CategoryShow extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchAllCategory(this.props.id)
+    }
+
     render() {
+        debugger
         return null;
     }
 }

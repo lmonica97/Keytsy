@@ -1,7 +1,6 @@
 class Api::CategoriesController < ApplicationController
     def index 
         @categories = Category.all 
-        debugger
         render 'api/category/index'
     end
 

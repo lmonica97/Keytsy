@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     debugger
     return {
-        fetchAllCategory: categoryId => dispatch(fetchAllCategory(categoryId)),
         fetchAllCategories: () => dispatch(fetchAllCategories())
     }
 }

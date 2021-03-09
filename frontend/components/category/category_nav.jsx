@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoryShowContainer from './category_show_container';
+import { Link } from 'react-router-dom';
 
 class CategoryNav extends React.Component {
     constructor(props) {
@@ -15,20 +16,15 @@ class CategoryNav extends React.Component {
 
     render() {
         const { categories } = this.props;
-        debugger
         return (
             <div className="cat-nav-block">
                 <div className="cat-nav-container">
                     <ul className="cat-nav-list">
-                        <a href="#" className="cat-nav-element">Keyboard & Accesories</a >
-                        <a href="#" className="cat-nav-element">Jewelry & Accesories</a >
-                        <a href="#" className="cat-nav-element">Clothing & Shoes</a >
-                        <a href="#" className="cat-nav-element">Home & Living</a >
-                        <a href="#" className="cat-nav-element">Wedding & Party</a >
-                        <a href="#" className="cat-nav-element">Toys & Entertainment</a >
-                        <a href="#" className="cat-nav-element">Art & Collectables</a >
-                        <a href="#" className="cat-nav-element">Craft Supplies</a >
-                        <a href="#"className="cat-nav-element">Keytsy Gifts & Gift Cards</a >
+                        { categories.map(category => 
+                            <Link to={`/categories/${category.id}`} style={{textDecoration:'none'}}> 
+                                <p className="cat-nav-element">{category.category_name}</p>
+                            </Link>  
+                        )}
                     </ul>
                 </div>
             </div>

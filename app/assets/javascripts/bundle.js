@@ -1177,9 +1177,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   debugger;
   return {
-    fetchAllCategory: function fetchAllCategory(categoryId) {
-      return dispatch(Object(_actions_category_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllCategory"])(categoryId));
-    },
     fetchAllCategories: function fetchAllCategories() {
       return dispatch(Object(_actions_category_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllCategories"])());
     }
@@ -1202,6 +1199,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _category_show_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category_show_container */ "./frontend/components/category/category_show_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1223,6 +1221,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -1253,41 +1252,22 @@ var CategoryNav = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var categories = this.props.categories;
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cat-nav-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cat-nav-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cat-nav-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Keyboard & Accesories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Jewelry & Accesories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Clothing & Shoes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Home & Living"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Wedding & Party"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Toys & Entertainment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Art & Collectables"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Craft Supplies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "cat-nav-element"
-      }, "Keytsy Gifts & Gift Cards"))));
+      }, categories.map(function (category) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/categories/".concat(category.id),
+          style: {
+            textDecoration: 'none'
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "cat-nav-element"
+        }, category.category_name));
+      }))));
     }
   }]);
 
@@ -1345,8 +1325,14 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(CategoryShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchAllCategory(this.props.id);
+    }
+  }, {
     key: "render",
     value: function render() {
+      debugger;
       return null;
     }
   }]);

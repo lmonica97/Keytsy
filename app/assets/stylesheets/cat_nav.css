@@ -22,9 +22,9 @@
     color: #22223b;
     padding-bottom: 11px;
     font-size: 13px;
+    margin: 0;
     margin-right: 20px;
-
-}
+}   
 
 .cat-nav-element:before {
     content: "";
