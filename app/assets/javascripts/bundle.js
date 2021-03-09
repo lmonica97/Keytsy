@@ -1404,7 +1404,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps, prevState) {
       debugger;
 
-      if (prevProps.category.id !== this.props.category.id) {
+      if (prevProps.match.params.id !== this.props.match.params.id) {
         debugger;
         this.props.fetchAllCategory(this.props.match.params.id);
       }
@@ -1412,14 +1412,24 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var allProducts = this.props.allProducts;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "category-product-container"
-      }, allProducts.map(function (product) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_product_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          product: product
-        });
-      })));
+      var _this$props = this.props,
+          allProducts = _this$props.allProducts,
+          category = _this$props.category;
+      debugger;
+
+      if (!category) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetch Products...");
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "category-header"
+        }, category.category_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "category-product-container"
+        }, allProducts.map(function (product) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_product_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            product: product
+          });
+        })));
+      }
     }
   }]);
 
@@ -1447,6 +1457,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     category: state.entities.categories[ownProps.match.params.id],
     allProducts: Object.values(state.entities.products)
