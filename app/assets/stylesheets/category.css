@@ -1,0 +1,38 @@
+.category-product-img {
+    height: 200px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.category-product-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-top: 100px;
+    margin-left: 520px;
+    margin-right: 290px;
+    margin-bottom: 100px;
+    font-family: 'Montserrat';
+}
+
+.category-product-seller {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.category-product-name {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.category-product-price {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    padding: 10px 0;
+}

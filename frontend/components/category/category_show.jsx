@@ -13,11 +13,13 @@ class CategoryShow extends React.Component {
     render() {
         const { allProducts } = this.props;
         return (
-            <ul>
-                {allProducts.map(product => 
-                    <CategoryProductShow product={product} />    
-                )}
-            </ul>
+            <div>
+                <ul className="category-product-container">
+                    {allProducts.map(product => 
+                        <CategoryProductShow product={product} />    
+                    )}
+                </ul>
+            </div>
         )
     }
 }
