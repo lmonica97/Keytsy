@@ -2,8 +2,7 @@ import React from 'react';
 // import SearchBar from './search_bar';
 import { Link } from 'react-router-dom';
 import Dropdown from './logout_dropdown';
-// import DemoUserContainer from '../session/demouser_container'
-import CategoryNav from '../category/category_nav';
+import CategoryContainer from '../category/category_container';
 import CartContainer from '../cart/cart_container';
 
 const Greeting = ({ currentUser, signout, openModal }) => {
@@ -22,7 +21,7 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <img className="cart" src={window.cart} />
         </Link>
       </nav>
-      <CategoryNav />
+      <CategoryContainer />
     </div>
   );
   
@@ -43,7 +42,7 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
         <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
       </nav>
-      <CategoryNav />
+      <CategoryContainer />
     </div>
   );
 

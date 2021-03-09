@@ -2,7 +2,6 @@ import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_PRODUCT_ERRORS } from '../ac
 
 const productReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state)
     switch(action.type) {
         case RECEIVE_PRODUCT:
             return Object.assign({}, state, {[action.product.id]: action.product})

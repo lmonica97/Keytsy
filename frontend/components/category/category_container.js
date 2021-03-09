@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchAllCategory, allCategories } from '../../actions/category_actions';
 import CategoryNav from './category_nav';
+import { fetchAllCategory, fetchAllCategories } from '../../actions/category_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     debugger
@@ -10,9 +11,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return {
         fetchAllCategory: categoryId => dispatch(fetchAllCategory(categoryId)),
-        allCategories: () => dispatch(allCategories())
+        fetchAllCategories: () => dispatch(fetchAllCategories())
     }
 }
 

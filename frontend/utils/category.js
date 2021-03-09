@@ -7,6 +7,7 @@ export const fetchAllProducts = (categoryId) => {
 }
 
 export const fetchAllCategories = () => {
+    debugger
     return $.ajax({
         url: 'api/categories',
         method: 'GET'

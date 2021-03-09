@@ -25,7 +25,7 @@ export const fetchAllCategory = (categoryId) => dispatch => {
         .then(products => dispatch(receiveAllCategory(products)))
 }
 
-export const allCategories = () => dispatch => {
+export const fetchAllCategories = () => dispatch => {
     debugger
     return CategoryApiUtil.fetchAllCategories()
         .then(categories => dispatch(receiveAllCategories(categories)))

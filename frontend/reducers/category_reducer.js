@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_CATEGORY } from '../actions/category_actions';
+import { RECEIVE_ALL_CATEGORY, RECEIVE_ALL_CATEGORIES } from '../actions/category_actions';
 
 const categoryReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,6 +7,9 @@ const categoryReducer = (state = {}, action) => {
         case RECEIVE_ALL_CATEGORY: 
             debugger
             return action.products 
+        case RECEIVE_ALL_CATEGORIES: 
+            debugger 
+            return action.categories
         default: 
             return state; 
     }
