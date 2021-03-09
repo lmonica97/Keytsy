@@ -7,7 +7,6 @@ class CategoryProductShow extends React.Component {
     }
 
     render() {
-        debugger
         const { product } = this.props;
         return (
             <li className="category-product-show">

@@ -1317,7 +1317,6 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
   _createClass(CategoryProductShow, [{
     key: "render",
     value: function render() {
-      debugger;
       var product = this.props.product;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "category-product-show"
@@ -1399,6 +1398,16 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchAllCategory(this.props.match.params.id);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      debugger;
+
+      if (prevProps.category.id !== this.props.category.id) {
+        debugger;
+        this.props.fetchAllCategory(this.props.match.params.id);
+      }
     }
   }, {
     key: "render",
@@ -2021,7 +2030,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   _createClass(ProductShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchProduct(this.props.match.params.id);
       this.props.fetchReviews(this.props.match.params.id);
     } // shouldComponentUpdate(nextProps, nextState) {
@@ -2032,11 +2040,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     //     return true
     // }
 
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      debugger;
-    }
   }, {
     key: "hideForm",
     value: function hideForm(name) {

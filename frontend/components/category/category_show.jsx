@@ -10,6 +10,14 @@ class CategoryShow extends React.Component {
         this.props.fetchAllCategory(this.props.match.params.id)
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        debugger
+        if (prevProps.category.id !== this.props.category.id) {
+            debugger
+            this.props.fetchAllCategory(this.props.match.params.id)
+        }
+    }
+
     render() {
         const { allProducts } = this.props;
         return (

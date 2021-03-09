@@ -18,7 +18,6 @@ class ProductShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchProduct(this.props.match.params.id);
         this.props.fetchReviews(this.props.match.params.id);
     }
@@ -30,11 +29,6 @@ class ProductShow extends React.Component {
     //     }
     //     return true
     // }
-
-    componentDidUpdate(prevProps, prevState) {
-        debugger
-        
-    }
 
     hideForm(name) {
         switch(name) {
