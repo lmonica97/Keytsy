@@ -11,7 +11,6 @@ const productReducer = (state = {}, action) => {
         case RECEIVE_PRODUCT_ERRORS:
             return null;
         case RECEIVE_ALL_CATEGORY: 
-            debugger
             return action.products
         default: 
             return state;

@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger 
     return {
         category: state.entities.categories[ownProps.match.params.id],
-        allProducts: state.entities.products
+        allProducts: Object.values(state.entities.products)
     }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoryProductShow from './category_product_show'
 
 class CategoryShow extends React.Component {
     constructor(props) {
@@ -6,12 +7,18 @@ class CategoryShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllCategory(this.props.category.id)
+        this.props.fetchAllCategory(this.props.match.params.id)
     }
 
     render() {
-        debugger
-        return null;
+        const { allProducts } = this.props;
+        return (
+            <ul>
+                {allProducts.map(product => 
+                    <CategoryProductShow product={product} />    
+                )}
+            </ul>
+        )
     }
 }
 
