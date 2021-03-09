@@ -1,4 +1,8 @@
 class Api::CategoriesController < ApplicationController
+    def index 
+        @categories = Category.all 
+        render 'api/categories/index'
+    end
 
     def show 
         @categoryProducts = Category.find_by(id: params[:id])

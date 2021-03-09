@@ -1,6 +1,6 @@
 export const fetchAllProducts = (categoryId) => {
+    debugger
     return $.ajax({
-        debugger
         url: `api/categories/${categoryId}`,
         method: 'GET'
     })

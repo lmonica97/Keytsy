@@ -176,6 +176,39 @@ var removeItem = function removeItem(cartitemId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/category_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/category_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_ALL_CATEGORY, receiveAllCategory, fetchAllCategory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_CATEGORY", function() { return RECEIVE_ALL_CATEGORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllCategory", function() { return receiveAllCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllCategory", function() { return fetchAllCategory; });
+/* harmony import */ var _utils_category__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/category */ "./frontend/utils/category.js");
+
+var RECEIVE_ALL_CATEGORY = 'RECEIVE_ALL_CATEGORY';
+var receiveAllCategory = function receiveAllCategory(products) {
+  debugger;
+  return {
+    type: RECEIVE_ALL_CATEGORY,
+    products: products
+  };
+};
+var fetchAllCategory = function fetchAllCategory(categoryId) {
+  return function (dispatch) {
+    debugger;
+    return _utils_category__WEBPACK_IMPORTED_MODULE_0__["fetchAllProducts"](categoryId).then(function (products) {
+      return dispatch(receiveAllCategory(products));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -3150,6 +3183,38 @@ var cartitemReducer = function cartitemReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/category_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/category_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_category_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/category_actions */ "./frontend/actions/category_actions.js");
+
+
+var categoryReducer = function categoryReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_category_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CATEGORY"]:
+      debugger;
+      return action.products;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (categoryReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -3164,6 +3229,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_reducer */ "./frontend/reducers/product_reducer.js");
 /* harmony import */ var _cartitem_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cartitem_reducer */ "./frontend/reducers/cartitem_reducer.js");
 /* harmony import */ var _review_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./review_reducer */ "./frontend/reducers/review_reducer.js");
+/* harmony import */ var _category_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./category_reducer */ "./frontend/reducers/category_reducer.js");
+
 
 
 
@@ -3173,7 +3240,8 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   products: _product_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   cartitems: _cartitem_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  reviews: _review_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  reviews: _review_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  categories: _category_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -4070,6 +4138,26 @@ var addSingleItem = function addSingleItem(cartitem) {
     data: {
       cartitem: cartitem
     }
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/utils/category.js":
+/*!************************************!*\
+  !*** ./frontend/utils/category.js ***!
+  \************************************/
+/*! exports provided: fetchAllProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllProducts", function() { return fetchAllProducts; });
+var fetchAllProducts = function fetchAllProducts(categoryId) {
+  debugger;
+  return $.ajax({
+    url: "api/categories/".concat(categoryId),
+    method: 'GET'
   });
 };
 
