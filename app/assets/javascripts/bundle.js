@@ -1198,8 +1198,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _category_show_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category_show_container */ "./frontend/components/category/category_show_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1225,28 +1224,21 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var CategoryNav = /*#__PURE__*/function (_React$Component) {
   _inherits(CategoryNav, _React$Component);
 
   var _super = _createSuper(CategoryNav);
 
   function CategoryNav(props) {
-    var _this;
-
     _classCallCheck(this, CategoryNav);
 
-    _this = _super.call(this, props);
-    debugger;
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(CategoryNav, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchAllCategories();
-      debugger;
     }
   }, {
     key: "render",
@@ -1259,7 +1251,7 @@ var CategoryNav = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "cat-nav-list"
       }, categories.map(function (category) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/categories/".concat(category.id),
           style: {
             textDecoration: 'none'
@@ -1327,7 +1319,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   _createClass(CategoryShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchAllCategory(this.props.id);
+      this.props.fetchAllCategory(this.props.category.id);
     }
   }, {
     key: "render",
@@ -1363,7 +1355,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   debugger;
   return {
-    categories: Object.values(state.entities.categories)
+    category: state.entities.categories[ownProps.match.params.id],
+    allProducts: state.entities.products
   };
 };
 
@@ -3361,10 +3354,6 @@ var categoryReducer = function categoryReducer() {
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
-    case _actions_category_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CATEGORY"]:
-      debugger;
-      return action.products;
-
     case _actions_category_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CATEGORIES"]:
       debugger;
       return action.categories;
@@ -3514,7 +3503,9 @@ var productErrorsReducer = function productErrorsReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_category_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/category_actions */ "./frontend/actions/category_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3532,6 +3523,10 @@ var productReducer = function productReducer() {
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCT_ERRORS"]:
       return null;
+
+    case _actions_category_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_CATEGORY"]:
+      debugger;
+      return action.products;
 
     default:
       return state;

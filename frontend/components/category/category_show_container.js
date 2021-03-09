@@ -5,7 +5,8 @@ import { fetchAllCategory } from '../../actions/category_actions';
 const mapStateToProps = (state, ownProps) => {
     debugger 
     return {
-        categories: Object.values(state.entities.categories)
+        category: state.entities.categories[ownProps.match.params.id],
+        allProducts: state.entities.products
     }
 }
 

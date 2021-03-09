@@ -6,7 +6,7 @@ class CategoryShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllCategory(this.props.id)
+        this.props.fetchAllCategory(this.props.category.id)
     }
 
     render() {
