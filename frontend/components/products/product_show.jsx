@@ -12,6 +12,7 @@ class ProductShow extends React.Component {
             comment: '',
             showReviewForm: false,
         }
+        this.hideForm = this.hideForm.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onStarClick = this.onStarClick.bind(this);
@@ -33,7 +34,7 @@ class ProductShow extends React.Component {
     hideForm(name) {
         switch(name) {
             case "showReviewForm":
-                this.setState({ showReviewForm: !this.state.showReviewForm })
+                this.setState({ showReviewForm: !this.state.showReviewForm, comment: '', rating: 1 })
                 break;
             default:
                 null;
@@ -51,7 +52,8 @@ class ProductShow extends React.Component {
     }
 
     handleSubmit(e) {
-        this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment}).then(this.hideForm("showReviewForm"))
+        this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment})
+            .then(this.hideForm("showReviewForm"))
     }
 
     update(type) {
@@ -81,7 +83,7 @@ class ProductShow extends React.Component {
         let ratings = [];
         reviews.map(review => ratings.push(review.rating));
         let total = ratings.reduce((a , b) => a + b, 0);
-        let average = (total / ratings.length);
+        let average = Math.round(total / ratings.length);
         if (!product){
             return(
                 <div>Fetching Product...</div>

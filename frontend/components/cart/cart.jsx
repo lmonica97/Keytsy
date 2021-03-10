@@ -78,7 +78,7 @@ class Cart extends React.Component {
                             <div className="paymentbox">
                                 <h3 className="payment-header">How you'll pay</h3>
                                 <div>
-                                    <input type="radio" name="payment" className="creditcard"/>
+                                    <input type="radio" name="payment" className="creditcard" defaultChecked/>
                                         <img className="pay-img" src={window.mastercard} /> 
                                         <img className="pay-img" src={window.visa} />
                                         <img className="pay-img" src={window.ae} />

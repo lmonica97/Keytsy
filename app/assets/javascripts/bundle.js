@@ -114,7 +114,6 @@ var REMOVE_CARTITEM = 'REMOVE_CARTITEM';
 var RECEIVE_CARTITEM_ERRORS = 'RECEIVE_CARTITEM_ERRORS';
 var RECEIVE_ALL_CARTITEMS = 'RECEIVE_ALL_CARTITEMS';
 var addCartitem = function addCartitem(cartitem) {
-  debugger;
   return {
     type: ADD_CARTITEM,
     cartitem: cartitem
@@ -149,7 +148,6 @@ var fetchAllitems = function fetchAllitems() {
 };
 var addItem = function addItem(cartitem) {
   return function (dispatch) {
-    debugger;
     return _utils_cartitem__WEBPACK_IMPORTED_MODULE_0__["addSingleItem"](cartitem).then(function (cartitem) {
       return dispatch(addCartitem(cartitem));
     }, function (error) {
@@ -779,7 +777,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         }, "How you'll pay"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "payment",
-          className: "creditcard"
+          className: "creditcard",
+          defaultChecked: true
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "pay-img",
           src: window.mastercard
@@ -875,7 +874,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     user: state.session.currentUser.id,
     items: Object.values(state.entities.cartitems),
@@ -1254,7 +1252,8 @@ var CategoryNav = /*#__PURE__*/function (_React$Component) {
           to: "/categories/".concat(category.id),
           style: {
             textDecoration: 'none'
-          }
+          },
+          key: category.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cat-nav-element"
         }, category.category_name));
@@ -1322,7 +1321,8 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var product = this.props.product;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "category-product-show"
+        className: "category-product-show",
+        key: product.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/".concat(product.id),
         style: {
@@ -1456,7 +1456,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     category: state.entities.categories[ownProps.match.params.id],
     allProducts: Object.values(state.entities.products)
@@ -2031,6 +2030,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       comment: '',
       showReviewForm: false
     };
+    _this.hideForm = _this.hideForm.bind(_assertThisInitialized(_this));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.onStarClick = _this.onStarClick.bind(_assertThisInitialized(_this));
@@ -2056,7 +2056,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       switch (name) {
         case "showReviewForm":
           this.setState({
-            showReviewForm: !this.state.showReviewForm
+            showReviewForm: !this.state.showReviewForm,
+            comment: '',
+            rating: 1
           });
           break;
 
@@ -2148,7 +2150,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var total = ratings.reduce(function (a, b) {
         return a + b;
       }, 0);
-      var average = total / ratings.length;
+      var average = Math.round(total / ratings.length);
 
       if (!product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetching Product...");
@@ -2350,7 +2352,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     fetchProduct: function fetchProduct(productId) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProduct"])(productId));
@@ -3416,7 +3417,6 @@ var cartitemReducer = function cartitemReducer() {
       return action.cartitems;
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["ADD_CARTITEM"]:
-      debugger;
       return Object.assign({}, state, _defineProperty({}, action.cartitem.id, action.cartitem));
 
     case _actions_cartitem_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CARTITEM"]:
@@ -4392,7 +4392,6 @@ var removeCartitem = function removeCartitem(cartitemId) {
   });
 };
 var addSingleItem = function addSingleItem(cartitem) {
-  debugger;
   return $.ajax({
     url: "/api/cartitems",
     method: 'POST',

@@ -37,6 +37,10 @@
     padding: 10px 0;
 }
 
+.category-product-show {
+    margin-bottom: 30px;
+}
+
 .category-header {
     font-family: 'Montserrat';
     font-size: 25px;

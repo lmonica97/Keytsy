@@ -9,7 +9,7 @@ class CategoryProductShow extends React.Component {
     render() {
         const { product } = this.props;
         return (
-            <li className="category-product-show">
+            <li className="category-product-show" key={product.id}>
                 <Link to={`/products/${product.id}`} style={{textDecoration:'none', color:'black'}}>
                     <img className="category-product-img" src={product.photoUrl} />
                     <p className="category-product-name">{product.product_name}</p>

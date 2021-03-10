@@ -7,7 +7,6 @@ const cartitemReducer = (state = {}, action) => {
         case RECEIVE_ALL_CARTITEMS:
             return action.cartitems
         case ADD_CARTITEM:
-            debugger
             return Object.assign({}, state, { [action.cartitem.id]: action.cartitem })
         case REMOVE_CARTITEM:   
             delete nextState[action.cartitemId]

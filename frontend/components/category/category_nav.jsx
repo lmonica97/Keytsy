@@ -17,7 +17,7 @@ class CategoryNav extends React.Component {
                 <div className="cat-nav-container">
                     <ul className="cat-nav-list">
                         { categories.map(category => 
-                            <Link to={`/categories/${category.id}`} style={{textDecoration:'none'}}> 
+                            <Link to={`/categories/${category.id}`} style={{textDecoration:'none'}} key={category.id}> 
                                 <p className="cat-nav-element">{category.category_name}</p>
                             </Link>  
                         )}

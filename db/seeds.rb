@@ -30,7 +30,25 @@ user2 = User.create!(
 
 user3 = User.create!(
     name: 'SallyStore',
-    email: 'sallystore@gm',
+    email: 'sallystore@g.com',
+    password: 'password'    
+)
+
+user5 = User.create!(
+    name: 'ExtraordinaryJewelry',
+    email: 'jewelry@gm.com',
+    password: 'password'    
+)
+
+user6 = User.create!(
+    name: 'KingCaps',
+    email: 'keypop@gm.com',
+    password: 'password'    
+)
+
+user7 = User.create!(
+    name: 'SupremeOutlet',
+    email: 'supreme@gm.com',
     password: 'password'    
 )
 
@@ -343,3 +361,137 @@ product30 = Product.create!(
 )
 product30.photo.attach(io: File.open("app/assets/images/products/30.jpg"), filename: "30.jpg")
 
+product31 = Product.create!(
+    seller_id: user6.id,
+    product_name: "Highlight yellow accent keycaps",
+    description: "These super bright highlight yellow keycaps will definitely brighten your day!",
+    price: 27.88,
+    category_id: category1.id
+)
+product31.photo.attach(io: File.open("app/assets/images/products/31.jpg"), filename: "31.jpg")
+
+product32 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Cute earrings",
+    description: "cute baby blue earrings that can match your very blue outfit",
+    price: 10.99,
+    category_id: category2.id
+)
+product32.photo.attach(io: File.open("app/assets/images/products/32.jpg"), filename: "32.jpg")
+
+product33 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Brown switches",
+    description: "Brown tactile switches, 40g actuation force. Comes in a pack of 10",
+    price: 5.66,
+    category_id: category1.id
+)
+product33.photo.attach(io: File.open("app/assets/images/products/33.jpg"), filename: "33.jpg")
+
+product34 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Cute cat face masks",
+    description: "Size should fit kids from 5-12 years old. Comes in a pack of one.",
+    price: 4.22,
+    category_id: category2.id
+)
+product34.photo.attach(io: File.open("app/assets/images/products/34.jpg"), filename: "34.jpg")
+
+product35 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Leather Gloves",
+    description: "Leather gloves for those cold nights you ever have to cold with no heat on",
+    price: 32.11,
+    category_id: category2.id
+)
+product35.photo.attach(io: File.open("app/assets/images/products/35.jpg"), filename: "35.jpg")
+
+product38 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Swarovski crystal Bracelet",
+    description: "Beautiful bracelet 3 inches in diameter",
+    price: 45.44,
+    category_id: category2.id
+)
+product38.photo.attach(io: File.open("app/assets/images/products/38.jpg"), filename: "38.jpg")
+
+product36 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Hiking Backpack",
+    description: "Cute yet convenient backpack --great for traveling. Has lots of compartments!",
+    price: 60.44,
+    category_id: category2.id
+)
+product36.photo.attach(io: File.open("app/assets/images/products/36.jpg"), filename: "36.jpg")
+
+product37 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Ruby stone necklace",
+    description: "Authentic Ruby Stone necklace. Great as a gift.",
+    price: 40.49,
+    category_id: category2.id
+)
+product37.photo.attach(io: File.open("app/assets/images/products/37.jpg"), filename: "37.jpg")
+
+product39 = Product.create!(
+    seller_id: user5.id,
+    product_name: "Diamond Ring",
+    description: "Pear cut diamond ring. 3 carat diamond",
+    price: 29999.99,
+    category_id: category2.id
+)
+product39.photo.attach(io: File.open("app/assets/images/products/39.jpg"), filename: "39.jpg")
+
+product40 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product40.photo.attach(io: File.open("app/assets/images/products/40.jpg"), filename: "40.jpg")
+
+product41 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product41.photo.attach(io: File.open("app/assets/images/products/41.jpg"), filename: "41.jpg")
+
+product42 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product42.photo.attach(io: File.open("app/assets/images/products/42.jpg"), filename: "42.jpg")
+
+product43 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product43.photo.attach(io: File.open("app/assets/images/products/43.jpg"), filename: "43.jpg")
+
+product44 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product44.photo.attach(io: File.open("app/assets/images/products/44.jpg"), filename: "44.jpg")
+
+product45 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Cable knit socks",
+    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
+    price: 12.11,
+    category_id: category3.id
+)
+product45.photo.attach(io: File.open("app/assets/images/products/45.jpg"), filename: "45.jpg")

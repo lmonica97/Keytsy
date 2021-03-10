@@ -4,7 +4,6 @@ import { fetchAllitems, addItem, updateItem, removeItem } from '../../actions/ca
 import {fetchProducts} from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         user: state.session.currentUser.id,
         items: Object.values(state.entities.cartitems),

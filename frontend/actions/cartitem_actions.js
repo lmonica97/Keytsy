@@ -6,7 +6,6 @@ export const RECEIVE_CARTITEM_ERRORS = 'RECEIVE_CARTITEM_ERRORS';
 export const RECEIVE_ALL_CARTITEMS = 'RECEIVE_ALL_CARTITEMS';
 
 export const addCartitem = cartitem => {
-    debugger
     return {
         type: ADD_CARTITEM,
         cartitem
@@ -41,7 +40,6 @@ export const fetchAllitems = () => dispatch => {
 }
 
 export const addItem = cartitem => dispatch => {
-    debugger
     return CartitemApiUtil.addSingleItem(cartitem)
         .then(cartitem => dispatch(addCartitem(cartitem)),
         error => dispatch(receiveCartitemErrors(error.responseJSON)))
