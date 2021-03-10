@@ -76,6 +76,12 @@ user11 = User.create!(
     password: 'password'    
 )
 
+user12 = User.create!(
+    name: 'Crafty',
+    email: 'homen1n@gm.com',
+    password: 'password'    
+)
+
 category1 = Category.create!(
     category_name: 'Keyboard & Accesories'
 )
@@ -782,119 +788,119 @@ product74 = Product.create!(
 product74.photo.attach(io: File.open("app/assets/images/products/74.jpg"), filename: "74.jpg")
 
 product75 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    seller_id: user1.id,
+    product_name: "Crystals",
+    description: "A random crystal will be picked from our collection and shipped to you.",
     price: 9.99,
-    category_id: category3.id
+    category_id: category7.id
 )
 product75.photo.attach(io: File.open("app/assets/images/products/75.jpg"), filename: "75.jpg")
 
 product76 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user2.id,
+    product_name: "Beautiful Rocks",
+    description: "Colorful rocks you can display around your house for decoration. Comes in randomly in a set of 10.",
+    price: 2.99,
+    category_id: category7.id
 )
 product76.photo.attach(io: File.open("app/assets/images/products/76.jpg"), filename: "76.jpg")
 
 product77 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user3.id,
+    product_name: "Unique Hourglass",
+    description: "Unique hourglass filled with colored sand. Please state in seller note which hourglass you'd like -- 1 or 2.",
+    price: 39.99,
+    category_id: category7.id
 )
 product77.photo.attach(io: File.open("app/assets/images/products/77.jpg"), filename: "77.jpg")
 
 product78 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    seller_id: user12.id,
+    product_name: "Thin Yarn",
+    description: "Comes in pack of three of the same color. Please state in seller's note which color(s) you'd like. This type of yarn is commonly used for bracelet making.",
     price: 9.99,
-    category_id: category3.id
+    category_id: category8.id
 )
 product78.photo.attach(io: File.open("app/assets/images/products/78.jpg"), filename: "78.jpg")
 
 product79 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Colored Pencils",
+    description: "Comes in pack of 24.",
+    price: 13.99,
+    category_id: category8.id
 )
 product79.photo.attach(io: File.open("app/assets/images/products/79.jpg"), filename: "79.jpg")
 
 product80 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Thread",
+    description: "500g of thread. Please specify color in seller's notes during checkout.",
+    price: 19.99,
+    category_id: category8.id
 )
 product80.photo.attach(io: File.open("app/assets/images/products/80.jpg"), filename: "80.jpg")
 
 product81 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Crayons",
+    description: "Crayons will come in a pack of 24.",
+    price: 6.99,
+    category_id: category8.id
 )
 product81.photo.attach(io: File.open("app/assets/images/products/81.jpg"), filename: "81.jpg")
 
 product82 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Gold Glitter",
+    description: "**NOT EDIBLE, PLEASE BE CAUTIOUS WITH KIDS** Gold glitter for decoration, projects, etc.",
+    price: 4.99,
+    category_id: category8.id
 )
 product82.photo.attach(io: File.open("app/assets/images/products/82.jpg"), filename: "82.jpg")
 
 product83 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    seller_id: user12.id,
+    product_name: "Plastic Discs",
+    description: "Will come in a pack of 1000. Only in colors: red, white and blue.",
     price: 9.99,
-    category_id: category3.id
+    category_id: category8.id
 )
 product83.photo.attach(io: File.open("app/assets/images/products/83.jpg"), filename: "83.jpg")
 
 product84 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user2.id,
+    product_name: "Ceramic Bowls (not glazed)",
+    description: "Ceramic Bowls that will come in ready to decorate and glaze.",
+    price: 12.99,
+    category_id: category8.id
 )
 product84.photo.attach(io: File.open("app/assets/images/products/84.jpg"), filename: "84.jpg")
 
 product85 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Paint",
+    description: "4oz of paint in a small bottle. Please specify color in seller's notes during checkout.",
+    price: 5.99,
+    category_id: category8.id
 )
 product85.photo.attach(io: File.open("app/assets/images/products/85.jpg"), filename: "85.jpg")
 
 product86 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user2.id,
+    product_name: "Measuring Tape",
+    description: "10 ft measruing tape, great for taking measurements.",
+    price: 2.99,
+    category_id: category8.id
 )
 product86.photo.attach(io: File.open("app/assets/images/products/86.jpg"), filename: "86.jpg")
 
 product87 = Product.create!(
-    seller_id: user8.id,
-    product_name: "Unisex black tshirt",
-    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
-    price: 9.99,
-    category_id: category3.id
+    seller_id: user12.id,
+    product_name: "Coloring Pencils",
+    description: "Comes in pack of 24. Great quality colored pencils with high pigmentation.",
+    price: 19.99,
+    category_id: category8.id
 )
 product87.photo.attach(io: File.open("app/assets/images/products/87.jpg"), filename: "87.jpg")
 
