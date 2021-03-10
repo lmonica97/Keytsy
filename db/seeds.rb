@@ -52,6 +52,12 @@ user7 = User.create!(
     password: 'password'    
 )
 
+user8 = User.create!(
+    name: 'ShannonStore',
+    email: 'shannon@gm.com',
+    password: 'password'    
+)
+
 category1 = Category.create!(
     category_name: 'Keyboard & Accesories'
 )
@@ -453,45 +459,99 @@ product40.photo.attach(io: File.open("app/assets/images/products/40.jpg"), filen
 
 product41 = Product.create!(
     seller_id: user7.id,
-    product_name: "Cable knit socks",
-    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
-    price: 12.11,
+    product_name: "Skate sneakers",
+    description: "Comes in men size 10. Color shown in photo, grey.",
+    price: 60.99,
     category_id: category3.id
 )
 product41.photo.attach(io: File.open("app/assets/images/products/41.jpg"), filename: "41.jpg")
 
 product42 = Product.create!(
     seller_id: user7.id,
-    product_name: "Cable knit socks",
-    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
-    price: 12.11,
+    product_name: "Nike hat",
+    description: "Red nike hat with white lettering",
+    price: 20.99,
     category_id: category3.id
 )
 product42.photo.attach(io: File.open("app/assets/images/products/42.jpg"), filename: "42.jpg")
 
 product43 = Product.create!(
     seller_id: user7.id,
-    product_name: "Cable knit socks",
-    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
-    price: 12.11,
+    product_name: "Womens printed tshirt",
+    description: "Womens grey t-shirt. Please specify size in seller's notes during checkout.",
+    price: 15.99,
     category_id: category3.id
 )
 product43.photo.attach(io: File.open("app/assets/images/products/43.jpg"), filename: "43.jpg")
 
 product44 = Product.create!(
     seller_id: user7.id,
-    product_name: "Cable knit socks",
-    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
-    price: 12.11,
+    product_name: "Beach hat",
+    description: "Beautiful beach hat with a black ribbon accent.",
+    price: 18.44,
     category_id: category3.id
 )
 product44.photo.attach(io: File.open("app/assets/images/products/44.jpg"), filename: "44.jpg")
 
 product45 = Product.create!(
     seller_id: user7.id,
-    product_name: "Cable knit socks",
-    description: "1 pair of socks. Very warm for the winter -- comes in the color lavender",
-    price: 12.11,
+    product_name: "Regrets Crop Tee",
+    description: "Womens cropped 'Regrets' tshirt. Please specify size in seller's notes during checkout!",
+    price: 9.99,
     category_id: category3.id
 )
 product45.photo.attach(io: File.open("app/assets/images/products/45.jpg"), filename: "45.jpg")
+
+product46 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Floral Maxi Dress",
+    description: "White women's dress with floral detailing. Please specify size in seller's notes during checkout",
+    price: 29.99,
+    category_id: category3.id
+)
+product46.photo.attach(io: File.open("app/assets/images/products/46.jpg"), filename: "46.jpg")
+
+product47 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Introvert Unisex Tshirt",
+    description: "Black introvert tshirt. Please specify size in seller's notes during checkout",
+    price: 9.99,
+    category_id: category3.id
+)
+product47.photo.attach(io: File.open("app/assets/images/products/47.jpg"), filename: "47.jpg")
+
+product48 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Black Satin Dress",
+    description: "Black Satin Dress, mid length dress. Please specify size in seller's notes during checkout.",
+    price: 39.99,
+    category_id: category3.id
+)
+product48.photo.attach(io: File.open("app/assets/images/products/48.jpg"), filename: "48.jpg")
+
+product49 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Men's Sweat Set",
+    description: "Comes in Salmon colorway, as show in photo. Please specify pants and top size in seller's notes during checkout.",
+    price: 39.99,
+    category_id: category3.id
+)
+product49.photo.attach(io: File.open("app/assets/images/products/49.jpg"), filename: "49.jpg")
+
+product50 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Men's Yellow Tshirt",
+    description: "Plain yellow tshirt made of 100% cotton. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product50.photo.attach(io: File.open("app/assets/images/products/50.jpg"), filename: "50.jpg")
+
+product51 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product51.photo.attach(io: File.open("app/assets/images/products/51.jpg"), filename: "51.jpg")
