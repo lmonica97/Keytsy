@@ -4,6 +4,7 @@ import CategoryProductShow from './category_product_show'
 class CategoryShow extends React.Component {
     constructor(props) {
         super(props);
+        this.filterUpdate = this.filterUpdate.bind(this);
     }
 
     componentDidMount() {
@@ -17,7 +18,7 @@ class CategoryShow extends React.Component {
     }
 
     render() {
-        const { allProducts, category } = this.props;
+        let { allProducts, category } = this.props;
         if (!category) {
             return (
                 <div>Fetch Products...</div>
@@ -28,11 +29,31 @@ class CategoryShow extends React.Component {
                     <div>
                         <h1 className="category-header">{category.category_name}</h1>
                     </div>
-                    <ul className="category-product-container">
-                        {allProducts.map(product => 
-                            <CategoryProductShow product={product} />    
-                        )}
-                    </ul>
+                    <div className="category-main">
+                        <div className="category-price-header">
+                            <p>Price ($)</p>
+                            <input type="radio" name="price" className="filter-price" defaultChecked />
+                                <label>Any Price</label>
+                            <br />
+                            <input type="radio" name="price" className="filter-price" />
+                                <label>Under $25</label>
+                            <br />
+                            <input type="radio" name="price" className="filter-price" />
+                                <label>$25 to $50</label>
+                            <br />
+                            <input type="radio" name="price" className="filter-price" />
+                                <label>$50 to $100</label>
+                            <br />
+                            <input type="radio" name="price" className="filter-price" />
+                                <label>Over $100</label>
+                            <br />
+                        </div>
+                            <ul className="category-product-container">
+                                {allProducts.map(product => 
+                                    <CategoryProductShow product={product} />    
+                                )}
+                            </ul>
+                    </div>
                 </div>
             )
         }

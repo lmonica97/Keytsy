@@ -4,6 +4,11 @@
     object-fit: cover;
 }
 
+.category-product-img:hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    cursor: pointer;
+}
+
 .category-product-container {
     display: flex;
     justify-content: space-between;
@@ -47,4 +52,13 @@
     margin-left: 280px;
     margin-top: 50px;
     font-weight: 600;
+}
+
+.category-price-header {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 13px;
+    margin-left: 280px;
+    width: 200px;
 }

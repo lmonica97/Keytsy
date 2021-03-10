@@ -920,7 +920,7 @@ product89 = Product.create!(
     price: 49.99,
     category_id: category9.id
 )
-product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+product89.photo.attach(io: File.open("app/assets/images/products/89.jpg"), filename: "89.jpg")
 
 product91 = Product.create!(
     seller_id: user9.id,
@@ -929,7 +929,7 @@ product91 = Product.create!(
     price: 19.99,
     category_id: category9.id
 )
-product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+product91.photo.attach(io: File.open("app/assets/images/products/91.jpg"), filename: "91.jpg")
 
 
 product90 = Product.create!(
@@ -939,7 +939,7 @@ product90 = Product.create!(
     price: 9.99,
     category_id: category9.id
 )
-product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+product90.photo.attach(io: File.open("app/assets/images/products/90.jpg"), filename: "90.jpg")
 
 
 
