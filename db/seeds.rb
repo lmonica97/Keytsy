@@ -58,6 +58,24 @@ user8 = User.create!(
     password: 'password'    
 )
 
+user9 = User.create!(
+    name: 'Keytsy',
+    email: 'keytsy@gm.com',
+    password: 'password'    
+)
+
+user10 = User.create!(
+    name: 'HomeGoals',
+    email: 'homen@gm.com',
+    password: 'password'    
+)
+
+user11 = User.create!(
+    name: 'TopCollector',
+    email: 'homenn@gm.com',
+    password: 'password'    
+)
+
 category1 = Category.create!(
     category_name: 'Keyboard & Accesories'
 )
@@ -555,3 +573,369 @@ product51 = Product.create!(
     category_id: category3.id
 )
 product51.photo.attach(io: File.open("app/assets/images/products/51.jpg"), filename: "51.jpg")
+
+product52 = Product.create!(
+    seller_id: user6.id,
+    product_name: "Novelkey Creams",
+    description: "Kovelkey Cream linear switches. Linear | 4mm travel | 2mm operating | 55g actuation | 70g bottom out. Switches sold in packs of 10.",
+    price: 5.55,
+    category_id: category1.id
+)
+product52.photo.attach(io: File.open("app/assets/images/products/52.jpg"), filename: "52.jpg")
+
+product53 = Product.create!(
+    seller_id: user6.id,
+    product_name: "DZ65RGB DYI KIT",
+    description: "Includes: Hotswap DZ65RGB v2 PCB, USB-C cable, Cherry screw-in stabilizers, Grey Aluminum case, and aluminum plate.",
+    price: 199.99,
+    category_id: category1.id
+)
+product53.photo.attach(io: File.open("app/assets/images/products/53.jpg"), filename: "53.jpg")
+
+product54 = Product.create!(
+    seller_id: user6.id,
+    product_name: "Gateron Milky Black",
+    description: "Linear | 4.0mm travel | 60g actuation",
+    price: 2.44,
+    category_id: category1.id
+)
+product54.photo.attach(io: File.open("app/assets/images/products/54.jpg"), filename: "54.jpg")
+
+product55 = Product.create!(
+    seller_id: user10.id,
+    product_name: "Grey cloth stool",
+    description: "Black stool, with a grey top cloth. Height: 30in, Width: 10in, Length: 10in.",
+    price: 39.99,
+    category_id: category4.id
+)
+product55.photo.attach(io: File.open("app/assets/images/products/55.jpg"), filename: "55.jpg")
+
+product56 = Product.create!(
+    seller_id: user10.id,
+    product_name: "Black and White Cactus",
+    description: "Black and white Cactus picture displayed on wooden frame. Dimensions: 40in x 25in.",
+    price: 49.99,
+    category_id: category4.id
+)
+product56.photo.attach(io: File.open("app/assets/images/products/56.jpg"), filename: "56.jpg")
+
+product57 = Product.create!(
+    seller_id: user10.id,
+    product_name: "I Hate Mondays",
+    description: "Small, 'I hate Mondays' display frame. Dimensions: 12in X 8in",
+    price: 19.99,
+    category_id: category4.id
+)
+product57.photo.attach(io: File.open("app/assets/images/products/57.jpg"), filename: "57.jpg")
+
+product58 = Product.create!(
+    seller_id: user10.id,
+    product_name: "Rose Gold Lamp",
+    description: "Rose Gold side table lamp. Great for those late night readings!",
+    price: 39.99,
+    category_id: category4.id
+)
+product58.photo.attach(io: File.open("app/assets/images/products/58.jpg"), filename: "58.jpg")
+
+product59 = Product.create!(
+    seller_id: user11.id,
+    product_name: "8 Pool Ball",
+    description: "8 Ball pool with plastic housing of the same ball pattern/color/number. Please state in seller's notes which number ball you'd like.",
+    price: 29.99,
+    category_id: category6.id
+)
+product59.photo.attach(io: File.open("app/assets/images/products/59.jpg"), filename: "59.jpg")
+
+product60 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Aluminum Chess Set",
+    description: "Very unique aluminum chess set!!! Very heavy on weight and details.",
+    price: 199.99,
+    category_id: category6.id
+)
+product60.photo.attach(io: File.open("app/assets/images/products/60.jpg"), filename: "60.jpg")
+
+product61 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Magnetic Dart Board",
+    description: "Fun magnetic dart board to play with your friends, with no accidents!",
+    price: 9.99,
+    category_id: category6.id
+)
+product61.photo.attach(io: File.open("app/assets/images/products/61.jpg"), filename: "61.jpg")
+
+product62 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Wooden Jenga",
+    description: "Wooden Jenga game, with authentic wood pieces.",
+    price: 29.99,
+    category_id: category6.id
+)
+product62.photo.attach(io: File.open("app/assets/images/products/62.jpg"), filename: "62.jpg")
+
+product63 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Baby Yoda",
+    description: "Baby Yoda with coat. Dimensions: 12in x 5in x 3in",
+    price: 49.99,
+    category_id: category6.id
+)
+product63.photo.attach(io: File.open("app/assets/images/products/63.jpg"), filename: "63.jpg")
+
+product64 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Horse Pinata",
+    description: "Paper horse pinata, comes in rainbow colorway. DOES NOT COME WITH ANY CANDY OR ANYTHING INSIDE.",
+    price: 19.99,
+    category_id: category6.id
+)
+product64.photo.attach(io: File.open("app/assets/images/products/64.jpg"), filename: "64.jpg")
+
+product65 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Poke Ball",
+    description: "Live out your Pokemon Trainer Dreams with this classic Poke Ball!",
+    price: 14.99,
+    category_id: category6.id
+)
+product65.photo.attach(io: File.open("app/assets/images/products/65.jpg"), filename: "65.jpg")
+
+product66 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Avocado Stuffed Toy",
+    description: "Friendly avocado stuffed toy. Dimensions: 15in x 6in x 5in",
+    price: 12.99,
+    category_id: category6.id
+)
+product66.photo.attach(io: File.open("app/assets/images/products/66.jpg"), filename: "66.jpg")
+
+product67 = Product.create!(
+    seller_id: user1.id,
+    product_name: "Plastic Tiaras",
+    description: "Kids plastic tiaras, come in a set of three, as show in photo.",
+    price: 7.99,
+    category_id: category6.id
+)
+product67.photo.attach(io: File.open("app/assets/images/products/67.jpg"), filename: "67.jpg")
+
+product68 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Vintage Yellow Toy Car",
+    description: "Vintage toy car, but still in decent quality. Tried to repaint any paint that deteriorated over time.",
+    price: 29.99,
+    category_id: category6.id
+)
+product68.photo.attach(io: File.open("app/assets/images/products/68.jpg"), filename: "68.jpg")
+
+product69 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Small Dog Bee Costume",
+    description: "Bee costume for smaller sized dogs, comes with a hood.",
+    price: 29.99,
+    category_id: category3.id
+)
+product69.photo.attach(io: File.open("app/assets/images/products/69.jpg"), filename: "69.jpg")
+
+product70 = Product.create!(
+    seller_id: user11.id,
+    product_name: "Unique Measuring Cups",
+    description: "Custom measuring cups, comes in a set of 4: 1/2 cup, 1/3 cup, 1 cup, and 1/4 cup.",
+    price: 39.99,
+    category_id: category7.id
+)
+product70.photo.attach(io: File.open("app/assets/images/products/70.jpg"), filename: "70.jpg")
+
+product71 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Snowman Ornament",
+    description: "Glass snowman ornament collectable to display on your tree.",
+    price: 14.99,
+    category_id: category7.id
+)
+product71.photo.attach(io: File.open("app/assets/images/products/71.jpg"), filename: "71.jpg")
+
+product72 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Rare Kidney Beans",
+    description: "Rare kidney beans with special patterns and colors. Will come in a set of 10 random beans.",
+    price: 9.99,
+    category_id: category7.id
+)
+product72.photo.attach(io: File.open("app/assets/images/products/72.jpg"), filename: "72.jpg")
+
+product73 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Beautiful seashell",
+    description: "Beautiful seashell you can use as display.",
+    price: 5.99,
+    category_id: category7.id
+)
+product73.photo.attach(io: File.open("app/assets/images/products/73.jpg"), filename: "73.jpg")
+
+product74 = Product.create!(
+    seller_id: user1.id,
+    product_name: "Gemstones",
+    description: "Beautiful gemstones to add to your collection. Your stone will be chosen randomly.",
+    price: 9.99,
+    category_id: category7.id
+)
+product74.photo.attach(io: File.open("app/assets/images/products/74.jpg"), filename: "74.jpg")
+
+product75 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product75.photo.attach(io: File.open("app/assets/images/products/75.jpg"), filename: "75.jpg")
+
+product76 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product76.photo.attach(io: File.open("app/assets/images/products/76.jpg"), filename: "76.jpg")
+
+product77 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product77.photo.attach(io: File.open("app/assets/images/products/77.jpg"), filename: "77.jpg")
+
+product78 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product78.photo.attach(io: File.open("app/assets/images/products/78.jpg"), filename: "78.jpg")
+
+product79 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product79.photo.attach(io: File.open("app/assets/images/products/79.jpg"), filename: "79.jpg")
+
+product80 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product80.photo.attach(io: File.open("app/assets/images/products/80.jpg"), filename: "80.jpg")
+
+product81 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product81.photo.attach(io: File.open("app/assets/images/products/81.jpg"), filename: "81.jpg")
+
+product82 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product82.photo.attach(io: File.open("app/assets/images/products/82.jpg"), filename: "82.jpg")
+
+product83 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product83.photo.attach(io: File.open("app/assets/images/products/83.jpg"), filename: "83.jpg")
+
+product84 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product84.photo.attach(io: File.open("app/assets/images/products/84.jpg"), filename: "84.jpg")
+
+product85 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product85.photo.attach(io: File.open("app/assets/images/products/85.jpg"), filename: "85.jpg")
+
+product86 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product86.photo.attach(io: File.open("app/assets/images/products/86.jpg"), filename: "86.jpg")
+
+product87 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Unisex black tshirt",
+    description: "Black tshirt with a TV logo on left chest side. Please specify size in seller's notes during checkout.",
+    price: 9.99,
+    category_id: category3.id
+)
+product87.photo.attach(io: File.open("app/assets/images/products/87.jpg"), filename: "87.jpg")
+
+product88 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Keytsy Gift Card",
+    description: "Keysy E-gift card to send to your loved ones, friends, etc.",
+    price: 99.99,
+    category_id: category9.id
+)
+product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+
+product89 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Keytsy Gift Card",
+    description: "Keysy E-gift card to send to your loved ones, friends, etc.",
+    price: 49.99,
+    category_id: category9.id
+)
+product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+
+product91 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Keysy Gift Card",
+    description: "Keysy E-gift card to send to your loved ones, friends, etc.",
+    price: 19.99,
+    category_id: category9.id
+)
+product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+
+
+product90 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Keytsy Gift Card",
+    description: "Keysy E-gift card to send to your loved ones, friends, etc.",
+    price: 9.99,
+    category_id: category9.id
+)
+product88.photo.attach(io: File.open("app/assets/images/products/88.jpg"), filename: "88.jpg")
+
+
+
+
+
