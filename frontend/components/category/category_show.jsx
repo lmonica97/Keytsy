@@ -4,7 +4,11 @@ import CategoryProductShow from './category_product_show'
 class CategoryShow extends React.Component {
     constructor(props) {
         super(props);
-        this.filterUpdate = this.filterUpdate.bind(this);
+        this.state = {
+            products: this.props.allProducts
+        }
+        this.filterPrice = this.filterPrice.bind(this);
+        this.filterRange = this.filterRange.bind(this);
     }
 
     componentDidMount() {
@@ -14,6 +18,18 @@ class CategoryShow extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
             this.props.fetchAllCategory(this.props.match.params.id)
+        }
+    }
+
+    filterPrice(price) {
+        return (e) => {
+            
+        }
+    }
+
+    filterRange(price1, price2) {
+        return (e) => {
+
         }
     }
 
@@ -35,7 +51,7 @@ class CategoryShow extends React.Component {
                             <input type="radio" name="price" className="filter-price" defaultChecked />
                                 <label>Any Price</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" />
+                            <input type="radio" name="price" className="filter-price" onClick={}/>
                                 <label>Under $25</label>
                             <br />
                             <input type="radio" name="price" className="filter-price" />

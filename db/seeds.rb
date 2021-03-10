@@ -924,7 +924,7 @@ product89.photo.attach(io: File.open("app/assets/images/products/89.jpg"), filen
 
 product91 = Product.create!(
     seller_id: user9.id,
-    product_name: "Keysy Gift Card",
+    product_name: "Keytsy Gift Card",
     description: "Keysy E-gift card to send to your loved ones, friends, etc.",
     price: 19.99,
     category_id: category9.id
