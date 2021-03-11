@@ -7,8 +7,9 @@ class CategoryShow extends React.Component {
         this.state = {
             products: this.props.allProducts
         }
-        this.filterPrice = this.filterPrice.bind(this);
+        this.filterPriceMin = this.filterPriceMin.bind(this);
         this.filterRange = this.filterRange.bind(this);
+        this.filterPriceMax = this.filterPriceMax.bind(this);
     }
 
     componentDidMount() {
@@ -21,13 +22,19 @@ class CategoryShow extends React.Component {
         }
     }
 
-    filterPrice(price) {
+    filterPriceMin(price) {
         return (e) => {
             
         }
     }
 
     filterRange(price1, price2) {
+        return (e) => {
+
+        }
+    }
+
+    filterPriceMax(price) {
         return (e) => {
 
         }
@@ -51,16 +58,16 @@ class CategoryShow extends React.Component {
                             <input type="radio" name="price" className="filter-price" defaultChecked />
                                 <label>Any Price</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" onClick={}/>
+                            <input type="radio" name="price" className="filter-price" onClick={this.filterPriceMin(25)}/>
                                 <label>Under $25</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" />
+                            <input type="radio" name="price" className="filter-price" onClick={this.filterRange(25, 50)}/>
                                 <label>$25 to $50</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" />
+                            <input type="radio" name="price" className="filter-price" onClick={this.filterRange(50, 100)} />
                                 <label>$50 to $100</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" />
+                            <input type="radio" name="price" className="filter-price" onClick={this.filterPriceMax(100)} />
                                 <label>Over $100</label>
                             <br />
                         </div>

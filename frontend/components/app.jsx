@@ -9,6 +9,7 @@ import Footer from './footer/footer';
 import ProductShowContainer from './products/product_show_container';
 import CartContainer from './cart/cart_container';
 import CategoryShowContainer from './category/category_show_container';
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/products/:id" component={ProductShowContainer} />
             <Route exact path="/categories/:id" component={CategoryShowContainer} />
+            <Route exact path="/search" component={SearchComponent} />
             <ProtectedRoute exact path="/cart" component={CartContainer} />
         </Switch>
         <Footer />
