@@ -24,7 +24,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/products/:id" component={ProductShowContainer} />
             <Route exact path="/categories/:id" component={CategoryShowContainer} />
-            <Route exact path="/search" component={SearchComponent} />
+            <Route exact path="/search" component={SearchContainer} />
             <ProtectedRoute exact path="/cart" component={CartContainer} />
         </Switch>
         <Footer />
