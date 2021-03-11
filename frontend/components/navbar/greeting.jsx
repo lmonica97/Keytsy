@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Dropdown from './logout_dropdown';
 import CategoryContainer from '../category/category_container';
 import CartContainer from '../cart/cart_container';
-import SearchContainer from '../search/search_container';
+import Search from '../search/search';
 
 const Greeting = ({ currentUser, signout, openModal }) => {
   const sessionLinks = () => (
@@ -15,7 +15,7 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         </Link>
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
         <div>
-          <SearchContainer />
+          <Search />
           {/* <button className="search-button-signin"><img className="search-image"src={window.magnifying} /></button>
           <input type="text" className="searchBar-signin" placeholder="Search for anything"></input> */}
         </div>
@@ -35,7 +35,7 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         </Link>
         <Dropdown currentUser={currentUser} signout={signout} />
         <div>
-          <SearchContainer />
+          <Search />
           {/* <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
           <input type="text" className="searchBar-signout" placeholder="Search for anything"></input> */}
         </div>
