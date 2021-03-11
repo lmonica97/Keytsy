@@ -1776,7 +1776,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _category_category_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../category/category_container */ "./frontend/components/category/category_container.js");
 /* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../cart/cart_container */ "./frontend/components/cart/cart_container.js");
 /* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../search/search */ "./frontend/components/search/search.jsx");
- // import SearchBar from './search_bar';
 
 
 

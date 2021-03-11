@@ -1,5 +1,4 @@
 import React from 'react';
-// import SearchBar from './search_bar';
 import { Link } from 'react-router-dom';
 import Dropdown from './logout_dropdown';
 import CategoryContainer from '../category/category_container';
@@ -16,8 +15,6 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
         <div>
           <Search />
-          {/* <button className="search-button-signin"><img className="search-image"src={window.magnifying} /></button>
-          <input type="text" className="searchBar-signin" placeholder="Search for anything"></input> */}
         </div>
         <Link to="/cart">
         <img className="cart" src={window.cart} />
@@ -36,8 +33,6 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <Dropdown currentUser={currentUser} signout={signout} />
         <div>
           <Search />
-          {/* <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
-          <input type="text" className="searchBar-signout" placeholder="Search for anything"></input> */}
         </div>
         <Link to="/cart">
           <img className="cart" src={window.cart} />
