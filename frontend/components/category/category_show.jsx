@@ -49,7 +49,7 @@ class CategoryShow extends React.Component {
             "Home & Living": <img className="cat-navimg" src={window.cat4} />,
             "Wedding & Party": <img className="cat-navimg" src={window.cat5} />,
             "Toys & Entertainment": <img className="cat-navimg" src={window.cat6} />,
-            "Arts & Collectables": <img className="cat-navimg" src={window.cat7} />,
+            "Art & Collectables": <img className="cat-navimg" src={window.cat7} />,
             "Craft Supplies": <img className="cat-navimg" src={window.cat8} />,
             "Keytsy Gifts & Gift Cards": <img className="cat-navimg" src={window.cat9} />
         }

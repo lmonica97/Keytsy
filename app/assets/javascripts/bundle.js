@@ -1470,7 +1470,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           className: "cat-navimg",
           src: window.cat6
         }),
-        "Arts & Collectables": /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        "Art & Collectables": /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "cat-navimg",
           src: window.cat7
         }),
