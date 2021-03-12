@@ -72,3 +72,15 @@
     margin-left: 280px;
     width: 200px;
 }
+
+.noMatchFilter {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.noMatch-sad {
+    margin-left: 450px;
+    margin-bottom: 50px;
+}

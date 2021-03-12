@@ -97,9 +97,16 @@ class CategoryShow extends React.Component {
                             <br />
                         </div>
                             <ul className="category-product-container">
-                                {productShow.map(product => 
+                                {productShow.length === 0 ? 
+                                    <div>
+                                        <div className="noMatchFilter">Sorry, there are no products that match this price range.</div>  
+                                        <img className="noMatch-sad" src={window.sad} />  
+                                    </div>
+                                    :
+                                    productShow.map(product => 
                                     <CategoryProductShow product={product} />    
-                                )}
+                                    )
+                                }
                             </ul>
                     </div>
                 </div>
