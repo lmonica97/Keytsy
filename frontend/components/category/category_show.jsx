@@ -43,15 +43,15 @@ class CategoryShow extends React.Component {
     render() {
         let { allProducts, category } = this.props;
         let categoryPic = {
-            "Keyboard & Accesories": <img src={} />,
-            "Jewelry & Accesories": <img src={} />,
-            "Clothing & Shoes": <img src={} />,
-            "Home & Living": <img src={} />,
-            "Wedding & Party": <img src={} />,
-            "Toys & Entertainment": <img src={} />,
-            "Arts & Collectables": <img src={} />,
-            "Craft Supplies": <img src={} />,
-            "Keytsy Gifts & Gift Cards": <img src={} />
+            "Keyboard & Accesories": <img className="cat-navimg" src={window.cat1} />,
+            "Jewelry & Accesories": <img className="cat-navimg" src={window.cat2} />,
+            "Clothing & Shoes": <img className="cat-navimg" src={window.cat3} />,
+            "Home & Living": <img className="cat-navimg" src={window.cat4} />,
+            "Wedding & Party": <img className="cat-navimg" src={window.cat5} />,
+            "Toys & Entertainment": <img className="cat-navimg" src={window.cat6} />,
+            "Arts & Collectables": <img className="cat-navimg" src={window.cat7} />,
+            "Craft Supplies": <img className="cat-navimg" src={window.cat8} />,
+            "Keytsy Gifts & Gift Cards": <img className="cat-navimg" src={window.cat9} />
         }
         if (!category) {
             return (
@@ -61,6 +61,7 @@ class CategoryShow extends React.Component {
             return (
                 <div>
                     <div>
+                        {categoryPic[category.category_name]}
                         <h1 className="category-header">{category.category_name}</h1>
                     </div>
                     <div className="category-main">

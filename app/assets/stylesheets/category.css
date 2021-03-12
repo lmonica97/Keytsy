@@ -47,11 +47,19 @@
 }
 
 .category-header {
+    position: absolute;
     font-family: 'Montserrat';
     font-size: 25px;
     margin-left: 280px;
     margin-top: 50px;
     font-weight: 600;
+    z-index: 99;
+}
+
+.cat-navimg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .category-price-header {
