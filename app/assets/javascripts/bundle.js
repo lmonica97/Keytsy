@@ -1366,7 +1366,8 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _category_product_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./category_product_show */ "./frontend/components/category/category_product_show.jsx");
+/* harmony import */ var _products_product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../products/product_index_item */ "./frontend/components/products/product_index_item.jsx");
+/* harmony import */ var _category_product_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category_product_show */ "./frontend/components/category/category_product_show.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1394,6 +1395,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var CategoryShow = /*#__PURE__*/function (_React$Component) {
   _inherits(CategoryShow, _React$Component);
 
@@ -1406,7 +1408,7 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      selectedFilter: ''
+      selectedFilter: 'default'
     };
     _this.handleFilter = _this.handleFilter.bind(_assertThisInitialized(_this));
     return _this;
@@ -1427,11 +1429,9 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleFilter",
     value: function handleFilter(e) {
-      debugger;
       this.setState({
         selectedFilter: e.target.value
       });
-      console.log(this.state.selectedFilter);
     }
   }, {
     key: "render",
@@ -1440,6 +1440,15 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           allProducts = _this$props.allProducts,
           category = _this$props.category;
       var selectedFilter = this.state.selectedFilter;
+      var productShow = selectedFilter === 'below' ? allProducts.filter(function (product) {
+        return product.price < 25;
+      }) : selectedFilter === 'between low' ? allProducts.filter(function (product) {
+        return product.price >= 25 && product.price <= 50;
+      }) : selectedFilter === 'between high' ? allProducts.filter(function (product) {
+        return product.price >= 50 && product.price <= 100;
+      }) : selectedFilter === 'above' ? allProducts.filter(function (product) {
+        return product.price > 100;
+      }) : allProducts;
       var categoryPic = {
         "Keyboard & Accesories": /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "cat-navimg",
@@ -1478,23 +1487,25 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           src: window.cat9
         })
       };
-      debugger;
 
       if (!category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetch Products...");
       } else {
+        var _React$createElement;
+
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, categoryPic[category.category_name], /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "category-header"
         }, category.category_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "category-main"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "category-price-header"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ($)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ($)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", (_React$createElement = {
           type: "radio",
           name: "price",
           className: "filter-price",
-          defaultChecked: true
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Any Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+          value: "default",
+          onChange: this.state.value === 'default'
+        }, _defineProperty(_React$createElement, "onChange", this.handleFilter), _defineProperty(_React$createElement, "defaultChecked", true), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Any Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
           type: "radio",
           name: "price",
           className: "filter-price",
@@ -1523,8 +1534,8 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           onChange: this.handleFilter
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Over $100"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "category-product-container"
-        }, allProducts.map(function (product) {
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_product_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, productShow.map(function (product) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_product_show__WEBPACK_IMPORTED_MODULE_2__["default"], {
             product: product
           });
         }))));

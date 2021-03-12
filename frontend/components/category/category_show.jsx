@@ -1,11 +1,12 @@
 import React from 'react';
+import ProductIndexItem from '../products/product_index_item';
 import CategoryProductShow from './category_product_show'
 
 class CategoryShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedFilter: ''
+            selectedFilter: 'default'
         }
         this.handleFilter = this.handleFilter.bind(this);
     }
@@ -21,14 +22,18 @@ class CategoryShow extends React.Component {
     }
 
     handleFilter(e) {
-        debugger
         this.setState({ selectedFilter: e.target.value})
-        console.log(this.state.selectedFilter)
     }
 
     render() {
         let { allProducts, category } = this.props;
         let { selectedFilter } = this.state
+
+        let productShow = (selectedFilter === 'below' ? allProducts.filter(product => product.price < 25)
+                            : selectedFilter === 'between low' ? allProducts.filter(product => product.price >= 25 && product.price <= 50)
+                            : selectedFilter === 'between high' ? allProducts.filter(product => product.price >= 50 && product.price <= 100)
+                            : selectedFilter === 'above' ? allProducts.filter(product => product.price > 100)
+                            : allProducts)
         let categoryPic = {
             "Keyboard & Accesories": <img className="cat-navimg" src={window.cat1} />,
             "Jewelry & Accesories": <img className="cat-navimg" src={window.cat2} />,
@@ -40,7 +45,6 @@ class CategoryShow extends React.Component {
             "Craft Supplies": <img className="cat-navimg" src={window.cat8} />,
             "Keytsy Gifts & Gift Cards": <img className="cat-navimg" src={window.cat9} />
         }
-        debugger
         if (!category) {
             return (
                 <div>Fetch Products...</div>
@@ -55,7 +59,7 @@ class CategoryShow extends React.Component {
                     <div className="category-main">
                         <div className="category-price-header">
                             <p>Price ($)</p>
-                            <input type="radio" name="price" className="filter-price" defaultChecked />
+                            <input type="radio" name="price" className="filter-price" value="default" onChange={this.state.value === 'default'} onChange={this.handleFilter} defaultChecked />
                                 <label>Any Price</label>
                             <br />
                             <input type="radio" name="price" className="filter-price" value="below" onChange={this.state.value === 'below'} onChange={this.handleFilter} />
@@ -72,7 +76,7 @@ class CategoryShow extends React.Component {
                             <br />
                         </div>
                             <ul className="category-product-container">
-                                {allProducts.map(product => 
+                                {productShow.map(product => 
                                     <CategoryProductShow product={product} />    
                                 )}
                             </ul>
