@@ -4,14 +4,12 @@ import { fetchAllCategory, fetchAllCategories } from '../../actions/category_act
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         categories: Object.values(state.entities.categories)
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         fetchAllCategories: () => dispatch(fetchAllCategories())
     }

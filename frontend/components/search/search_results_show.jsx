@@ -1,8 +1,14 @@
 import React from 'react';
 
 class SearchResultsShow extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
-        return null;
+        debugger
+        return(
+            <div>hello</div>
+        )
     }
 }
 

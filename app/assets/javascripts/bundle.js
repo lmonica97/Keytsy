@@ -1171,14 +1171,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     categories: Object.values(state.entities.categories)
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     fetchAllCategories: function fetchAllCategories() {
       return dispatch(Object(_actions_category_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllCategories"])());
@@ -1370,8 +1368,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _category_product_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category_product_show */ "./frontend/components/category/category_product_show.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1423,7 +1419,9 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.match.params.id !== this.props.match.params.id) {
-        this.props.fetchAllCategory(this.props.match.params.id);
+        this.props.fetchAllCategory(this.props.match.params.id).then(this.setState({
+          selectedFilter: 'default'
+        }));
       }
     }
   }, {
@@ -1491,46 +1489,42 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
       if (!category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fetch Products...");
       } else {
-        var _React$createElement;
-
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, categoryPic[category.category_name], /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "category-header"
         }, category.category_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "category-main"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "category-price-header"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ($)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", (_React$createElement = {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Price ($)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "default",
-          onChange: this.state.value === 'default'
-        }, _defineProperty(_React$createElement, "onChange", this.handleFilter), _defineProperty(_React$createElement, "defaultChecked", true), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Any Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _defineProperty({
+          onChange: this.handleFilter,
+          defaultChecked: true
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Any Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "below",
-          onChange: this.state.value === 'below'
-        }, "onChange", this.handleFilter)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Under $25"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          onChange: this.handleFilter
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Under $25"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "between low",
-          hecked: this.state.value === 'between low',
           onChange: this.handleFilter
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$25 to $50"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "between high",
-          checked: this.state.value === 'between high',
           onChange: this.handleFilter
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$50 to $100"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "above",
-          checked: this.state.value === 'above',
           onChange: this.handleFilter
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Over $100"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "category-product-container"
@@ -3237,16 +3231,17 @@ var SearchResultsShow = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(SearchResultsShow);
 
-  function SearchResultsShow() {
+  function SearchResultsShow(props) {
     _classCallCheck(this, SearchResultsShow);
 
-    return _super.apply(this, arguments);
+    return _super.call(this, props);
   }
 
   _createClass(SearchResultsShow, [{
     key: "render",
     value: function render() {
-      return null;
+      debugger;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "hello");
     }
   }]);
 
@@ -4814,14 +4809,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllProducts", function() { return fetchAllProducts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllCategories", function() { return fetchAllCategories; });
 var fetchAllProducts = function fetchAllProducts(categoryId) {
-  debugger;
   return $.ajax({
     url: "api/categories/".concat(categoryId),
     method: 'GET'
   });
 };
 var fetchAllCategories = function fetchAllCategories() {
-  debugger;
   return $.ajax({
     url: 'api/categories',
     method: 'GET'

@@ -17,7 +17,7 @@ class CategoryShow extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.props.fetchAllCategory(this.props.match.params.id)
+            this.props.fetchAllCategory(this.props.match.params.id).then(this.setState({ selectedFilter: 'default'}))
         }
     }
 
@@ -59,19 +59,40 @@ class CategoryShow extends React.Component {
                     <div className="category-main">
                         <div className="category-price-header">
                             <p>Price ($)</p>
-                            <input type="radio" name="price" className="filter-price" value="default" onChange={this.state.value === 'default'} onChange={this.handleFilter} defaultChecked />
+                            <input type="radio" 
+                            name="price" 
+                            className="filter-price" 
+                            value="default" 
+                            onChange={this.handleFilter} 
+                            defaultChecked />
                                 <label>Any Price</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" value="below" onChange={this.state.value === 'below'} onChange={this.handleFilter} />
+                            <input type="radio" 
+                            name="price" 
+                            className="filter-price"
+                            value="below" 
+                            onChange={this.handleFilter} />
                                 <label>Under $25</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" value="between low" hecked={this.state.value === 'between low'} onChange={this.handleFilter} />
+                            <input type="radio" 
+                            name="price" 
+                            className="filter-price"
+                            value="between low" 
+                            onChange={this.handleFilter} />
                                 <label>$25 to $50</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" value="between high" checked={this.state.value === 'between high'} onChange={this.handleFilter} />
+                            <input type="radio" 
+                            name="price" 
+                            className="filter-price" 
+                            value="between high" 
+                            onChange={this.handleFilter} />
                                 <label>$50 to $100</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" value="above" checked={this.state.value === 'above'} onChange={this.handleFilter} />
+                            <input type="radio" 
+                            name="price" 
+                            className="filter-price" 
+                            value="above" 
+                            onChange={this.handleFilter} />
                                 <label>Over $100</label>
                             <br />
                         </div>
