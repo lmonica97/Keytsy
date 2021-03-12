@@ -5,11 +5,9 @@ class CategoryShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: this.props.allProducts
+            selectedFilter: ''
         }
-        this.filterPriceMin = this.filterPriceMin.bind(this);
-        this.filterRange = this.filterRange.bind(this);
-        this.filterPriceMax = this.filterPriceMax.bind(this);
+        this.handleFilter = this.handleFilter.bind(this);
     }
 
     componentDidMount() {
@@ -22,26 +20,15 @@ class CategoryShow extends React.Component {
         }
     }
 
-    filterPriceMin(price) {
-        return (e) => {
-            
-        }
-    }
-
-    filterRange(price1, price2) {
-        return (e) => {
-
-        }
-    }
-
-    filterPriceMax(price) {
-        return (e) => {
-
-        }
+    handleFilter(e) {
+        debugger
+        this.setState({ selectedFilter: e.target.value})
+        console.log(this.state.selectedFilter)
     }
 
     render() {
         let { allProducts, category } = this.props;
+        let { selectedFilter } = this.state
         let categoryPic = {
             "Keyboard & Accesories": <img className="cat-navimg" src={window.cat1} />,
             "Jewelry & Accesories": <img className="cat-navimg" src={window.cat2} />,
@@ -53,6 +40,7 @@ class CategoryShow extends React.Component {
             "Craft Supplies": <img className="cat-navimg" src={window.cat8} />,
             "Keytsy Gifts & Gift Cards": <img className="cat-navimg" src={window.cat9} />
         }
+        debugger
         if (!category) {
             return (
                 <div>Fetch Products...</div>
@@ -70,16 +58,16 @@ class CategoryShow extends React.Component {
                             <input type="radio" name="price" className="filter-price" defaultChecked />
                                 <label>Any Price</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" onClick={this.filterPriceMin(25)}/>
+                            <input type="radio" name="price" className="filter-price" value="below" onChange={this.state.value === 'below'} onChange={this.handleFilter} />
                                 <label>Under $25</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" onClick={this.filterRange(25, 50)}/>
+                            <input type="radio" name="price" className="filter-price" value="between low" hecked={this.state.value === 'between low'} onChange={this.handleFilter} />
                                 <label>$25 to $50</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" onClick={this.filterRange(50, 100)} />
+                            <input type="radio" name="price" className="filter-price" value="between high" checked={this.state.value === 'between high'} onChange={this.handleFilter} />
                                 <label>$50 to $100</label>
                             <br />
-                            <input type="radio" name="price" className="filter-price" onClick={this.filterPriceMax(100)} />
+                            <input type="radio" name="price" className="filter-price" value="above" checked={this.state.value === 'above'} onChange={this.handleFilter} />
                                 <label>Over $100</label>
                             <br />
                         </div>
