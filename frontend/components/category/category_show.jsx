@@ -42,6 +42,17 @@ class CategoryShow extends React.Component {
 
     render() {
         let { allProducts, category } = this.props;
+        let categoryPic = {
+            "Keyboard & Accesories": <img src={} />,
+            "Jewelry & Accesories": <img src={} />,
+            "Clothing & Shoes": <img src={} />,
+            "Home & Living": <img src={} />,
+            "Wedding & Party": <img src={} />,
+            "Toys & Entertainment": <img src={} />,
+            "Arts & Collectables": <img src={} />,
+            "Craft Supplies": <img src={} />,
+            "Keytsy Gifts & Gift Cards": <img src={} />
+        }
         if (!category) {
             return (
                 <div>Fetch Products...</div>
