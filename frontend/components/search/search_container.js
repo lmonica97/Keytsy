@@ -3,7 +3,6 @@ import SearchResults from './search_results';
 import { fetchProducts } from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         products: Object.values(state.entities.products)
     }

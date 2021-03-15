@@ -2,6 +2,7 @@ import React from 'react';
 import SearchResults from './search_results';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+const queryString = require('querystring');
  
 class Search extends React.Component {
     constructor(props) {
@@ -13,8 +14,8 @@ class Search extends React.Component {
     }
 
     handleSubmit() {
-        debugger
-        this.props.history.push({ pathname: '/search', search: this.state.searchTerm})
+        const {searchTerm} = this.state
+        this.props.history.push({ pathname: '/search', search: `search=${searchTerm}`})
     }
 
     update(type) {
