@@ -2236,6 +2236,28 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           src: window.rating5
         })
       };
+      var storeStars = {
+        1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating1
+        }),
+        2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating2
+        }),
+        3: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating3
+        }),
+        4: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating4
+        }),
+        5: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating5
+        })
+      };
       var ratings = [];
       reviews.map(function (review) {
         return ratings.push(review.rating);
@@ -2257,7 +2279,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "product-sale-seller"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-show-seller"
-        }, product.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "rating-sales"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "sales"
+        }, this.randomNumberGenerator(), " sales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "separator"
+        }, " | "), ratings.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "store-rating"
+        }, "There are currently no reviews.") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, storeStars[average]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-show-image-block"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "product-show-image",

@@ -80,6 +80,14 @@ class ProductShow extends React.Component {
             4: <img className="review-star-rating1" src={window.rating4} />,
             5: <img className="review-star-rating1" src={window.rating5} />
         }
+
+        const storeStars = {
+            1: <img className="review-star-rating2" src={window.rating1} />,
+            2: <img className="review-star-rating2" src={window.rating2} />,
+            3: <img className="review-star-rating2" src={window.rating3} />,
+            4: <img className="review-star-rating2" src={window.rating4} />,
+            5: <img className="review-star-rating2" src={window.rating5} />
+        }
         let ratings = [];
         reviews.map(review => ratings.push(review.rating));
         let total = ratings.reduce((a , b) => a + b, 0);
@@ -96,6 +104,14 @@ class ProductShow extends React.Component {
                     </div>
                     <div className="product-sale-seller">
                         <p className="product-show-seller">{product.name}</p>
+                        <div className="rating-sales">
+                            <p className="sales">{this.randomNumberGenerator()} sales</p> 
+                            <p className="separator"> | </p>
+                            { ratings.length === 0 ? 
+                            <p className="store-rating">There are currently no reviews.</p> : 
+                            <p>{storeStars[average]}</p>
+                            }
+                        </div>
                     </div>
                     <div className="product-show-image-block">
                         <img className="product-show-image" src={this.props.product.photoUrl} />
