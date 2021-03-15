@@ -343,6 +343,7 @@ var REMOVE_REVIEW = 'REMOVE_REVIEW';
 var RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 var RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 var receiveReview = function receiveReview(review) {
+  debugger;
   return {
     type: RECEIVE_REVIEW,
     review: review
@@ -386,6 +387,7 @@ var createReview = function createReview(review) {
 };
 var updateReview = function updateReview(review) {
   return function (dispatch) {
+    debugger;
     return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
       return dispatch(receiveReview(review));
     }, function (error) {
@@ -2782,6 +2784,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  debugger;
   return {
     fetchReviews: function fetchReviews(productId) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["fetchReviews"])(productId));
@@ -2986,7 +2989,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "update-review",
           onClick: function onClick() {
-            return _this3.props.updateReview(review);
+            return _this3.props.updateReview(review).then(_this3.hideForm("showUpdateForm"));
           }
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-review",
@@ -3264,8 +3267,6 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      debugger;
-
       if (prevProps.products.length !== this.props.products.length) {
         this.props.fetchProducts();
       }
@@ -4256,7 +4257,7 @@ var reviewErrorsReducer = function reviewErrorsReducer() {
       return [];
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
-      return action.errors;
+      return null;
 
     default:
       return state;
@@ -4292,6 +4293,7 @@ var reviewReducer = function reviewReducer() {
       return Object.assign({}, state, _defineProperty({}, action.review.id, action.review));
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
+      debugger;
       return action.reviews;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:

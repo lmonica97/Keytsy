@@ -5,6 +5,7 @@ export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 export const receiveReview = (review) => {
+    debugger
     return {
         type: RECEIVE_REVIEW,
         review
@@ -45,6 +46,7 @@ export const createReview = (review) => dispatch => {
 }
 
 export const updateReview = (review) => dispatch => {
+    debugger
     return ReviewApiUtil.updateReview(review)
         .then(review => dispatch(receiveReview(review)),
         error => dispatch(receiveReviewErrors(error.responseJSON)))

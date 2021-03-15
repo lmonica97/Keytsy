@@ -13,7 +13,6 @@ class SearchResults extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (prevProps.products.length !== this.props.products.length) {
             this.props.fetchProducts();
         }
