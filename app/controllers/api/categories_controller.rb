@@ -6,7 +6,7 @@ class Api::CategoriesController < ApplicationController
 
     def show 
         @category = Category.find_by(id: params[:id])
-        @allProducts = @category.products
+        @allProducts = @category.products.includes(:reviews)
         render "api/category/show"
     end
 

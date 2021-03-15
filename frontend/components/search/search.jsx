@@ -8,6 +8,13 @@ class Search extends React.Component {
         this.state = {
             searchTerm: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit() {
+        e.preventDefault();
+        debugger
+        this.props.history.push({ pathname: '/search', searchInput: this.state.searchTerm})
     }
 
     update(type) {
@@ -19,14 +26,16 @@ class Search extends React.Component {
     render() {
         return(
             <div>
-                <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
-                <input 
-                type="text" 
-                className="searchBar-signout" 
-                placeholder="Search for anything"
-                value={this.state.searchTerm}
-                onChange={this.update('searchTerm')}>
-                </input>
+                <form onSubmit={this.handleSubmit}>
+                    <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
+                    <input 
+                    type="text" 
+                    className="searchBar-signout" 
+                    placeholder="Search for anything"
+                    value={this.state.searchTerm}
+                    onChange={this.update('searchTerm')}>
+                    </input>
+                </form>
             </div>
         )
     }

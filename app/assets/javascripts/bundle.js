@@ -3034,10 +3034,21 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       searchTerm: ''
     };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Search, [{
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      e.preventDefault();
+      debugger;
+      this.props.history.push({
+        pathname: '/search',
+        searchInput: this.state.searchTerm
+      });
+    }
+  }, {
     key: "update",
     value: function update(type) {
       var _this2 = this;
@@ -3049,7 +3060,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "search-button-signout"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "search-image",
@@ -3060,7 +3073,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
         placeholder: "Search for anything",
         value: this.state.searchTerm,
         onChange: this.update('searchTerm')
-      }));
+      })));
     }
   }]);
 
