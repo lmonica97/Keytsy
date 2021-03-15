@@ -12,17 +12,23 @@ class SearchResults extends React.Component {
         this.props.fetchProducts()
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        debugger
+        if (prevProps.products.length !== this.props.products.length) {
+            this.props.fetchProducts();
+        }
+    }
+
     render() {
         const search = queryString.parse(this.props.location.search);
         const { products } = this.props;
         let searchProducts = products.filter(product => product.product_name.toLowerCase().includes(search["?search"].toLowerCase()))
-        debugger
         return (
             <div className="search-results">
                 <h1 className="search-results-header">Search Results</h1>
                 { searchProducts.length === 0 ? 
                     <div> 
-                        <p className="no-search-result">Sorry, there are no products that match "{search['?search']}".</p>
+                        <p className="no-search-result">Sorry, there are no products that match "{search['?search']}". <br /> Please try searching something else.</p>
                         <img className="no-search-img" src={window.sad} />
                     </div>  
                     : 
@@ -32,7 +38,7 @@ class SearchResults extends React.Component {
                 }
                 <div>
                     <h3 className="search-results-header">Recommendations</h3>
-                    <div className="cart-suggest-list">
+                    <div className="search-results-container">
                         <SingleRecommendation product={products.slice(45,46)} />
                         <SingleRecommendation product={products.slice(66,67)} />
                         <SingleRecommendation product={products.slice(55,56)} />

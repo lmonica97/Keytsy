@@ -3262,6 +3262,15 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
       this.props.fetchProducts();
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      debugger;
+
+      if (prevProps.products.length !== this.props.products.length) {
+        this.props.fetchProducts();
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var search = queryString.parse(this.props.location.search);
@@ -3269,14 +3278,13 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
       var searchProducts = products.filter(function (product) {
         return product.product_name.toLowerCase().includes(search["?search"].toLowerCase());
       });
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-results"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "search-results-header"
       }, "Search Results"), searchProducts.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "no-search-result"
-      }, "Sorry, there are no products that match \"", search['?search'], "\"."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Sorry, there are no products that match \"", search['?search'], "\". ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Please try searching something else."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "no-search-img",
         src: window.sad
       })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3288,7 +3296,7 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "search-results-header"
       }, "Recommendations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cart-suggest-list"
+        className: "search-results-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_single_recommendation__WEBPACK_IMPORTED_MODULE_2__["default"], {
         product: products.slice(45, 46)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_single_recommendation__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -3363,6 +3371,7 @@ var SearchResultsShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var product = this.props.product;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "recommendation-list",
         key: product.id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/products/".concat(product.id),
@@ -3408,9 +3417,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var SingleRecommendation = function SingleRecommendation(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "cart-suggest-single"
+    className: "recommendation-ul"
   }, props.product.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "recommendation-list",
       key: item.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/products/".concat(item.id),
@@ -3420,14 +3430,14 @@ var SingleRecommendation = function SingleRecommendation(props) {
         cursor: 'pointer'
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "cart-suggest-img",
+      className: "category-product-img",
       src: item.photoUrl
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "cart-suggest-name"
+      className: "category-product-name"
     }, item.product_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "cart-suggest-seller"
+      className: "category-product-seller"
     }, item.seller.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "cart-suggest-price"
+      className: "category-product-price"
     }, "$", item.price)));
   }));
 };

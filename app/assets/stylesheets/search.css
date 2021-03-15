@@ -30,3 +30,13 @@
     flex-wrap: wrap;
     margin-bottom: 100px;
 }
+
+.recommendation-list {
+    list-style: none;
+}
+
+.recommendation-ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
