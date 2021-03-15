@@ -90,11 +90,42 @@
     margin-top: 10px;
 }
 
+.category-section {
+    display: flex;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    margin-left: 280px;
+    margin-top: 20px;
+}
+
+.category-section-all {
+    margin-right: 10px;
+}
+
+.category-arrow {
+    padding: 0;
+    margin: 0;
+    padding-top: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.category-section-name {
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
 .category-sales-num {
     font-size: 12px;
     padding: 0;
     margin: 0;
     margin-left: 5px;
+}
+
+.category-product-total {
+    font-size: 12px;
+    padding-top: 5px;
 }
 
 .category-sales {

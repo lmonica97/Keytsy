@@ -56,6 +56,12 @@ class CategoryShow extends React.Component {
                         {categoryPic[category.category_name]}
                         <h1 className="category-header">{category.category_name}</h1>
                     </div>
+                    <div className="category-section">
+                        <p className="category-section-all">All categories</p>
+                        <p className="category-arrow"> › </p> 
+                        <p className="category-section-name">{category.category_name}</p>
+                        <p className="category-product-total">({allProducts.length} results)</p>
+                    </div>
                     <div className="category-main">
                         <div className="category-price-header">
                             <p>Price ($)</p>
