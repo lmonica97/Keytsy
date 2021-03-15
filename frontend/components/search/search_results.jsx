@@ -5,10 +5,9 @@ class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchTerm: ''
+            searchTerm: this.props.history.location.search
         }
         let { products } = this.props;
-        debugger
     }
 
     componentDidMount() {
@@ -22,13 +21,9 @@ class SearchResults extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                {this.products.map(product => 
-                    <SearchResultsShow product={product} />    
-                )}
-            </div>
-        )
+        const { products } = this.props;
+        debugger
+        return null;
     }
 }
 

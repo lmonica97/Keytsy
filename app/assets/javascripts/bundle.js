@@ -585,7 +585,7 @@ var App = function App() {
     component: _category_category_show_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
-    path: "/search/:searchInput",
+    path: "/search",
     component: _search_search_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
     exact: true,
@@ -3103,6 +3103,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Search = /*#__PURE__*/function (_React$Component) {
   _inherits(Search, _React$Component);
 
@@ -3124,11 +3125,10 @@ var Search = /*#__PURE__*/function (_React$Component) {
   _createClass(Search, [{
     key: "handleSubmit",
     value: function handleSubmit() {
-      e.preventDefault();
       debugger;
       this.props.history.push({
         pathname: '/search',
-        searchInput: this.state.searchTerm
+        search: this.state.searchTerm
       });
     }
   }, {
@@ -3163,7 +3163,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
   return Search;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Search);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Search));
 
 /***/ }),
 
@@ -3177,7 +3177,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ "./frontend/components/search/search.jsx");
+/* harmony import */ var _search_results__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_results */ "./frontend/components/search/search_results.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 
 
@@ -3186,7 +3186,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   debugger;
   return {
-    products: state.entities.products
+    products: Object.values(state.entities.products)
   };
 };
 
@@ -3198,7 +3198,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search_results__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -3251,10 +3251,9 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      searchTerm: ''
+      searchTerm: _this.props.history.location.search
     };
     var products = _this.props.products;
-    debugger;
     return _this;
   }
 
@@ -3277,11 +3276,9 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.products.map(function (product) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          product: product
-        });
-      }));
+      var products = this.props.products;
+      debugger;
+      return null;
     }
   }]);
 

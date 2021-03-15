@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import SearchResults from './search';
+import SearchResults from './search_results';
 import { fetchProducts } from '../../actions/product_actions';
 
 const mapStateToProps = (state, ownProps) => {
     debugger
     return {
-        products: state.entities.products
+        products: Object.values(state.entities.products)
     }
 }
 

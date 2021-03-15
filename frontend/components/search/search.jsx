@@ -1,7 +1,8 @@
 import React from 'react';
 import SearchResults from './search_results';
 import { Link } from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom';
+ 
 class Search extends React.Component {
     constructor(props) {
         super(props);
@@ -12,9 +13,8 @@ class Search extends React.Component {
     }
 
     handleSubmit() {
-        e.preventDefault();
         debugger
-        this.props.history.push({ pathname: '/search', searchInput: this.state.searchTerm})
+        this.props.history.push({ pathname: '/search', search: this.state.searchTerm})
     }
 
     update(type) {
@@ -41,4 +41,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default withRouter(Search);

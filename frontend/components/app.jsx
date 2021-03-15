@@ -11,7 +11,6 @@ import CartContainer from './cart/cart_container';
 import CategoryShowContainer from './category/category_show_container';
 import SearchContainer from './search/search_container';
 
-
 const App = () => (
     <div>
         <Modal />
@@ -24,7 +23,7 @@ const App = () => (
             <Route exact path="/" component={SplashContainer} />
             <Route exact path="/products/:id" component={ProductShowContainer} />
             <Route exact path="/categories/:id" component={CategoryShowContainer} />
-            <Route exact path="/search/:searchInput" component={SearchContainer} />
+            <Route exact path="/search" component={SearchContainer} />
             <ProtectedRoute exact path="/cart" component={CartContainer} />
         </Switch>
         <Footer />
