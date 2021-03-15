@@ -5,6 +5,7 @@
         json.seller do 
             json.partial! "api/users/user", user: product.seller
         end
+        json.reviews product.reviews
     end
 end
 

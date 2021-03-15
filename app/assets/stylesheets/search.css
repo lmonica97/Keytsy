@@ -1,0 +1,32 @@
+.search-results {
+    font-family: 'Montserrat';
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+.search-results-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.no-search-result {
+    text-align: center;
+    margin-right: 290px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.no-search-img {
+    margin-top: 50px;
+    margin-left: 600px;
+    margin-bottom: 100px;
+}
+
+.search-results-container {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 290px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
