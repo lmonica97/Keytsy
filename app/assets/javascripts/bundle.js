@@ -2228,14 +2228,19 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "handleClick",
     value: function handleClick(e) {
       e.preventDefault();
-      this.props.addItem({
-        user_id: this.props.currentUser.id,
-        product_id: this.props.product.id,
-        quantity: this.state.quantity
-      }).then(this.props.history.push({
-        pathname: '/cart',
-        state: this.state
-      }));
+
+      if (!this.props.currentUser) {
+        alert("Please sign in or sign up before adding product to cart!");
+      } else {
+        this.props.addItem({
+          user_id: this.props.currentUser.id,
+          product_id: this.props.product.id,
+          quantity: this.state.quantity
+        }).then(this.props.history.push({
+          pathname: '/cart',
+          state: this.state
+        }));
+      }
     }
   }, {
     key: "handleSubmit",
