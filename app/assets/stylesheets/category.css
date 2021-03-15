@@ -84,3 +84,20 @@
     margin-left: 450px;
     margin-bottom: 50px;
 }
+
+.category-product {
+    display: flex;
+    margin-top: 10px;
+}
+
+.category-sales-num {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+}
+
+.category-sales {
+    padding: 0;
+    margin: 0;
+}

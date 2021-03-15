@@ -1321,9 +1321,46 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(CategoryProductShow, [{
+    key: "randomNumberGenerator",
+    value: function randomNumberGenerator() {
+      var min = 1;
+      var max = 100;
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  }, {
     key: "render",
     value: function render() {
+      var storeStars = {
+        1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating1
+        }),
+        2: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating2
+        }),
+        3: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating3
+        }),
+        4: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating4
+        }),
+        5: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "review-star-rating2",
+          src: window.rating5
+        })
+      };
       var product = this.props.product;
+      var ratings = [];
+      product.reviews.map(function (review) {
+        return ratings.push(review.rating);
+      });
+      var total = ratings.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      var average = Math.round(total / ratings.length);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "category-product-show",
         key: product.id
@@ -1340,7 +1377,13 @@ var CategoryProductShow = /*#__PURE__*/function (_React$Component) {
         className: "category-product-name"
       }, product.product_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "category-product-seller"
-      }, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, product.name), product.reviews.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "category-product"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "category-sales"
+      }, storeStars[average]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "category-sales-num"
+      }, " (", this.randomNumberGenerator(), ")")) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "category-product-price"
       }, "$", product.price)));
     }

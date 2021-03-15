@@ -80,7 +80,6 @@ class ProductShow extends React.Component {
             4: <img className="review-star-rating1" src={window.rating4} />,
             5: <img className="review-star-rating1" src={window.rating5} />
         }
-
         const storeStars = {
             1: <img className="review-star-rating2" src={window.rating1} />,
             2: <img className="review-star-rating2" src={window.rating2} />,
