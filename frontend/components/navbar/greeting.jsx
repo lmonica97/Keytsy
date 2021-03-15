@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <div>
           <Search />
         </div>
-        <Link to="/cart">
+        <Link to="/cart" onClick={() => alert("Please sign in or sign up.")}>
         <img className="cart" src={window.cart} />
         </Link>
       </nav>
