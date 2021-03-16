@@ -125,18 +125,20 @@ class ProductShow extends React.Component {
                             <div>
                                 <p className="product-show-name">{product.product_name}</p>
                             </div>
-                            {/* <div className="product-available">
-                                <img className="product-in-stock" src={window.check} />
-                                <p>In stock</p>
+                            <div className="product-price-stock">
+                                <div className="product-show-price">
+                                    <p className="product-main-price">${product.price}</p>
+                                </div>
+                                <div className="product-available">
+                                    <img className="product-in-stock" src={window.check} />
+                                    <p className="product-stock">In stock</p>
+                                </div>
                             </div>
-                            <div className="product-show-description">
+                            {/* <div className="product-show-description">
                                 <h4 className="product-show-tag">Description</h4>
                                 <p className="product-description-box">{product.description}</p>
-                            </div>
-                            <div className="product-show-price">
-                                <p>${product.price}</p>
-                            </div>
-                            <div>
+                            </div> */}
+                            <div className="quantity-container">
                                 <label className="product-show-quantity-label">Quantity</label>
                                 <select className="product-quantity-box" onChange={this.update('quantity')}>
                                     <option value="1" defaultValue="1">1</option>
@@ -161,7 +163,7 @@ class ProductShow extends React.Component {
                             <form onClick={this.handleClick}>
                                 <button className="product-show-add-button">Add to cart</button>
                             </form>
-                            <div>
+                            {/* <div>
                                 <img className="product-show-icon1" src={window.procart} /> 
                                 <p className="product-in-cart">
                                     <span className="highlight-text">Other people want this. </span> Over {this.randomNumberGenerator()} people have this in their carts right now.
@@ -191,7 +193,7 @@ class ProductShow extends React.Component {
                                 <img className="seller-profile-pic" src={window.profilepic} />
                                 <h4 className="seller-profile-name">{product.name}</h4>
                                 <p>Owner of <a href="#">{product.name}</a></p>
-                            </div> */}
+                            </div>  */}
                         </div> 
                     </div>    
                     <div>
