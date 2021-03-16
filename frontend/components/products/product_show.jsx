@@ -103,11 +103,10 @@ class ProductShow extends React.Component {
             return (
                 <div className="product-show-page">
                     <div className="product-info-show">
-                        <div>
+                        <div className="remove-padding">
                             <img className="photo-sidebar" src={product.photoUrl} />
-                        </div>
-                        <div>
                             <img className="product-show-image" src={product.photoUrl} />
+                            
                         </div>
                         <div className="product-show-text">
                             <div className="product-sale-seller">
@@ -198,8 +197,7 @@ class ProductShow extends React.Component {
                             </div>  
                         </div> 
                     </div>    
-                    <div>
-                        {/* <div>
+                        <div className="product-review-container">
                             <div className="product-total-review-cont">
                                 <p className="product-total-reviews">{ratings.length} review(s)</p>
                                 {stars[average]}
@@ -237,9 +235,8 @@ class ProductShow extends React.Component {
                                 </div>
 
                                 <ReviewContainer product={this.props.product}/>
-                            </div> */}
-                        {/* </div> */}
-                    </div>
+                            </div> 
+                        </div>
                 </div>
             )
         }

@@ -280,55 +280,6 @@
     font-size: 16px;
 }
 
-.anon-pic1 {
-  
-    left: 15.2%;
-    top: 950px;
-}
-
-.rating1 {
-    
-    height: 100px;
-    top: 950px;
-    left: 17.2%;
-}
-
-
-.rating2 {
-  
-    height: 100px;
-    top: 1100px;
-    left: 17.2%;
-}
-
-.anon-pic2 {
-    
-    left: 15.2%;
-    top: 1100px;
-}
-
-.comment2-user {
-    
-    left: 17.2%;
-    top: 1110px;
-    font-size: 12px;
-}
-
-.comment2-date {
-    
-    left: 20.5%;
-    top: 1110px;
-    font-size: 12px;
-}
-
-.comment2 p {
-    
-    left: 17.2%;
-    top: 1160px;
-    padding-right: 800px;
-    line-height: 1.5;
-}
-
 .product-show-seller {
     padding: 0;
     margin: 0;
@@ -347,16 +298,6 @@
 
 .rating-sales {
     display: flex;
-    
-    left: 63.5%;
-    top: 16.5%;
-}
-
-.product-sales{
-   
-    left: 63.5%;
-    top: 16.5%;
-    font-size: 12px;
 }
 
 .sales {
@@ -415,5 +356,17 @@
     width: 206px;
     border-radius: 10px 10px 0px 0px;
     object-fit: cover;
+}
 
+.product-review-container {
+    position: relative;
+    margin-top: -230px;
+    margin-left: 230px;
+    font-family: 'Montserrat';
+}
+
+.remove-padding {
+    padding: 0;
+    height: 750px;
+    display: flex;
 }
