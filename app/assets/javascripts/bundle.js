@@ -1013,6 +1013,11 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(CartShow, [{
+    key: "componendDidUpdate",
+    value: function componendDidUpdate(prevProps, prevState) {
+      debugger;
+    }
+  }, {
     key: "update",
     value: function update(value) {
       this.setState({

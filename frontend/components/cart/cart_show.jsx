@@ -26,6 +26,10 @@ class CartShow extends React.Component{
         ]
     }
 
+    componendDidUpdate(prevProps, prevState) {
+        debugger
+    }
+
     update(value) {
         this.setState({quantity: value})
     }
