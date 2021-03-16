@@ -26,18 +26,16 @@ class Search extends React.Component {
 
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
-                    <input 
+            <form onSubmit={this.handleSubmit} className="search-bar-form">
+                <input 
                     type="text" 
                     className="searchBar-signout" 
                     placeholder="Search for anything"
                     value={this.state.searchTerm}
                     onChange={this.update('searchTerm')}>
-                    </input>
-                </form>
-            </div>
+                </input>
+                <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
+            </form>
         )
     }
 }

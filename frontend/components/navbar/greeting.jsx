@@ -12,12 +12,10 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <Link to="/"> 
           <img className="logo" src={window.logo} />
         </Link>
-         {/* <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
-        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a> */}
+        <Search />
+         <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
+        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
         <button className="signin" onClick={() => openModal('signin')}>Sign in</button>
-        <div>
-          <Search />
-        </div>
         <Link to="/cart" onClick={() => alert("Please sign in or sign up.")}>
         <img className="cart" src={window.cart} />
         </Link>
@@ -32,15 +30,13 @@ const Greeting = ({ currentUser, signout, openModal }) => {
         <Link to="/">
           <img className="logo" src={window.logo} />
         </Link>
+        <Search />
+        <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
+        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
         <Dropdown currentUser={currentUser} signout={signout} />
-        <div>
-          <Search />
-        </div>
         <Link to="/cart">
           <img className="cart" src={window.cart} />
         </Link> 
-        <a href={"https://www.linkedin.com/in/monica-liang-a06510146/"}><img className="logo-1" src={window.linkedin} /></a>
-        <a href={"https://github.com/lmonica97"}><img className="logo-2" src={window.github} /></a>
       </nav>
       <CategoryContainer />
     </div>

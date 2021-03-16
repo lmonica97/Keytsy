@@ -49,3 +49,18 @@
     cursor: pointer;
 }
 
+.signin-logout {
+    display:flex;
+    justify-content: space-between;
+    margin-left: 280px;
+    margin-right: 290px;
+    margin-top: 15px;
+}
+
+.signin-signout {
+    display:flex;
+    justify-content: space-between;
+    margin-left: 280px;
+    margin-right: 290px;
+    margin-top: 15px;
+}
