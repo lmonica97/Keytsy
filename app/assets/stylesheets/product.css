@@ -145,19 +145,31 @@
     cursor: pointer;
 }
 
+.product-show-icons {
+    display: flex;
+    margin-top: 15px;
+}
+
+.regular-text {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.regular-text1 {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
+}
+
 .product-show-tag {
-    
-    left: 63.5%;
-    top: 745px;
     font-size: 14px;
     font-weight: bolder;
 }
 
 .product-description-box {
-    
-    left: 63.5%;
-    top: 800px;
-    padding-right: 320px;
     line-height: 2;
     font-size: 14px;
 }
@@ -187,26 +199,16 @@
     font-weight: bold;
 }
 
-.product-show-icon1 {
+.product-show-icon1{
     height: 40px;
     width: 40px;
+    margin-right: 10px;
 }
 
 .product-show-icon2 {
     height: 50px;
     width: 45px;
-}
-
-.product-show-icon1 {
-   
-    top: 490px;
-    left: 63.5%;
-}
-
-.product-show-icon2 {
-   
-    top: 540px;
-    left: 63.5%;
+    margin-right: 10px;
 }
 
 .product-in-cart {
@@ -229,47 +231,30 @@
     font-size: 12px;
 }
 
-.product-highlight-list {
-    list-style: none;
-}
-
-.product-highlight1, .product-highlight2 {
+.product-highlight1{
     height: 15px;
     width: 15px;
+    margin-right: 10px;
 }
 
 .product-highlight-header {
     font-weight: bold;
     font-size: 14px;
-   
-    left: 63.5%;
-    top: 600px;
 }
 
-.product-highlight1 {
-    
-    left: 63.5%;
-    top: 675px;
-}
-
-.product-highlight2 {
-    
-    left: 63.5%;
-    top: 710px;
+.product-show-description {
+    margin-top: 30px;
 }
 
 .product-highlight-p {
-    
-    top: 660px;
-    left: 64.5%;
     font-size: 14px;
+    padding: 0;
+    margin: 0;
 }
 
-.product-highlight-p2 {
-    
-    top: 695px;
-    left: 64.5%;
-    font-size: 14px;
+.seller-profile {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .rating {
@@ -388,31 +373,29 @@
 }
 
 .seller-profile h3 {
-   
-    left: 63.5%;
-    top: 930px;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .seller-profile-pic {
     height: 65px;
     width: 65px;
-    
-    left: 63.5%;
-    top: 990px;
+    margin-right: 20px;
 }
 
+.seller-main {
+    display: flex;
+    margin-top: 10px;
+}
+
+
 .seller-profile-name {
-    
-    left: 68%;
-    top: 970px;
     font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .seller-profile p {
-    
-    left: 68%;
-    top: 1015px;
     font-size: 12px;
     font-weight: bold;
 }

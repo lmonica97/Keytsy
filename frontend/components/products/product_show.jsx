@@ -134,10 +134,6 @@ class ProductShow extends React.Component {
                                     <p className="product-stock">In stock</p>
                                 </div>
                             </div>
-                            {/* <div className="product-show-description">
-                                <h4 className="product-show-tag">Description</h4>
-                                <p className="product-description-box">{product.description}</p>
-                            </div> */}
                             <div className="quantity-container">
                                 <label className="product-show-quantity-label">Quantity</label>
                                 <select className="product-quantity-box" onChange={this.update('quantity')}>
@@ -163,37 +159,43 @@ class ProductShow extends React.Component {
                             <form onClick={this.handleClick}>
                                 <button className="product-show-add-button">Add to cart</button>
                             </form>
-                            {/* <div>
+                            <div className="product-show-icons">
                                 <img className="product-show-icon1" src={window.procart} /> 
-                                <p className="product-in-cart">
-                                    <span className="highlight-text">Other people want this. </span> Over {this.randomNumberGenerator()} people have this in their carts right now.
-                                </p>
+                                <p className="regular-text"><span className="highlight-text">Other people want this. </span>Over {this.randomNumberGenerator()} people have this in their carts right now.</p> 
                             </div>
-                            <div>
+                            <div className="product-show-icons">
                                 <img  className="product-show-icon2" src={window.delivery} />
-                                <p className="product-delivery">
-                                    <span className="highlight-text">Hooray!</span> This istem ships for free to the US.
-                                </p>
+                                <p className="regular-text1"><span className="highlight-text">Hooray! </span>This istem ships for free to the US.</p>
                             </div>
                             <div>
                                 <h6 className="product-highlight-header">Highlights</h6>
-                                <ul className="product-highlight-list">
-                                    <li>
+                                <div className="product-highlight-list">
+                                    <div className="product-show-icons">
                                         <img className="product-highlight1"src={window.hand} />
                                         <p className="product-highlight-p">Handmade</p>
-                                    </li>
-                                    <li>
-                                        <img className="product-highlight2" src={window.made} />
-                                        <p className="product-highlight-p2">Materials: with love</p>
-                                    </li>
-                                </ul>
+                                    </div>
+                                    <div className="product-show-icons">
+                                        <img className="product-highlight1" src={window.made} />
+                                        <p className="product-highlight-p">Materials: with love</p>
+                                    </div>
+                                </div>
                             </div>
+                            <div className="product-show-description">
+                                <h4 className="product-show-tag">Description</h4>
+                                <p className="product-description-box">{product.description}</p>
+                            </div> 
                             <div className="seller-profile">
                                 <h3>Meet your Seller</h3>
-                                <img className="seller-profile-pic" src={window.profilepic} />
-                                <h4 className="seller-profile-name">{product.name}</h4>
-                                <p>Owner of <a href="#">{product.name}</a></p>
-                            </div>  */}
+                                <div className="seller-main">
+                                    <div>
+                                        <img className="seller-profile-pic" src={window.profilepic} />
+                                    </div>
+                                    <div>
+                                        <h4 className="seller-profile-name">{product.name}</h4>
+                                        <p>Owner of <a href="#">{product.name}</a></p>
+                                    </div>
+                                </div>
+                            </div>  
                         </div> 
                     </div>    
                     <div>
