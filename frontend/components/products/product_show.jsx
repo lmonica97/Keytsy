@@ -23,14 +23,6 @@ class ProductShow extends React.Component {
         this.props.fetchReviews(this.props.match.params.id);
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     debugger
-    //     if (this.state.showReviewForm != nextState.showReviewForm ) {
-    //         return false
-    //     }
-    //     return true
-    // }
-
     hideForm(name) {
         switch(name) {
             case "showReviewForm":

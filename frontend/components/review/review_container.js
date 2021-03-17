@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         fetchReviews: (productId) => dispatch(fetchReviews(productId)),
         createReview: (productId, review) => dispatch(createReview(productId, review)),

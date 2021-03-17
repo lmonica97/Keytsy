@@ -343,7 +343,6 @@ var REMOVE_REVIEW = 'REMOVE_REVIEW';
 var RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 var RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 var receiveReview = function receiveReview(review) {
-  debugger;
   return {
     type: RECEIVE_REVIEW,
     review: review
@@ -387,7 +386,6 @@ var createReview = function createReview(review) {
 };
 var updateReview = function updateReview(review) {
   return function (dispatch) {
-    debugger;
     return _utils_review__WEBPACK_IMPORTED_MODULE_0__["updateReview"](review).then(function (review) {
       return dispatch(receiveReview(review));
     }, function (error) {
@@ -1014,9 +1012,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
 
   _createClass(CartShow, [{
     key: "componendDidUpdate",
-    value: function componendDidUpdate(prevProps, prevState) {
-      debugger;
-    }
+    value: function componendDidUpdate(prevProps, prevState) {}
   }, {
     key: "update",
     value: function update(value) {
@@ -2212,14 +2208,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchProduct(this.props.match.params.id);
       this.props.fetchReviews(this.props.match.params.id);
-    } // shouldComponentUpdate(nextProps, nextState) {
-    //     debugger
-    //     if (this.state.showReviewForm != nextState.showReviewForm ) {
-    //         return false
-    //     }
-    //     return true
-    // }
-
+    }
   }, {
     key: "hideForm",
     value: function hideForm(name) {
@@ -2835,7 +2824,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  debugger;
   return {
     fetchReviews: function fetchReviews(productId) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["fetchReviews"])(productId));
@@ -4357,7 +4345,6 @@ var reviewReducer = function reviewReducer() {
       return Object.assign({}, state, _defineProperty({}, action.review.id, action.review));
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
-      debugger;
       return action.reviews;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
