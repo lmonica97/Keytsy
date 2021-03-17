@@ -11,17 +11,22 @@ class Search extends React.Component {
             searchTerm: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearState = this.clearState.bind(this);
     }
 
     handleSubmit() {
         const {searchTerm} = this.state
-        this.props.history.push({ pathname: '/search', search: `search=${searchTerm}`})
+        this.props.history.push({ pathname: '/search', search: `search=${searchTerm}`}).then(this.clearState())
     }
 
     update(type) {
         return (e) => {
             this.setState({ [type]: e.currentTarget.value })
         }
+    }
+
+    clearState() {
+        this.setState({ searchTerm: ''})
     }
 
     render() {
@@ -31,10 +36,9 @@ class Search extends React.Component {
                     type="text" 
                     className="searchBar-signout" 
                     placeholder="Search for anything"
-                    value={this.state.searchTerm}
                     onChange={this.update('searchTerm')}>
                 </input>
-                <button className="search-button-signout"><img className="search-image"src={window.magnifying} /></button>
+                <button className="search-button-signout" onClick={() => this.handleSubmit}><img className="search-image"src={window.magnifying} /></button>
             </form>
         )
     }

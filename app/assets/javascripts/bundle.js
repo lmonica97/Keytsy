@@ -1561,31 +1561,35 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           className: "filter-price",
           value: "default",
           onChange: this.handleFilter,
-          defaultChecked: true
+          checked: selectedFilter === "default"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Any Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "below",
-          onChange: this.handleFilter
+          onChange: this.handleFilter,
+          checked: selectedFilter === "below"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Under $25"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "between low",
-          onChange: this.handleFilter
+          onChange: this.handleFilter,
+          checked: selectedFilter === "between low"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$25 to $50"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "between high",
-          onChange: this.handleFilter
+          onChange: this.handleFilter,
+          checked: selectedFilter === "between high"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "$50 to $100"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "radio",
           name: "price",
           className: "filter-price",
           value: "above",
-          onChange: this.handleFilter
+          onChange: this.handleFilter,
+          checked: selectedFilter === "above"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Over $100"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "category-product-container"
         }, productShow.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2907,8 +2911,8 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       id: _this.props.reviewId,
       reviewer_id: _this.props.reviewerId,
       product_id: _this.props.productId,
-      rating: 1,
-      comment: "",
+      rating: _this.props.rating,
+      comment: _this.props.comment,
       showUpdateForm: false
     };
     _this.onStarClick = _this.onStarClick.bind(_assertThisInitialized(_this));
@@ -3171,6 +3175,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
       searchTerm: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.clearState = _this.clearState.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3181,7 +3186,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
       this.props.history.push({
         pathname: '/search',
         search: "search=".concat(searchTerm)
-      });
+      }).then(this.clearState());
     }
   }, {
     key: "update",
@@ -3193,8 +3198,17 @@ var Search = /*#__PURE__*/function (_React$Component) {
       };
     }
   }, {
+    key: "clearState",
+    value: function clearState() {
+      this.setState({
+        searchTerm: ''
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "search-bar-form"
@@ -3202,10 +3216,12 @@ var Search = /*#__PURE__*/function (_React$Component) {
         type: "text",
         className: "searchBar-signout",
         placeholder: "Search for anything",
-        value: this.state.searchTerm,
         onChange: this.update('searchTerm')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "search-button-signout"
+        className: "search-button-signout",
+        onClick: function onClick() {
+          return _this3.handleSubmit;
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "search-image",
         src: window.magnifying

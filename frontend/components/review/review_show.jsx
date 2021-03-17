@@ -8,8 +8,8 @@ class ReviewShow extends React.Component {
             id: this.props.reviewId,
             reviewer_id: this.props.reviewerId,
             product_id: this.props.productId,
-            rating: 1,
-            comment: "",
+            rating: this.props.rating,
+            comment: this.props.comment,
             showUpdateForm: false
         }
         this.onStarClick = this.onStarClick.bind(this);

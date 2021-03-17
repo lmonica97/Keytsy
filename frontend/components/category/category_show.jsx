@@ -70,35 +70,39 @@ class CategoryShow extends React.Component {
                             className="filter-price" 
                             value="default" 
                             onChange={this.handleFilter} 
-                            defaultChecked />
+                            checked={selectedFilter === "default"} />
                                 <label>Any Price</label>
                             <br />
                             <input type="radio" 
                             name="price" 
                             className="filter-price"
                             value="below" 
-                            onChange={this.handleFilter} />
+                            onChange={this.handleFilter}
+                            checked={selectedFilter === "below"} />
                                 <label>Under $25</label>
                             <br />
                             <input type="radio" 
                             name="price" 
                             className="filter-price"
                             value="between low" 
-                            onChange={this.handleFilter} />
+                            onChange={this.handleFilter}
+                            checked={selectedFilter === "between low"} />
                                 <label>$25 to $50</label>
                             <br />
                             <input type="radio" 
                             name="price" 
                             className="filter-price" 
                             value="between high" 
-                            onChange={this.handleFilter} />
+                            onChange={this.handleFilter}
+                            checked={selectedFilter === "between high"} />
                                 <label>$50 to $100</label>
                             <br />
                             <input type="radio" 
                             name="price" 
                             className="filter-price" 
                             value="above" 
-                            onChange={this.handleFilter} />
+                            onChange={this.handleFilter}
+                            checked={selectedFilter === "above"} />
                                 <label>Over $100</label>
                             <br />
                         </div>
