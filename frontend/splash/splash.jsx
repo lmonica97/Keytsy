@@ -21,31 +21,31 @@ class Splash extends React.Component {
                     <h2 className="intro-header">See what's trending for Valentine's Day on Keytsy.</h2>
                     <div className="intro-container">
                         <ul className="intro-container-list">
-                            <Link to="/products/75" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
+                            <Link to="/products/7" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.roses} />
                                 </div>
                                 <p>Roses<img className="arrow" src={window.arrow} /></p>
                             </Link>
-                            <Link to="/products/82" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
+                            <Link to="/products/14" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.valentine} />
                                 </div>
                                 <p>Arts & Craft<img className="arrow" src={window.arrow} /></p>
                             </Link>
-                            <Link to="/products/70" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
+                            <Link to="/products/3" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.candy} />
                                 </div>
                                 <p>Candies <img className="arrow" src={window.arrow} /></p>
                             </Link>
-                            <Link to="/products/74" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
+                            <Link to="/products/6" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                     <img className="intro-image" src={window.heart} />
                                 </div>
                                 <p>Love<img className="arrow" src={window.arrow} /></p>
                             </Link>
-                            <Link to="/products/69" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
+                            <Link to="/products/1" style={{ textDecoration: 'none', color: 'black' }} className="intro-container-list-index">
                                 <div className="intro-container-list-index-image">
                                 <img className="intro-image" src={window.cookie} />
                                 </div>
@@ -76,27 +76,27 @@ class Splash extends React.Component {
                                 <h3>Home favorites</h3>
                                 <span>See more <img className="arrow" src={window.arrow} /></span>
                             </div>
-                            <Link to="/products/87" className="home-block">
+                            <Link to="/products/19" className="home-block">
                                 <img className="home-pics" src={window.home1} />
                             </Link>
-                            <Link to="/products/88" className="home-block">
+                            <Link to="/products/20" className="home-block">
                                 <img className="home-pics" src={window.home2} />
                             </Link>
-                            <Link to="/products/89" className="home-block">
+                            <Link to="/products/21" className="home-block">
                                 <img className="home-pics3" src={window.home3} />
                             </Link >
-                            <Link to="/products/90" className="home-block">
+                            <Link to="/products/22" className="home-block">
                                 <img className="home-pics" src={window.home4} />
                             </Link>
-                            <Link to="/products/91" className="home-block">
+                            <Link to="/products/23" className="home-block">
                                 <img className="home-pics" src={window.home5} />
                             </Link>
-                            <Link to="/products/92" className="home-block">
+                            <Link to="/products/24" className="home-block">
                                 <img className="home-pics" src={window.home6} />
                             </Link>
                         </div>
                         <div className="home-main-comp">
-                            <Link to="/products/93" className="home-main">
+                            <Link to="/products/25" className="home-main">
                                 <img className="home-pics-main" src={window.mainhome} />
                             </Link>
                         </div>

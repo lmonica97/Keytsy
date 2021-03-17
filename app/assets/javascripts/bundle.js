@@ -4682,7 +4682,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "intro-container-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/75",
+        to: "/products/7",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -4697,7 +4697,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/82",
+        to: "/products/14",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -4712,7 +4712,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/70",
+        to: "/products/3",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -4727,7 +4727,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/74",
+        to: "/products/6",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -4742,7 +4742,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/69",
+        to: "/products/1",
         style: {
           textDecoration: 'none',
           color: 'black'
@@ -4780,37 +4780,37 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "arrow",
         src: window.arrow
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/87",
+        to: "/products/19",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home1
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/88",
+        to: "/products/20",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home2
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/89",
+        to: "/products/21",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics3",
         src: window.home3
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/90",
+        to: "/products/22",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home4
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/91",
+        to: "/products/23",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
         src: window.home5
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/92",
+        to: "/products/24",
         className: "home-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics",
@@ -4818,7 +4818,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-main-comp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/products/93",
+        to: "/products/25",
         className: "home-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pics-main",
