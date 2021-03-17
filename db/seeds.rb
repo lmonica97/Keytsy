@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
+Product.delete_all
+Category.delete_all
 
-# p.image.attach(io: File.open("app/assets/images/products/1.jpg"), file_name: "1.jpg")
+# p.image.attach(io: URI.open("app/assets/images/products/1.jpg"), file_name: "1.jpg")
 user1 = User.create!(
     name: 'AwesomeStore',
     email: 'awesomestore@gmail.com',
@@ -122,7 +125,7 @@ product1 = Product.create!(
     price: 6.99,
     category_id: category5.id
 )
-product1.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/1.jpg"), filename: "1.jpg")
+product1.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/1.jpg"), filename: "1.jpg")
 
 product2 = Product.create!(
     seller_id: user3.id,
@@ -131,7 +134,7 @@ product2 = Product.create!(
     price: 15.99,
     category_id: category6.id
 )
-product2.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/3.jpg"), filename: "3.jpg")
+product2.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/3.jpg"), filename: "3.jpg")
 
 product3 = Product.create!(
     seller_id: user2.id,
@@ -141,7 +144,7 @@ product3 = Product.create!(
     category_id: category5.id
 )
 
-product3.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/2.jpg"), filename: "2.jpg")
+product3.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/2.jpg"), filename: "2.jpg")
 
 product4 = Product.create!(
     seller_id: user2.id,
@@ -150,7 +153,7 @@ product4 = Product.create!(
     price: 10.99,
     category_id: category8.id
 )
-product4.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/4.jpg"), filename: "4.jpg")
+product4.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/4.jpg"), filename: "4.jpg")
 
 product5 = Product.create!(
     seller_id: user3.id,
@@ -159,7 +162,7 @@ product5 = Product.create!(
     price: 12.59,
     category_id: category8.id
 )
-product5.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/5.jpg"), filename: "5.jpg")
+product5.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/5.jpg"), filename: "5.jpg")
 
 product6 = Product.create!(
     seller_id: user3.id,
@@ -168,7 +171,7 @@ product6 = Product.create!(
     price: 5.99,
     category_id: category5.id
 )
-product6.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/6.jpg"), filename: "6.jpg")
+product6.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/6.jpg"), filename: "6.jpg")
 
 product7 = Product.create!(
     seller_id: user1.id,
@@ -177,7 +180,7 @@ product7 = Product.create!(
     price: 10.25,
     category_id: category5.id
 )
-product7.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/7.jpg"), filename: "7.jpg")
+product7.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/7.jpg"), filename: "7.jpg")
 
 product8 = Product.create!(
     seller_id: user2.id,
@@ -186,7 +189,7 @@ product8 = Product.create!(
     price: 150.99,
     category_id: category1.id 
 )
-product8.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/8.jpg"), filename: "8.jpg")
+product8.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/8.jpg"), filename: "8.jpg")
 
 product9 = Product.create!(
     seller_id: user1.id,
@@ -195,7 +198,7 @@ product9 = Product.create!(
     price: 5.99,
     category_id: category7.id
 )
-product9.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/9.jpg"), filename: "9.jpg")
+product9.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/9.jpg"), filename: "9.jpg")
 
 product10 = Product.create!(
     seller_id: user3.id,
@@ -204,7 +207,7 @@ product10 = Product.create!(
     price: 25.99,
     category_id: category3.id
 )
-product10.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/10.jpg"), filename: "10.jpg")
+product10.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/10.jpg"), filename: "10.jpg")
 
 product11 = Product.create!(
     seller_id: user2.id,
@@ -213,7 +216,7 @@ product11 = Product.create!(
     price: 20.99,
     category_id: category2.id
 )
-product11.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/11.jpg"), filename: "11.jpg")
+product11.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/11.jpg"), filename: "11.jpg")
 
 product12 = Product.create!(
     seller_id: user3.id,
@@ -222,7 +225,7 @@ product12 = Product.create!(
     price: 40.99,
     category_id: category2.id
 )
-product12.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/12.jpg"), filename: "12.jpg")
+product12.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/12.jpg"), filename: "12.jpg")
 
 product13 = Product.create!(
     seller_id: user1.id,
@@ -231,7 +234,7 @@ product13 = Product.create!(
     price: 4.99,
     category_id: category6.id
 )
-product13.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/13.jpg"), filename: "13.jpg")
+product13.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/13.jpg"), filename: "13.jpg")
 
 product14 = Product.create!(
     seller_id: user1.id,
@@ -240,7 +243,7 @@ product14 = Product.create!(
     price: 30.68,
     category_id: category4.id
 )
-product14.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/14.jpg"), filename: "14.jpg")
+product14.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/14.jpg"), filename: "14.jpg")
 
 product15 = Product.create!(
     seller_id: user2.id,
@@ -249,7 +252,7 @@ product15 = Product.create!(
     price: 24.99,
     category_id: category7.id
 )
-product15.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/15.jpg"), filename: "15.jpg")
+product15.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/15.jpg"), filename: "15.jpg")
 
 product16 = Product.create!(
     seller_id: user2.id,
@@ -258,7 +261,7 @@ product16 = Product.create!(
     price: 500.21,
     category_id: category4.id
 )
-product16.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/16.jpg"), filename: "16.jpg")
+product16.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/16.jpg"), filename: "16.jpg")
 
 product17 = Product.create!(
     seller_id: user2.id,
@@ -267,7 +270,7 @@ product17 = Product.create!(
     price: 19.99,
     category_id: category3.id
 )
-product17.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/17.jpg"), filename: "17.jpg")
+product17.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/17.jpg"), filename: "17.jpg")
 
 
 product18 = Product.create!(
@@ -277,7 +280,7 @@ product18 = Product.create!(
     price: 11.99,
     category_id: category7.id
 )
-product18.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/18.jpg"), filename: "18.jpg")
+product18.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/18.jpg"), filename: "18.jpg")
 
 product19 = Product.create!(
     seller_id: user2.id,
@@ -286,7 +289,7 @@ product19 = Product.create!(
     price: 100.22,
     category_id: category4.id
 )
-product19.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/19.jpg"), filename: "19.jpg")
+product19.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/19.jpg"), filename: "19.jpg")
 
 product20 = Product.create!(
     seller_id: user1.id,
@@ -295,7 +298,7 @@ product20 = Product.create!(
     price: 30.65,
     category_id: category4.id
 )
-product20.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/20.jpg"), filename: "20.jpg")
+product20.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/20.jpg"), filename: "20.jpg")
 
 product21 = Product.create!(
     seller_id: user3.id,
@@ -304,7 +307,7 @@ product21 = Product.create!(
     price: 15.68,
     category_id: category4.id
 )
-product21.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/21.jpg"), filename: "21.jpg")
+product21.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/21.jpg"), filename: "21.jpg")
 
 product22 = Product.create!(
     seller_id: user1.id,
@@ -313,7 +316,7 @@ product22 = Product.create!(
     price: 240.99,
     category_id: category4.id
 )
-product22.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/22.jpg"), filename: "22.jpg")
+product22.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/22.jpg"), filename: "22.jpg")
 
 product23 = Product.create!(
     seller_id: user2.id,
@@ -322,7 +325,7 @@ product23 = Product.create!(
     price: 500.55,
     category_id: category4.id
 )
-product23.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/23.jpg"), filename: "23.jpg")
+product23.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/23.jpg"), filename: "23.jpg")
 
 product24 = Product.create!(
     seller_id: user3.id,
@@ -331,7 +334,7 @@ product24 = Product.create!(
     price: 28.11,
     category_id: category4.id
 )
-product24.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/24.jpg"), filename: "24.jpg")
+product24.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/24.jpg"), filename: "24.jpg")
 
 product25 = Product.create!(
     seller_id: user1.id,
@@ -340,7 +343,7 @@ product25 = Product.create!(
     price: 35.55,
     category_id: category5.id
 )
-product25.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/25.jpg"), filename: "25.jpg")
+product25.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/25.jpg"), filename: "25.jpg")
 
 product26 = Product.create!(
     seller_id: user2.id,
@@ -349,7 +352,7 @@ product26 = Product.create!(
     price: 50.55,
     category_id: category1.id
 )
-product26.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/26.jpg"), filename: "26.jpg")
+product26.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/26.jpg"), filename: "26.jpg")
 
 product27 = Product.create!(
     seller_id: user3.id,
@@ -358,7 +361,7 @@ product27 = Product.create!(
     price: 99.99,
     category_id: category1.id
 )
-product27.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/27.jpg"), filename: "27.jpg")
+product27.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/27.jpg"), filename: "27.jpg")
 
 product28 = Product.create!(
     seller_id: user2.id,
@@ -367,7 +370,7 @@ product28 = Product.create!(
     price: 20.99,
     category_id: category1.id
 )
-product28.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/28.jpg"), filename: "28.jpg")
+product28.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/28.jpg"), filename: "28.jpg")
 
 product29 = Product.create!(
     seller_id: user3.id,
@@ -376,7 +379,7 @@ product29 = Product.create!(
     price: 32.49,
     category_id: category7.id
 )
-product29.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/29.jpg"), filename: "29.jpg")
+product29.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/29.jpg"), filename: "29.jpg")
 
 product30 = Product.create!(
     seller_id: user3.id,
@@ -385,7 +388,7 @@ product30 = Product.create!(
     price: 40.49,
     category_id: category7.id
 )
-product30.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/30.jpg"), filename: "30.jpg")
+product30.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/30.jpg"), filename: "30.jpg")
 
 product31 = Product.create!(
     seller_id: user6.id,
@@ -394,7 +397,7 @@ product31 = Product.create!(
     price: 27.88,
     category_id: category1.id
 )
-product31.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/31.jpg"), filename: "31.jpg")
+product31.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/31.jpg"), filename: "31.jpg")
 
 product32 = Product.create!(
     seller_id: user5.id,
@@ -403,7 +406,7 @@ product32 = Product.create!(
     price: 10.99,
     category_id: category2.id
 )
-product32.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/32.jpg"), filename: "32.jpg")
+product32.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/32.jpg"), filename: "32.jpg")
 
 product33 = Product.create!(
     seller_id: user5.id,
@@ -412,7 +415,7 @@ product33 = Product.create!(
     price: 5.66,
     category_id: category1.id
 )
-product33.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/33.jpg"), filename: "33.jpg")
+product33.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/33.jpg"), filename: "33.jpg")
 
 product34 = Product.create!(
     seller_id: user5.id,
@@ -421,7 +424,7 @@ product34 = Product.create!(
     price: 4.22,
     category_id: category2.id
 )
-product34.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/34.jpg"), filename: "34.jpg")
+product34.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/34.jpg"), filename: "34.jpg")
 
 product35 = Product.create!(
     seller_id: user5.id,
@@ -430,7 +433,7 @@ product35 = Product.create!(
     price: 32.11,
     category_id: category2.id
 )
-product35.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/35.jpg"), filename: "35.jpg")
+product35.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/35.jpg"), filename: "35.jpg")
 
 product38 = Product.create!(
     seller_id: user5.id,
@@ -439,7 +442,7 @@ product38 = Product.create!(
     price: 45.44,
     category_id: category2.id
 )
-product38.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/38.jpg"), filename: "38.jpg")
+product38.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/38.jpg"), filename: "38.jpg")
 
 product36 = Product.create!(
     seller_id: user5.id,
@@ -448,7 +451,7 @@ product36 = Product.create!(
     price: 60.44,
     category_id: category2.id
 )
-product36.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/36.jpg"), filename: "36.jpg")
+product36.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/36.jpg"), filename: "36.jpg")
 
 product37 = Product.create!(
     seller_id: user5.id,
@@ -457,7 +460,7 @@ product37 = Product.create!(
     price: 40.49,
     category_id: category2.id
 )
-product37.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/37.jpg"), filename: "37.jpg")
+product37.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/37.jpg"), filename: "37.jpg")
 
 product39 = Product.create!(
     seller_id: user5.id,
@@ -466,7 +469,7 @@ product39 = Product.create!(
     price: 29999.99,
     category_id: category2.id
 )
-product39.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/39.jpg"), filename: "39.jpg")
+product39.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/39.jpg"), filename: "39.jpg")
 
 product40 = Product.create!(
     seller_id: user7.id,
@@ -475,7 +478,7 @@ product40 = Product.create!(
     price: 12.11,
     category_id: category3.id
 )
-product40.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/40.jpg"), filename: "40.jpg")
+product40.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/40.jpg"), filename: "40.jpg")
 
 product41 = Product.create!(
     seller_id: user7.id,
@@ -484,7 +487,7 @@ product41 = Product.create!(
     price: 60.99,
     category_id: category3.id
 )
-product41.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/41.jpg"), filename: "41.jpg")
+product41.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/41.jpg"), filename: "41.jpg")
 
 product42 = Product.create!(
     seller_id: user7.id,
@@ -493,7 +496,7 @@ product42 = Product.create!(
     price: 20.99,
     category_id: category3.id
 )
-product42.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/42.jpg"), filename: "42.jpg")
+product42.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/42.jpg"), filename: "42.jpg")
 
 product43 = Product.create!(
     seller_id: user7.id,
@@ -502,7 +505,7 @@ product43 = Product.create!(
     price: 15.99,
     category_id: category3.id
 )
-product43.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/43.jpg"), filename: "43.jpg")
+product43.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/43.jpg"), filename: "43.jpg")
 
 product44 = Product.create!(
     seller_id: user7.id,
@@ -511,7 +514,7 @@ product44 = Product.create!(
     price: 18.44,
     category_id: category3.id
 )
-product44.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/44.jpg"), filename: "44.jpg")
+product44.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/44.jpg"), filename: "44.jpg")
 
 product45 = Product.create!(
     seller_id: user7.id,
@@ -520,7 +523,7 @@ product45 = Product.create!(
     price: 9.99,
     category_id: category3.id
 )
-product45.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/45.jpg"), filename: "45.jpg")
+product45.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/45.jpg"), filename: "45.jpg")
 
 product46 = Product.create!(
     seller_id: user8.id,
@@ -529,7 +532,7 @@ product46 = Product.create!(
     price: 29.99,
     category_id: category3.id
 )
-product46.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/46.jpg"), filename: "46.jpg")
+product46.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/46.jpg"), filename: "46.jpg")
 
 product47 = Product.create!(
     seller_id: user8.id,
@@ -538,7 +541,7 @@ product47 = Product.create!(
     price: 9.99,
     category_id: category3.id
 )
-product47.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/47.jpg"), filename: "47.jpg")
+product47.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/47.jpg"), filename: "47.jpg")
 
 product48 = Product.create!(
     seller_id: user8.id,
@@ -547,7 +550,7 @@ product48 = Product.create!(
     price: 39.99,
     category_id: category3.id
 )
-product48.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/48.jpg"), filename: "48.jpg")
+product48.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/48.jpg"), filename: "48.jpg")
 
 product49 = Product.create!(
     seller_id: user8.id,
@@ -556,7 +559,7 @@ product49 = Product.create!(
     price: 39.99,
     category_id: category3.id
 )
-product49.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/49.jpg"), filename: "49.jpg")
+product49.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/49.jpg"), filename: "49.jpg")
 
 product50 = Product.create!(
     seller_id: user8.id,
@@ -565,7 +568,7 @@ product50 = Product.create!(
     price: 9.99,
     category_id: category3.id
 )
-product50.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/50.jpg"), filename: "50.jpg")
+product50.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/50.jpg"), filename: "50.jpg")
 
 product51 = Product.create!(
     seller_id: user8.id,
@@ -574,7 +577,7 @@ product51 = Product.create!(
     price: 9.99,
     category_id: category3.id
 )
-product51.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/51.jpg"), filename: "51.jpg")
+product51.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/51.jpg"), filename: "51.jpg")
 
 product52 = Product.create!(
     seller_id: user6.id,
@@ -583,7 +586,7 @@ product52 = Product.create!(
     price: 5.55,
     category_id: category1.id
 )
-product52.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/52.jpg"), filename: "52.jpg")
+product52.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/52.jpg"), filename: "52.jpg")
 
 product53 = Product.create!(
     seller_id: user6.id,
@@ -592,7 +595,7 @@ product53 = Product.create!(
     price: 199.99,
     category_id: category1.id
 )
-product53.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/53.jpg"), filename: "53.jpg")
+product53.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/53.jpg"), filename: "53.jpg")
 
 product54 = Product.create!(
     seller_id: user6.id,
@@ -601,7 +604,7 @@ product54 = Product.create!(
     price: 2.44,
     category_id: category1.id
 )
-product54.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/54.jpg"), filename: "54.jpg")
+product54.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/54.jpg"), filename: "54.jpg")
 
 product55 = Product.create!(
     seller_id: user10.id,
@@ -610,7 +613,7 @@ product55 = Product.create!(
     price: 39.99,
     category_id: category4.id
 )
-product55.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/55.jpg"), filename: "55.jpg")
+product55.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/55.jpg"), filename: "55.jpg")
 
 product56 = Product.create!(
     seller_id: user10.id,
@@ -619,7 +622,7 @@ product56 = Product.create!(
     price: 49.99,
     category_id: category4.id
 )
-product56.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/56.jpg"), filename: "56.jpg")
+product56.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/56.jpg"), filename: "56.jpg")
 
 product57 = Product.create!(
     seller_id: user10.id,
@@ -628,7 +631,7 @@ product57 = Product.create!(
     price: 19.99,
     category_id: category4.id
 )
-product57.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/57.jpg"), filename: "57.jpg")
+product57.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/57.jpg"), filename: "57.jpg")
 
 product58 = Product.create!(
     seller_id: user10.id,
@@ -637,7 +640,7 @@ product58 = Product.create!(
     price: 39.99,
     category_id: category4.id
 )
-product58.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/58.jpg"), filename: "58.jpg")
+product58.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/58.jpg"), filename: "58.jpg")
 
 product59 = Product.create!(
     seller_id: user11.id,
@@ -646,7 +649,7 @@ product59 = Product.create!(
     price: 29.99,
     category_id: category6.id
 )
-product59.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/59.jpg"), filename: "59.jpg")
+product59.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/59.jpg"), filename: "59.jpg")
 
 product60 = Product.create!(
     seller_id: user11.id,
@@ -655,7 +658,7 @@ product60 = Product.create!(
     price: 199.99,
     category_id: category6.id
 )
-product60.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/60.jpg"), filename: "60.jpg")
+product60.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/60.jpg"), filename: "60.jpg")
 
 product61 = Product.create!(
     seller_id: user11.id,
@@ -664,7 +667,7 @@ product61 = Product.create!(
     price: 9.99,
     category_id: category6.id
 )
-product61.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/61.jpg"), filename: "61.jpg")
+product61.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/61.jpg"), filename: "61.jpg")
 
 product62 = Product.create!(
     seller_id: user11.id,
@@ -673,7 +676,7 @@ product62 = Product.create!(
     price: 29.99,
     category_id: category6.id
 )
-product62.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/62.jpg"), filename: "62.jpg")
+product62.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/62.jpg"), filename: "62.jpg")
 
 product63 = Product.create!(
     seller_id: user11.id,
@@ -682,7 +685,7 @@ product63 = Product.create!(
     price: 49.99,
     category_id: category6.id
 )
-product63.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/63.jpg"), filename: "63.jpg")
+product63.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/63.jpg"), filename: "63.jpg")
 
 product64 = Product.create!(
     seller_id: user11.id,
@@ -691,7 +694,7 @@ product64 = Product.create!(
     price: 19.99,
     category_id: category6.id
 )
-product64.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/64.jpg"), filename: "64.jpg")
+product64.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/64.jpg"), filename: "64.jpg")
 
 product65 = Product.create!(
     seller_id: user11.id,
@@ -700,7 +703,7 @@ product65 = Product.create!(
     price: 14.99,
     category_id: category6.id
 )
-product65.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/65.jpg"), filename: "65.jpg")
+product65.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/65.jpg"), filename: "65.jpg")
 
 product66 = Product.create!(
     seller_id: user11.id,
@@ -709,7 +712,7 @@ product66 = Product.create!(
     price: 12.99,
     category_id: category6.id
 )
-product66.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/66.jpg"), filename: "66.jpg")
+product66.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/66.jpg"), filename: "66.jpg")
 
 product67 = Product.create!(
     seller_id: user1.id,
@@ -718,7 +721,7 @@ product67 = Product.create!(
     price: 7.99,
     category_id: category6.id
 )
-product67.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/67.jpg"), filename: "67.jpg")
+product67.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/67.jpg"), filename: "67.jpg")
 
 product68 = Product.create!(
     seller_id: user11.id,
@@ -727,7 +730,7 @@ product68 = Product.create!(
     price: 29.99,
     category_id: category6.id
 )
-product68.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/68.jpg"), filename: "68.jpg")
+product68.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/68.jpg"), filename: "68.jpg")
 
 product69 = Product.create!(
     seller_id: user8.id,
@@ -736,7 +739,7 @@ product69 = Product.create!(
     price: 29.99,
     category_id: category3.id
 )
-product69.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/69.jpg"), filename: "69.jpg")
+product69.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/69.jpg"), filename: "69.jpg")
 
 product70 = Product.create!(
     seller_id: user11.id,
@@ -745,7 +748,7 @@ product70 = Product.create!(
     price: 39.99,
     category_id: category7.id
 )
-product70.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/70.jpg"), filename: "70.jpg")
+product70.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/70.jpg"), filename: "70.jpg")
 
 product71 = Product.create!(
     seller_id: user3.id,
@@ -754,7 +757,7 @@ product71 = Product.create!(
     price: 14.99,
     category_id: category7.id
 )
-product71.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/71.jpg"), filename: "71.jpg")
+product71.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/71.jpg"), filename: "71.jpg")
 
 product72 = Product.create!(
     seller_id: user3.id,
@@ -763,7 +766,7 @@ product72 = Product.create!(
     price: 9.99,
     category_id: category7.id
 )
-product72.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/72.jpg"), filename: "72.jpg")
+product72.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/72.jpg"), filename: "72.jpg")
 
 product73 = Product.create!(
     seller_id: user3.id,
@@ -772,7 +775,7 @@ product73 = Product.create!(
     price: 5.99,
     category_id: category7.id
 )
-product73.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/73.jpg"), filename: "73.jpg")
+product73.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/73.jpg"), filename: "73.jpg")
 
 product74 = Product.create!(
     seller_id: user1.id,
@@ -781,7 +784,7 @@ product74 = Product.create!(
     price: 9.99,
     category_id: category7.id
 )
-product74.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/74.jpg"), filename: "74.jpg")
+product74.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/74.jpg"), filename: "74.jpg")
 
 product75 = Product.create!(
     seller_id: user1.id,
@@ -790,7 +793,7 @@ product75 = Product.create!(
     price: 9.99,
     category_id: category7.id
 )
-product75.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/75.jpg"), filename: "75.jpg")
+product75.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/75.jpg"), filename: "75.jpg")
 
 product76 = Product.create!(
     seller_id: user2.id,
@@ -799,7 +802,7 @@ product76 = Product.create!(
     price: 2.99,
     category_id: category7.id
 )
-product76.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/76.jpg"), filename: "76.jpg")
+product76.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/76.jpg"), filename: "76.jpg")
 
 product77 = Product.create!(
     seller_id: user3.id,
@@ -808,7 +811,7 @@ product77 = Product.create!(
     price: 39.99,
     category_id: category7.id
 )
-product77.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/77.jpg"), filename: "77.jpg")
+product77.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/77.jpg"), filename: "77.jpg")
 
 product78 = Product.create!(
     seller_id: user12.id,
@@ -817,7 +820,7 @@ product78 = Product.create!(
     price: 9.99,
     category_id: category8.id
 )
-product78.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/78.jpg"), filename: "78.jpg")
+product78.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/78.jpg"), filename: "78.jpg")
 
 product79 = Product.create!(
     seller_id: user12.id,
@@ -826,7 +829,7 @@ product79 = Product.create!(
     price: 13.99,
     category_id: category8.id
 )
-product79.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/79.jpg"), filename: "79.jpg")
+product79.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/79.jpg"), filename: "79.jpg")
 
 product80 = Product.create!(
     seller_id: user12.id,
@@ -835,7 +838,7 @@ product80 = Product.create!(
     price: 19.99,
     category_id: category8.id
 )
-product80.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/80.jpg"), filename: "80.jpg")
+product80.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/80.jpg"), filename: "80.jpg")
 
 product81 = Product.create!(
     seller_id: user12.id,
@@ -844,7 +847,7 @@ product81 = Product.create!(
     price: 6.99,
     category_id: category8.id
 )
-product81.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/81.jpg"), filename: "81.jpg")
+product81.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/81.jpg"), filename: "81.jpg")
 
 product82 = Product.create!(
     seller_id: user12.id,
@@ -853,7 +856,7 @@ product82 = Product.create!(
     price: 4.99,
     category_id: category8.id
 )
-product82.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/82.jpg"), filename: "82.jpg")
+product82.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/82.jpg"), filename: "82.jpg")
 
 product83 = Product.create!(
     seller_id: user12.id,
@@ -862,7 +865,7 @@ product83 = Product.create!(
     price: 9.99,
     category_id: category8.id
 )
-product83.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/83.jpg"), filename: "83.jpg")
+product83.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/83.jpg"), filename: "83.jpg")
 
 product84 = Product.create!(
     seller_id: user2.id,
@@ -871,7 +874,7 @@ product84 = Product.create!(
     price: 12.99,
     category_id: category8.id
 )
-product84.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/84.jpg"), filename: "84.jpg")
+product84.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/84.jpg"), filename: "84.jpg")
 
 product85 = Product.create!(
     seller_id: user12.id,
@@ -880,7 +883,7 @@ product85 = Product.create!(
     price: 5.99,
     category_id: category8.id
 )
-product85.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/85.jpg"), filename: "85.jpg")
+product85.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/85.jpg"), filename: "85.jpg")
 
 product86 = Product.create!(
     seller_id: user2.id,
@@ -889,7 +892,7 @@ product86 = Product.create!(
     price: 2.99,
     category_id: category8.id
 )
-product86.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/86.jpg"), filename: "86.jpg")
+product86.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/86.jpg"), filename: "86.jpg")
 
 product87 = Product.create!(
     seller_id: user12.id,
@@ -898,7 +901,7 @@ product87 = Product.create!(
     price: 19.99,
     category_id: category8.id
 )
-product87.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/87.jpg"), filename: "87.jpg")
+product87.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/87.jpg"), filename: "87.jpg")
 
 product88 = Product.create!(
     seller_id: user9.id,
@@ -907,7 +910,7 @@ product88 = Product.create!(
     price: 99.99,
     category_id: category9.id
 )
-product88.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/88.jpg"), filename: "88.jpg")
+product88.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/88.jpg"), filename: "88.jpg")
 
 product89 = Product.create!(
     seller_id: user9.id,
@@ -916,7 +919,7 @@ product89 = Product.create!(
     price: 49.99,
     category_id: category9.id
 )
-product89.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/89.jpg"), filename: "89.jpg")
+product89.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/89.jpg"), filename: "89.jpg")
 
 product91 = Product.create!(
     seller_id: user9.id,
@@ -925,7 +928,7 @@ product91 = Product.create!(
     price: 19.99,
     category_id: category9.id
 )
-product91.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/91.jpg"), filename: "91.jpg")
+product91.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/91.jpg"), filename: "91.jpg")
 
 
 product90 = Product.create!(
@@ -935,7 +938,7 @@ product90 = Product.create!(
     price: 9.99,
     category_id: category9.id
 )
-product90.photo.attach(io: File.open("https://keytsy-seeds.s3.amazonaws.com/products/90.jpg"), filename: "90.jpg")
+product90.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/90.jpg"), filename: "90.jpg")
 
 
 
