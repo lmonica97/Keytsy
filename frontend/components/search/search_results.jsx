@@ -21,7 +21,7 @@ class SearchResults extends React.Component {
     render() {
         const search = queryString.parse(this.props.location.search);
         const { products } = this.props;
-        let searchProducts = products.filter(product => product.product_name.toLowerCase().includes(search["?search"].toLowerCase()))
+        let searchProducts = products.filter(product => product.product_name.toLowerCase().includes(search["?search"].toLowerCase()) || product.description.toLowerCase().includes(search["?search"].toLowerCase()))
         return (
             <div className="search-results">
                 <h1 className="search-results-header">Search Results</h1>

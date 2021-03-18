@@ -3352,7 +3352,7 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
       var search = queryString.parse(this.props.location.search);
       var products = this.props.products;
       var searchProducts = products.filter(function (product) {
-        return product.product_name.toLowerCase().includes(search["?search"].toLowerCase());
+        return product.product_name.toLowerCase().includes(search["?search"].toLowerCase()) || product.description.toLowerCase().includes(search["?search"].toLowerCase());
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-results"
