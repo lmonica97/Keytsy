@@ -931,14 +931,95 @@ product91 = Product.create!(
 product91.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/91.jpg"), filename: "91.jpg")
 
 
-product90 = Product.create!(
-    seller_id: user9.id,
-    product_name: "Keytsy Gift Card",
-    description: "Keysy E-gift card to send to your loved ones, friends, etc.",
-    price: 9.99,
-    category_id: category9.id
+product92 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Custom event table cards",
+    description: "Great to use in large events, to label tables. Please let us know how you'd like the font to be in seller's notes during checkout. Comes in set of 10, cardboard.",
+    price: 19.99,
+    category_id: category5.id
 )
-product90.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/90.jpg"), filename: "90.jpg")
+product92.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/92.jpg"), filename: "92.jpg")
+
+
+product93 = Product.create!(
+    seller_id: user8.id,
+    product_name: "Mr & Mrs Paper Goodie Bags",
+    description: "Comes in pack of 100. Only one design available, as seen in photo. Size: 6in X 4in",
+    price: 8.99,
+    category_id: category5.id
+)
+product93.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/93.jpg"), filename: "93.jpg")
+
+
+product94 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Rainbow Confetti",
+    description: "Small, 1cm diameter confetti circles, can be used to stuff balloons for a better pop effect!",
+    price: 2.99,
+    category_id: category5.id
+)
+product94.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/94.jpg"), filename: "94.jpg")
+
+
+product95 = Product.create!(
+    seller_id: user2.id,
+    product_name: "String Lights",
+    description: "Colored string lights, length: 3ft per string. Comes in only three colors: red, blue, and yellow. (pack of 3 in each color)",
+    price: 29.99,
+    category_id: category5.id
+)
+product95.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/95.jpg"), filename: "95.jpg")
+
+
+product96 = Product.create!(
+    seller_id: user7.id,
+    product_name: "Emoji Balloons",
+    description: "Very limited in emojis: Smiley, ring, kiss, heart eyes.",
+    price: 15.99,
+    category_id: category5.id
+)
+product96.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/96.jpg"), filename: "96.jpg")
+
+
+product97 = Product.create!(
+    seller_id: user12.id,
+    product_name: "Metallic Balloons",
+    description: "Comes in a pack of 25 balloons. Only available in the colors shown in photo.",
+    price: 12.99,
+    category_id: category5.id
+)
+product97.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/97.jpg"), filename: "97.jpg")
+
+
+product98 = Product.create!(
+    seller_id: user1.id,
+    product_name: "Halloween-Themed Cookies",
+    description: "These Halloween-themed cookies will come in a pack of 10, 2 cookies each for each design. The icing is vanilla flavored, with food coloring. Cookies are plain sugar cookies.",
+    price: 16.99,
+    category_id: category5.id
+)
+product98.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/98.jpg"), filename: "98.jpg")
+
+
+product99 = Product.create!(
+    seller_id: user2.id,
+    product_name: "Lettered Balloons",
+    description: "Available for all alphabet characters only. Each order only comes with one balloon with the character of your choice. Please let us know in seller's notes.",
+    price: 8.99,
+    category_id: category5.id
+)
+product99.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/99.jpg"), filename: "99.jpg")
+
+
+product100 = Product.create!(
+    seller_id: user3.id,
+    product_name: "Everyone Can Code",
+    description: "A Banner to celebrate everyone can code.",
+    price: 5.99,
+    category_id: category5.id
+)
+product100.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/100.jpg"), filename: "100.jpg")
+
 
 
 
