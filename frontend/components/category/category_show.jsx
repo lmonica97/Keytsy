@@ -114,7 +114,7 @@ class CategoryShow extends React.Component {
                                     </div>
                                     :
                                     productShow.map(product => 
-                                    <CategoryProductShow product={product} />    
+                                    <CategoryProductShow product={product} key={product.id}/>    
                                     )
                                 }
                             </ul>

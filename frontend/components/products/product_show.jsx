@@ -49,7 +49,7 @@ class ProductShow extends React.Component {
 
     handleSubmit(e) {
         this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment})
-            .then(this.hideForm("showReviewForm"))
+        this.hideForm("showReviewForm")
     }
 
     update(type) {

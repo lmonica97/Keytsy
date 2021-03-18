@@ -5,7 +5,7 @@ class ReviewShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: this.props.reviewId,
+            id: this.props.id,
             reviewer_id: this.props.reviewerId,
             product_id: this.props.productId,
             rating: this.props.rating,
@@ -47,7 +47,7 @@ class ReviewShow extends React.Component {
         }
         if (!this.props.currentUser) {
             return (
-                <div className="review-show-container">
+                <div className="review-show-container" key={this.props.id}>
                         <div className="review-user-date">
                             <img className="review-user-pic" src={window.anon} />
                             <p className="review-user">{this.props.user}</p>
@@ -60,7 +60,7 @@ class ReviewShow extends React.Component {
             )
         } else {
         return (
-            <li className="review-index-container" key={this.props.reviewId}>
+            <li className="review-index-container" key={this.props.id}>
                 <div className="review-main-container">
                     { showUpdateForm ? 
                     <div className="review-edit-container">
@@ -79,10 +79,10 @@ class ReviewShow extends React.Component {
                         </div>
                         <textarea className="review-update-text" placeholder={this.props.comment} onChange={this.update("comment")}></textarea>
                         <button className="update-review" onClick={() => this.props.updateReview(review).then(this.hideForm("showUpdateForm"))}>Update</button>
-                        <button className="delete-review" onClick={() => this.props.deleteReview(this.props.reviewId).then(this.hideForm("showUpdateForm"))}>Delete Review</button>
+                        <button className="delete-review" onClick={() => this.props.deleteReview(this.props.id).then(this.hideForm("showUpdateForm"))}>Delete Review</button>
                     </div> :
-                    <div className="review-show-container">
-                        <div className="review-user-date">
+                    <div className="review-show-container" key={this.props.id}>
+                        <div className="review-user-date" key={this.props.id}>
                             <img className="review-user-pic" src={window.anon} />
                             <p className="review-user">{this.props.user}</p>
                             <p className="review-date">{this.props.date}</p>

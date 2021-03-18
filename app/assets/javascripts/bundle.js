@@ -1595,7 +1595,8 @@ var CategoryShow = /*#__PURE__*/function (_React$Component) {
           src: window.sad
         })) : productShow.map(function (product) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_product_show__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            product: product
+            product: product,
+            key: product.id
           });
         }))));
       }
@@ -2258,7 +2259,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         product_id: this.props.product.id,
         rating: this.state.rating,
         comment: this.state.comment
-      }).then(this.hideForm("showReviewForm"));
+      });
+      this.hideForm("showReviewForm");
     }
   }, {
     key: "update",
@@ -2760,8 +2762,17 @@ var Review = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "randomKeyNum",
+    value: function randomKeyNum() {
+      var min = 12390812491;
+      var max = 565659380382;
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var _this$props = this.props,
           user = _this$props.user,
           product = _this$props.product,
@@ -2777,7 +2788,8 @@ var Review = /*#__PURE__*/function (_React$Component) {
           className: "review-list-container"
         }, reversed.map(function (review) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            reviewId: review.id,
+            key: _this.randomKeyNum(),
+            id: review.id,
             reviewerId: review.reviewer_id,
             user: review.name,
             date: review.date,
@@ -2896,7 +2908,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      id: _this.props.reviewId,
+      id: _this.props.id,
       reviewer_id: _this.props.reviewerId,
       product_id: _this.props.productId,
       rating: _this.props.rating,
@@ -2978,7 +2990,8 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
 
       if (!this.props.currentUser) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "review-show-container"
+          className: "review-show-container",
+          key: this.props.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-user-date"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -3001,7 +3014,7 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "review-index-container",
-          key: this.props.reviewId
+          key: this.props.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-main-container"
         }, showUpdateForm ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3033,12 +3046,14 @@ var ReviewShow = /*#__PURE__*/function (_React$Component) {
         }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-review",
           onClick: function onClick() {
-            return _this3.props.deleteReview(_this3.props.reviewId).then(_this3.hideForm("showUpdateForm"));
+            return _this3.props.deleteReview(_this3.props.id).then(_this3.hideForm("showUpdateForm"));
           }
         }, "Delete Review")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "review-show-container"
+          className: "review-show-container",
+          key: this.props.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "review-user-date"
+          className: "review-user-date",
+          key: this.props.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-user-pic",
           src: window.anon

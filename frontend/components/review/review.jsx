@@ -16,6 +16,12 @@ class Review extends React.Component {
         }
     }
 
+    randomKeyNum() {
+        let min = 12390812491;
+        let max = 565659380382;
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
     render() {
         const { user, product, reviews, updateReview, deleteReview } = this.props;
         let reversed = reviews.reverse()
@@ -27,7 +33,7 @@ class Review extends React.Component {
             return (
                 <div className="review-list-container">
                         {reversed.map(review => (
-                            <ReviewShow reviewId={review.id} reviewerId={review.reviewer_id} user={review.name} date={review.date}
+                            <ReviewShow key={this.randomKeyNum()} id={review.id} reviewerId={review.reviewer_id} user={review.name} date={review.date}
                             comment={review.comment} rating={review.rating} currentUser={user}
                             updateReview={updateReview} deleteReview={deleteReview} productId={review.product_id} />
                         ))}
