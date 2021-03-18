@@ -1020,6 +1020,60 @@ product100 = Product.create!(
 )
 product100.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/100.jpg"), filename: "100.jpg")
 
+product101 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Alpaca Linear Switches",
+    description: "Alpaca linear switches, will come in pack of 10. Smooth linear switches with gold plated 62g springs. Top housing is polycarbonate. Bottom housing is nylon. Stem is POM. These switches are PCB mount(5-pin)",
+    price: 6.99,
+    category_id: category1.id
+)
+product101.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/101.jpg"), filename: "101.jpg")
+
+product102 = Product.create!(
+    seller_id: user9.id,
+    product_name: "GMK Noel Set",
+    description: "No accent keys or anything. Only everything in photo included.",
+    price: 134.99,
+    category_id: category1.id
+)
+product102.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/102.jpg"), filename: "102.jpg")
+
+product103 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Durock POM Switches",
+    description: "POM blend for top and bottom housing with a redesigned stem. Linear switch with 63.5g bottom out. Plate mount 5-pin switch.",
+    price: 6.99,
+    category_id: category1.id
+)
+product103.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/103.jpg"), filename: "103.jpg")
+
+product106 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Switch Lubing Station",
+    description: "Comes in the color purple. Can lube up to 42 switches at the same time.",
+    price: 29.99,
+    category_id: category1.id
+)
+product106.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/106.jpg"), filename: "106.jpg")
+
+product105 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Satisfaction75",
+    description: "75% layout keyboard. DOES NOT COME WITH KEYCAPS OR SWITCHES. Will come with brass-rose gold knob.",
+    price: 475.99,
+    category_id: category1.id
+)
+product105.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/105.jpg"), filename: "105.jpg")
+
+product107 = Product.create!(
+    seller_id: user9.id,
+    product_name: "Krytox 205g0",
+    description: "0.5 oz tube of pute Krytox 205g0.",
+    price: 21.89,
+    category_id: category1.id
+)
+product107.photo.attach(io: URI.open("https://keytsy-seeds.s3.amazonaws.com/products/107.jpg"), filename: "107.jpg")
+
 
 
 
