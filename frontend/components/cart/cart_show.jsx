@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { Link } from 'react-router-dom';
 
 class CartShow extends React.Component{
     constructor(props){
@@ -50,11 +51,11 @@ class CartShow extends React.Component{
                 </div>
                 <div className="item-index">
                     <div> 
-                        <img className="cartshow-image"src={this.props.photo} />
+                        <Link to={`/products/${this.props.id}`} ><img className="cartshow-image"src={this.props.photo} /></Link>
                     </div>
                     <div className="cartshow-strings">
                         <div className="cartshow-name">
-                            <p className="cart-name">{this.props.name}</p>
+                            <Link to={`/products/${this.props.id}`} style={{textDecoration:'none', color:'black'}}><p className="cart-name">{this.props.name}</p></Link>
                         </div>
                         <div className="select-cart">
                             <Select 
