@@ -679,6 +679,13 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "randomKeyNum",
+    value: function randomKeyNum() {
+      var min = 132390812491;
+      var max = 5465659380382;
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -762,6 +769,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cartshow-container"
         }, items.map(function (item) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: _this3.randomKeyNum(),
             user: _this3.props.user,
             seller: item.name,
             quantity: item.quantity,

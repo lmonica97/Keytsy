@@ -27,6 +27,12 @@ class Cart extends React.Component {
        }) 
     }
 
+    randomKeyNum() {
+        let min = 132390812491;
+        let max = 5465659380382;
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
     render() {
         const { items, removeItem, updateItem, products, addItem, user } = this.props;
         if (items.length === 0) {
@@ -69,7 +75,7 @@ class Cart extends React.Component {
                         <ul className="cartshow-container">
                             {
                                 items.map(item => (
-                                        <CartShow user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.product_id} cartItem={item.id}
+                                        <CartShow key={this.randomKeyNum()} user={this.props.user} seller={item.name} quantity={item.quantity} name={item.product_name} price={item.price} photo={item.photoUrl} id={item.product_id} cartItem={item.id}
                                             removeitem={removeItem} total={total.toFixed(2)} updateItem={updateItem} />
                                 ))
                             }
