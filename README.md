@@ -17,9 +17,8 @@ This app is my replication of the original website, Etsy.com. Similarly to the o
 ## Keytsy was built with:
 + Ruby on Rails -- Backend
 + PostgresQL -- database structure 
-+ ReactJS -- Frontend
++ ReactJS, NodeJS, Redux -- Frontend
 + AWS -- For product images
-+ Redux -- Frontend
 
 ## Features
 + User Autherization -- Allows a User to create an account, sign in to an existing account, and sign out. 
@@ -34,11 +33,29 @@ This app is my replication of the original website, Etsy.com. Similarly to the o
   <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/product.gif" />
 </p>
 
-+ Cart -- Display of the products that the User added to cart. User can update quantity amount, add more products to existing cart, delete items from cart, and purchase the items in their cart. (**COMING SOON!**)
-+ Reviews -- Users who have purchased products can leave a review on the product page for that specific product on a 1-5 scale rating. (**COMING SOON!**)
-+ Search -- A search bar that will display a result of products that match the User's search input. (**COMING SOON!**)
-+ Categories -- When a user selects on a specific category of items, only the products that are within the category chosen will be listed. (**COMING SOON!**)
-+ Favorites -- User will have their own favorites page, where they can view which products they favorited. They can favorite more items and de-favorite existing items in their favorites page. (**COMING SOON!**)
++ Cart -- Display of the products that the User added to cart. User can update quantity amount, add more products to existing cart, delete items from cart, and purchase the items in their cart. 
+
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/cart.gif" />
+</p>
+
++ Reviews -- Users will have to be logged in to create a review. Reviews will be rated from a scale from 1-5 stars and Users will be able to review their own existing reviews or delete them.
+
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/review.gif" />
+</p>
+
++ Search -- A search bar that will display a result of products that match the User's search input.
+
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/search.gif" />
+</p>
+
++ Categories -- When a user selects on a specific category of items, only the products that are within the category chosen will be listed. 
+
+<p align="center">
+  <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/category.gif" />
+</p>
 
 
 
