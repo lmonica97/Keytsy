@@ -51,7 +51,7 @@ This app is my replication of the original website, Etsy.com. Similarly to the o
   <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/search.gif" />
 </p>
 
-+ Categories -- When a user selects on a specific category of items, only the products that are within the category chosen will be listed. 
++ Categories -- When a user selects on a specific category of items, only the products that are within the category chosen will be listed. Users can filter products in each category with the price filter.
 
 <p align="center">
   <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/category.gif" />
