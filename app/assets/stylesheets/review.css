@@ -118,6 +118,7 @@
 }
 
 .review-comment {
+    width: 100%;
     margin-right: 850px;
     margin-left: 60px;
 }
