@@ -12,7 +12,6 @@ class CategoryNav extends React.Component {
 
     render() {
         const { categories } = this.props;
-        debugger
         return (
             <div className="cat-nav-block">
                 <div className="cat-nav-container">
