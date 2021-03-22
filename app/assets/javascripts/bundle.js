@@ -2272,13 +2272,14 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      e.preventDefault();
       this.props.createReview({
         reviewer_id: this.props.currentUser.id,
         product_id: this.props.product.id,
         rating: this.state.rating,
         comment: this.state.comment
       });
-      this.hideForm("showReviewForm");
+      this.hideForm('showReviewForm');
     }
   }, {
     key: "update",
@@ -2305,6 +2306,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var showReviewForm = this.state.showReviewForm;
       var rating = this.state.rating;
       var reviews = this.props.reviews;
+      var errors = this.props.errors;
+      debugger;
       var stars = {
         1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-star-rating1",
@@ -2507,12 +2510,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "product-total-review-cont"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "product-total-reviews"
-        }, ratings.length, " review(s)"), stars[average]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, ratings.length, " review(s)"), stars[average]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "review-errors"
+        }, errors), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-component"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, showReviewForm ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-form-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "review-form"
+          className: "review-form",
+          onSubmit: this.handleSubmit
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "review-form-head"
         }, "Write a review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2536,7 +2542,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           onChange: this.update("comment")
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "review-submit-btn",
-          onClick: this.handleSubmit
+          type: "submit"
         }, "Submit"))) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onClick: function onClick() {
             return _this3.hideForm("showReviewForm");
@@ -4340,9 +4346,11 @@ var reviewErrorsReducer = function reviewErrorsReducer() {
       return [];
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
+      debugger;
       return [];
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
+      debugger;
       return action.errors;
 
     default:
@@ -4384,9 +4392,6 @@ var reviewReducer = function reviewReducer() {
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_REVIEW"]:
       delete nextState[action.reviewId];
       return nextState;
-
-    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
-      return [];
 
     default:
       return state;

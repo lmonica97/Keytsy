@@ -48,8 +48,9 @@ class ProductShow extends React.Component {
     }
 
     handleSubmit(e) {
+        e.preventDefault();
         this.props.createReview({reviewer_id: this.props.currentUser.id, product_id: this.props.product.id, rating: this.state.rating, comment: this.state.comment})
-        this.hideForm("showReviewForm")
+        this.hideForm('showReviewForm')
     }
 
     update(type) {
@@ -69,6 +70,8 @@ class ProductShow extends React.Component {
         const { showReviewForm } = this.state;
         const { rating } = this.state;
         const { reviews } = this.props;
+        const { errors }  = this.props;
+        debugger
         const stars = {
             1: <img className="review-star-rating1" src={window.rating1} />,
             2: <img className="review-star-rating1" src={window.rating2} />,
@@ -194,12 +197,13 @@ class ProductShow extends React.Component {
                                 <p className="product-total-reviews">{ratings.length} review(s)</p>
                                 {stars[average]}
                             </div>
+                            <span className="review-errors">{errors}</span>
                             <div>
                                 <div className="review-component">
                                     <div>
                                     { showReviewForm ? 
                                     <div className="review-form-container">
-                                        <form className="review-form">
+                                        <form className="review-form" onSubmit={this.handleSubmit}>
                                             <h1 className="review-form-head">Write a review</h1>
                                             <div className="review-rating-disp">
                                                 <p className="rating-text">Rating: </p>
@@ -215,7 +219,7 @@ class ProductShow extends React.Component {
                                             </div>
                                             <p className="review-text-label">Comment: </p>
                                             <textarea className="review-textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
-                                            <button className="review-submit-btn" onClick={this.handleSubmit}>Submit</button>
+                                            <button className="review-submit-btn" type="submit">Submit</button>
                                         </form>
                                     </div> : null}
                                     </div>

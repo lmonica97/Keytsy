@@ -7,7 +7,7 @@ class Api::ReviewsController < ApplicationController
             @reviews = Review.where(product_id: params[:product_id])
             render 'api/reviews/index'
         else 
-            return nil 
+            render json: @review.errors.full_messages, status: 422 
         end
     end
 
@@ -38,7 +38,7 @@ class Api::ReviewsController < ApplicationController
             @reviews = Review.where(product_id: @review.product_id)
             render 'api/reviews/index'
         else 
-            render json: @review.errors.full_messages, status: 404
+            render json: ["Comment can not be blank. Please try again."], status: 404
         end
     end
 

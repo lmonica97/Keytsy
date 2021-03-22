@@ -247,3 +247,11 @@
 .review-show-container {
     margin-top: 0px;
 }
+
+.review-errors-block {
+    display: block;
+}
+
+.review-errors {
+    color: red;
+}

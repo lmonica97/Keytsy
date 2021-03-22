@@ -8,8 +8,10 @@ const reviewErrorsReducer = (state = [], action) => {
         case REMOVE_REVIEW: 
             return [];
         case RECEIVE_ALL_REVIEWS:
+            debugger
             return [];
         case RECEIVE_REVIEW_ERRORS: 
+        debugger
             return action.errors;
         default: 
             return state;
