@@ -57,6 +57,73 @@ This app is my replication of the original website, Etsy.com. Similarly to the o
   <img src="https://github.com/lmonica97/Keytsy/blob/main/app/assets/images/gifs/category.gif" />
 </p>
 
+## Code snippets
+1. 
+```javascript
+  <div className="review-component">
+                                 <div>
+                                    { showReviewForm ? 
+                                    <div className="review-form-container">
+                                        <form className="review-form" onSubmit={this.handleSubmit}>
+                                            <h1 className="review-form-head">Write a review</h1>
+                                            <div className="review-rating-disp">
+                                                <p className="rating-text">Rating: </p>
+                                                <ReactStars
+                                                count={5}
+                                                value={rating}
+                                                size={34}
+                                                onChange={this.onStarClick}
+                                                activeColor="#ffd700"
+                                                className="review-star-rating"
+                                                />
+                                                <p className="rating-text1">{rating} Star(s)</p>
+                                            </div>
+                                            <p className="review-text-label">Comment: </p>
+                                            <textarea className="review-textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
+                                            <button className="review-submit-btn" type="submit">Submit</button>
+                                        </form>
+                                    </div> : null}
+                                    </div>
+                                    <div>
+                                    {this.props.currentUser ? 
+                                        <form onClick={() => this.hideForm("showReviewForm")}>
+                                            {
+                                                showReviewForm ? 
+                                                <button className="close-btn">Close</button> :
+                                                <button className="create-btn">Create Review</button> 
+                                            }
+                                        </form>
+                                     : null }
+                                    </div> 
+    </div>
+                                    
+```
 
+2. 
+```ruby 
+def create 
+        allCartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+        @cartitem = Cartitem.new(cartitem_params)
+        hash = {};
+        allCartitems.map { |cartitem| hash[cartitem.product_id] = cartitem.id} 
+        if hash.keys.include?(@cartitem.product_id) 
+            @existingcartitem = Cartitem.find_by(id: hash[@cartitem.product_id])
+            @existingcartitem.quantity = @existingcartitem.quantity + @cartitem.quantity
+            if @existingcartitem.save && logged_in? 
+                @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+                render 'api/cartitems/index'
+            else 
+                render json: @cartitem.errors.full_messages, status: 404
+            end
+        else 
+            if @cartitem.save && logged_in? 
+                @cartitems = Cartitem.all.select{ |item| item.user_id == current_user.id }
+                render 'api/cartitems/index'
+            else 
+                render json: @cartitem.errors.full_messages, status: 404
+            end
+        end
+    end
+```
 
 
