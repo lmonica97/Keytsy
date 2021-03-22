@@ -197,8 +197,8 @@ class ProductShow extends React.Component {
                                 <p className="product-total-reviews">{ratings.length} review(s)</p>
                                 {stars[average]}
                             </div>
-                            <span className="review-errors">{errors}</span>
                             <div>
+                                <div><p className="review-errors">{errors}</p></div>
                                 <div className="review-component">
                                     <div>
                                     { showReviewForm ? 

@@ -227,7 +227,7 @@
     padding: 0;
     margin: 0;
     padding-bottom: 20px;
-    margin-top: -340px;
+    margin-top: -360px;
 }
 
 .review-star-rating1 {
@@ -235,7 +235,7 @@
     height: 27px;
     margin-left: 10px;
     padding-bottom: 10px;
-    margin-top: -340px;
+    margin-top: -360px;
 }
 
 .product-total-review-cont {
@@ -253,5 +253,9 @@
 }
 
 .review-errors {
+    position: absolute;
     color: red;
+    margin-top: -25px;
+    margin-left: 60px;
+    font-weight: bold;
 }
