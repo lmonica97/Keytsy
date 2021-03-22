@@ -40,8 +40,8 @@ export const fetchReviews = productId => dispatch => {
 
 export const createReview = (review) => dispatch => {
     return ReviewApiUtil.createReview(review)
-        .then(review => dispatch(receiveReview(review))),
-        error => dispatch(receiveReviewErrors(error.responseJSON))
+        .then(review => dispatch(receiveReview(review)),
+        error => dispatch(receiveReviewErrors(error.responseJSON)))
 }
 
 export const updateReview = (review) => dispatch => {

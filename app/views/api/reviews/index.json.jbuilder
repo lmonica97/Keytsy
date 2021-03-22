@@ -5,3 +5,4 @@
         json.extract! review.reviewer, :name
     end
 end
+

@@ -12,7 +12,7 @@ const reviewReducer = (state = {}, action) => {
             delete nextState[action.reviewId]
             return nextState;
         case RECEIVE_REVIEW_ERRORS:
-            return null;
+            return [];
         default:
             return state;
     }

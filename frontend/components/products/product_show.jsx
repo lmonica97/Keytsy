@@ -199,7 +199,7 @@ class ProductShow extends React.Component {
                                     <div>
                                     { showReviewForm ? 
                                     <div className="review-form-container">
-                                        <form className="review-form" onSubmit={this.handleSubmit}>
+                                        <form className="review-form">
                                             <h1 className="review-form-head">Write a review</h1>
                                             <div className="review-rating-disp">
                                                 <p className="rating-text">Rating: </p>
@@ -215,7 +215,7 @@ class ProductShow extends React.Component {
                                             </div>
                                             <p className="review-text-label">Comment: </p>
                                             <textarea className="review-textarea" value={this.state.comment} onChange={this.update("comment")}></textarea>
-                                            <button className="review-submit-btn">Submit</button>
+                                            <button className="review-submit-btn" onClick={this.handleSubmit}>Submit</button>
                                         </form>
                                     </div> : null}
                                     </div>

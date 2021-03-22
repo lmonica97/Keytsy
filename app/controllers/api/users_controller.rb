@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
           login(@user)
           render "api/users/show"
         else
-          
           render json: {
             email: 'Please enter a valid email address', 
             name: "can't be blank.", 

@@ -1,5 +1,6 @@
 class Api::ReviewsController < ApplicationController
     before_action only: [:update, :destroy, :create]
+    skip_before_action :verify_authenticity_token
 
     def index 
         if params[:product_id]
@@ -37,7 +38,7 @@ class Api::ReviewsController < ApplicationController
             @reviews = Review.where(product_id: @review.product_id)
             render 'api/reviews/index'
         else 
-            render json: @review.errors.full_message, status: 404
+            render json: @review.errors.full_messages, status: 404
         end
     end
 
