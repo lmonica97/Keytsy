@@ -32,7 +32,7 @@ class SearchResults extends React.Component {
                     </div>  
                     : 
                     <div className="search-results-container">
-                        {searchProducts.map(product=> <SearchResultsShow product={product} />)}
+                        {searchProducts.map(product=> <SearchResultsShow key={product.id} product={product} />)}
                     </div>
                 }
                 <div>

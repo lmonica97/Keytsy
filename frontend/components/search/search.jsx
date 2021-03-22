@@ -16,7 +16,7 @@ class Search extends React.Component {
 
     handleSubmit() {
         const {searchTerm} = this.state
-        this.props.history.push({ pathname: '/search', search: `search=${searchTerm}`}).then(this.clearState())
+        this.props.history.push({ pathname: '/search', search: `search=${searchTerm}`})
     }
 
     update(type) {

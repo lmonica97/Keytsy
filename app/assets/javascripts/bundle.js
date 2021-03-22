@@ -2307,7 +2307,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var rating = this.state.rating;
       var reviews = this.props.reviews;
       var errors = this.props.errors;
-      debugger;
       var stars = {
         1: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "review-star-rating1",
@@ -2587,7 +2586,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.session.currentUser,
@@ -3214,7 +3212,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
       this.props.history.push({
         pathname: '/search',
         search: "search=".concat(searchTerm)
-      }).then(this.clearState());
+      });
     }
   }, {
     key: "update",
@@ -3384,6 +3382,7 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
         className: "search-results-container"
       }, searchProducts.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results_show__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: product.id,
           product: product
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {

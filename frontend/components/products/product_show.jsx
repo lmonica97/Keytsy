@@ -71,7 +71,6 @@ class ProductShow extends React.Component {
         const { rating } = this.state;
         const { reviews } = this.props;
         const { errors }  = this.props;
-        debugger
         const stars = {
             1: <img className="review-star-rating1" src={window.rating1} />,
             2: <img className="review-star-rating1" src={window.rating2} />,

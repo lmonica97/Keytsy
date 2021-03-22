@@ -6,7 +6,7 @@ import { createReview, receiveReviewErrors } from '../../actions/review_actions'
 import { fetchReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+
     return {
         product: state.entities.products[ownProps.match.params.id],
         currentUser: state.session.currentUser,
