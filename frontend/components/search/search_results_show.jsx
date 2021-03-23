@@ -7,7 +7,6 @@ class SearchResultsShow extends React.Component {
     }
     render() {
         const {product} = this.props;
-        debugger
         return(
             <li className="recommendation-list" key={product.id}>
                 <Link to={`/products/${product.id}`} style={{textDecoration:'none', color:'black', cursor: 'pointer'}}>
