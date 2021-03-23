@@ -7,6 +7,7 @@
     background-size: cover;
     height: 500px;
     align-items: center;
+    overflow: hidden;
 } 
 
 .info-section-header {
@@ -26,8 +27,8 @@
     color: white;
     font-size: 15px;
     font-family: 'Montserrat';
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .sub-info {
