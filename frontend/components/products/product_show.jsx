@@ -104,7 +104,7 @@ class ProductShow extends React.Component {
                         </div>
                         <div className="product-show-text">
                             <div className="product-sale-seller">
-                                <p className="product-show-seller">{product.name}</p>
+                                <p className="product-show-seller">{product.seller.name}</p>
                                 <div className="rating-sales">
                                     <p className="sales">{this.randomNumberGenerator()} sales</p> 
                                     <p className="separator"> | </p>
@@ -184,8 +184,8 @@ class ProductShow extends React.Component {
                                         <img className="seller-profile-pic" src={window.profilepic} />
                                     </div>
                                     <div>
-                                        <h4 className="seller-profile-name">{product.name}</h4>
-                                        <p>Owner of <a href="#">{product.name}</a></p>
+                                        <h4 className="seller-profile-name">{product.seller.name}</h4>
+                                        <p>Owner of <a href="#">{product.seller.name}</a></p>
                                     </div>
                                 </div>
                             </div>  
