@@ -224,7 +224,13 @@ class ProductShow extends React.Component {
                                     </div>
                                     <div>
                                     {this.props.currentUser ? 
-                                    <form onClick={() => this.hideForm("showReviewForm")}>{showReviewForm ? <button className="close-btn">Close</button> : <button className="create-btn">Create Review</button> }</form>
+                                        <form onClick={() => this.hideForm("showReviewForm")}>
+                                            {
+                                                showReviewForm ? 
+                                                <button className="close-btn">Close</button> :
+                                                <button className="create-btn">Create Review</button> 
+                                            }
+                                        </form>
                                      : null }
                                     </div>     
                                 </div>
